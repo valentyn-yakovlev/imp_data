@@ -1,0 +1,13 @@
+$TTL 3h
+0.0.127.in-addr.arpa.	IN      SOA     gateway.test.org.    jp.test.org.(
+                                        1       ;serial
+                                        3h      ;refresh after 3 hours
+                                        1h      ;retry
+                                        1w      ;expire
+                                        1h)     ;-ve ttl
+;nameserver
+0.0.127.in-addr.arpa.	IN      NS      gateway.test.org.
+
+;Aliases
+0.0.127.in-addr.arpa.	IN      PTR     gateway.test.org.
+

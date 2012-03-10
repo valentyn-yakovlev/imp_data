@@ -1,0 +1,18 @@
+$TTL 3H
+test.org.	IN	SOA	gateway.test.org.	jp.test.org.(
+				1	;serial
+				3h	;refresh after 3 hours
+				1h	;retry
+				1w	;expire
+				1h)	;-ve ttl
+;nameserver
+test.org.		IN 	NS	gateway.test.org.
+;address record
+localhost.test.org. 	IN	A	127.0.0.1
+gateway.test.org.	IN	A	192.168.1.5
+development.test.org.	IN	A	192.168.1.4
+research.test.org.	IN	A	192.168.1.10
+;Aliases
+gw.test.org.		IN	CNAME	gateway.test.org.
+devel.test.org.		IN	CNAME	development.test.org.
+res.test.org.		IN	CNAME	research.test.org.
