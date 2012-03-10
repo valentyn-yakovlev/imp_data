@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium2.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Selenium Tutorial : Selenium2  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, selenium, tutorial, :, selenium2" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Selenium Tutorial : Selenium2 </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Selenium Tutorial </a>
+  &raquo;
+  Selenium2 </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="selenium_in_your_company.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="toolbox.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="12. Selenium 2.0"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="selenium2"></a>12. Selenium 2.0</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The next major version of Selenium is going to change a lot of things on the Selenium internals
+</li><li class="listitem">
+Selenium 2.0 will be in fact be a merge between the Selenium and WebDriver projects
+</li><li class="listitem">
+Currently, Selenium 2.0 is still in development: last version at the time of writing is alpha 6
+</li></ul></div><div class="section" title="12.1. Differences &amp; New Features"><div class="titlepage"><div><div><h3 class="title"><a id="_differences_amp_new_features"></a>12.1. Differences &amp; New Features</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Selenium 2.0 intends to get rid of Selenium RC
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The driver will directly drive the browser using WebDriver
+</li><li class="listitem">
+Parallelization is easier: the test code takes care of it
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Selenium 2.0 comes as a browser extension directly plugging into the browser automation features, allowing to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Avoid the JavaScript security model (same origin policy rule) that restricts Selenium 1.x capabilities
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+It will be possible to test features on several domains (like Facebook connect for instance)
+</li></ul></div></li></ul></div></li><li class="listitem"><p class="simpara">
+Selenium 2.0 works at the OS/browser level:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+For instance, command <code class="literal">type</code> works at the OS level rather than changing the value of the input elements with JavaScript
+</li><li class="listitem">
+It drives the browser much more effectively: forget the limitations of Selenium 1.x like the file upload or download, pop-ups and dialogs barrier or self-signed certificates problems
+</li></ul></div></li><li class="listitem">
+In addition, WebDriver provides a real object-based API giving you the ability to leverage the PageObject pattern very easily
+</li><li class="listitem">
+The merge of the projects combines the strenghts of both frameworks: Selenium 2.0 will provide both Selenium 1.x and WebDriver APIs and it will be possible to use these APIs with both Selenium and WebDriver backends
+</li></ul></div></div><div class="section" title="12.2. API"><div class="titlepage"><div><div><h3 class="title"><a id="_api"></a>12.2. API</h3></div></div></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The following examples are Java-based as the API is not available in Ruby yet.
+At the time of writing, only Java, C# and Python APIs are available</p></td></tr></table></div><div class="section" title="12.2.1. The WebDriver object"><div class="titlepage"><div><div><h4 class="title"><a id="_the_webdriver_object"></a>12.2.1. The WebDriver object</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Currently, WebDriver provides 4 implementations of its driver:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+<code class="literal">HtmlUnitDriver</code>, a pure Java driver based on <span class="emphasis"><em>HtmlUnit</em></span> browser simulator (all Java-capable OS)
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+When running, you won’t see any window opening because it doesn’t render any page like Firefox would. You can’t use it to get size or position of pages' elements
+</li><li class="listitem">
+It is very fast but does not provides JavaScript <span class="emphasis"><em>yet</em></span>: this feature is still a WIP. If you want to use it anyway, use <code class="literal">driver.setJavascriptEnabled(true)</code>.
+</li></ul></div></li><li class="listitem">
+<code class="literal">FirefoxDriver</code>: supports Firefox (2.x and 3.x, all OS)
+</li><li class="listitem">
+<code class="literal">InternetExplorerDriver</code>: supports InternetExplorer (tested on IE6, 7 and 8, should work on IE5.5 and on Windows XP and Vista)
+</li><li class="listitem">
+<code class="literal">ChromeDriver</code>: drives Google’s browser (&gt;= 4.0, all OS)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Here is an example of a test using HtmlUnitDriver:
+</p><pre class="programlisting">package org.openqa.selenium.example;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+
+public class Example  {
+    public static void main(String[] args) {
+        WebDriver driver = new HtmlUnitDriver(); //<a id="CO10-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+        // And now use this to visit Google
+        driver.get("http://www.google.com"); //<a id="CO10-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+
+        // Find the text input element by its name
+        WebElement element = driver.findElement(By.name("q")); //<a id="CO10-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+
+        // Enter something to search for
+        element.sendKeys("Cheese!"); //<a id="CO10-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+
+        // Now submit the form. WebDriver will find the form for us from the element
+        element.submit(); //<a id="CO10-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+
+        // Check the title of the page
+        System.out.println("Page title is: " + driver.getTitle());
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+We create a new WebDriver object using HtmlUnit as a browser.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">get</code> is the equivalent of <code class="literal">open</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Each element of the page is an instance of <code class="literal">WebElement</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">WebElement</code> provides the methods to interact with the element. If you call an invalid method on an element (<code class="literal">toggle()</code> on a Button for instance), an exception will be thrown
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">submit()</code> method will automatically find the form enclosing the element and submit it. If none is present, it will throw a <code class="literal">NoSuchElementException</code>
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+You can also interact with the frames and windows of the browser:
+</p><pre class="programlisting">for (String handle : driver.getWindowHandles()) { //<a id="CO11-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  driver.switchTo().window(handle);
+}
+
+...
+
+driver.switchTo().frame("frameName");
+driver.switchTo().frame("frameName.0.child"); //<a id="CO11-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+You can get the list of the windows opened in the browser with <code class="literal">getWindowHandles()</code>.
+If you know the handle of the window (<code class="literal">target</code> attribute of an anchor element) you can just call <code class="literal">driver.switchTo().window("window handle")</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+You can also acces the subframes of a frame using the dot and both name and index
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+The driver object also provides navigation methods:
+</p><pre class="programlisting">driver.navigate().to("http://www.example.com"); //<a id="CO12-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+driver.navigate().forward();
+driver.navigate().back();</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">driver.get("url");</code> is just an alias to <code class="literal">driver.navigate().to("url")</code>
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+You can also manage cookies via the <code class="literal">Options</code> interface that is accessible through <code class="literal">manage()</code>
+</p><pre class="programlisting">// Go to the correct domain
+driver.get("http://www.example.com");
+
+// Now set the cookie. This one's valid for the entire domain
+Cookie cookie = new Cookie("key", "value");
+driver.manage().addCookie(cookie);
+
+// And now output all the available cookies for the current URL
+Set&lt;Cookie&gt; allCookies = driver.manage().getCookies();
+for (Cookie loadedCookie : allCookies) {
+    System.out.println(String.format("%s -&gt; %s", loadedCookie.getName(), loadedCookie.getValue()));
+}</pre></li></ul></div></div><div class="section" title="12.2.2. WebElement objects"><div class="titlepage"><div><div><h4 class="title"><a id="_webelement_objects"></a>12.2.2. WebElement objects</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+WebElement provides methods to do simple interactions with your HTML elements: type, click, select…
+</li><li class="listitem"><p class="simpara">
+RenderedWebElements represents a HTML element as if it was rendered in the browser and so provides access to size, location, access to css properties or drag&amp;drop:
+</p><pre class="programlisting">WebElement plain = driver.findElement(By.name("q"));
+RenderedWebElement element = (RenderedWebElement) plain;
+
+...
+
+RenderedWebElement element = (RenderedWebElement) driver.findElement(By.name("source"));
+RenderedWebElement target = (RenderedWebElement) driver.findElement(By.name("target"));
+
+element.dragAndDropOn(target);</pre></li></ul></div></div><div class="section" title="12.2.3. PageFactory"><div class="titlepage"><div><div><h4 class="title"><a id="_pagefactory"></a>12.2.3. PageFactory</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+WebDriver provides native support for the PageObject patern through the <code class="literal">PageFactory</code> object
+</li><li class="listitem"><p class="simpara">
+Consider the following PageObject:
+</p><pre class="programlisting">package org.openqa.selenium.example;
+
+import org.openqa.selenium.WebElement;
+
+public class GoogleSearchPage {
+    private WebElement q; //<a id="CO13-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+    public void searchFor(String text) {
+        q.sendKeys(text); //<a id="CO13-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+        q.submit();
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Here we declare our WebElement
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+We use it but notice that we never instanciated it
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Now, we use the <code class="literal">GoogleSearchPage</code> class in our test class:
+</p><pre class="programlisting">package org.openqa.selenium.example;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class UsingGoogleSearchPage {
+    public static void main(String[] args) {
+        WebDriver driver = new HtmlUnitDriver();
+
+        driver.get("http://www.google.com/");
+
+        GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class); //<a id="CO14-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+        page.searchFor("Cheese");
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">initElements</code> will instanciate the WebElements properties of the page for us - but we never specified what element <code class="literal">q</code> was mapped to?!
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+The PageFactory will use the name of the properties to find our elements on the pages: Here our search field is named <code class="literal">q</code> and PageFactory will map it to the page element with the same id, that is the search input field:
+</p><p class="simpara"><code class="literal">q.sendKeys(text);</code> is the same as <code class="literal">driver.findElement(By.id("q")).sendKeys(text);</code></p></li><li class="listitem"><p class="simpara">
+In order for PageFactory to work properly, your PageObjects should have a constructor with only one argument: the driver instance:
+</p><pre class="screen">public class GoogleSearchPage {
+
+    public GoogleSearchPage(WebDriver driver) { }
+}</pre></li><li class="listitem"><p class="simpara">
+You can change the behavior of the PageFactory’s locator lookup using annotations:
+</p><pre class="programlisting">public class GoogleSearchPage {
+
+    @FindBy(how = How.NAME, using = "q")
+    private WebElement searchBox;
+
+    ....
+}</pre><p class="simpara">Here we’ll use the name attribute to locate our elements</p></li><li class="listitem"><p class="simpara">
+The default behavior of WebDriver is to lookup for the element each time it is accessed. In an Ajax-enabled application, this is ok since some elements may disappear but on a static page, it is useless.
+</p><p class="simpara">You can use the <code class="literal">@CacheLookup</code> annotation to cache the element mapping:</p><pre class="programlisting">    @FindBy(how = How.NAME, using = "q")
+    @CacheLookup
+    private WebElement searchBox;</pre></li></ul></div></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="selenium_in_your_company.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="toolbox.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="selenium2.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Selenium Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_assumptions">1.1. Assumptions</a></span></dt><dt><span class="section"><a href="index.html#_lab_files">1.2. Lab Files</a></span></dt></dl></dd><dt><span class="section"><a href="project.html">2. The Selenium Project</a></span></dt><dd><dl><dt><span class="section"><a href="project.html#_overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="project.html#Selenium_and_the_web_testing_frameworks">2.2. Selenium And The Web Testing Frameworks</a></span></dt><dt><span class="section"><a href="project.html#_history">2.3. History</a></span></dt></dl></dd><dt><span class="section"><a href="IDE.html">3. Selenium IDE</a></span></dt><dd><dl><dt><span class="section"><a href="IDE.html#_overview_2">3.1. Overview</a></span></dt><dt><span class="section"><a href="IDE.html#_presentation">3.2. Presentation</a></span></dt><dt><span class="section"><a href="IDE.html#_export_features">3.3. Export Features</a></span></dt><dt><span class="section"><a href="IDE.html#_installation">3.4. Installation</a></span></dt><dt><span class="section"><a href="IDE.html#_lab_1">3.5. Lab 1</a></span></dt><dt><span class="section"><a href="IDE.html#_discussion">3.6. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="test_cases_and_test_suites.html">4. Test-Cases and Test-Suites</a></span></dt><dd><dl><dt><span class="section"><a href="test_cases_and_test_suites.html#_selenese">4.1. Selenese</a></span></dt><dt><span class="section"><a href="test_cases_and_test_suites.html#_test_suites">4.2. Test Suites</a></span></dt></dl></dd><dt><span class="section"><a href="commands.html">5. Commands</a></span></dt><dd><dl><dt><span class="section"><a href="commands.html#_actions">5.1. Actions</a></span></dt><dt><span class="section"><a href="commands.html#_accessors">5.2. Accessors</a></span></dt><dt><span class="section"><a href="commands.html#_assertions">5.3. Assertions</a></span></dt></dl></dd><dt><span class="section"><a href="locators.html">6. Locators</a></span></dt><dd><dl><dt><span class="section"><a href="locators.html#_identifier">6.1. Identifier</a></span></dt><dt><span class="section"><a href="locators.html#_id">6.2. Id</a></span></dt><dt><span class="section"><a href="locators.html#_name">6.3. Name</a></span></dt><dt><span class="section"><a href="locators.html#_link">6.4. Link</a></span></dt><dt><span class="section"><a href="locators.html#_dom">6.5. DOM</a></span></dt><dt><span class="section"><a href="locators.html#_xpath">6.6. XPath</a></span></dt><dt><span class="section"><a href="locators.html#_css">6.7. CSS</a></span></dt><dt><span class="section"><a href="locators.html#_ui_elements">6.8. UI-Elements</a></span></dt><dt><span class="section"><a href="locators.html#_structure_dependent_or_not">6.9. Structure-Dependent Or Not?</a></span></dt><dt><span class="section"><a href="locators.html#quiz_locators">6.10. Quiz</a></span></dt><dt><span class="section"><a href="locators.html#_lab_2">6.11. Lab 2</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_remote_control.html">7. Selenium Remote Control (RC)</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_remote_control.html#_overview_3">7.1. Overview</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_selenium_server">7.2. Selenium Server</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_client_libraries">7.3. Client libraries</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_3_installation_of_selenium_rc">7.4. Lab 3 : Installation of Selenium RC</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_junit">7.5. Junit</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_rspec">7.6. RSpec</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_javascript">7.7. JavaScript</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_fixtures">7.8. Fixtures</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_4_improving_a_test">7.9. Lab 4 : Improving a test</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_grid.html">8. Selenium Grid</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_grid.html#_presentation_2">8.1. Presentation</a></span></dt></dl></dd><dt><span class="section"><a href="testing_strategies.html">9. Testing Strategies</a></span></dt><dd><dl><dt><span class="section"><a href="testing_strategies.html#_what_kinds_of_tests">9.1. What Kinds Of Tests?</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_how_should_you_test_your_apps">9.2. How Should You Test Your Apps</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_best_practices">9.3. Best Practices</a></span></dt><dt><span class="section"><a href="testing_strategies.html#UI-Elements">9.4. UI-Elements:</a></span></dt><dt><span class="section"><a href="testing_strategies.html#seide_rollups">9.5. Rollups</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_lab_5_ui_elements_and_rollups">9.6. Lab 5: UI-Elements And Rollups</a></span></dt></dl></dd><dt><span class="section"><a href="pageobject.html">10. PageObject</a></span></dt><dd><dl><dt><span class="section"><a href="pageobject.html#_lab_6_pageobject_pattern">10.1. Lab 6: PageObject Pattern</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_in_your_company.html">11. Selenium In Your Company</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_in_your_company.html#_where_to_start">11.1. Where to start?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#_what_are_the_issues">11.2. What Are The Issues?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#Continuous-Integration">11.3. Continuous Integration</a></span></dt></dl></dd><dt><span class="section"><a href="selenium2.html">12. Selenium 2.0</a></span></dt><dd><dl><dt><span class="section"><a href="selenium2.html#_differences_amp_new_features">12.1. Differences &amp; New Features</a></span></dt><dt><span class="section"><a href="selenium2.html#_api">12.2. API</a></span></dt></dl></dd><dt><span class="section"><a href="toolbox.html">13. Toolbox</a></span></dt><dd><dl><dt><span class="section"><a href="toolbox.html#_flash_testing">13.1. Flash testing</a></span></dt><dt><span class="section"><a href="toolbox.html#helper_tools">13.2. Selenium helper tools</a></span></dt><dt><span class="section"><a href="toolbox.html#_test_developer_tools">13.3. Test developer tools</a></span></dt></dl></dd><dt><span class="section"><a href="appendix.html">14. Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="appendix.html#_selenium_rc_api_reference_ruby">14.1. Selenium RC API Reference (Ruby)</a></span></dt><dt><span class="section"><a href="appendix.html#_quiz_answers">14.2. Quiz answers</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium2.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

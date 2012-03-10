@@ -1,0 +1,1578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/object_oriented.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Java Fundamentals Tutorial : Object Oriented  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, java, fundamentals, tutorial, :, object, oriented" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Java Fundamentals Tutorial : Object Oriented </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Java Fundamentals Tutorial </a>
+  &raquo;
+  Object Oriented </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="flow_control.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="packaging.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="6. Object Oriented Programming in Java"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="object_oriented"></a>6. Object Oriented Programming in Java</h2></div></div></div><p>Introduction to Object Oriented Programming in Java</p><div class="section" title="6.1. What is Object Oriented Programming (OOP)?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_is_object_oriented_programming_oop"></a>6.1. What is Object Oriented Programming (OOP)?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A software design method that models the characteristics of real or abstract objects using software classes and objects.
+</li><li class="listitem"><p class="simpara">
+Characteristics of objects:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+State (what the objects have)
+</li><li class="listitem">
+Behavior (what the objects do)
+</li><li class="listitem">
+Identity (what makes them unique)
+</li></ul></div></li><li class="listitem">
+Definition: an object is a software bundle of related <span class="emphasis"><em>fields</em></span> (variables) and <span class="emphasis"><em>methods</em></span>.
+</li><li class="listitem">
+In OOP, a program is a collection of objects that act on one another (vs. procedures).
+</li></ul></div><p></p><p>For example, a car is an object. Its state includes current:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Speed
+</li><li class="listitem">
+RPM
+</li><li class="listitem">
+Gear
+</li><li class="listitem">
+Direction
+</li><li class="listitem">
+Fuel level
+</li><li class="listitem">
+Engine temperature
+</li></ul></div><p>Its behaviors include:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Change Gear
+</li><li class="listitem">
+Go faster/slower
+</li><li class="listitem">
+Go in reverse
+</li><li class="listitem">
+Stop
+</li><li class="listitem">
+Shut-off
+</li></ul></div><p>Its identity is:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+VIN
+</li><li class="listitem">
+License Plate
+</li></ul></div></div><div class="section" title="6.2. Why OOP?"><div class="titlepage"><div><div><h3 class="title"><a id="_why_oop"></a>6.2. Why OOP?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<span class="emphasis"><em>Modularity</em></span> — Separating entities into separate logical units makes them easier to code, understand, analyze, test, and maintain.
+</li><li class="listitem">
+<span class="emphasis"><em>Data hiding</em></span> (<span class="emphasis"><em>encapsulation</em></span>) — The implementation of an object’s private data and actions can change without affecting other objects that depend on it.
+</li><li class="listitem"><p class="simpara">
+Code reuse through:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<span class="emphasis"><em>Composition</em></span> — Objects can contain other objects
+</li><li class="listitem">
+<span class="emphasis"><em>Inheritance</em></span> — Objects can inherit state and behavior of other objects
+</li></ul></div></li><li class="listitem">
+Easier design due to natural modeling
+</li></ul></div><p></p><p>Even though OOP takes some getting used to, its main benefit is to make it easier to solve real-world problems by modeling natural objects in software objects. The OO thought process is more intuitive than procedural, especially for tackling complex problems.</p><p>Although a lot of great software is implemented in procedural languages like C, OO languages typically scale better for taking on medium to large software projects.</p></div><div class="section" title="6.3. Class vs. Object"><div class="titlepage"><div><div><h3 class="title"><a id="_class_vs_object"></a>6.3. Class vs. Object</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+A <span class="emphasis"><em>class</em></span> is a template or blueprint for how to build an object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A class is a prototype that defines state placeholders and behavior common to all objects of its kind.
+</li><li class="listitem">
+Each object is a member of a single class — there is no multiple inheritance in Java.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+An <span class="emphasis"><em>object</em></span> is an instance of a particular class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+There are typically many object instances for any one given class (or type).
+</li><li class="listitem">
+Each object of a given class has the same built-in behavior but possibly a different state (data).
+</li><li class="listitem">
+Objects are <span class="emphasis"><em>instantiated</em></span> (created).
+</li></ul></div></li></ul></div><p></p><p>For example, each car starts of with a design that defines its features and properties.</p><p>It is the design that is used to build a car of a particular type or class.</p><p>When the physical cars roll off the assembly line, those cars are <span class="emphasis"><em>instances</em></span> (concrete objects) of that class.</p><p>Many people can have a 2007 BMW 335i, but there is typically only one design for that particular class of cars.</p><p>As we will see later, classification of objects is a powerful idea, especially when it comes to inheritance — or classification hierarchy.</p></div><div class="section" title="6.4. Classes in Java"><div class="titlepage"><div><div><h3 class="title"><a id="_classes_in_java"></a>6.4. Classes in Java</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Everything in Java is defined in a class.
+</li><li class="listitem">
+In its simplest form, a class just defines a collection of data (like a record or a C <code class="literal">struct</code>). For example:
+</li></ul></div><pre class="programlisting">class Employee {
+    String name;
+    String ssn;
+    String emailAddress;
+    int yearOfBirth;
+}</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The order of data fields and methods in a class is not significant.
+</li></ul></div><p></p><p>If you recall, each class must be saved in a file that matches its name, for example: <code class="literal">Employee.java</code></p><p>There are a few exceptions to this rule (for non-<code class="literal">public</code> classes), but the accepted convention is to have one class defined per source file.</p><p>Note that in Java, <code class="literal">Strings</code> are also classes rather than being implemented as primitive types.</p><p>Unlike local variables, the state variables (known as <span class="emphasis"><em>fields</em></span>) of objects do not have to be explicitly initialized. Primitive fields (such as <code class="literal">yearOfBirth</code>) are automatically set to primitive defaults (<code class="literal">0</code> in this case), whereas objects (<code class="literal">name</code>, <code class="literal">ssn</code>, <code class="literal">emailAddress</code>) are automatically set to <code class="literal">null</code> — meaning that they do not point to any object.</p></div><div class="section" title="6.5. Objects in Java"><div class="titlepage"><div><div><h3 class="title"><a id="_objects_in_java"></a>6.5. Objects in Java</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+To create an object (instance) of a particular class, use the <code class="literal">new</code> operator, followed by an invocation of a <span class="emphasis"><em>constructor</em></span> for that class, such as:
+</p><pre class="literallayout">new MyClass()</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The constructor method initializes the state of the new object.
+</li><li class="listitem">
+The <code class="literal">new</code> operator returns a <span class="emphasis"><em>reference</em></span> to the newly created object.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+As with primitives, the variable type must be compatible with the value type when using object references, as in:
+</p><pre class="literallayout">Employee e = new Employee();</pre></li><li class="listitem">
+To access member data or methods of an object, use the dot (<code class="literal">.</code>) notation: <span class="emphasis"><em><code class="literal">variable.field</code></em></span> or <span class="emphasis"><em><code class="literal">variable.method</code></em></span><code class="literal">()</code>
+</li></ul></div><p></p><p>We’ll explore all of these concepts in more depth in this module.</p><p>Consider this simple example of creating and using instances of the <code class="literal">Employee</code> class:</p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        e1.name = "John";
+        e1.ssn = "555-12-345";
+        e1.emailAddress = "john@company.com";
+
+        Employee e2 = new Employee();
+        e2.name = "Tom";
+        e2.ssn = "456-78-901";
+        e2.yearOfBirth = 1974;
+
+        System.out.println("Name: " + e1.name);
+        System.out.println("SSN: " + e1.ssn);
+        System.out.println("Email Address: " + e1.emailAddress);
+        System.out.println("Year Of Birth: " + e1.yearOfBirth);
+
+        System.out.println("Name: " + e2.name);
+        System.out.println("SSN: " + e2.ssn);
+        System.out.println("Email Address: " + e2.emailAddress);
+        System.out.println("Year Of Birth: " + e2.yearOfBirth);
+
+    }
+}</pre><p>Running this code produces:</p><pre class="screen">Name: John
+SSN: 555-12-345
+Email Address: john@company.com
+Year Of Birth: 0
+Name: Tom
+SSN: 456-78-901
+Email Address: null
+Year Of Birth: 1974</pre></div><div class="section" title="6.6. Java Memory Model"><div class="titlepage"><div><div><h3 class="title"><a id="_java_memory_model"></a>6.6. Java Memory Model</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java variables do not contain the actual objects, they contain <span class="emphasis"><em>references</em></span> to the objects.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The actual objects are stored in an area of memory known as the <span class="emphasis"><em>heap</em></span>.
+</li><li class="listitem">
+Local variables referencing those objects are stored on the stack.
+</li><li class="listitem">
+More than one variable can hold a reference to the same object.
+</li></ul></div></li></ul></div><div class="figure"><a id="id36155234"></a><p class="title"><b>Figure 4. Java Memory Model</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/StackVsHeap.png" width="450" alt="Java Memory Model"></img></div></div></div><br class="figure-break"></br><p></p><p>As previously mentioned, the <span class="emphasis"><em>stack</em></span> is the area of memory where local variables (including method parameters) are stored. When it comes to object variables, these are merely <span class="emphasis"><em>references</em></span> (pointers) to the actual objects on the heap.</p><p>Every time an object is instantiated, a chunk of <span class="emphasis"><em>heap memory</em></span> is set aside to hold the data (state) of that object. Since objects can contain other objects, some of this data can in fact hold references to those nested objects.</p><p>In Java:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Object references can either point to an actual object of a compatible type, or be set to <code class="literal">null</code> (<code class="literal">0</code> is not the same as <code class="literal">null</code>).
+</li><li class="listitem">
+It is not possible to instantiate objects on the stack. Only local variables (primitives and object references) can live on the stack, and everything else is stored on the heap, including classes and static data.
+</li></ul></div></div><div class="section" title="6.7. Accessing Objects through References"><div class="titlepage"><div><div><h3 class="title"><a id="_accessing_objects_through_references"></a>6.7. Accessing Objects through References</h3></div></div></div><pre class="programlisting">Employee e1 = new Employee();
+Employee e2 = new Employee();
+
+// e1 and e2 refer to two independent Employee objects on the heap
+
+Employee e3 = e1;
+
+// e1 and e3 refer to the *same* Employee object
+
+e3 = e2;
+
+// Now e2 and e3 refer to the same Employee object
+
+e1 = null;
+
+// e1 no longer refers to any object. Additionally, there are no references
+// left to the Employee object previously referred to by e1. That "orphaned"
+// object is now eligible for garbage collection.</pre><p></p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The statement <code class="literal">Employee e3 = e2;</code> sets <code class="literal">e3</code> to point to the same physical object as <code class="literal">e2</code>. It does <span class="strong"><strong>not</strong></span> duplicate the object. Changes to <code class="literal">e3</code> are reflected in <code class="literal">e2</code> and vice-versa.</p></td></tr></table></div></div><div class="section" title="6.8. Garbage Collection"><div class="titlepage"><div><div><h3 class="title"><a id="_garbage_collection"></a>6.8. Garbage Collection</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Unlike some OO languages, Java does not support an explicit <span class="emphasis"><em>destructor</em></span> method to delete an object from memory.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Instead, unused objects are deleted by a process known as <span class="emphasis"><em>garbage collection</em></span>.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The JVM automatically runs garbage collection periodically. Garbage collection:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Identifies objects no longer in use (no references)
+</li><li class="listitem">
+Finalizes those objects (deconstructs them)
+</li><li class="listitem">
+Frees up memory used by destroyed objects
+</li><li class="listitem">
+Defragments memory
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Garbage collection introduces overhead, and can have a major affect on Java application performance.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The goal is to avoid how often and how long GC runs.
+</li><li class="listitem">
+Programmatically, try to avoid unnecessary object creation and deletion.
+</li><li class="listitem">
+Most JVMs have tuning parameters that affect GC performance.
+</li></ul></div></li></ul></div><p></p><p>Benefits of garbage collection:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Frees up programmers from having to manage memory. Manually identifying unused objects (as in a language such as C++) is not a trivial task, especially when programs get so complex that the responsibility of object destruction and memory deallocation becomes vague.
+</li><li class="listitem"><p class="simpara">
+Ensures integrity of programs:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Prevents memory leaks — each object is tracked down and disposed off as soon as it is no longer used.
+</li><li class="listitem">
+Prevents deallocation of objects that are still in use or have already been released. In Java it is impossible to explicitly deallocate an object or use one that has already been deallocated. In a language such as C++ dereferencing null pointers or double-freeing objects typically crashes the program.
+</li></ul></div></li></ul></div><p>Through Java command-line switches (<code class="literal">java -X</code>), you can:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Set minimum amount of memory (e.g. <code class="literal">-Xmn</code>)
+</li><li class="listitem">
+Set maximum amount of memory (e.g. <code class="literal">-Xmx</code>, <code class="literal">-Xss</code>)
+</li><li class="listitem">
+Tune GC and memory integrity (e.g. <code class="literal">-XX:+UseParallelGC</code>)
+</li></ul></div><p>For more information, see: <a class="ulink" href="http://java.sun.com/docs/hotspot/VMOptions.html" target="_top">http://java.sun.com/docs/hotspot/VMOptions.html</a> and <a class="ulink" href="http://www.petefreitag.com/articles/gctuning/" target="_top">http://www.petefreitag.com/articles/gctuning/</a></p></div><div class="section" title="6.9. Methods in Java"><div class="titlepage"><div><div><h3 class="title"><a id="_methods_in_java"></a>6.9. Methods in Java</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+A <span class="emphasis"><em>method</em></span> is a set of instructions that defines a particular behavior.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A method is also known as a <span class="emphasis"><em>function</em></span> or a <span class="emphasis"><em>procedure</em></span> in procedural languages.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Java allows procedural programming through its <span class="emphasis"><em>static</em></span> methods (e.g. the <code class="literal">main()</code> method).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A static method belongs to a class independent of any of the class’s instances.
+</li></ul></div></li><li class="listitem">
+It would be possible to implement an entire program through static methods, which call each other procedurally, but that is not OOP.
+</li></ul></div><p></p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        e1.name = "John";
+        e1.ssn = "555-12-345";
+        e1.emailAddress = "john@company.com";
+
+        Employee e2 = new Employee();
+        e2.name = "Tom";
+        e2.ssn = "456-78-901";
+        e2.yearOfBirth = 1974;
+
+        printEmployee(e1);
+        printEmployee(e2);
+    }
+
+    static void printEmployee(Employee e) {
+        System.out.println("Name: " + e.name);
+        System.out.println("SSN: " + e.ssn);
+        System.out.println("Email Address: " + e.emailAddress);
+        System.out.println("Year Of Birth: " + e.yearOfBirth);
+    }
+}</pre><p>Running this code produces the same output as before:</p><pre class="screen">Name: John
+SSN: 555-12-345
+Email Address: john@company.com
+Year Of Birth: 0
+Name: Tom
+SSN: 456-78-901
+Email Address: null
+Year Of Birth: 1974</pre></div><div class="section" title="6.10. Methods in Java (cont.)"><div class="titlepage"><div><div><h3 class="title"><a id="_methods_in_java_cont"></a>6.10. Methods in Java (cont.)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+In true OOP, we combine an object’s state and behavior together.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+For example, rather than having external code access the individual fields of an Employee object and print the values, an Employee object could know how to print itself:
+</li></ul></div></li></ul></div><pre class="programlisting">class Employee {
+    String name;
+    String ssn;
+    String emailAddress;
+    int yearOfBirth;
+
+    void print() {
+        System.out.println("Name: " + name);
+        System.out.println("SSN: " + ssn);
+        System.out.println("Email Address: " + emailAddress);
+        System.out.println("Year Of Birth: " + yearOfBirth);
+    }
+}</pre><p></p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        e1.name = "John";
+        e1.ssn = "555-12-345";
+        e1.emailAddress = "john@company.com";
+
+        Employee e2 = new Employee();
+        e2.name = "Tom";
+        e2.ssn = "456-78-901";
+        e2.yearOfBirth = 1974;
+
+        e1.print();
+        e2.print();
+    }
+}</pre><p>Running this code produces the same output as before:</p><pre class="screen">Name: John
+SSN: 555-12-345
+Email Address: john@company.com
+Year Of Birth: 0
+Name: Tom
+SSN: 456-78-901
+Email Address: null
+Year Of Birth: 1974</pre></div><div class="section" title="6.11. Method Declarations"><div class="titlepage"><div><div><h3 class="title"><a id="_method_declarations"></a>6.11. Method Declarations</h3></div></div></div><p>Each method has a <span class="emphasis"><em>declaration</em></span> of the following format:</p><pre class="literallayout"><span class="emphasis"><em>modifiers returnType name</em></span>(<span class="emphasis"><em>params</em></span>) <span class="emphasis"><em>throws-clause</em></span> { <span class="emphasis"><em>body</em></span> }</pre><div class="variablelist"><dl><dt><span class="term">
+<span class="emphasis"><em>modifiers</em></span>
+</span></dt><dd>
+<code class="literal">public</code>, <code class="literal">private</code>, <code class="literal">protected</code>, <code class="literal">static</code>, <code class="literal">final</code>, <code class="literal">abstract</code>, <code class="literal">native</code>, <code class="literal">synchronized</code>
+</dd><dt><span class="term">
+<span class="emphasis"><em>returnType</em></span>
+</span></dt><dd>
+A primitive type, object type, or <code class="literal">void</code> (no return value)
+</dd><dt><span class="term">
+<span class="emphasis"><em>name</em></span>
+</span></dt><dd>
+The name of the method
+</dd><dt><span class="term">
+<span class="emphasis"><em>params</em></span>
+</span></dt><dd>
+<span class="emphasis"><em><code class="literal">paramType paramName</code></em></span>, …
+</dd><dt><span class="term">
+<span class="emphasis"><em>throws-clause</em></span>
+</span></dt><dd>
+<code class="literal">throws </code><span class="emphasis"><em><code class="literal">ExceptionType</code></em></span>, …
+</dd><dt><span class="term">
+<span class="emphasis"><em>body</em></span>
+</span></dt><dd>
+The method’s code, including the declaration of local variables, enclosed in braces
+</dd></dl></div><p></p><p>Note that abstract methods do not have a body (more on this later).</p><p>Here are some examples of method declarations:</p><pre class="programlisting">public static void print(Employee e) { ... }
+public void print() { ... }
+public double sqrt(double n) { ... }
+public int max(int x, int y) { ... }
+public synchronized add(Employee e) throws DuplicateEntryException { ... }
+public int read() throws IOException { ... }
+public void println(Object o) { ... }
+protected void finalize() throws Throwable { ... }
+public native void write(byte[] buffer, int offset, int length) throws IOException { ... }
+public boolean equals(Object o) { ... }
+private void process(MyObject o) { ... }
+void run() { ... }</pre></div><div class="section" title="6.12. Method Signatures"><div class="titlepage"><div><div><h3 class="title"><a id="_method_signatures"></a>6.12. Method Signatures</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <span class="emphasis"><em>signature</em></span> of a method consists of:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The method name
+</li><li class="listitem">
+The parameter list (that is, the parameter types and their order)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The signature does <span class="strong"><strong>not</strong></span> include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The parameter names
+</li><li class="listitem">
+The return type
+</li></ul></div></li><li class="listitem">
+Each method defined in a class must have a unique signature.
+</li><li class="listitem">
+Methods with the same name but different signatures are said to be <span class="emphasis"><em>overloaded</em></span>.
+</li></ul></div><p></p><p>We’ll discuss examples of overloading constructors and other methods later in this module.</p></div><div class="section" title="6.13. Invoking Methods"><div class="titlepage"><div><div><h3 class="title"><a id="_invoking_methods"></a>6.13. Invoking Methods</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Use the dot (<code class="literal">.</code>) notation to invoke a method on an object: <span class="emphasis"><em><code class="literal">objectRef.method</code></em></span><code class="literal">(</code><span class="emphasis"><em><code class="literal">params</code></em></span><code class="literal">)</code>
+</li><li class="listitem"><p class="simpara">
+Parameters passed into methods are always copied (“pass-by-value”).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Changes made to parameter variables within the methods do no affect the caller.
+</li><li class="listitem">
+Object references are also copied, but they still point to the <span class="emphasis"><em>same object</em></span>.
+</li></ul></div></li></ul></div><p></p><p>For example, we add the following method to our Employee class:</p><pre class="programlisting">void setYearOfBirth(int year) {
+    yearOfBirth = year;
+    year = -1;      // modify local variable copy
+}</pre><p>We invoke it from <code class="literal">EmployeeDemo.main()</code> as:</p><pre class="programlisting">int y = 1974;
+e2.setYearOfBirth(y);
+System.out.println(e2.yearOfBirth); // prints 1974
+System.out.println(y);          // prints 1974</pre><p>On the other hand, we add this method to our EmployeeDemo class:</p><pre class="programlisting">static void printYearOfBirth(Employee e) {
+    System.out.println(e.yearOfBirth);
+    e.yearOfBirth = -1; // modify object's copy
+}</pre><p>We invoke it from <code class="literal">EmployeeDemo.main()</code> as:</p><pre class="programlisting">printYearOfBirth(e2);           // prints 1974
+System.out.println(e2.yearOfBirth); // prints -1</pre></div><div class="section" title="6.14. Static vs. Instance Data Fields"><div class="titlepage"><div><div><h3 class="title"><a id="_static_vs_instance_data_fields"></a>6.14. Static vs. Instance Data Fields</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Static (or class) data fields
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Unique to the entire class
+</li><li class="listitem">
+Shared by all instances (objects) of that class
+</li><li class="listitem">
+Accessible using <span class="emphasis"><em><code class="literal">ClassName.fieldName</code></em></span>
+</li><li class="listitem">
+The class name is optional within static and instance methods of the class, unless a local variable of the same name exists in that scope
+</li><li class="listitem">
+Subject to the declared access mode, accessible from outside the class using the same syntax
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Instance (object) data fields
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Unique to each instance (object) of that class (that is, each object has its own set of instance fields)
+</li><li class="listitem">
+Accessible within instance methods and constructors using <code class="literal">this.</code><span class="emphasis"><em><code class="literal">fieldName</code></em></span>
+</li><li class="listitem">
+The <code class="literal">this.</code> qualifier is optional, unless a local variable of the same name exists in that scope
+</li><li class="listitem">
+Subject to the declared access mode, accessible from outside the class from an object reference using <span class="emphasis"><em><code class="literal">objectRef.fieldName</code></em></span>
+</li></ul></div></li></ul></div><p></p><p>Say we add the following to our Employee class:</p><pre class="literallayout">static int vacationDays = 10;</pre><p>and we print this in the Employee’s <code class="literal">print()</code> method:</p><pre class="literallayout">System.out.println("Vacation Days: " + vacationDays);</pre><p>In the EmployeeDemo’s <code class="literal">main()</code> method, we change <code class="literal">vacationDays</code> to 15:</p><pre class="literallayout">Employee.vacationDays = 15;</pre><p>Now, <code class="literal">e1.print()</code> and <code class="literal">e2.print()</code> will both show the vacation days set to 15. This is because both <code class="literal">e1</code> and <code class="literal">e2</code> (and any other Employee object) share the static <code class="literal">vacationDays</code> integer field.</p><p>The field <code class="literal">vacationDays</code> is part of the Employee class, and this is also stored on the heap, where it is shared by all objects of that class.</p><p>Static fields that are not protected (which we will soon learn how to do) are almost like global variables — accessible to anyone.</p><p>Note that it is possible to access static fields through instance variables (e.g., <code class="literal">e1.vacationDays = 15;</code> will have the same effect), however this is discouraged. You should always access static fields by <span class="emphasis"><em><code class="literal">ClassName.staticFieldName</code></em></span>, unless you are within the same class, in which case you can just say <span class="emphasis"><em><code class="literal">staticFieldName</code></em></span>.</p></div><div class="section" title="6.15. Static vs. Instance Methods"><div class="titlepage"><div><div><h3 class="title"><a id="_static_vs_instance_methods"></a>6.15. Static vs. Instance Methods</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Static methods can access only static data and invoke other static methods.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Often serve as helper procedures/functions
+</li><li class="listitem">
+Use when the desire is to provide a utility or access to class data only
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Instance methods can access both instance and static data and methods.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Implement behavior for individual objects
+</li><li class="listitem">
+Use when access to instance data/methods is required
+</li></ul></div></li><li class="listitem"><p class="simpara">
+An example of static method use is Java’s Math class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+All of its functionality is provided as static methods implementing mathematical functions (e.g., <code class="literal">Math.sin()</code>).
+</li><li class="listitem">
+The Math class is designed so that you don’t (and can’t) create actual Math instances.
+</li></ul></div></li><li class="listitem">
+Static methods also are used to implement <span class="emphasis"><em>factory methods</em></span> for creating objects, a technique discussed later in this class.
+</li></ul></div><p></p><pre class="programlisting">class Employee {
+    String name;
+    String ssn;
+    String emailAddress;
+    int yearOfBirth;
+    int extraVacationDays = 0;
+    static int baseVacationDays = 10;
+
+    Employee(String name, String ssn) {
+        this.name = name;
+        this.ssn = ssn;
+    }
+
+    static void setBaseVacationDays(int days) {
+        baseVacationDays = days &lt; 10? 10 : days;
+    }
+
+    static int getBaseVacationDays() {
+        return baseVacationDays;
+    }
+
+    void setExtraVacationDays(int days) {
+        extraVacationDays = days &lt; 0? 0 : days;
+    }
+
+    int getExtraVacationDays() {
+        return extraVacationDays;
+    }
+
+    void setYearOfBirth(int year) {
+        yearOfBirth = year;
+    }
+
+    int getVacationDays() {
+        return baseVacationDays + extraVacationDays;
+    }
+
+    void print() {
+        System.out.println("Name: " + name);
+        System.out.println("SSN: " + ssn);
+        System.out.println("Email Address: " + emailAddress);
+        System.out.println("Year Of Birth: " + yearOfBirth);
+        System.out.println("Vacation Days: " + getVacationDays());
+    }
+}</pre><p>To change the company vacation policy, do <code class="literal">Employee.setBaseVacationDays(15);</code></p><p>To give one employee extra vacation, do <code class="literal">e2.setExtraVacationDays(5);</code></p></div><div class="section" title="6.16. Method Overloading"><div class="titlepage"><div><div><h3 class="title"><a id="_method_overloading"></a>6.16. Method Overloading</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A class can provide multiple definitions of the same method. This is known as <span class="emphasis"><em>overloading</em></span>.
+</li><li class="listitem"><p class="simpara">
+Overloaded methods <span class="emphasis"><em>must</em></span> have distinct signatures:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The parameter type list must be different, either different number or different order.
+</li><li class="listitem">
+Only parameter <span class="emphasis"><em>types</em></span> determine the signature, not parameter <span class="emphasis"><em>names</em></span>.
+</li><li class="listitem">
+The return type is not considered part of the signature.
+</li></ul></div></li></ul></div><p></p><p>We can overload the print method in our Employee class to support providing header and footer to be printed:</p><pre class="programlisting">public class Employee {
+    …
+    public void print(String header, String footer) {
+        if (header != null) {
+            System.out.println(header);
+        }
+        System.out.println("Name: " + name);
+        System.out.println("SSN: " + ssn);
+        System.out.println("Email Address: " + emailAddress);
+        System.out.println("Year Of Birth: " + yearOfBirth);
+        System.out.println("Vacation Days: " + getVacationDays());
+        if (footer != null) {
+            System.out.println(footer);
+        }
+    }
+
+    public void print(String header) {
+        print(header, null);
+    }
+
+    public void print() {
+        print(null);
+    }
+}</pre><p>In our <code class="literal">EmployeeDemo.main()</code> we can then do:</p><pre class="programlisting">e1.print("COOL EMPLOYEE");
+e2.print("START OF EMPLOYEE", "END OF EMPLOYEE");</pre></div><div class="section" title="6.17. Variable Argument Length Methods"><div class="titlepage"><div><div><h3 class="title"><a id="_variable_argument_length_methods"></a>6.17. Variable Argument Length Methods</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java 5 introduced syntax supporting methods with a variable number of argument (also known as <span class="emphasis"><em>varargs</em></span>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The last parameter in the method declaration must have the format <span class="emphasis"><em><code class="literal">Type</code></em></span><code class="literal">... </code><span class="emphasis"><em><code class="literal">varName</code></em></span> (literally three periods following the type).
+</li><li class="listitem">
+The arguments corresponding to the parameter are presented as an <span class="emphasis"><em>array</em></span> of that type.
+</li><li class="listitem">
+You can also invoke the method with an explicit array of that type as the argument.
+</li><li class="listitem">
+If no arguments are provided corresponding to the parameter, the result is an array of length 0.
+</li></ul></div></li><li class="listitem">
+There can be at most one varargs parameter in a method declaration.
+</li><li class="listitem">
+The varargs parameter must be the last parameter in the method declaration.
+</li></ul></div><p></p><p>For example, consider the following implementation of a <code class="literal">max()</code> method:</p><pre class="programlisting">public int max(int... values) {
+    int max = Integer.MIN_VALUE;
+    for (int i: values) {
+        if (i &gt; max) max = i;
+    }
+    return max;
+}</pre><p>You can then invoke the <code class="literal">max()</code> method with any of the following:</p><pre class="programlisting">max(1, -2, 3, -4);
+max(1);
+max();
+int[] myValues = {5, -7, 26, -13, 42, 361};
+max(myValues);</pre></div><div class="section" title="6.18. Constructors"><div class="titlepage"><div><div><h3 class="title"><a id="_constructors"></a>6.18. Constructors</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Constructors are like special methods that are called implicitly as soon as an object is instantiated (i.e. on <code class="literal">new ClassName()</code>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Constructors have no return type (not even <code class="literal">void</code>).
+</li><li class="listitem">
+The constructor name must match the class name.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+If you don’t define an explicit constructor, Java assumes a default constructor
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The default constructor accepts no arguments.
+</li><li class="listitem">
+The default constructor automatically invokes its base class constructor with no arguments, as discussed later in this module.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can provide one or more explicit constructors to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Simplify object initialization (one line of code to create and initialize the object)
+</li><li class="listitem">
+Enforce the state of objects (require parameters in the constructor)
+</li><li class="listitem">
+Invoke the base class constructor with arguments, as discussed later in this module.
+</li></ul></div></li><li class="listitem">
+Adding <span class="emphasis"><em>any</em></span> explicit constructor disables the implicit (no argument) constructor.
+</li></ul></div><p></p><p>We can add a constructor to our Employee class to allow/require that it be constructed with a name and a social security number:</p><pre class="programlisting">class Employee {
+    String name;
+    String ssn;
+    …
+    Employee(String name, String ssn) {
+        this.name = name; // "this." helps distinguish between
+        this.ssn = ssn; // instance and parameter variables
+    }
+    …
+}</pre><p>Then we can modify <code class="literal">EmployeeDemo.main()</code> to call the specified constructor:</p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee("John", "555-12-345");
+        e1.emailAddress = "john@company.com";
+        Employee e2 = new Employee("Tom", "456-78-901");
+        e2.setYearOfBirth(1974);
+        …
+    }
+}</pre></div><div class="section" title="6.19. Constructors (cont.)"><div class="titlepage"><div><div><h3 class="title"><a id="_constructors_cont"></a>6.19. Constructors (cont.)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+As with methods, constructors can be overloaded.
+</li><li class="listitem"><p class="simpara">
+Each constructor must have a unique signature.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The parameter type list must be different, either different number or different order.
+</li><li class="listitem">
+Only parameter <span class="emphasis"><em>types</em></span> determine the signature, not parameter <span class="emphasis"><em>names</em></span>.
+</li></ul></div></li><li class="listitem">
+One constructor can invoke another by invoking <code class="literal">this(</code><span class="emphasis"><em><code class="literal">param1, param2, …</code></em></span><code class="literal">)</code> as the <span class="emphasis"><em>first</em></span> line of its implementation.
+</li></ul></div><p></p><p>It is no longer possible to do <code class="literal">Employee e = new Employee();</code> because there is no constructor that takes no parameters.</p><p>We could add additional constructors to our class Employee:</p><pre class="programlisting">Employee(String ssn) { // employees must have at least a SSN
+    this.ssn = ssn;
+}
+
+Employee(String name, String ssn) {
+    this(ssn);
+    this.name = name;
+}
+
+Employee(String name, String ssn, String emailAddress) {
+    this(name, ssn);
+    this.emailAddress = emailAddress;
+}
+
+Employee(String ssn, int yearOfBirth) {
+    this(ssn);
+    this.yearOfBirth = yearOfBirth;
+}</pre><p>Now we can construct Employee objects in different ways:</p><pre class="programlisting">Employee e1 = new Employee("John", "555-12-345", "john@company.com");
+Employee e2 = new Employee("456-78-901", 1974);
+e2.name = "Tom";</pre></div><div class="section" title="6.20. Constants"><div class="titlepage"><div><div><h3 class="title"><a id="_constants"></a>6.20. Constants</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+“Constant” fields are defined using the <code class="literal">final</code> keyword, indicating their values can be assigned only once.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Final instance fields must be initialized by the end of object construction.
+</li><li class="listitem">
+Final static fields must be initialized by the end of class initialization.
+</li><li class="listitem">
+Final local variables must be initialized only once before they are used.
+</li><li class="listitem">
+Final method parameters are initialized on the method call.
+</li></ul></div></li></ul></div><div class="important" title="Important" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="../images/important.png"></img></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>Declaring a reference variable as <code class="literal">final</code> means only that once initialized to refer to an object, it can’t be changed to refer to another object. It does <span class="strong"><strong>not</strong></span> imply that the state of the object referenced cannot be changed.</p></td></tr></table></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Final static field can be initialized through direct assignment or by using a <span class="emphasis"><em>static initializer</em></span>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+A static initializer consists of the keyword <code class="literal">static</code> followed by a block, for example:
+</p><pre class="programlisting">private static int[] values = new int[10];
+static {
+    for (int i = 0; i &lt; values.length; i++) {
+        values[i] = (int) (100.0 * Math.random());
+    }
+}</pre></li></ul></div></li></ul></div><p></p><p>If we declare <code class="literal">ssn</code> as final, we then must either assign it right away or initialize it in all constructors. This can also be done indirectly via constructor-to-constructor calls. Once initialized, final instance fields (e.g. <code class="literal">ssn</code>) can no longer be changed.</p><pre class="programlisting">class Employee {
+    final String ssn;
+    …
+    Employee(String ssn) {
+        this.ssn = ssn;
+    }
+    …
+}</pre><p>Local variables can also be set as final, to indicate that they should not be changed once set:</p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        final Employee e1 = new Employee(…);
+        final Employee e2 = new Employee("456-78-901", 1974);
+        final Employee e3;
+        e3 = e2;
+        …
+    }
+}</pre></div><div class="section" title="6.21. Encapsulation"><div class="titlepage"><div><div><h3 class="title"><a id="_encapsulation"></a>6.21. Encapsulation</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The principle of <span class="emphasis"><em>encapsulation</em></span> is that all of an object’s data is contained and hidden in the object and access to it restricted to methods of that class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Code outside of the object cannot (or at least should not) directly access object fields.
+</li><li class="listitem">
+All access to an object’s fields takes place through its methods.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Encapsulation allows you to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Change the way in which the data is actually stored without affecting the code that interacts with the object
+</li><li class="listitem">
+Validate requested changes to data
+</li><li class="listitem">
+Ensure the consistency of data — for example preventing related fields from being changed independently, which could leave the object in an inconsistent or invalid state
+</li><li class="listitem">
+Protect the data from unauthorized access
+</li><li class="listitem">
+Perform actions such as notifications in response to data access and modification
+</li></ul></div></li></ul></div><p></p><p>More generally, encapsulation is a technique for <span class="emphasis"><em>isolating change</em></span>. By hiding internal data structures and processes and publishing only well-defined methods for accessing your objects,</p></div><div class="section" title="6.22. Access Modifiers: Enforcing Encapsulation"><div class="titlepage"><div><div><h3 class="title"><a id="access_modifiers_simple"></a>6.22. Access Modifiers: Enforcing Encapsulation</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<span class="emphasis"><em>Access modifiers</em></span> are Java keywords you include in a declaration to control access.
+</li><li class="listitem"><p class="simpara">
+You can apply access modifiers to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Instance and static fields
+</li><li class="listitem">
+Instance and static methods
+</li><li class="listitem">
+Constructors
+</li><li class="listitem">
+Classes
+</li><li class="listitem">
+Interfaces (discussed later in this module)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Two access modifiers provided by Java are:
+</p><div class="variablelist"><dl><dt><span class="term">
+<code class="literal">private</code>
+</span></dt><dd>
+visible only within the same class
+</dd><dt><span class="term">
+<code class="literal">public</code>
+</span></dt><dd>
+visible everywhere
+</dd></dl></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>There are two additional access levels that we’ll discuss in <a class="link" href="packaging.html#access_modifiers_complete" title="7.8. Access Modifiers and Packages">the next module</a>.</p></td></tr></table></div></div><div class="section" title="6.23. Accessors (Getters) and Mutators (Setters)"><div class="titlepage"><div><div><h3 class="title"><a id="_accessors_getters_and_mutators_setters"></a>6.23. Accessors (Getters) and Mutators (Setters)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A common model for designing data access is the use of <span class="emphasis"><em>accessor</em></span> and <span class="emphasis"><em>mutator</em></span> methods.
+</li><li class="listitem"><p class="simpara">
+A mutator — also known as a <span class="emphasis"><em>setter</em></span> — changes some property of an object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+By convention, mutators are usually named <code class="literal">set</code><span class="emphasis"><em><code class="literal">PropertyName</code></em></span>.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+An accessor — also known as a <span class="emphasis"><em>getter</em></span> — returns some property of an object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+By convention, accessors are usually named <code class="literal">get</code><span class="emphasis"><em><code class="literal">PropertyName</code></em></span>.
+</li><li class="listitem">
+One exception is that accessors that return a <code class="literal">boolean</code> value are commonly named <code class="literal">is</code><span class="emphasis"><em><code class="literal">PropertyName</code></em></span>.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Accessors and mutators often are declared <code class="literal">public</code> and used to access the property outside the object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Using accessors and mutators from code within the object also can be beneficial for side-effects such as validation, notification, etc.
+</li><li class="listitem">
+You can omit implementing a mutator — or mark it <code class="literal">private</code> — to implement <span class="emphasis"><em>immutable</em></span> (unchangeable) object properties.
+</li></ul></div></li></ul></div><p></p><p>We can update our Employee class to use access modifiers, accessors, and mutators:</p><pre class="programlisting">public class Employee {
+    private String name;
+    private final String ssn;
+    …
+    public void setName(String name) {
+        if (name != null &amp;&amp; name.length() &gt; 0) {
+            this.name = name;
+        }
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSsn() {
+        return this.ssn;
+    }
+    …
+}</pre><p>Now, to set the name on an employee in <code class="literal">EmployeeDemo.main()</code> (i.e., from the outside), you must call:</p><pre class="literallayout">e2.setName("Tom");</pre><p>as opposed to:</p><pre class="literallayout">e2.name = "Tom"; // won't compile, name is hidden externally</pre></div><div class="section" title="6.24. Inheritance"><div class="titlepage"><div><div><h3 class="title"><a id="_inheritance"></a>6.24. Inheritance</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+<span class="emphasis"><em>Inheritance</em></span> allows you to define a class based on the definition of another class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The class it inherits from is called a <span class="emphasis"><em>base class</em></span> or a <span class="emphasis"><em>parent class</em></span>.
+</li><li class="listitem">
+The derived class is called a <span class="emphasis"><em>subclass</em></span> or <span class="emphasis"><em>child class</em></span>.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Subject to any access modifiers, which we’ll discuss later, the subclass gets access to the fields and methods defined by the base class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The subclass can add its own set of fields and methods to the set it inherits from its parent.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Inheritance simplifies modeling of real-world hierarchies through generalization of common features.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Common features and functionality is implemented in the base classes, facilitating code reuse.
+</li><li class="listitem">
+Subclasses can extended, specialize, and override base class functionality.
+</li></ul></div></li></ul></div><p></p><p>Inheritance provides a means to create specializations of existing classes. This is referred to as <span class="emphasis"><em>sub-typing</em></span>. Each subclass provides specialized state and/or behavior in addition to the state and behavior inherited by the parent class.</p><p>For example, a manager is also an employee but it has a responsibility over a department, whereas a generic employee does not.</p></div><div class="section" title="6.25. Inheritance, Composition, and Aggregation"><div class="titlepage"><div><div><h3 class="title"><a id="_inheritance_composition_and_aggregation"></a>6.25. Inheritance, Composition, and Aggregation</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Complex class structures can be built through inheritance, composition, and aggregation.
+</li><li class="listitem"><p class="simpara">
+Inheritance establishes an “is-a” relationship between classes.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The subclass has the same features and functionality as its base class, with some extensions.
+</li><li class="listitem">
+A Car <span class="strong"><strong>is-a</strong></span> Vehicle. An Apple <span class="strong"><strong>is-a</strong></span> Food.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Composition and aggregation are the construction of complex classes that incorporate other objects.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+They establish a “has-a” relationship between classes.
+</li><li class="listitem">
+A Car <span class="strong"><strong>has-a</strong></span> Engine. A Customer <span class="strong"><strong>has-a</strong></span> CreditCard.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+In <span class="emphasis"><em>composition</em></span>, the component object exists solely for the use of its composite object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+If the composite object is destroyed, the component object is destroyed as well.
+</li><li class="listitem">
+For example, an Employee <span class="strong"><strong>has-a</strong></span> name, implemented as a String object. There is no need to retain the String object once the Employee object has been destroyed.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+In <span class="emphasis"><em>aggregation</em></span>, the component object can (but isn’t required to) have an existence independent of its use in the aggregate object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Depending on the structure of the aggregate, destroying the aggregate may or may not destroy the component.
+</li><li class="listitem">
+For example, let’s say a Customer <span class="strong"><strong>has-a</strong></span> BankAccount object. However, the BankAccount might represent a joint account owned by multiple Customers. In that case, it might not be appropriate to delete the BankAccount object just because one Customer object is deleted from the system.
+</li></ul></div></li></ul></div><p></p><p>Notice that composition and aggregation represent another aspect of encapsulation. For example, consider a Customer class that includes a customer’s birthdate as a property. We could define a Customer class in such a way that it duplicates all of the fields and methods from and existing class like Date, but duplicating code is almost always a bad idea. What if the data or methods associated with a Date were to change in the future? We would also have to change the definitions for our Customer class. Whenever a set of data or methods are used in more than one place, we should look for opportunities to encapsulate the data or methods so that we can reuse the code and isolate any changes we might need to make in the future.</p><p>Additionally when designing a class structure with composition or aggregation, we should keep in mind the principle of encapsulation when deciding where to implement functionality. Consider implementing a method on Customer that would return the customer’s age. Obviously, this depends on the birth date of the customer stored in the Date object. But should we have code in Customer that calculates the elapsed time since the birth date? It would require the Customer class to know some very Date-specific manipulation. In this case, the code would be <span class="emphasis"><em>tightly coupled</em></span> –- a change to Date is more likely to require a change to Customer as well. It seems more appropriate for Date objects to know how to calculate the elapsed time between two instances. The Customer object could then <span class="emphasis"><em>delegate</em></span> the age request to the Date object in an appropriate manner. This makes the classes <span class="emphasis"><em>loosely coupled</em></span> –- so that a change to Date is unlikely to require a change to Customer.</p></div><div class="section" title="6.26. Inheritance in Java"><div class="titlepage"><div><div><h3 class="title"><a id="_inheritance_in_java"></a>6.26. Inheritance in Java</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+You define a subclass in Java using the <code class="literal">extends</code> keyword followed by the base class name. For example:
+</p><pre class="literallayout">class Car extends Vehicle { // ... }</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In Java, a class can extend at most one base class. That is, multiple inheritance is not supported.
+</li><li class="listitem">
+If you don’t explicitly extend a base class, the class inherits from Java’s Object class, discussed later in this module.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Java supports multiple <span class="emphasis"><em>levels</em></span> of inheritance.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+For example, Child can extend Parent, which in turn extends GrandParent, and so on.
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">class A {
+    String a = null;
+    void doA() {
+        System.out.println("A says " + a);
+    }
+}
+class B extends A {
+    String b = null;
+    void doB() {
+        System.out.println("B says " + b);
+    }
+}
+class C extends B {
+    String c = null;
+    void doA() {
+        System.out.println("Who cares what A says");
+    }
+    void doB() {
+        System.out.println("Who cares what B says");
+    }
+    void doC() {
+        System.out.println("C says " + a + " " + b + " " + c);
+    }
+}
+public class ABCDemo {
+    public static void main(String[] args) {
+        A a = new A();
+        B b = new B();
+        C c = new C();
+
+        a.a = "AAA";
+        b.a = "B's A";
+        b.b = "BBB";
+        c.a = "Who cares";
+        c.b = "Whatever";
+        c.c = "CCC";
+
+        a.doA();
+        b.doB();
+        c.doA();
+        c.doB();
+        c.doC();
+    }
+}</pre><p>The output of running ABCDemo is:</p><pre class="screen">A says AAA
+B says B's AAAs, BBB
+Who cares what A says
+Who cares what B says
+C says Who cares Whatever CCC</pre></div><div class="section" title="6.27. Invoking Base Class Constructors"><div class="titlepage"><div><div><h3 class="title"><a id="_invoking_base_class_constructors"></a>6.27. Invoking Base Class Constructors</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+By default, Java automatically invokes the base class’s constructor with <span class="strong"><strong>no</strong></span> arguments before invoking the subclass’s constructor.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+This might not be desirable, especially if the base class doesn’t have a no-argument constructor. (You get a compilation error in that case.)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can explicitly invoke a base class constructor with any arguments you want with the syntax <code class="literal">super(arg1, arg2, ...)</code>. For example:
+</p><pre class="programlisting">class Subclass extends ParentClass {
+    public Subclass(String name, int age) {
+        super(name);
+        // Additional Subclass initialization...
+    }
+}</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The call to <code class="literal">super()</code> must be the <span class="strong"><strong>first</strong></span> statement in a subclass constructor.
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>A single constructor cannot invoke both <code class="literal">super()</code> and <code class="literal">this()</code>. However, a constructor can use <code class="literal">this()</code> to invoke an overloaded constructor, which in turn invokes <code class="literal">super()</code>.</p></td></tr></table></div></div><div class="section" title="6.28. Overriding vs. Overloading"><div class="titlepage"><div><div><h3 class="title"><a id="_overriding_vs_overloading"></a>6.28. Overriding vs. Overloading</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The subclass can <span class="emphasis"><em>override</em></span> its parent class definition of fields and methods, replacing them with its own definitions and implementations.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+To successfully override the base class method definition, the subclass method must have the same signature.
+</li><li class="listitem">
+If the subclass defines a method with the same name as one in the base class but a different signature, the method is overloaded not overridden.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+A subclass can explicitly invoked an ancestor class’s implementation of a method by prefixing <code class="literal">super.</code> to the method call. For example:
+</p><pre class="programlisting">class Subclass extends ParentClass {
+    public String getDescription() {
+        String parentDesc = super.getDescription();
+        return "My description\n" + parentDesc;
+    }
+}</pre></li></ul></div><p></p><p>Consider defining a Manager class as a subclass of Employee:</p><pre class="programlisting">public class Manager extends Employee {
+    private String responsibility;
+
+    public Manager(String name, String ssn, String responsibility) {
+        super(name, ssn);
+        this.responsibility = responsibility;
+    }
+
+    public void setResponsibility(String responsibility) {
+        this.responsibility = responsibility;
+    }
+
+    public String getResponsibility() {
+        return this.responsibility;
+    }
+
+    public void print(String header, String footer) {
+        super.print(header, null);
+        System.out.println("Responsibility: " + responsibility);
+        if (footer != null) {
+            System.out.println(footer);
+        }
+    }
+}</pre><p>Now with code like this:</p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        …
+        Manager m1 = new Manager("Bob", "345-11-987", "Development");
+        Employee.setBaseVacationDays(15);
+        m1.setExtraVacationDays(10);
+        …
+        m1.print("BIG BOSS");
+    }
+}</pre><p>The output is:</p><pre class="screen">BIG BOSS
+Name: Bob
+SSN: 345-11-987
+Email Address: null
+Year Of Birth: 0
+Vacation Days: 25
+Responsibility: Development</pre><p>Note that the Manager class must invoke one of super’s constructors in order to be a valid Employee. Also observe that we can invoke a method like <code class="literal">setExtraVacationDays()</code> that is defined in Employee on our Manager instance <code class="literal">m1</code>.</p></div><div class="section" title="6.29. Polymorphism"><div class="titlepage"><div><div><h3 class="title"><a id="_polymorphism"></a>6.29. Polymorphism</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<span class="emphasis"><em>Polymorphism</em></span> is the ability for an object of one type to be treated as though it were another type.
+</li><li class="listitem"><p class="simpara">
+In Java, inheritance provides us one kind of polymorphism.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+An object of a subclass can be treated as though it were an object of its parent class, or any of its ancestor classes. This is also known as <span class="emphasis"><em>upcasting</em></span>.
+</li><li class="listitem"><p class="simpara">
+For example, if Manager is a subclass of Employee:
+</p><pre class="literallayout">Employee e = new Manager(...);</pre></li><li class="listitem"><p class="simpara">
+Or if a method accepts a reference to an Employee object:
+</p><pre class="literallayout">public void giveRaise(Employee e) { // ... }
+// ...
+Manager m = new Manager(...);
+giveRaise(m);</pre></li></ul></div></li></ul></div><p></p><p>Why is polymorphism useful? It allows us to create more generalized programs that can be extended more easily.</p><p>Consider an online shopping application. You might need to accept multiple payment methods, such as credit cards, debit card, direct bank debit through ACH, etc. Each payment method might be implemented as a separate class because of differences in the way you need to process credits, debits, etc.</p><p>If you were to handle each object type explicitly, the application would be very complex to write. It would require <code class="literal">if-else</code> statements everywhere to test for the different types of payment methods, and overloaded methods to pass different payment type objects as arguments.</p><p>On the other hand, if you define a base class like PaymentMethod and then derive subclasses for each type, then it doesn’t matter if you’ve instantiated a CreditCard object or a DebitCard object, you can treat it as a PaymentMethod object.</p></div><div class="section" title="6.30. More on Upcasting"><div class="titlepage"><div><div><h3 class="title"><a id="_more_on_upcasting"></a>6.30. More on Upcasting</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Once you have upcast an object reference, you can access only the fields and methods declared by the base class.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+For example, if Manager is a subclass of Employee:
+</p><pre class="literallayout">Employee e = new Manager(...);</pre></li><li class="listitem">
+Now using <code class="literal">e</code> you can access only the fields and methods declared by the Employee class.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+However, if you invoke a method on <code class="literal">e</code> that is defined in Employee but overridden in Manager, the Manager version is executed.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+For example:
+</p><pre class="programlisting">public class A {
+    public void print() {
+        System.out.println("Hello from class A");
+    }
+}
+public class B extends A {
+    public void print() {
+        System.out.println("Hello from class B");
+    }
+}
+// ...
+A obj = new B();
+obj.print();</pre><p class="simpara">In the case, the output is "Hello from class B".</p></li></ul></div></li></ul></div><p></p><p>From within a subclass, you can explicitly invoke a base class’s version of a method by using the <code class="literal">super.</code> prefix on the method call.</p></div><div class="section" title="6.31. Downcasting"><div class="titlepage"><div><div><h3 class="title"><a id="_downcasting"></a>6.31. Downcasting</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+An upcast reference can be <span class="emphasis"><em>downcast</em></span> to a subclass through explicit casting. For example:
+</p><pre class="programlisting">Employee e = new Manager(...);
+// ...
+Manager m = (Manager) e;</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The object referenced must actually be a member of the downcast type, or else a <code class="literal">ClassCastException</code> run-time exception occurs.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can test if an object is a member of a specific type using the <code class="literal">instanceof</code> operator, for example:
+</p><pre class="literallayout">if (obj instanceof Manager) { // We've got a Manager object }</pre></li></ul></div><p></p><pre class="programlisting">public class EmployeeDemo {
+    public static void main(String[] args) {
+        final Employee e1 = new Employee("John", "555-12-345", "john@company.com");
+        final Employee e2 = new Employee("456-78-901", 1974);
+        e2.setName("Tom");
+        Employee em = new Manager("Bob", "345-11-987", "Development");
+
+        Employee.setBaseVacationDays(15);
+        e2.setExtraVacationDays(5);
+        em.setExtraVacationDays(10);
+
+        if (em instanceof Manager) {
+            Manager m = (Manager) em;
+            m.setResponsibility("Operations");
+        }
+
+        e1.print("COOL EMPLOYEE");
+        e2.print("START OF EMPLOYEE", "END OF EMPLOYEE");
+        em.print("BIG BOSS");
+    }
+}</pre><p>This would print:</p><pre class="screen">BIG BOSS
+Name: Bob
+SSN: 345-11-987
+Email Address: null
+Year Of Birth: 0
+Vacation Days: 25
+Responsibility: Operations</pre></div><div class="section" title="6.32. Abstract Classes and Methods"><div class="titlepage"><div><div><h3 class="title"><a id="_abstract_classes_and_methods"></a>6.32. Abstract Classes and Methods</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+An <span class="emphasis"><em>abstract class</em></span> is a class designed solely for subclassing.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You can’t create actual instances of the abstract class. You get a compilation error if you attempt to do so.
+</li><li class="listitem">
+You design abstract classes to implement common sets of behavior, which are then shared by the <span class="emphasis"><em>concrete</em></span> (instantiable) classes you derive from them.
+</li><li class="listitem"><p class="simpara">
+You declare a class as abstract with the <code class="literal">abstract</code> modifier:
+</p><pre class="literallayout">public abstract class PaymentMethod { // ... }</pre></li></ul></div></li><li class="listitem"><p class="simpara">
+An <span class="emphasis"><em>abstract method</em></span> is a method with no body.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It declares a method signature and return type that a concrete subclass must implement.
+</li><li class="listitem"><p class="simpara">
+You declare a method as abstract with the <code class="literal">abstract</code> modifier and a semicolon terminator:
+</p><pre class="literallayout">public abstract boolean approveCharge(float amount);</pre></li><li class="listitem">
+If a class has any abstract methods declared, the class itself must also be declared as abstract.
+</li></ul></div></li></ul></div><p></p><p>For example, we could create a basic triangle class:</p><pre class="programlisting">public abstract class Triangle implements Shape {
+  public abstract double getA();
+  public abstract double getB();
+  public abstract double getC();
+  public double getPerimeter() {
+    return getA() + getB() + getC();
+  }
+  // getArea() is also abstract since it is not implemented
+}</pre><p>Now we can create concrete triangle classes based on their geometric properties. For example:</p><pre class="programlisting">public class RightAngledTriangle extends Triangle {
+  private double a, b, c;
+  public RightAngledTriangle(double a, double b) {
+    this.a = a;
+    this.b = b;
+    this.c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+  }
+  public double getA() { return a; }
+  public double getB() { return b; }
+  public double getC() { return c; }
+  public double getArea() { return (a * b) / 2; }
+}</pre></div><div class="section" title="6.33. Interfaces"><div class="titlepage"><div><div><h3 class="title"><a id="_interfaces"></a>6.33. Interfaces</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+An <span class="emphasis"><em>interface</em></span> defines a set of methods, without actually defining their implementation.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A class can then <span class="emphasis"><em>implement</em></span> the interface, providing actual definitions for the interface methods.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+In essence, an interface serves as a “contract” defining a set of capabilities through method signatures and return types.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+By implementing the interface, a class “advertises” that it provides the functionality required by the interface, and agrees to follow that contract for interaction.
+</li></ul></div></li></ul></div><p></p><p>The concept of an interface is the cornerstone of object oriented (or modular) programming. Like the rest of OOP, interfaces are modeled after real world concepts/entities.</p><p>For example, one must have a driver’s license to drive a car, regardless for what kind of a car that is (i.e., make, model, year, engine size, color, style, features etc.).</p><p>However, the car must be able to perform certain operations:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Go forward
+</li><li class="listitem">
+Slowdown/stop (break light)
+</li><li class="listitem">
+Go in reverse
+</li><li class="listitem">
+Turn left (signal light)
+</li><li class="listitem">
+Turn right (signal light)
+</li><li class="listitem">
+Etc.
+</li></ul></div><p>These operations are defined by an interface (contract) that defines what a car is from the perspective of <span class="strong"><strong>how it is used</strong></span>. The interface does not concern itself with how the car is <span class="strong"><strong>implemented</strong></span>. That is left up to the car manufacturers.</p></div><div class="section" title="6.34. Defining a Java Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_defining_a_java_interface"></a>6.34. Defining a Java Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Use the <code class="literal">interface</code> keyword to define an interface in Java.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The naming convention for Java interfaces is the same as for classes: CamelCase with an initial capital letter.
+</li><li class="listitem"><p class="simpara">
+The interface definition consists of public abstract method declarations. For example:
+</p><pre class="programlisting">public interface Shape {
+    double getArea();
+    double getPerimeter();
+}</pre></li></ul></div></li><li class="listitem"><p class="simpara">
+All methods declared by an interface are implicitly <code class="literal">public abstract</code> methods.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You can omit either or both of the <code class="literal">public</code> and <code class="literal">static</code> keywords.
+</li><li class="listitem">
+You must include the semicolon terminator after the method declaration.
+</li></ul></div></li></ul></div><p></p><p>Rarely, a Java interface might also declare and initialize <code class="literal">public static final</code> fields for use by subclasses that implement the interface.</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Any such field must be declared <span class="strong"><strong>and</strong></span> initialized by the interface.
+</li><li class="listitem">
+You can omit any or all of the <code class="literal">public</code>, <code class="literal">static</code>, and <code class="literal">final</code> keywords in the declaration.
+</li></ul></div></div><div class="section" title="6.35. Implementing a Java Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_implementing_a_java_interface"></a>6.35. Implementing a Java Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+You define a class that implements a Java interface using the <code class="literal">implements</code> keyword followed by the interface name. For example:
+</p><pre class="literallayout">class Circle implements Shape { // ... }</pre></li><li class="listitem"><p class="simpara">
+A concrete class must then provide implementations for all methods declared by the interface.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Omitting any method declared by the interface, or not following the same method signatures and return types, results in a compilation error.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+An abstract class can omit implementing some or all of the methods required by an interface.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In that case concrete subclasses of that base class must implement the methods.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+A Java class can implement as many interfaces as needed.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Simply provide a comma-separated list of interface names following the <code class="literal">implements</code> keyword. For example:
+</p><pre class="literallayout">class ColorCircle implements Shape, Color { // ... }</pre></li></ul></div></li><li class="listitem"><p class="simpara">
+A Java class can extend a base class <span class="strong"><strong>and</strong></span> implement one or more interfaces.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+In the declaration, provide the <code class="literal">extends</code> keyword and the base class name, followed by the <code class="literal">implements</code> keywords and the interface name(s). For example:
+</p><pre class="literallayout">class Car extends Vehicle implements Possession { // ... }</pre></li></ul></div></li></ul></div><p></p><pre class="programlisting">public class Circle implements Shape {
+
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public double getArea() {
+        return Math.PI * Math.pow(this.radius, 2);
+    }
+
+    public double getPerimeter() {
+        return Math.PI * this.radius * 2;
+    }
+}
+
+/**
+ * Rectange shape with a width and a height.
+ * @author sasa
+ * @version 1.0
+ */
+public class Rectangle implements Shape {
+
+    private double width;
+    private double height;
+
+    /**
+     * Constructor.
+     * @param width the width of this rectangle.
+     * @param height the height of this rectangle.
+     */
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    /**
+     * Gets the width.
+     * @return the width.
+     */
+    public double getWidth() {
+        return width;
+    }
+
+    /**
+     * Gets the height.
+     * @return the height.
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    public double getArea() {
+        return this.width * this.height;
+    }
+
+    public double getPerimeter() {
+        return 2 * (this.width + this.height);
+    }
+}
+
+public class Square extends Rectangle {
+    public Square(double side) {
+        super(side, side);
+    }
+}</pre></div><div class="section" title="6.36. Polymorphism through Interfaces"><div class="titlepage"><div><div><h3 class="title"><a id="_polymorphism_through_interfaces"></a>6.36. Polymorphism through Interfaces</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Interfaces provide another kind of polymorphism in Java.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+An object implementing an interface can be assigned to a reference variable typed to the interface.
+</li><li class="listitem"><p class="simpara">
+For example, if Circle implements the Shape interface:
+</p><pre class="literallayout">Shape s = new Circle(2);</pre></li><li class="listitem"><p class="simpara">
+Or you could define a method with an interface type for a parameter:
+</p><pre class="programlisting">public class ShapePrinter {
+    public void print(Shape shape) {
+        System.out.println("AREA: " + shape.getArea());
+        System.out.println("PERIMETER: " + shape.getPerimeter());
+    }
+}</pre></li></ul></div></li><li class="listitem">
+When an object reference is upcast to an interface, you can invoke only those methods declared by the interface.
+</li></ul></div><p></p><p>The following illustrates our shapes and ShapePrinter classes:</p><pre class="programlisting">public class ShapeDemo {
+    public static void main(String[] args) {
+        Circle c = new Circle(5.0);
+        Rectangle r = new Rectangle(3, 4);
+        Square s = new Square(6);
+
+        ShapePrinter printer = new ShapePrinter();
+        printer.print(c);
+        printer.print(r);
+        printer.print(s);
+
+    }
+}</pre><p>This would print:</p><pre class="screen">AREA: 78.53981633974483
+CIRCUMFERENCE: 31.41592653589793
+AREA: 12.0
+CIRCUMFERENCE: 14.0
+AREA: 36.0
+CIRCUMFERENCE: 24.0</pre></div><div class="section" title="6.37. Object: Java’s Ultimate Superclass"><div class="titlepage"><div><div><h3 class="title"><a id="_literal_object_literal_java_8217_s_ultimate_superclass"></a>6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Every class in Java ultimately has the Object class as an ancestor.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The Object class implements basic functionality required by all classes.
+</li><li class="listitem">
+Often you’ll want to override some of these methods to better support your custom classes.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Behaviors implemented by Object include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Equality testing and hash code calculation
+</li><li class="listitem">
+String conversion
+</li><li class="listitem">
+Cloning
+</li><li class="listitem">
+Class introspection
+</li><li class="listitem">
+Thread synchronization
+</li><li class="listitem">
+Finalization (deconstruction)
+</li></ul></div></li></ul></div></div><div class="section" title="6.38. Overriding Object.toString()"><div class="titlepage"><div><div><h3 class="title"><a id="_overriding_literal_object_tostring_literal"></a>6.38. Overriding <code class="literal">Object.toString()</code></h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">Object.toString()</code> method returns a String representation of the object.
+</li><li class="listitem"><p class="simpara">
+The <code class="literal">toString()</code> method is invoked automatically:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+When you pass an object as an argument to <code class="literal">System.out.println(obj)</code> and some other Java utility methods
+</li><li class="listitem">
+When you provide an object as a String concatenation operand
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The default implementation returns the object’s class name followed by its hash code.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You’ll usually want to override this method to return a more meaningful value.
+</li></ul></div></li></ul></div><p></p><p>For example:</p><pre class="programlisting">public class Circle implements Shape {
+    // ...
+    public String toString() {
+        return "Circle with radius of " + this.radius;
+    }
+}</pre></div><div class="section" title="6.39. Object Equality"><div class="titlepage"><div><div><h3 class="title"><a id="_object_equality"></a>6.39. Object Equality</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+When applied to object references, the equality operator (<code class="literal">==</code>) returns <code class="literal">true</code> only if the references are to the same object. For example:
+</li></ul></div><pre class="programlisting">Circle a = new Circle(2);
+Circle b = new Circle(2);
+Circle c = a;
+if { a == b } { // false }
+if { a == c } { // true }</pre><p></p><p>One exception to this equality principle is that Java supports <span class="emphasis"><em>string interning</em></span> to save memory (and speed up testing for equality). When the <code class="literal">intern()</code> method is invoked on a String, a lookup is performed on a table of interned Strings. If a String object with the same content is already in the table, a reference to the String in the table is returned. Otherwise, the String is added to the table and a reference to it is returned. The result is that after interning, all Strings with the same content will point to the same object.</p><p>String interning is performed on String literals automatically during compilation. At run-time you can invoke <code class="literal">intern()</code> on any String object that you want to add to the intern pool.</p></div><div class="section" title="6.40. Object Equivalence"><div class="titlepage"><div><div><h3 class="title"><a id="_object_equivalence"></a>6.40. Object Equivalence</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The Object class provides an <code class="literal">equals()</code> method that you can override to determine if two objects are equivalent.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The default implementation by Object is a simple <code class="literal">==</code> test.
+</li><li class="listitem">
+You should include all <code class="literal">`significant'' fields for your class when overriding `equals()</code>.
+</li><li class="listitem"><p class="simpara">
+We could define a simple version of <code class="literal">Circle.equals</code> as follows:
+</p><pre class="programlisting">public booleans equals(Object obj) {
+    if (obj == this) {
+        // We're being compared to ourself
+        return true;
+    }
+    else if (obj == null || obj.getClass() != this.getClass()) {
+        // We can only compare to another Circle object
+        return false;
+    }
+    else {
+        // Compare the only significant field
+        Circle c = (Circle) obj;
+        return c.radius == this.radius;
+    }
+}</pre></li></ul></div></li></ul></div><p></p><p>A somewhat more complex example of an equality test is shown in this class:</p><pre class="programlisting">public class Person {
+    private String name;
+    private final int yearOfBirth;
+    private String emailAddress;
+
+    public Person(String name, int yearOfBirth) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYearOfBirth() {
+        return this.yearOfBirth;
+    }
+
+    public String getEmailAddress() {
+        return this.emailAddress;
+    }
+
+    public void setEmailAddress() {
+        this.emailAddress = emailAddress;
+    }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            // we are being compared to ourself
+            return true;
+        } else if (o == null || o.getClass() != this.getClass()) {
+            // can only compare to another person
+            return false;
+        } else {
+            Person p = (Person) o; // cast to our type
+            // compare significant fields
+            return p.name.equals(this.name) &amp;&amp;
+                p.yearOfBirth == this.yearOfBirth;
+        }
+    }
+
+    public int hashCode() {
+        // compute based on significant fields
+        return 3 * this.name.hashCode() + 5 * this.yearOfBirth;
+    }
+}</pre></div><div class="section" title="6.41. Object Equivalence (cont.)"><div class="titlepage"><div><div><h3 class="title"><a id="_object_equivalence_cont"></a>6.41. Object Equivalence (cont.)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Overriding <code class="literal">equals()</code> requires care. Your equality test must exhibit the following properties:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Symmetry: For two references, <code class="literal">a</code> and <code class="literal">b</code>, <code class="literal">a.equals(b)</code> if and only if <code class="literal">b.equals(a)</code>
+</li><li class="listitem">
+Reflexivity: For all non-<code class="literal">null</code> references, <code class="literal">a.equals(a)</code>
+</li><li class="listitem">
+Transitivity: If <code class="literal">a.equals(b)</code> and <code class="literal">b.equals(c)</code>, then <code class="literal">a.equals(c)</code>
+</li><li class="listitem">
+Consistency with <code class="literal">hashCode()</code>: Two equal objects must have the same <code class="literal">hashCode()</code> value
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The <code class="literal">hashcode()</code> method is used by many Java Collections Framework classes like HashMap to identify objects in the collection. If you override the <code class="literal">equals()</code> method in your class, you <span class="strong"><strong>must</strong></span> override <code class="literal">hashcode()</code> as well.</p></td></tr></table></div><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>The Apache Commons Lang library (<a class="ulink" href="http://commons.apache.org/lang" target="_top">http://commons.apache.org/lang</a>) includes two helper classes,
+<a class="ulink" href="http://commons.apache.org/lang/api-release/org/apache/commons/lang/builder/EqualsBuilder.html" target="_top">EqualsBuilder</a>
+and <a class="ulink" href="http://commons.apache.org/lang/api-release/org/apache/commons/lang/builder/HashCodeBuilder.html" target="_top">HashCodeBuilder</a>,
+that can greatly simplify creating proper <code class="literal">equals()</code> and <code class="literal">hashcode()</code> implementations.</p></td></tr></table></div><p></p><p>A complete discussion of the issues implementing equality tests and hashcodes is beyond the scope of this course. For more information on the issues to be aware of, refer to:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+This Stack Overflow article:
+<a class="ulink" href="http://stackoverflow.com/questions/27581/overriding-equals-and-hashcode-in-java" target="_top">http://stackoverflow.com/questions/27581/overriding-equals-and-hashcode-in-java</a>
+</li><li class="listitem">
+The article "Java theory and practice: Hashing it out" on IBM developerWorks:
+<a class="ulink" href="http://www.ibm.com/developerworks/java/library/j-jtp05273.html" target="_top">http://www.ibm.com/developerworks/java/library/j-jtp05273.html</a>
+</li><li class="listitem">
+The book <span class="emphasis"><em>Effective Java, 2<sup>nd</sup> ed.</em></span>, by Joshua Bloch
+</li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="flow_control.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="packaging.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="object_oriented.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Java Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#overview_of_java">1. Overview of Java</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_history_of_java">1.1. History of Java</a></span></dt><dt><span class="section"><a href="index.html#_what_is_java">1.2. What is Java?</a></span></dt><dt><span class="section"><a href="index.html#_why_java">1.3. Why Java?</a></span></dt><dt><span class="section"><a href="index.html#_java_after_15_years">1.4. Java After 15 years</a></span></dt></dl></dd><dt><span class="section"><a href="hello_world.html">2. A Java Hello World Program</a></span></dt><dd><dl><dt><span class="section"><a href="hello_world.html#_literal_helloworld_java_literal">2.1. <code class="literal">HelloWorld.java</code></a></span></dt><dt><span class="section"><a href="hello_world.html#_java_keywords">2.2. Java Keywords</a></span></dt><dt><span class="section"><a href="hello_world.html#_java_identifiers">2.3. Java Identifiers</a></span></dt><dt><span class="section"><a href="hello_world.html#_compiling_java_programs">2.4. Compiling Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_running_java_programs">2.5. Running Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_comments_in_java_code">2.6. Comments in Java Code</a></span></dt><dt><span class="section"><a href="hello_world.html#_the_literal_main_literal_method">2.7. The <code class="literal">main()</code> Method</a></span></dt></dl></dd><dt><span class="section"><a href="data_types.html">3. Data Types</a></span></dt><dd><dl><dt><span class="section"><a href="data_types.html#_declaring_and_assigning_variables">3.1. Declaring and Assigning Variables</a></span></dt><dt><span class="section"><a href="data_types.html#_java_primitive_types">3.2. Java Primitive Types</a></span></dt><dt><span class="section"><a href="data_types.html#_conversion_between_types">3.3. Conversion Between Types</a></span></dt><dt><span class="section"><a href="data_types.html#_declaring_arrays">3.4. Declaring Arrays</a></span></dt><dt><span class="section"><a href="data_types.html#_creating_and_initializing_array_objects">3.5. Creating and Initializing Array Objects</a></span></dt><dt><span class="section"><a href="data_types.html#_modifying_array_size">3.6. Modifying Array Size</a></span></dt><dt><span class="section"><a href="data_types.html#_strings">3.7. Strings</a></span></dt></dl></dd><dt><span class="section"><a href="operators.html">4. Operators</a></span></dt><dd><dl><dt><span class="section"><a href="operators.html#_arithmetic_operators">4.1. Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_shortcut_arithmetic_operators">4.2. Shortcut Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_string_concatenation">4.3. String Concatenation</a></span></dt><dt><span class="section"><a href="operators.html#_relational_operators">4.4. Relational Operators</a></span></dt><dt><span class="section"><a href="operators.html#_logical_boolean_operators">4.5. Logical Boolean Operators</a></span></dt><dt><span class="section"><a href="operators.html#_bitwise_operators">4.6. Bitwise Operators</a></span></dt><dt><span class="section"><a href="operators.html#_assignment_operators">4.7. Assignment Operators</a></span></dt><dt><span class="section"><a href="operators.html#_other_operators">4.8. Other Operators</a></span></dt><dt><span class="section"><a href="operators.html#_operator_precedence">4.9. Operator Precedence</a></span></dt></dl></dd><dt><span class="section"><a href="flow_control.html">5. Statements and Flow Control</a></span></dt><dd><dl><dt><span class="section"><a href="flow_control.html#_expressions">5.1. Expressions</a></span></dt><dt><span class="section"><a href="flow_control.html#_statements_and_blocks">5.2. Statements and Blocks</a></span></dt><dt><span class="section"><a href="flow_control.html#_local_variable_storage_the_stack">5.3. Local Variable Storage: The Stack</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_return_literal_statement">5.4. The <code class="literal">return</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_if_else_literal_statement">5.5. The <code class="literal">if-else</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement">5.6. The <code class="literal">switch</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement_cont">5.7. The <code class="literal">switch</code> Statement (cont.)</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_while_literal_loop_statement">5.8. The <code class="literal">while</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_for_literal_loop_statement">5.9. The <code class="literal">for</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_using_literal_for_literal_to_iterate_over_arrays_and_collections">5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_break_literal_statement">5.11. The <code class="literal">break</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_continue_literal_statement">5.12. The <code class="literal">continue</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_nested_loops_and_labels">5.13. Nested Loops and Labels</a></span></dt></dl></dd><dt><span class="section"><a href="object_oriented.html">6. Object Oriented Programming in Java</a></span></dt><dd><dl><dt><span class="section"><a href="object_oriented.html#_what_is_object_oriented_programming_oop">6.1. What is Object Oriented Programming (OOP)?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_why_oop">6.2. Why OOP?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_class_vs_object">6.3. Class vs. Object</a></span></dt><dt><span class="section"><a href="object_oriented.html#_classes_in_java">6.4. Classes in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_objects_in_java">6.5. Objects in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_java_memory_model">6.6. Java Memory Model</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessing_objects_through_references">6.7. Accessing Objects through References</a></span></dt><dt><span class="section"><a href="object_oriented.html#_garbage_collection">6.8. Garbage Collection</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java">6.9. Methods in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java_cont">6.10. Methods in Java (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_declarations">6.11. Method Declarations</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_signatures">6.12. Method Signatures</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_methods">6.13. Invoking Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_data_fields">6.14. Static vs. Instance Data Fields</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_methods">6.15. Static vs. Instance Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_overloading">6.16. Method Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_variable_argument_length_methods">6.17. Variable Argument Length Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors">6.18. Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors_cont">6.19. Constructors (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constants">6.20. Constants</a></span></dt><dt><span class="section"><a href="object_oriented.html#_encapsulation">6.21. Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#access_modifiers_simple">6.22. Access Modifiers: Enforcing Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessors_getters_and_mutators_setters">6.23. Accessors (Getters) and Mutators (Setters)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance">6.24. Inheritance</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_composition_and_aggregation">6.25. Inheritance, Composition, and Aggregation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_in_java">6.26. Inheritance in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_base_class_constructors">6.27. Invoking Base Class Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_vs_overloading">6.28. Overriding vs. Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism">6.29. Polymorphism</a></span></dt><dt><span class="section"><a href="object_oriented.html#_more_on_upcasting">6.30. More on Upcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_downcasting">6.31. Downcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_abstract_classes_and_methods">6.32. Abstract Classes and Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_interfaces">6.33. Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_defining_a_java_interface">6.34. Defining a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_implementing_a_java_interface">6.35. Implementing a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism_through_interfaces">6.36. Polymorphism through Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_literal_object_literal_java_8217_s_ultimate_superclass">6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_literal_object_tostring_literal">6.38. Overriding <code class="literal">Object.toString()</code></a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equality">6.39. Object Equality</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence">6.40. Object Equivalence</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence_cont">6.41. Object Equivalence (cont.)</a></span></dt></dl></dd><dt><span class="section"><a href="packaging.html">7. Packaging</a></span></dt><dd><dl><dt><span class="section"><a href="packaging.html#_why_is_packaging_needed">7.1. Why is Packaging Needed?</a></span></dt><dt><span class="section"><a href="packaging.html#_packages_in_java">7.2. Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_sub_packages_in_java">7.3. Sub-Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_package_naming_conventions">7.4. Package Naming Conventions</a></span></dt><dt><span class="section"><a href="packaging.html#_using_package_members_qualified_names">7.5. Using Package Members: Qualified Names</a></span></dt><dt><span class="section"><a href="packaging.html#_importing_package_members">7.6. Importing Package Members</a></span></dt><dt><span class="section"><a href="packaging.html#_static_imports">7.7. Static Imports</a></span></dt><dt><span class="section"><a href="packaging.html#access_modifiers_complete">7.8. Access Modifiers and Packages</a></span></dt><dt><span class="section"><a href="packaging.html#_the_class_path">7.9. The Class Path</a></span></dt><dt><span class="section"><a href="packaging.html#_java_archive_jar_files">7.10. Java Archive (JAR) Files</a></span></dt><dt><span class="section"><a href="packaging.html#_the_literal_jar_literal_command_line_tool_examples">7.11. The <code class="literal">jar</code> Command-Line Tool Examples</a></span></dt></dl></dd><dt><span class="section"><a href="javadoc.html">8. JavaDoc</a></span></dt><dd><dl><dt><span class="section"><a href="javadoc.html#_what_is_javadoc">8.1. What is JavaDoc?</a></span></dt><dt><span class="section"><a href="javadoc.html#_reading_doc_comments_java_api">8.2. Reading Doc Comments (Java API)</a></span></dt><dt><span class="section"><a href="javadoc.html#_defining_javadoc">8.3. Defining JavaDoc</a></span></dt><dt><span class="section"><a href="javadoc.html#_doc_comment_tags">8.4. Doc Comment Tags</a></span></dt><dt><span class="section"><a href="javadoc.html#_generating_doc_comment_output">8.5. Generating Doc Comment Output</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">9. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_what_are_exceptions">9.1. What are Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_why_use_exceptions">9.2. Why Use Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_built_in_exceptions">9.3. Built-In Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_types">9.4. Exception Types</a></span></dt><dt><span class="section"><a href="exceptions.html#_checked_vs_unchecked_exceptions">9.5. Checked vs. Unchecked Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_lifecycle">9.6. Exception Lifecycle</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions">9.7. Handling Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions_cont">9.8. Handling Exceptions (cont.)</a></span></dt><dt><span class="section"><a href="exceptions.html#_grouping_exceptions">9.9. Grouping Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_throwing_exception">9.10. Throwing Exception</a></span></dt><dt><span class="section"><a href="exceptions.html#_creating_an_exception_class">9.11. Creating an Exception Class</a></span></dt><dt><span class="section"><a href="exceptions.html#_nesting_exceptions">9.12. Nesting Exceptions</a></span></dt></dl></dd><dt><span class="section"><a href="java_lang.html">10. The <code class="literal">java.lang</code> Package</a></span></dt><dd><dl><dt><span class="section"><a href="java_lang.html#_primitive_wrappers">10.1. Primitive Wrappers</a></span></dt><dt><span class="section"><a href="java_lang.html#_string_and_stringbuilder">10.2. String and StringBuilder</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_math_class">10.3. The Math Class</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_system_class">10.4. The System Class</a></span></dt></dl></dd><dt><span class="section"><a href="input_output.html">11. Input/Output</a></span></dt><dd><dl><dt><span class="section"><a href="input_output.html#_representing_file_paths">11.1. Representing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_managing_file_paths">11.2. Managing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_input_output_class_hierarchy">11.3. Input/Output Class Hierarchy</a></span></dt><dt><span class="section"><a href="input_output.html#_byte_streams">11.4. Byte Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_character_streams">11.5. Character Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_exception_handling_in_java_i_o">11.6. Exception Handling in Java I/O</a></span></dt><dt><span class="section"><a href="input_output.html#_java_file_i_o_classes">11.7. Java File I/O Classes</a></span></dt><dt><span class="section"><a href="input_output.html#_easy_text_output_printwriter_printstream">11.8. Easy Text Output: PrintWriter/PrintStream</a></span></dt><dt><span class="section"><a href="input_output.html#_reading_from_the_terminal">11.9. Reading from the Terminal</a></span></dt><dt><span class="section"><a href="input_output.html#_filtered_streams">11.10. Filtered Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_object_serialization">11.11. Object Serialization</a></span></dt></dl></dd><dt><span class="section"><a href="java_net.html">12. <code class="literal">java.net</code></a></span></dt><dd><dl><dt><span class="section"><a href="java_net.html#_literal_java_net_inetaddress_literal">12.1. <code class="literal">java.net.InetAddress</code></a></span></dt><dt><span class="section"><a href="java_net.html#_url_connections">12.2. URL/Connections</a></span></dt><dt><span class="section"><a href="java_net.html#_tcp_sockets">12.3. TCP Sockets</a></span></dt></dl></dd><dt><span class="section"><a href="generics_collections.html">13. Java Collections and Generics</a></span></dt><dd><dl><dt><span class="section"><a href="generics_collections.html#collections">13.1. The Java Collections Framework</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collection_interface">13.2. The Collection Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_iterating_over_a_collection">13.3. Iterating Over a Collection</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_list_interface">13.4. The List Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_list">13.5. Classes Implementing List</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_set_and_sortedset_interfaces">13.6. The Set and SortedSet Interfaces</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_set">13.7. Classes Implementing Set</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_queue_interface">13.8. The Queue Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_map_interface">13.9. The Map Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_retrieving_map_views">13.10. Retrieving Map Views</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_map">13.11. Classes Implementing Map</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collections_class">13.12. The Collections Class</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_safety_in_java_collections">13.13. Type Safety in Java Collections</a></span></dt><dt><span class="section"><a href="generics_collections.html#_java_generics">13.14. Java Generics</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generics_and_polymorphism">13.15. Generics and Polymorphism</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_wildcards">13.16. Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_qualified_type_wildcards">13.17. Qualified Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generic_methods">13.18. Generic Methods</a></span></dt></dl></dd><dt><span class="section"><a href="threading.html">14. Threading</a></span></dt><dd><dl><dt><span class="section"><a href="threading.html#_runnable_and_thread">14.1. Runnable And Thread</a></span></dt><dt><span class="section"><a href="threading.html#_thread_synchronization">14.2. Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_more_thread_synchronization">14.3. More Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_concurrency_features">14.4. Java 5 Concurrency Features</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_pre_java_5">14.5. Thread Scheduling Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_in_java_5">14.6. Thread Scheduling In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_8217_s_literal_executorservice_literal">14.7. Java 5’s <code class="literal">ExecutorService</code></a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_pre_java_5">14.8. Getting Results From Threads Pre Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_in_java_5">14.9. Getting Results From Threads In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_pre_java_5">14.10. Thread Sync Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_in_java_5_with_locks">14.11. Thread Sync In Java 5 With Locks</a></span></dt><dt><span class="section"><a href="threading.html#_benefits_of_java_5_locks">14.12. Benefits Of Java 5 Locks</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_conditions">14.13. Java 5 Conditions</a></span></dt><dt><span class="section"><a href="threading.html#_atomics_in_java_5">14.14. Atomics In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_other_java_5_concurrency_features">14.15. Other Java 5 Concurrency Features</a></span></dt></dl></dd><dt><span class="section"><a href="java_util.html">15. Additional Java Features</a></span></dt><dd><dl><dt><span class="section"><a href="java_util.html#_the_date_class">15.1. The Date Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_calendar_class">15.2. The Calendar Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_timezone_class">15.3. The TimeZone Class</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates">15.4. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates_2">15.5. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#enum">15.6. Typesafe Enums</a></span></dt><dt><span class="section"><a href="java_util.html#_typesafe_enums_cont">15.7. Typesafe Enums (cont.)</a></span></dt><dt><span class="section"><a href="java_util.html#_enumset_and_enummap">15.8. EnumSet and EnumMap</a></span></dt><dt><span class="section"><a href="java_util.html#_annotations">15.9. Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_using_annotations">15.10. Using Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_standard_java_annotations">15.11. Standard Java Annotations</a></span></dt></dl></dd><dt><span class="section"><a href="_java_native_interface_jni.html">16. Java Native Interface (JNI)</a></span></dt><dd><dl><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_overview">16.1. JNI Overview</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_components">16.2. JNI Components</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_java">16.3. JNI Development (Java)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_c">16.4. JNI Development (C)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_compile">16.5. JNI Development (Compile)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_type_conversion">16.6. Type Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_native_method_arguments">16.7. Native Method Arguments</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_string_conversion">16.8. String Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_array_conversion">16.9. Array Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_throwing_exceptions_in_the_native_world">16.10. Throwing Exceptions In The Native World</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_access_properties_and_methods_from_native_code">16.11. Access Properties And Methods From Native Code</a></span></dt></dl></dd><dt><span class="section"><a href="jdbc.html">17. <code class="literal">java.sql</code></a></span></dt><dd><dl><dt><span class="section"><a href="jdbc.html#_jdbc_overview">17.1. JDBC Overview</a></span></dt><dt><span class="section"><a href="jdbc.html#_jdbc_drivers">17.2. JDBC Drivers</a></span></dt><dt><span class="section"><a href="jdbc.html#_getting_a_jdbc_literal_connection_literal">17.3. Getting a JDBC <code class="literal">Connection</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_preparing_a_literal_statement_literal">17.4. Preparing a <code class="literal">Statement</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_processing_literal_resultset_literal">17.5. Processing <code class="literal">ResultSet</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_using_literal_resultsetmetadata_literal">17.6. Using <code class="literal">ResultSetMetaData</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_updates">17.7. Updates</a></span></dt></dl></dd><dt><span class="section"><a href="xml_processing.html">18. XML Processing</a></span></dt><dd><dl><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_java">18.1. Parsing XML with Java</a></span></dt><dt><span class="section"><a href="xml_processing.html#_event_driven_approach">18.2. Event-Driven Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_sax">18.3. Overview of SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_sax">18.4. Parsing XML with SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_object_model_approach">18.5. Object-Model Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_dom">18.6. Overview of DOM</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_dom">18.7. Parsing XML with DOM</a></span></dt></dl></dd><dt><span class="section"><a href="design_patterns.html">19. Design Patterns</a></span></dt><dd><dl><dt><span class="section"><a href="design_patterns.html#_what_are_design_patterns">19.1. What are Design Patterns?</a></span></dt><dt><span class="section"><a href="design_patterns.html#_singleton">19.2. Singleton</a></span></dt><dt><span class="section"><a href="design_patterns.html#_factory_method">19.3. Factory Method</a></span></dt><dt><span class="section"><a href="design_patterns.html#_abstract_factory">19.4. Abstract Factory</a></span></dt><dt><span class="section"><a href="design_patterns.html#_adapter">19.5. Adapter</a></span></dt><dt><span class="section"><a href="design_patterns.html#_composite">19.6. Composite</a></span></dt><dt><span class="section"><a href="design_patterns.html#_decorator">19.7. Decorator</a></span></dt><dt><span class="section"><a href="design_patterns.html#_chain_of_responsibility">19.8. Chain of Responsibility</a></span></dt><dt><span class="section"><a href="design_patterns.html#_observer_publish_subscribe">19.9. Observer / Publish-Subscribe</a></span></dt><dt><span class="section"><a href="design_patterns.html#_strategy">19.10. Strategy</a></span></dt><dt><span class="section"><a href="design_patterns.html#_template">19.11. Template</a></span></dt><dt><span class="section"><a href="design_patterns.html#_emphasis_role_strong_d_emphasis_ata_emphasis_role_strong_a_emphasis_ccess_emphasis_role_strong_o_emphasis_bject">19.12. <span class="strong"><strong>D</strong></span>ata <span class="strong"><strong>A</strong></span>ccess <span class="strong"><strong>O</strong></span>bject</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/object_oriented.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,49 @@
+#!/bin/sh
+# System + MySQL backup script
+# Copyright (c) 2008 Marchost
+# This script is licensed under GNU GPL version 2.0 or above
+# ---------------------------------------------------------------------
+
+#@@@@@@@@@@@@@@@@@@@@#
+### TO BE MODIFIED ###
+#@@@@@@@@@@@@@@@@@@@@#
+
+### System Setup ###
+BACKUP=/data
+
+### MySQL Login Info ###
+USER="root"
+PASS="passwd"
+HOST="localhost"
+
+### Binaries ###
+TAR="$(which tar)"
+GZIP="$(which gzip)"
+MYSQL="$(which mysql)"
+MYSQLDUMP="$(which mysqldump)"
+
+### Date in 24h format ###
+NOW=$(date +%d%b%Y)
+
+### Create dir ###
+mkdir -p $BACKUP/$NOW
+
+### Get all databases name ###
+DBS="$($MYSQL -u $USER -h $HOST -p$PASS -Bse 'show databases')"
+for db in $DBS
+do
+
+#### Take Backup in sql format###
+FILE=$BACKUP/$NOW/$db$NOW.sql
+$MYSQLDUMP --add-drop-table --allow-keywords -q -a -c -u $USER -p$PASS $db > $FILE
+done
+
+### Create Archive of sql file###
+cd $BACKUP/$NOW
+for f in $(ls);do  tar -cjf $f.tar.bz2 $f ;
+done
+
+#### Remove sql file###
+rm $BACKUP/$NOW/*.sql
+
+unset HOST USER PASS NOW 

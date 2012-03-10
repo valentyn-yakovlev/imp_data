@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#########################
+######TO BE MODIFIED#####
+
+### System Setup ###
+BACKUP=/mnt/sql/sql
+
+### MySQL Login Info ###
+USER="root"
+PASS="passwd"
+HOST="localhost"
+
+### Binaries ###
+TAR="$(which tar)"
+GZIP="$(which gzip)"
+MYSQL="$(which mysql)"
+MYSQLDUMP="$(which mysqldump)"
+
+### Today + hour in 24h format ###
+NOW=$(date +%d%B%Y)
+
+### Create hourly dir ###
+mkdir -p $BACKUP/$NOW
+
+### Get all databases name ###
+DBS="$($MYSQL -u $USER -p$PASS -Bse 'show databases')"
+for db in $DBS
+do
+FILE=$BACKUP/$NOW/$db$NOW.sql
+
+$MYSQLDUMP --allow-keywords -q -a -c -u $USER -p$PASS $db > $FILE
+
+done
+unset HOST USER PASS NOW

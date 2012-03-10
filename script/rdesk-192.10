@@ -1,0 +1,74 @@
+#! /bin/bash
+# This script is for remote desktop
+#any one can use it as commandbt coppying  in /usr/bin
+
+firstnet=10.1.1
+secnet=192.168.57
+clear
+echo "############################################"
+echo "############################################"
+
+echo   "Please enter your network. eg 10 or 192"
+
+echo "############################################"
+echo "############################################"
+read network
+clear
+
+if [ $network = 10 ]
+then
+echo "############################################"
+echo "############################################"
+
+echo "Enter The Last Octate (10.1.1.x)"
+
+echo "############################################"
+echo "############################################"
+read firstnetip
+
+clear
+echo "############################################"
+echo "############################################"
+
+echo "Enter The Username To Try: (Administrator)"
+
+echo "############################################"
+echo "############################################"
+read user
+clear
+fnet=$firstnet.$firstnetip
+echo "Trying $fnet ......"
+rdesktop -k en-us -a 16 -g 100% -u $user $firstnet.$firstnetip
+clear
+else
+if [ $network = 192 ]
+then
+
+echo "############################################"
+echo "############################################"
+
+echo "Enter The Last Octate (192.16.57.x)"
+
+echo "############################################"
+echo "############################################"
+sleep 2
+read secnetip
+clear
+
+echo "############################################"
+echo "############################################"
+
+echo "Enter The Username To Try: (Administrator)"
+
+echo "############################################"
+echo "############################################"
+sleep 2
+read user
+clear
+snet=$secnet.$secnetip
+echo "Trying $snet ......"
+sleep 1
+rdesktop -k en-us -a 16 -g 100% -u $user $secnet.$secnetip
+fi
+fi
+clear

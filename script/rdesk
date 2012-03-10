@@ -1,0 +1,26 @@
+#! /bin/bash
+echo "############"
+echo "############"
+#ip=10.0.104
+echo "Enter The IP"
+echo "############"
+echo "############"
+sleep 2
+read ip
+clear
+
+echo "############################################"
+echo "############################################"
+echo "Enter The Username To login: (Administrator)"
+a=administrator
+echo "############################################"
+echo "############################################"
+sleep 2
+read usern
+clear
+
+echo "Trying $ip...."
+
+sleep 1
+rdesktop -k en-us -a 16 -u $usern $ip
+clear

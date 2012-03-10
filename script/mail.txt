@@ -1,0 +1,7 @@
+NOW=$(date +%d%b%Y)
+BACK=/data/backup
+MAILDIR=/data/mail
+HOMEDIR=/home/sandip
+rsync -avz $MAILDIR $BACK/mail$NOW
+rsync -avz $HOMEDIR/.ssh $BACK/ssh$NOW
+rsync -avz $HOMEDIR/.sshmenu $BACK/ssh$NOW

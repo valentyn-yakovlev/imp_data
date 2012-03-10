@@ -1,0 +1,20 @@
+#!/bin/sh
+
+USER_NAME="/root/user.txt"
+
+#>/tmp/usercreate_log.txt
+
+for user in `cat $USER_NAME`
+do
+       password="Welc0me2U"
+       pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
+       useradd -g mailusers -s /bin/false -p $pass $user
+       grep $user /etc/passwd
+       if [ $? -eq 0 ]
+     then
+               echo "$user created successfully" >>/tmp/usercreate_log.txt
+       else
+               echo "$user not created" >> /tmp/usercreate_log.txt
+       fi
+done
+

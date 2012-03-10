@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/plugins.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jquery Tutorial : Plugins  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jquery, tutorial, :, plugins" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jquery Tutorial : Plugins </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Jquery Tutorial </a>
+  &raquo;
+  Plugins </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="ajax.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="jquery_ui.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="8. Plugins"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="plugins"></a>8. Plugins</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A plugin is a piece of code that adds more functionality to a software or a library.
+</li><li class="listitem">
+jQuery provides you the ability to use plugins (so you do not re-invent the wheel) and it also provides you the ability to write your own.
+</li><li class="listitem"><p class="simpara">
+In this chapter, we are going to discuss how to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Use some of the popular Plugins available
+</li><li class="listitem">
+Create a plugin for code reuse purposes
+</li></ul></div></li></ul></div><div class="section" title="8.1. Popular Plugins"><div class="titlepage"><div><div><h3 class="title"><a id="_popular_plugins"></a>8.1. Popular Plugins</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Many times, you might consider adding more functionality to your applications, such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Slideshows
+</li><li class="listitem">
+New animations
+</li><li class="listitem">
+Form validation &amp; autocompletion
+</li><li class="listitem">
+Table enhancement (fixed headers, pagination, row editing and such)
+</li><li class="listitem">
+Etc…
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Most of the time these functionalities have already been implemented by other developers in the form of a plugin.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+There is no need to reinvent the wheel.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Of course there are tons of plugins available out there on the web and obviously we cannot cover all of them.</p></td></tr></table></div></li></ul></div></li></ul></div></div><div class="section" title="8.2. Easing Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_easing_plugin"></a>8.2. Easing Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+When we discussed effects and animations, we talked about easing which control the value of a CSS property over a certain time.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Acceleration &amp; deceleration effect
+</li><li class="listitem">
+Bouncing effect
+</li><li class="listitem">
+Linear effect
+</li><li class="listitem">
+And many others
+</li></ul></div></li><li class="listitem"><p class="simpara">
+jQuery has only two easing functions built-in: <code class="literal">linear</code> and <code class="literal">swing</code> (<code class="literal">swing</code> is the default easing function which is used if no other is specified).
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/plugins_linear_swing.png" alt="images/plugins_linear_swing.png"></img></div></div></li><li class="listitem"><p class="simpara">
+If you need more choice for easing functions you can use the easing plugin available at this location: <a class="ulink" href="http://plugins.jquery.com/project/Easing" target="_top">http://plugins.jquery.com/project/Easing</a>
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>This plugin is also included in the jQuery UI project that we are going to discuss later</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+To start using the easing plugin, download and include the JavaScript file in the HTML page:
+</p><pre class="programlisting">&lt;script type="text/javascript" src="jquery.easing.1.3.js"&gt;&lt;/script&gt;</pre></li><li class="listitem"><p class="simpara">
+Now, you will have access to more easing options. For instance:
+</p><pre class="programlisting">$(document).ready(function() {
+    $('.menu-li1').toggle(function() {
+        $(this).next('.menu-ul1').slideDown('slow','easeOutBounce'); // <a id="CO10-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    },
+    function() {
+        $(this).next('.menu-ul1').slideUp('slow','easeOutBounce'); // <a id="CO10-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO10-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left"><p>
+This will give a bouncy effect when sliding up or sliding down the side menu
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Of course, there are other easing functions available like <code class="literal">easeInCirc</code>, <code class="literal">easeInOutExpo</code>, <code class="literal">easeOutBack</code>, <code class="literal">easeOutElastic</code>, <code class="literal">easeOutBounce</code>, <code class="literal">easeInOutElastic</code>, etc…</p></td></tr></table></div></td></tr></table></div></li></ul></div></div><div class="section" title="8.3. Slideshow Plugins"><div class="titlepage"><div><div><h3 class="title"><a id="_slideshow_plugins"></a>8.3. Slideshow Plugins</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+There are tons of plugins related to slideshow to facilitate image gallery creation.
+</li><li class="listitem"><p class="simpara">
+Of those plugins, we are going to discuss these two:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The ColorBox plugin (for lightbox purposes)
+</li><li class="listitem">
+The Cycle plugin (to provide sliding of elements inside a container using special transitions)
+</li></ul></div></li></ul></div></div><div class="section" title="8.4. The ColorBox Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_the_colorbox_plugin"></a>8.4. The ColorBox Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+There is a well known plugin for slideshows: ThickBox
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Very good plugin but it is no longer maintained.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+ColorBox is a serious challenger to ThickBox:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Appearance of the rendered lightbox is defined in external CSS
+</li><li class="listitem">
+Light footprint: only 9Kb
+</li><li class="listitem">
+MIT licensed
+</li></ul></div></li><li class="listitem"><p class="simpara">
+To start using ColorBox:
+</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+Download the archive from the website ⇒ <a class="ulink" href="http://colorpowered.com/colorbox/?url=colorbox" target="_top">http://colorpowered.com/colorbox/?url=colorbox</a>. It contains:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Two versions of the plugin: a non-minified and a minified version of the library
+</li><li class="listitem">
+Several examples and each of them contains a stylesheet along with several images that can serve as a basis for your own design (here we are just going to copy paste what we need)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Include the library in your HTML file:
+</p><pre class="screen">&lt;script type="text/javascript" src="jquery.colorbox-min.js"&gt;&lt;/script&gt;</pre></li><li class="listitem"><p class="simpara">
+Let us say you have a list of links like this one:
+</p><pre class="programlisting">&lt;ul&gt;
+  &lt;li&gt;&lt;a rel="foodpic" href="images/bday_cake.png"&gt;Birthday Cake&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a rel="foodpic" href="images/corn.png"&gt;Corn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a rel="foodpic" href="images/egg.png"&gt;Egg&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a rel="foodpic" href="images/pear.png"&gt;Pear&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a rel="foodpic" href="images/thanksgiving.png"&gt;Thanksgiving Dessert&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre></li><li class="listitem"><p class="simpara">
+You can quickly start to use the ColorBox plugin like this:
+</p><pre class="screen">$('a[rel="foodpic"]').colorbox();</pre></li><li class="listitem"><p class="simpara">
+Of course, there are a lot of options you can specify when calling the <code class="literal">.colorbox()</code> method by passing it a JavaScript object containing those options. These options can be found at <a class="ulink" href="http://colorpowered.com/colorbox/?url=colorbox" target="_top">http://colorpowered.com/colorbox/?url=colorbox</a>
+</p><pre class="screen">$('a[rel="foodpic"]').colorbox({
+    transition: 'fade', <a id="CO11-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    speed: 500, <a id="CO11-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    current: "{current} of {total} food pictures" <a id="CO11-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Effect to apply when changing picture
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Speed of the transition in milliseconds
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Text formatting that provides information to the user about the current picture number and the total number of pictures left
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This produces the following result:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/plugins_colorbox.png" alt="images/plugins_colorbox.png"></img></div></div></li></ol></div></li></ul></div></div><div class="section" title="8.5. The Cycle Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_the_cycle_plugin"></a>8.5. The Cycle Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The Cycle plugin is a plugin that can be used in conjunction with slideshow implementations to provide different types of transition effects.
+</li><li class="listitem">
+The method <code class="literal">.cycle()</code> provided by the plugin applies on a container element so each direct child of this same container becomes a "slide."
+</li><li class="listitem">
+To start using the cycle plugin, download the archive at the following address ⇒ <a class="ulink" href="http://malsup.com/jquery/cycle/download.html" target="_top">http://malsup.com/jquery/cycle/download.html</a>
+</li><li class="listitem"><p class="simpara">
+This archive contains three minified versions of the library:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">jquery.cycle.min.js</code>: basic version library containing only a slide transition
+</li><li class="listitem">
+<code class="literal">jquery.cycle.all.min.js</code>: full featured version containing a lot of transitions (This is the one we are going to show here)
+</li><li class="listitem"><p class="simpara">
+<code class="literal">jquery.cycle.lite.min.js</code>: stripped down version containing only the most the basic options
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>If you need to see the source code of the library, there is also a <code class="literal">src</code> folder included in the archive</p></td></tr></table></div></li></ul></div></li><li class="listitem"><p class="simpara">
+Include the plugin in your HTML file:
+</p><pre class="programlisting">&lt;script type="text/javascript" src="jquery.cycle.all.min.js"&gt;&lt;/script&gt;</pre></li><li class="listitem"><p class="simpara">
+Here is an example of some HTML code:
+</p><pre class="programlisting">&lt;div id="photos"&gt;​
+  &lt;img src="images/bday_cake.png"/&gt;
+  &lt;img src="images/corn.png"/&gt;
+  &lt;img src="images/egg.png"/&gt;
+  &lt;img src="images/pear.png"/&gt;
+  &lt;img src="images/thanksgiving.png"/&gt;
+&lt;/div&gt;</pre></li><li class="listitem"><p class="simpara">
+To quickly use the cycle plugin, you could do the following:
+</p><pre class="programlisting">$(document).ready(function() {
+    $('#photos').cycle({ // <a id="CO12-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+        fx: 'fade'
+    });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">.cycle()</code> method is called on a container element and is passed a JavaScript object containing multiple properties for our slideshow. In this case we just specify the effect to use (other effects can be seen here: <a class="ulink" href="http://malsup.com/jquery/cycle/browser.html" target="_top">http://malsup.com/jquery/cycle/browser.html</a>)
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Of course, there is a list of options we can use to more precisely control the transition effects for the <code class="literal">.cycle()</code> method (<a class="ulink" href="http://malsup.com/jquery/cycle/options.html" target="_top">http://malsup.com/jquery/cycle/options.html</a>)
+</p><pre class="screen">$('#photos').cycle({
+  fx: 'scrollDown', <a id="CO13-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  speedIn: 2500, <a id="CO13-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+  speedOut: 500, <a id="CO13-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  timeout: 0, <a id="CO13-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+  next: '#photos' <a id="CO13-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This is the effect to use
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Speed for the in transition in milliseconds (when the current slide gets in)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Speed for the out transition in milliseconds (when the current slide gets out)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Milliseconds between slide transition
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+Element to use as event trigger for next slide
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This would look like this:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/plugins_cycle.png" alt="images/plugins_cycle.png"></img></div></div></li></ul></div></div><div class="section" title="8.6. Jcrop Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_jcrop_plugin"></a>8.6. Jcrop Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Another popular plugin related to images is the Jcrop plugin which allows the user to crop your images.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Of course, the Jcrop plugin does not crop your image, the manipulation will still happen on the server-side. Jcrop just provides the user an intuitive way to define the bounding edges of the image</p></td></tr></table></div></li><li class="listitem">
+This kind of feature is often used to crop a profile picture image.
+</li><li class="listitem">
+To start using Jcrop, download it at the following URL: <a class="ulink" href="http://deepliquid.com/content/Jcrop_Download.html" target="_top">http://deepliquid.com/content/Jcrop_Download.html</a>
+</li><li class="listitem"><p class="simpara">
+The downloaded archive contains:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The JavaScript file containing the plugin
+</li><li class="listitem">
+A CSS file for the plugin
+</li><li class="listitem">
+An animated GIF that the plugin uses as a background
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Include the plugin in your HTML file:
+</p><pre class="programlisting">&lt;script type="text/javascript" src="jquery.Jcrop.js"&gt;&lt;/script&gt;</pre></li><li class="listitem"><p class="simpara">
+Copy/paste the CSS file along with the animated GIF in your project then include the CSS file in your HTML file
+</p><pre class="programlisting">&lt;link rel="stylesheet" type="text/css" href="jquery.Jcrop.css"/&gt;</pre></li><li class="listitem"><p class="simpara">
+We will use the following HTML code as an example:
+</p><pre class="programlisting">&lt;div id="cropsection"&gt;
+  &lt;img id="mofat" src="images/lake.jpg" alt="Lake on a sunny day"/&gt; <a id="CO14-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  &lt;input type="button" value="crop"/&gt; <a id="CO14-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+&lt;/div&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Image where we will apply the Jcrop plugin
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+This button will give us the detail of the selection
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This is how you apply the plugin to the image in the JavaScript part:
+</p><pre class="programlisting">$(window).load(function() {
+    var $image_to_crop=$('#cropsection &gt; img').eq(0);
+    var jcrop = $.Jcrop($image_to_crop,{ // <a id="CO15-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+        setSelect: [10,10,100,100], // <a id="CO15-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+        minSize:[50,50] // <a id="CO15-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO15-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Calling <code class="literal">$.Jcrop()</code> will return a Jcrop object so that we can later access its properties and methods to get the selected coordinates. This method has two arguments, the first one being the image on which we apply the plugin and the second one being the options for the plugin passed as a JavaScript object
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO15-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> <a href="#CO15-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Options passed to the plugin. The detail of these options can be found here: <a class="ulink" href="http://deepliquid.com/content/Jcrop_Manual.html#Setting_Options" target="_top">http://deepliquid.com/content/Jcrop_Manual.html#Setting_Options</a>
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This will render the following:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/plugins_jcrop.png" alt="images/plugins_jcrop.png"></img></div></div></li><li class="listitem"><p class="simpara">
+So far, if we click on the button nothing happens. We want to display the current selection as soon as the user clicks on this button
+</p><pre class="screen">$('#cropsection :button').click(function() {
+    var selection = jcrop.tellSelect();
+    alert('selected size: ' + selection.w + 'x' + selection.h);
+    alert('selected at coordinates: (' + selection.x + ',' + selection.y + ')');
+});</pre></li></ul></div></div><div class="section" title="8.7. The Validation Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_the_validation_plugin"></a>8.7. The Validation Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Form validation is very hard to do using simple JavaScript.
+</li><li class="listitem"><p class="simpara">
+Data like email addresses and urls are generally validated against regular expressions.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Hard to write
+</li><li class="listitem">
+Hard to test
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Validation plugin:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Was started in 2006
+</li><li class="listitem"><p class="simpara">
+Written and maintained by Jörn Zaefferer
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Member of the jQuery team
+</li><li class="listitem">
+Lead developer on the jQuery UI team
+</li></ul></div></li></ul></div></li><li class="listitem">
+To start using the Validation plugin, go to <a class="ulink" href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_top">http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a>
+</li><li class="listitem"><p class="simpara">
+Include the library in your HTML:
+</p><pre class="programlisting">&lt;script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"&gt;&lt;/script&gt; <a id="CO16-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO16-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+In this case we let Microsoft host the plugin for us but you could also download it and host it along with your web site
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Here is an example of an HTML form:
+</p><pre class="programlisting">$(document).ready(function() {
+    $('#signup form').validate({ // <a id="CO17-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+        rules: {
+            name: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            url: {
+                url: true
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            passconf: {
+                equalTo: "#password"
+            }
+        },
+        success: function(label) {
+            label.text('OK!').css('color','green');
+        }
+    });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO17-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">.validate()</code> method is applied to a form. We need to provide an object to this method containing validation rules and handlers such as the <code class="literal">success</code> handler that will add a label element next to each input as soon as they are valid. Complete documentation for this plugin can be found here: <a class="ulink" href="http://docs.jquery.com/Plugins/Validation" target="_top">http://docs.jquery.com/Plugins/Validation</a>
+</td></tr></table></div></li></ul></div></div><div class="section" title="8.8. DataTable Plugin"><div class="titlepage"><div><div><h3 class="title"><a id="_datatable_plugin"></a>8.8. DataTable Plugin</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Using only jQuery, we have seen that you have the ability to do a lot with a selection.
+</li><li class="listitem"><p class="simpara">
+Regarding tables, you could imagine the following functionalities:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Fixed tables headers
+</li><li class="listitem">
+Repeated table headers
+</li><li class="listitem">
+Pagination
+</li><li class="listitem">
+Inline editing
+</li><li class="listitem">
+Sort by columns
+</li></ul></div></li><li class="listitem">
+All of this of course would take time to implement and this is not easy at all.
+</li><li class="listitem">
+As you might guess, someone might already have done this before: the DataTable plugin (<a class="ulink" href="http://www.datatables.net/index" target="_top">http://www.datatables.net/index</a>).
+</li><li class="listitem"><p class="simpara">
+The DataTable plugin:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Your HTML tables become fully functional data grids (pagination, column sorting, searching, ajax loading, etc)
+</li><li class="listitem">
+Free and open source
+</li><li class="listitem">
+Fully internationalisable
+</li><li class="listitem">
+Supports jQuery UI ThemeRoller (will be discussed in jQuery UI)
+</li><li class="listitem">
+Tested through 1400+ unit tests
+</li></ul></div></li></ul></div></div><div class="section" title="8.9. Creating Your Own Plugin: Why?"><div class="titlepage"><div><div><h3 class="title"><a id="_creating_your_own_plugin_why"></a>8.9. Creating Your Own Plugin: Why?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Encapsulate your code for reuse purposes
+</li><li class="listitem">
+Public distribution
+</li><li class="listitem">
+Maintain chainability
+</li><li class="listitem">
+Public distribution
+</li><li class="listitem">
+Prevent namespace clashing
+</li><li class="listitem">
+Plugins in jQuery are easy to write!
+</li></ul></div></div><div class="section" title="8.10. Creating Your Own Plugin: How?"><div class="titlepage"><div><div><h3 class="title"><a id="_creating_your_own_plugin_how"></a>8.10. Creating Your Own Plugin: How?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Plugin creation follows three main steps:
+</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+The method you create is passed a DOM selection (a jQuery object)
+</li><li class="listitem">
+The method performs some DOM manipulation, event binding, etc…
+</li><li class="listitem">
+The method returns the original selection (a jQuery object) so it maintains chainability
+</li></ol></div></li><li class="listitem">
+To start creating a plugin you would add your method to the jQuery prototype.
+</li><li class="listitem"><p class="simpara">
+The jQuery prototype is accessed with <code class="literal">$.fn</code> or <code class="literal">jQuery.fn</code>:
+</p><pre class="programlisting">$.fn.pluginName = function(options) {
+  //Implement your plugin here
+}</pre></li><li class="listitem">
+However, this is poor design. The <code class="literal">$</code> syntax could conflict with other JavaScript libraries you might be using.
+</li><li class="listitem"><p class="simpara">
+You could use a self-invoking anonymous function like this (recommended design for avoiding conflicts):
+</p><pre class="programlisting">(function($){
+    $.fn.pluginName = function() {
+        //Implement your plugin here
+    };
+})(jQuery);</pre></li><li class="listitem">
+Inside the function your selection (jQuery object on which you called the plugin) is accessible using the <code class="literal">this</code> keyword. There is no need to wrap it like this <code class="literal">$(this)</code> since it is already a jQuery object.
+</li><li class="listitem">
+Once the plugin is done, you would save it into a JavaScript file (generally <code class="literal">jquery.pluginname.js</code>) and include it in your HTML file along with the jQuery library.
+</li><li class="listitem"><p class="simpara">
+Finally to use your plugin you would do
+</p><pre class="programlisting">$('selection').pluginName();</pre></li></ul></div></div><div class="section" title="8.11. Creating Your Own Plugin: Best Practices"><div class="titlepage"><div><div><h3 class="title"><a id="_creating_your_own_plugin_best_practices"></a>8.11. Creating Your Own Plugin: Best Practices</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+As we have seen, there are two structures for creating a plugin.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+The first one (not recommended at all):
+</p><pre class="programlisting">$.fn.pluginName = function(options) {
+  //Implement your plugin here
+}</pre></li><li class="listitem"><p class="simpara">
+And the second one (avoid conflicts when using other libraries ⇒ always use this one):
+</p><pre class="programlisting">(function($){
+    $.fn.pluginName = function() {
+        //Implement your plugin here
+    };
+})(jQuery);</pre></li></ul></div></li><li class="listitem">
+Do not wrap <code class="literal">this</code> in the immediate scope of the plugin’s method since <code class="literal">this</code> refers to the jQuery object on which we call the plugin.
+</li><li class="listitem">
+For chainability purposes, it is highly recommended to return the jQuery object (<code class="literal">this</code>) on which we call the plugin.
+</li><li class="listitem">
+In case you need to pass the plugin some settings, consider using objects over a list of arguments.
+</li><li class="listitem">
+Only use a method for your plugin in order to avoid cluttering the namespace.
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>With so many plugins out there, you should analyze the plugins you are considering using as if you were writing them with the previously mentioned best practices in mind.</p></td></tr></table></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ajax.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="jquery_ui.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="plugins.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana jQuery Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction To jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_useful_learning_resources">1.1. Useful Learning Resources</a></span></dt><dt><span class="section"><a href="index.html#_history_of_jquery">1.2. History Of jQuery</a></span></dt><dt><span class="section"><a href="index.html#_what_is_jquery">1.3. What is jQuery?</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_custom_javascript">1.4. jQuery vs Custom JavaScript</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_other_javascript_libraries">1.5. jQuery vs Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="index.html#_where_do_i_start">1.6. Where Do I Start?</a></span></dt><dt><span class="section"><a href="index.html#_download_the_library">1.7. Download the Library</a></span></dt><dt><span class="section"><a href="index.html#_using_google_content_deliver_network_cdn">1.8. Using Google Content Deliver Network (CDN)</a></span></dt><dt><span class="section"><a href="index.html#_the_literal_jquery_literal_function_object">1.9. The <code class="literal">jQuery</code> Function Object</a></span></dt><dt><span class="section"><a href="index.html#_is_the_document_ready">1.10. Is The Document Ready?</a></span></dt><dt><span class="section"><a href="index.html#_where_to_run_your_code">1.11. Where to Run Your Code?</a></span></dt><dt><span class="section"><a href="index.html#_execute_some_jquery_code">1.12. Execute Some jQuery Code</a></span></dt></dl></dd><dt><span class="section"><a href="selections_and_dom_traversing.html">2. Selection and DOM Traversal</a></span></dt><dd><dl><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection">2.1. Selection</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_basic_selectors">2.2. Basic Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_hierarchy_selectors">2.3. Hierarchy Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection_by_attribute">2.4. Selection By Attribute</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_form_selectors">2.5. Form Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_position_filters">2.6. Position Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_other_filters">2.7. Other Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_jquery_method_chaining">2.8. jQuery Method Chaining</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_dom_traversal">2.9. DOM Traversal</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_filter_methods">2.10. Filter Methods</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_advanced_method_chaining">2.11. Advanced Method Chaining</a></span></dt></dl></dd><dt><span class="section"><a href="dom_manipulation.html">3. DOM And Attributes Manipulation</a></span></dt><dd><dl><dt><span class="section"><a href="dom_manipulation.html#_dom_manipulation">3.1. DOM Manipulation</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_creating_elements">3.2. Creating Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_elements">3.3. Inserting Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_before_or_after_another_element">3.4. Inserting an Element Before or After Another Element</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_as_the_first_or_last_child_of_a_parent">3.5. Inserting an Element as the First or Last Child of a Parent</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_mass_insertion">3.6. Mass Insertion</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_moving_elements">3.7. Moving Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_cloning_copying_elements">3.8. Cloning (Copying) Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_removing_elements">3.9. Removing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_replacing_elements">3.10. Replacing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_element_content_html_vs_text">3.11. Element Content: HTML vs Text</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_other_element_attributes">3.12. Other Element Attributes</a></span></dt></dl></dd><dt><span class="section"><a href="css_styling.html">4. CSS Styling and jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties">4.1. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties_2">4.2. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_removing_css_properties">4.3. Removing CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_css_classes">4.4. CSS Classes</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_dimensions">4.5. Element Dimensions</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_position">4.6. Element Position</a></span></dt></dl></dd><dt><span class="section"><a href="events.html">5. Events</a></span></dt><dd><dl><dt><span class="section"><a href="events.html#_events_overview">5.1. Events Overview</a></span></dt><dt><span class="section"><a href="events.html#_binding_an_event_handler">5.2. Binding An Event Handler</a></span></dt><dt><span class="section"><a href="events.html#_binding_shortcut_methods">5.3. Binding Shortcut Methods</a></span></dt><dt><span class="section"><a href="events.html#_unbinding_handlers_and_8220_one_shot_8221_handlers">5.4. Unbinding Handlers and “One-Shot” Handlers</a></span></dt><dt><span class="section"><a href="events.html#_the_event_object">5.5. The Event Object</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation">5.6. Event Delegation</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation_and_jquery">5.7. Event Delegation And jQuery</a></span></dt><dt><span class="section"><a href="events.html#_literal_live_literal_vs_literal_delegate_literal">5.8. <code class="literal">.live()</code> vs <code class="literal">.delegate()</code></a></span></dt></dl></dd><dt><span class="section"><a href="effects_and_custom_animations.html">6. Effects and Custom Animations</a></span></dt><dd><dl><dt><span class="section"><a href="effects_and_custom_animations.html#_jquery_built_in_effects">6.1. jQuery Built-in Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_showing_or_hiding_elements">6.2. Showing or Hiding Elements</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_fading_effects">6.3. Fading Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_sliding_effects">6.4. Sliding Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_creating_your_own_animations">6.5. Creating Your Own Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_notes">6.6. Animation Notes</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_queues">6.7. Animation Queues</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_stopping_animations">6.8. Stopping Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_additional_animation_controls">6.9. Additional Animation controls</a></span></dt></dl></dd><dt><span class="section"><a href="ajax.html">7. Ajax</a></span></dt><dd><dl><dt><span class="section"><a href="ajax.html#_what_is_ajax">7.1. What Is Ajax?</a></span></dt><dt><span class="section"><a href="ajax.html#_limitations_of_ajax">7.2. Limitations Of Ajax</a></span></dt><dt><span class="section"><a href="ajax.html#_load_html_content_the_literal_load_literal_method">7.3. Load HTML Content: The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_hijax_with_jquery">7.4. Hijax With jQuery</a></span></dt><dt><span class="section"><a href="ajax.html#_select_in_detail_what_to_load">7.5. Select In Detail What To Load</a></span></dt><dt><span class="section"><a href="ajax.html#_advanced_loading_using_the_literal_load_literal_method">7.6. Advanced Loading Using The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_json_and_jsonp">7.7. JSON and JSONP</a></span></dt><dt><span class="section"><a href="ajax.html#_load_json_data_the_literal_getjson_literal_method">7.8. Load JSON Data: The <code class="literal">.getJSON()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_the_main_ajax_method_literal_ajax_literal">7.9. The Main Ajax Method: <code class="literal">.ajax()</code></a></span></dt><dt><span class="section"><a href="ajax.html#_ajax_global_settings">7.10. Ajax Global Settings</a></span></dt><dt><span class="section"><a href="ajax.html#_error_handling">7.11. Error Handling</a></span></dt></dl></dd><dt><span class="section"><a href="plugins.html">8. Plugins</a></span></dt><dd><dl><dt><span class="section"><a href="plugins.html#_popular_plugins">8.1. Popular Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_easing_plugin">8.2. Easing Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_slideshow_plugins">8.3. Slideshow Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_the_colorbox_plugin">8.4. The ColorBox Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_cycle_plugin">8.5. The Cycle Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_jcrop_plugin">8.6. Jcrop Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_validation_plugin">8.7. The Validation Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_datatable_plugin">8.8. DataTable Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_why">8.9. Creating Your Own Plugin: Why?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_how">8.10. Creating Your Own Plugin: How?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_best_practices">8.11. Creating Your Own Plugin: Best Practices</a></span></dt></dl></dd><dt><span class="section"><a href="jquery_ui.html">9. jQuery UI</a></span></dt><dd><dl><dt><span class="section"><a href="jquery_ui.html#_what_is_jquery_ui">9.1. What Is jQuery UI?</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_getting_started">9.2. Getting Started</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_widgets">9.3. jQuery Widgets</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_accordion_widget">9.4. The Accordion Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_tabs_widget">9.5. The Tabs Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_dialogs">9.6. Dialogs</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_controls">9.7. jQuery UI Controls</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_datepicker">9.8. The Datepicker</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_slider">9.9. The Slider</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_progress_bar">9.10. The Progress Bar</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_interactions">9.11. Jquery UI Interactions</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop">9.12. Drag &amp; Drop</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop_example">9.13. Drag &amp; Drop: Example</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_sortable_elements">9.14. Sortable elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_selectable_elements">9.15. Selectable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_resizable_elements">9.16. Resizable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_animation">9.17. jQuery UI animation</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_concepts.html">10. Advanced Concepts</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_concepts.html#_best_practices_loops">10.1. Best Practices: Loops</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_avoid_anonymous_functions">10.2. Best Practices: Avoid Anonymous Functions</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_optimizing_selectors">10.3. Best Practices: Optimizing Selectors</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_jquery_utility_methods">10.4. jQuery Utility Methods</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_avoiding_conflict_with_other_javascript_libraries">10.5. Avoiding Conflict With Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_queuing_and_dequeuing_animations">10.6. Queuing And Dequeuing Animations</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/plugins.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

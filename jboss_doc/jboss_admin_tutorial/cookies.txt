@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+marakana.com	TRUE	/	FALSE	1999999999	JSESSIONID	84CD3F434AEEE6C205ACEBC7BA99C0B2
+marakana.com	TRUE	/	FALSE	1999999999	SE	dmVu5uXGn9Z4jm5nlDvBDUXZPoy9%2ByJFnk5kineto8ubqPJ74OxSXljJpgcrK6clT5elmqvaCSqzlMK2UwuZsO6FN8Tk2iHFaw6YoNEU%2FYc%3D
+

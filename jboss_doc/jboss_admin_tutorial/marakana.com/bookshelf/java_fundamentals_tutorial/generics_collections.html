@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/generics_collections.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Java Fundamentals Tutorial : Generics Collections  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, java, fundamentals, tutorial, :, generics, collections" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Java Fundamentals Tutorial : Generics Collections </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Java Fundamentals Tutorial </a>
+  &raquo;
+  Generics Collections </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="java_net.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="threading.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="13. Java Collections and Generics"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="generics_collections"></a>13. Java Collections and Generics</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The Java Collections Framework
+</li><li class="listitem">
+Java Generics
+</li></ul></div><div class="section" title="13.1. The Java Collections Framework"><div class="titlepage"><div><div><h3 class="title"><a id="collections"></a>13.1. The Java Collections Framework</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java arrays have limitations.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+They cannot dynamically shrink and grow.
+</li><li class="listitem">
+They have limited type safety.
+</li><li class="listitem">
+Implementing efficient, complex data structures from scratch would be difficult.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Java Collections Framework is a set of classes and interfaces implementing complex collection data structures.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A <span class="emphasis"><em>collection</em></span> is an object that represents a group of objects.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Java Collections Framework provides many benefits:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Reduces programming effort (already there)
+</li><li class="listitem">
+Increases performance (tested and optimized)
+</li><li class="listitem">
+Part of the core API (available, easy to learn)
+</li><li class="listitem">
+Promotes software reuse (standard interface)
+</li><li class="listitem">
+Easy to design APIs based on generic collections
+</li></ul></div></li></ul></div><p></p><p>The Java Collections Framework consists of:</p><div class="variablelist"><dl><dt><span class="term">
+Collection interfaces
+</span></dt><dd>
+Collection, List, Set, Map, etc.
+</dd><dt><span class="term">
+General-purpose implementations
+</span></dt><dd>
+ArrayList, LinkedList, HashSet, HashMap, etc.
+</dd><dt><span class="term">
+Special-purpose implementations
+</span></dt><dd>
+designed for performance characteristics, usage restrictions, or behavior
+</dd><dt><span class="term">
+Concurrent implementations
+</span></dt><dd>
+designed for use in high-concurrency contexts
+</dd><dt><span class="term">
+Wrapper implementations
+</span></dt><dd>
+adding synchronization, immutability, etc.
+</dd><dt><span class="term">
+Abstract implementations
+</span></dt><dd>
+building blocks for custom implementations
+</dd><dt><span class="term">
+Algorithms
+</span></dt><dd>
+static methods that perform useful functions, such as sorting or randomizing a collection
+</dd><dt><span class="term">
+Infrastructure
+</span></dt><dd>
+interfaces to support the collections
+</dd><dt><span class="term">
+Array utilities
+</span></dt><dd>
+static methods that perform useful functions on arrays, such as sorting, initializing, or converting to collections
+</dd></dl></div><p>More information on the Java Collections Framework is available at: <a class="ulink" href="http://download.oracle.com/javase/tutorial/collections/index.html" target="_top">http://download.oracle.com/javase/tutorial/collections/index.html</a></p></div><div class="section" title="13.2. The Collection Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_the_collection_interface"></a>13.2. The Collection Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+<code class="literal">java.util.Collection</code> is the root interface in the collections hierarchy.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It represents a group of Objects.
+</li><li class="listitem">
+Primitive types (e.g., <code class="literal">int</code>) must be boxed (e.g., Integer) for inclusion in a collection.
+</li><li class="listitem">
+More specific collection interfaces (e.g., List) extend this interface.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Collection interface includes a variety of methods:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Adding objects to the collection: <code class="literal">add(E)</code>, <code class="literal">addAll(Collection)</code>
+</li><li class="listitem">
+Testing size and membership: <code class="literal">size()</code>, <code class="literal">isEmpty()</code>, <code class="literal">contains(E)</code>, <code class="literal">containsAll(Collection)</code>
+</li><li class="listitem">
+Iterating over members: <code class="literal">iterator()</code>
+</li><li class="listitem">
+Removing members: <code class="literal">remove(E)</code>, <code class="literal">removeAll(Collection)</code>, <code class="literal">clear()</code>, <code class="literal">retainAll(Collection)</code>
+</li><li class="listitem">
+Generating array representations: <code class="literal">toArray()</code>, <code class="literal">toArray(T[])</code>
+</li></ul></div></li></ul></div><p></p><p>The Collection interface does not say anything about:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+the order of elements
+</li><li class="listitem">
+whether they can be duplicated
+</li><li class="listitem">
+whether they can be <code class="literal">null</code>
+</li><li class="listitem">
+the types of elements they can contain
+</li></ul></div><p>This interface is typically used to pass collections around and manipulate them in the most generic way.</p></div><div class="section" title="13.3. Iterating Over a Collection"><div class="titlepage"><div><div><h3 class="title"><a id="_iterating_over_a_collection"></a>13.3. Iterating Over a Collection</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+An <span class="emphasis"><em>iterator</em></span> is an object that iterates over the objects in a collection.
+</li><li class="listitem"><p class="simpara">
+<code class="literal">java.util.Iterator</code> is an interface specifying the capabilities of an iterator.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Invoking the <code class="literal">iterator()</code> method on a collection returns an iterator object that implements Iterator and knows how to step through the objects in the underlying collection.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Iterator interface specifies the following methods:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">hasNext()</code> - Returns <code class="literal">true</code> if there are more elements in the collection; <code class="literal">false</code> otherwise
+</li><li class="listitem">
+<code class="literal">next()</code> - Returns the next element
+</li><li class="listitem">
+<code class="literal">remove()</code> - Removes from the collection the last element returned by the iterator
+</li></ul></div></li></ul></div><p></p><p>For example, to print all elements in a collection:</p><pre class="programlisting">private static void print(Collection c) {
+    Iterator i = c.iterator();
+    while (i.hasNext()) {
+        Object o = i.next();
+        System.out.println(o);
+    }
+}</pre><p>This can also be written as:</p><pre class="programlisting">private static void print(Collection c) {
+    for (Iterator i = c.iterator(); i.hasNext(); ) {
+        System.out.println(i.next());
+    }
+}</pre><p>And in Java 5, the Iterator can be used implicitly thanks to <code class="literal">for-each</code>:</p><pre class="programlisting">private static void print(Collection c) {
+    for (Object o : c) {
+        System.out.println(o);
+    }
+}</pre></div><div class="section" title="13.4. The List Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_the_list_interface"></a>13.4. The List Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">java.util.List</code> Interface extends the Collection interface.
+</li><li class="listitem"><p class="simpara">
+The List interface declares methods for managing an ordered collection of object (a <span class="emphasis"><em>sequence</em></span>). You can:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Control where each element is inserted in the list
+</li><li class="listitem">
+Access elements by their integer index (position in the list)
+</li><li class="listitem">
+Search for elements in the list
+</li><li class="listitem">
+Insert duplicate elements and <code class="literal">null</code> values, in most List implementations
+</li></ul></div></li></ul></div><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>Especially if you’re dynamically resizing a collection of object, favor using a List over a Java array.</p></td></tr></table></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Some additional methods provided by List include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">add(int index, E element)</code> — Insert an element at a specific location (without an index argument, new elements are appended to the end)
+</li><li class="listitem">
+<code class="literal">get(int index)</code> — Return an element at the specified location
+</li><li class="listitem">
+<code class="literal">remove(int index)</code> — Remove an element at the specified location
+</li><li class="listitem">
+<code class="literal">set(int index, E element)</code> — Replace the element at the specified location
+</li><li class="listitem">
+<code class="literal">subList(int fromIndex, int toIndex)</code> — Returns as a List a <span class="emphasis"><em>modifiable view</em></span> of the specified portion of the list (that is, changes to the view actually affect the underlying list)
+</li></ul></div></li></ul></div></div><div class="section" title="13.5. Classes Implementing List"><div class="titlepage"><div><div><h3 class="title"><a id="_classes_implementing_list"></a>13.5. Classes Implementing List</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Java provides several classes that implement the List interface.
+</li><li class="listitem"><p class="simpara">
+Two are used most commonly:
+</p><div class="variablelist"><dl><dt><span class="term">
+<code class="literal">java.util.ArrayList</code>
+</span></dt><dd>
+An ArrayList is usually your best bet for a List if the values remain fairly static once you’ve created the list. It’s more efficient than a LinkedList for random access.
+</dd><dt><span class="term">
+<code class="literal">java.util.LinkedList</code>
+</span></dt><dd>
+A LinkedList provides better performance than an ArrayList if you’re frequently inserting and deleting elements, especially from the middle of the collection. But it’s slower than an ArrayList for random-access.
+</dd></dl></div></li></ul></div><p></p><p>In the following example, notice the use of the <code class="literal">java.util.Collections.sort()</code> static method, which does an in-place sort of the elements in a List:</p><pre class="programlisting">package util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * This program reads arguments passed to it from the command-line
+ * or the lines from STDIN, sorts them, and writes the result to STDOUT.
+ */
+public class Sort {
+    public static void main(String[] args) throws IOException {
+        if (args.length &gt; 0) {
+            Arrays.sort(args);
+            for (int i = 0; i &lt; args.length; i++) {
+                System.out.println(args[i]);
+            }
+        } else {
+            List lines = new ArrayList();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    System.in));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+            Collections.sort(lines);
+            for (Iterator i = lines.iterator(); i.hasNext();) {
+                System.out.println(i.next());
+            }
+        }
+    }
+}</pre></div><div class="section" title="13.6. The Set and SortedSet Interfaces"><div class="titlepage"><div><div><h3 class="title"><a id="_the_set_and_sortedset_interfaces"></a>13.6. The Set and SortedSet Interfaces</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">java.util.Set</code> Interface extends the Collection interface.
+</li><li class="listitem"><p class="simpara">
+The Set interface declares methods for managing a collection of objects that contain no duplicates.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The basic Set interface makes no guarantee of the order of elements.
+</li><li class="listitem">
+A Set can contain at most one <code class="literal">null</code> element.
+</li><li class="listitem">
+Mutable elements should not be changed while in a Set.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Set interface adds no methods beyond those of the Collection interface.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The Set interface simply enforces behavior of the collection.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The <code class="literal">java.util.SortedSet</code> interface extends Set so that elements are automatically ordered.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A SortedSet Iterator traverses the Set in order.
+</li><li class="listitem">
+A SortedSet also adds the methods <code class="literal">first()</code>, <code class="literal">last()</code>, <code class="literal">headSet()</code>, <code class="literal">tailSet()</code>, and <code class="literal">subSet()</code>
+</li></ul></div></li></ul></div></div><div class="section" title="13.7. Classes Implementing Set"><div class="titlepage"><div><div><h3 class="title"><a id="_classes_implementing_set"></a>13.7. Classes Implementing Set</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Java provides several classes that implement the Set interface, including:
+</li></ul></div><p>+
+<code class="literal">java.util.HashSet</code>::
+A hash table implementation of the Set interface. The best all-around implementation of the Set interface, providing fast lookup and updates.</p><div class="variablelist"><dl><dt><span class="term">
+<code class="literal">java.util.LinkedHashSet</code>
+</span></dt><dd>
+A hash table and linked list implementation of the Set interface. It maintains the insertion order of elements for iteration, and runs nearly as fast as a HashSet.
+</dd><dt><span class="term">
+<code class="literal">java.util.TreeSet</code>
+</span></dt><dd>
+A red-black tree implementation of the SortedSet interface, maintaining the collection in sorted order, but slower for lookups and updates.
+</dd></dl></div><p></p><pre class="programlisting">package util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+/**
+ * This program computes a unique set of elements passed to it either from
+ * command line (as arguments) or from STDIN (as lines).
+ *
+ * This demonstrates the use of Sets.
+ */
+public class Unique {
+
+    public static void main(String[] args) throws IOException {
+        Set unique = new HashSet(); // replace with TreeSet to get them sorted
+        if (args.length &gt; 0) {
+            unique.addAll(Arrays.asList(args));
+        } else {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    System.in));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                unique.add(line);
+            }
+        }
+        for (Iterator i = unique.iterator(); i.hasNext();) {
+            System.out.println(i.next());
+        }
+    }
+}</pre></div><div class="section" title="13.8. The Queue Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_the_queue_interface"></a>13.8. The Queue Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">java.util.Queue</code> interface is a collection designed for holding elements prior to processing.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Besides basic Collection operations, queues provide additional insertion, extraction, and inspection operations.
+</li><li class="listitem">
+Queues can implement FIFO (queue), LIFO (stack), and priority ordering.
+</li><li class="listitem">
+Queues generally do not accept <code class="literal">null</code> elements.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Queue operations include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Inserting elements: <code class="literal">add()</code> and <code class="literal">offer()</code>
+</li><li class="listitem">
+Removing and returning elements: <code class="literal">remove()</code> and <code class="literal">poll()</code>
+</li><li class="listitem">
+Returning elements without removal: <code class="literal">element()</code> and <code class="literal">peek()</code>
+</li></ul></div></li><li class="listitem">
+The <code class="literal">java.util.concurrent.BlockingQueue</code> interfaces declare additional blocking <code class="literal">put()</code> and <code class="literal">take()</code> methods, designed for concurrent access by multiple threads.
+</li></ul></div><p></p><p>General-purpose Queue implementations:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">java.util.LinkedList</code>
+</li><li class="listitem">
+<code class="literal">java.util.PriorityQueue</code>
+</li></ul></div><p>Concurrency-specific BlockingQueue implementations:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">java.util.concurrent.ArrayBlockingQueue</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.ConcurrentLinkedQueue</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.DelayQueue</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.LinkedBlockingQueue</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.PriorityBlockingQueue</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.SynchronousQueue</code>
+</li></ul></div></div><div class="section" title="13.9. The Map Interface"><div class="titlepage"><div><div><h3 class="title"><a id="_the_map_interface"></a>13.9. The Map Interface</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">java.util.Map</code> interface does <span class="strong"><strong>not</strong></span> extend the Collection interface!
+</li><li class="listitem"><p class="simpara">
+A Map is a collection that maps key objects to value objects.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A Map cannot contain duplicate keys
+</li><li class="listitem">
+Each key can map to at most one value.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The Map interface methods include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Adding key-value pairs to the collection: <code class="literal">put(K, V)</code>, <code class="literal">putAll(Map)</code>
+</li><li class="listitem">
+Retrieving a value by its key: <code class="literal">get(K)</code>
+</li><li class="listitem">
+Testing size: <code class="literal">size()</code>, <code class="literal">isEmpty()</code>
+</li><li class="listitem">
+Testing membership: <code class="literal">containsKey(K)</code>, <code class="literal">containsValue(V)</code>
+</li><li class="listitem">
+Removing members: <code class="literal">remove(K)</code>, <code class="literal">clear()</code>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The <code class="literal">java.util.SortedMap</code> interface extends Map so that elements are automatically ordered by key.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Iterating over a SortedMap iterates over the elements in key order.
+</li><li class="listitem">
+A SortedMap also adds the methods <code class="literal">firstKey()</code>, <code class="literal">lastKey()</code>, <code class="literal">headMap()</code>, <code class="literal">tailMap()</code>, and <code class="literal">subMap()</code>
+</li></ul></div></li></ul></div></div><div class="section" title="13.10. Retrieving Map Views"><div class="titlepage"><div><div><h3 class="title"><a id="_retrieving_map_views"></a>13.10. Retrieving Map Views</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+You can also also retrieve collections as <span class="emphasis"><em>modifiable views</em></span> from the Map representing the keys (<code class="literal">keySet()</code>), the values (<code class="literal">values()</code>), and a Set of key-value pairs (<code class="literal">entrySet()</code>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+These collections are used typically to iterate over the Map elements.
+</li><li class="listitem">
+These collections are backed by the Map, so changes to the Map are reflected in the collection views and vice-versa.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Iterating over Map elements is done typically with a Set of objects implementing the <code class="literal">java.util.Map.Entry</code> interface.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You retrieve the Set of Map.Entry objects by invoking <code class="literal">Map.entrySet()</code>.
+</li><li class="listitem"><p class="simpara">
+To iterate over the Map elements using an explicit Iterator:
+</p><pre class="programlisting">for (Iterator i = map.entrySet().iterator; i.hasNext(); ) {
+    Map.Entry entry = (Map.Entry) i.next();
+    System.out.println( entry.getKey() + ":\t" + entry.getValue() );
+}</pre></li><li class="listitem"><p class="simpara">
+To iterate over the Map elements using the <code class="literal">for-each</code> syntax:
+</p><pre class="programlisting">for ( Map.Entry entry: map.entrySet() ) {
+    System.out.println(entry.getKey() + ":\t" + entry.getValue());
+}</pre></li></ul></div></li></ul></div></div><div class="section" title="13.11. Classes Implementing Map"><div class="titlepage"><div><div><h3 class="title"><a id="_classes_implementing_map"></a>13.11. Classes Implementing Map</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Java provides several classes that implement the Map interface, including:
+</li></ul></div><p>+
+<code class="literal">java.util.HashMap</code>::
+A hash table implementation of the Map interface. The best all-around implementation of the Map interface, providing fast lookup and updates.</p><div class="variablelist"><dl><dt><span class="term">
+<code class="literal">java.util.LinkedHashMap</code>
+</span></dt><dd>
+A hash table and linked list implementation of the Map interface. It maintains the insertion order of elements for iteration, and runs nearly as fast as a HashMap.
+</dd><dt><span class="term">
+<code class="literal">java.util.TreeMap</code>
+</span></dt><dd>
+A red-black tree implementation of the SortedMap interface, maintaining the collection in sorted order, but slower for lookups and updates.
+</dd></dl></div><p></p><pre class="programlisting">package util;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+/**
+ * This program computes the frequency of words passed to it either as command
+ * line arguments or from STDIN. The result is written back to STDOUT.
+ *
+ * This demonstrates the use of Maps.
+ */
+public class WordFrequency {
+
+    public static void main(String[] args) throws IOException {
+        // replace with TreeMap to get them sorted by name
+        Map wordMap = new HashMap();
+        if (args.length &gt; 0) {
+            for (int i = 0; i &lt; args.length; i++) {
+                countWord(wordMap, args[i]);
+            }
+        } else {
+            getWordFrequency(System.in, wordMap);
+        }
+        for (Iterator i = wordMap.entrySet().iterator(); i.hasNext();) {
+            Map.Entry entry = (Map.Entry) i.next();
+            System.out.println(entry.getKey() + " :\t" + entry.getValue());
+        }
+
+    }
+
+    private static void getWordFrequency(InputStream in, Map wordMap)
+            throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        int ch = -1;
+        StringBuffer word = new StringBuffer();
+        while ((ch = reader.read()) != -1) {
+            if (Character.isWhitespace(ch)) {
+                if (word.length() &gt; 0) {
+                    countWord(wordMap, word.toString());
+                    word = new StringBuffer();
+                }
+            } else {
+                word.append((char) ch);
+            }
+        }
+        if (word.length() &gt; 0) {
+            countWord(wordMap, word.toString());
+        }
+    }
+
+    private static void countWord(Map wordMap, String word) {
+        Integer count = (Integer) wordMap.get(word);
+        if (count == null) {
+            count = new Integer(1);
+        } else {
+            count = new Integer(count.intValue() + 1);
+        }
+        wordMap.put(word, count);
+    }
+}</pre></div><div class="section" title="13.12. The Collections Class"><div class="titlepage"><div><div><h3 class="title"><a id="_the_collections_class"></a>13.12. The Collections Class</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">java.util.Collections</code> class (note the final "<span class="strong"><strong>s</strong></span>" ) consists exclusively of static methods that operate on or return collections. Features include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Taking a collection and returning an unmodifiable view of the collection
+</li><li class="listitem">
+Taking a collection and returning a synchronized view of the collection for thread-safe use
+</li><li class="listitem">
+Returning the minimum or maximum element from a collection
+</li><li class="listitem">
+Sorting, reversing, rotating, and randomly shuffling List elements
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Several methods of the Collections class require objects in the collection to be comparable.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The object class must implement the <code class="literal">java.lang.Comparable</code> interface.
+</li><li class="listitem">
+The object class must provide an implementation of the <code class="literal">compareTo()</code> method, which a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+</li></ul></div></li></ul></div><p></p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>There are several requirements for proper implementation of the <code class="literal">compareTo()</code> method. See the reference documentation for more information. The book <span class="emphasis"><em>Effective Java, 2<sup>nd</sup> ed.</em></span>, by Joshua Bloch also has excellent information on the requirements and pitfalls of proper implementation of the <code class="literal">compareTo()</code> method.</p></td></tr></table></div></div><div class="section" title="13.13. Type Safety in Java Collections"><div class="titlepage"><div><div><h3 class="title"><a id="_type_safety_in_java_collections"></a>13.13. Type Safety in Java Collections</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The Java Collections Framework was designed to handle objects of any type.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In Java 1.4 and earlier they used Object as the type for any object added to the collection.
+</li><li class="listitem"><p class="simpara">
+You had to explicitly cast the objects to the desired type when you used them or else you would get compile-time errors.
+</p><pre class="literallayout">Employee e = (Employee) list.get(0);</pre></li><li class="listitem">
+Worse yet, if you were dealing with a collection of objects, say of type Dog, and then accidentally added an object of an incompatible type, say a Cat, your code could eventually try to cast the object to the incompatible type, resulting in a runtime exception.
+</li></ul></div></li></ul></div><p></p><p>Java arrays actually have a similar polymorphism problem that can result in runtime exceptions:</p><pre class="programlisting">package com.markana.demo;
+
+abstract class Animal {
+    abstract public void speak();
+
+    public void identify() {
+        System.out.println("I'm an animal.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void speak() {
+        System.out.println("woof");
+    }
+
+    @Override
+    public void identify() {
+        System.out.println("I'm a Dog.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void speak() {
+        System.out.println("meow");
+    }
+
+    @Override
+    public void identify() {
+        System.out.println("I'm a Cat.");
+    }
+}
+
+package com.markana.demo;
+
+/** Demonstration that arrays are not completely type-safe
+ * @author Ken Jones
+ *
+ */
+public class ArrayTypeError {
+
+    public static void main(String[] args) {
+        // Create an array of three anonymous dogs
+        Dog[] kennel = { new Dog(), new Dog(), new Dog()};
+
+        // Let them all speak
+        for (Dog d: kennel) d.speak();
+
+        // Dogs are Objects, so this should work
+        Object[] things = kennel;
+
+        /* A Cat is an Object, so we should be able to add one to the
+         * things array. Note that the following does NOT cause a
+         * compiler error! Instead it throws a RUNTIME exception,
+         * ArrayStoreException.
+         */
+        things[0] = new Cat();
+    }
+
+}</pre></div><div class="section" title="13.14. Java Generics"><div class="titlepage"><div><div><h3 class="title"><a id="_java_generics"></a>13.14. Java Generics</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Java Generics, introduced in Java 5, provide stronger type safety.
+</li><li class="listitem"><p class="simpara">
+Generics allow <span class="emphasis"><em>types</em></span> to be passed as <span class="emphasis"><em>parameters</em></span> to class, interface, and method declarations. For example:
+</p><pre class="literallayout">List&lt;Employee&gt; emps = new ArrayList&lt;Employee&gt;();</pre></li><li class="listitem"><p class="simpara">
+The <code class="literal">&lt;Employee&gt;</code> in this example is a <span class="emphasis"><em>type parameter</em></span>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+With the type parameter, the <span class="emphasis"><em>compiler</em></span> ensures that we use the collection with objects of a compatible type only.
+</li><li class="listitem"><p class="simpara">
+Another benefit is that we won’t need to cast the objects we get from the collection:
+</p><pre class="literallayout">Employee e = emps.get(0);</pre></li><li class="listitem">
+Object type errors are now detected at compile time, rather than throwing casting exceptions at runtime.
+</li></ul></div></li></ul></div></div><div class="section" title="13.15. Generics and Polymorphism"><div class="titlepage"><div><div><h3 class="title"><a id="_generics_and_polymorphism"></a>13.15. Generics and Polymorphism</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+What can be confusing about generics when you start to use them is that collections of a type are <span class="strong"><strong>not</strong></span> polymorphic on the <span class="emphasis"><em>type</em></span>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+That is, you can <span class="strong"><strong>not</strong></span> assign a <code class="literal">List&lt;String&gt;</code> to a reference variable of type <code class="literal">List&lt;Object&gt;</code> (and by extension, pass a <code class="literal">List&lt;String&gt;</code> as an argument to a method whose parameter is type <code class="literal">List&lt;Object&gt;</code>); it results in a compiler error.
+</li><li class="listitem">
+Why? If allowed, we could then add objects of an incompatible type to the collection through the more “generic” typed reference variable.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+So if you define a <code class="literal">printCollection()</code> to accept a parameter typed <code class="literal">List&lt;Person&gt;</code>, you can pass only <code class="literal">List&lt;Person&gt;</code> collections as arguments.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Even if Employee is a subclass of Person, a <code class="literal">List&lt;Employee&gt;</code> can’t be assigned to a <code class="literal">List&lt;Person&gt;</code>.
+</li></ul></div></li></ul></div><p></p><p>Here’s an illustration of how type parameters are not polymorphic for collections:</p><pre class="programlisting">package com.markana.demo;
+
+import java.util.*;
+
+public class GenericsTypeError {
+    public static void main( String[] args) {
+        // Create a List of Dog objects
+        List&lt;Dog&gt; kennel = new ArrayList&lt;Dog&gt;();
+
+        // Adding a Dog is no problem
+        kennel.add( new Dog() );
+
+        // The following line results in a compiler error
+        List&lt;Object&gt; objs = kennel;
+
+        // Because if it were allowed, we could do this
+        objs.add( new Cat() );
+
+        // And now we've got a Cat in our List of Dogs
+    }
+}</pre></div><div class="section" title="13.16. Type Wildcards"><div class="titlepage"><div><div><h3 class="title"><a id="_type_wildcards"></a>13.16. Type Wildcards</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">?</code> type parameter <span class="emphasis"><em>wildcard</em></span> is interpreted as “type unknown.”
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+So declaring a variable as <code class="literal">List&lt;?&gt;</code> means that you can assign a List of any type of object to the reference variable.
+</li><li class="listitem">
+However, once assigned to the variable, you can’t make any assumptions about the type of the objects in the list.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+So defining your method as <code class="literal">printCollection(List&lt;?&gt; persons)</code> means that it can accept a List of any type.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+But when invoked, you can’t make any assumptions as to the type of objects that the list contains.
+</li><li class="listitem">
+Remember, <code class="literal">?</code> is “type unknown”.
+</li><li class="listitem">
+At best, you know that everything can be treated as an Object.
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">package com.markana.demo;
+
+import java.util.*;
+
+public class GenericsWildcardExample1 {
+
+    public static void main( String[] args) {
+        // Create a List of Dog objects
+        List&lt;Dog&gt; kennel = new ArrayList&lt;Dog&gt;();
+
+        // Adding a Dog is no problem
+        kennel.add( new Dog() );
+
+        // The following line compiles without error
+        List&lt;?&gt; objs = kennel;
+
+        /*
+         * But now we can't make any assumptions about the type of
+         * objects in the objs List. In fact, the only thing that
+         * we can safely do with them is treat them as Objects.
+         * For example, implicitly invoking toString() on them.
+         */
+
+        for (Object o: objs) {
+            System.out.println("String representation: " + o);
+        }
+
+    }
+}</pre></div><div class="section" title="13.17. Qualified Type Wildcards"><div class="titlepage"><div><div><h3 class="title"><a id="_qualified_type_wildcards"></a>13.17. Qualified Type Wildcards</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Declaring a variable or parameter as <code class="literal">List&lt;? extends Person&gt;</code>, says that the list can be of all Person objects, or all objects can be of (the same) subclass of Person.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+So you can access any existing object in the List as a Person.
+</li><li class="listitem">
+However, you can’t <span class="strong"><strong>add</strong></span> new objects to the List.
+</li><li class="listitem">
+The list might contain all Person objects… or Employee objects, or Customer objects, or objects of some other subclass of Person. You’d be in trouble if you could add a Customer to a list of Employees.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Another type wildcard qualifier is <code class="literal">super</code>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">List&lt;? super Employee&gt;</code> means a List of objects of type Employee or some supertype of Employee.
+</li><li class="listitem">
+So the type is “unknown,” but in this case it could be Employee, Person, or Object.
+</li><li class="listitem">
+Because you don’t know which, for “read” access the best you can do is use only Object methods.
+</li><li class="listitem">
+But you can add new Employee objects to the list, because polymorphism allows the Employee to be treated as a Person or Object as well.
+</li></ul></div></li><li class="listitem">
+Both <code class="literal">extends</code> and <code class="literal">super</code> can be combined with the wildcard type.
+</li></ul></div><p></p><pre class="programlisting">package com.markana.demo;
+
+import java.util.*;
+
+public class GenericsWildcardExample2 {
+
+    public static void main( String[] args) {
+        // Create a List of Dog objects
+        List&lt;Dog&gt; kennel = new ArrayList&lt;Dog&gt;();
+
+        // Adding a Dog is no problem
+        kennel.add( new Dog() );
+
+        /*
+         * We can assign to objs a reference to any List as long
+         * as it contains objects of type Animal or some subclass
+         * of Animal.
+         */
+
+        List&lt;? extends Animal&gt; objs = kennel;
+
+        /*
+         * Now we know that the objects in the objs List are
+         * all Animals or all the same subclass of Animal. So
+         * we can safely access the existing objects as Animals.
+         * For example, invoking identify() on them.
+         */
+
+        for (Animal o: objs) {
+            o.identify();
+        }
+
+        /*
+         * However, it would be a compilation error to try to
+         * add new objects to the list through objs. We don't know
+         * what type of objects the List contains. They might be
+         * all Dogs, or all Cats, or all "generic" Animals.
+         */
+    }
+}</pre></div><div class="section" title="13.18. Generic Methods"><div class="titlepage"><div><div><h3 class="title"><a id="_generic_methods"></a>13.18. Generic Methods</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+A <span class="emphasis"><em>generic method</em></span> is one implemented to work with a variety of types.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The method definition contains one or more type parameters whose values are determined when the method is <span class="strong"><strong>invoked</strong></span>.
+</li><li class="listitem">
+Type parameters are listed within <code class="literal">&lt;&gt;</code> after any access modifiers and before the method return type.
+</li><li class="listitem">
+You can use any identifier for a type parameter, but single letters like <code class="literal">&lt;T&gt;</code> are used most often.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+For example:
+</p><pre class="programlisting">static &lt;T&gt; void addToCollection(T p, Collection&lt;T&gt; c) {
+    c.add(p);
+}</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In this example, the object <code class="literal">p</code> and the objects in the collection <code class="literal">c</code> must all be the same type.
+</li></ul></div></li><li class="listitem">
+You can use type wildcards, <code class="literal">extends</code>, and <code class="literal">super</code> in generic method definitions as well.
+</li></ul></div><p></p><pre class="programlisting">package com.markana.demo;
+
+import java.util.*;
+
+public class GenericsWildcardExample3 {
+
+    public static &lt;T&gt; void add1( T obj, Collection&lt;? super T&gt; c) {
+        c.add(obj);
+    }
+
+    public static &lt;U, T extends U&gt; void add2( T obj, Collection&lt;U&gt; c) {
+        c.add(obj);
+    }
+
+    public static void main( String[] args) {
+
+        // Create a List of Cat and Dog objects
+        List&lt;Animal&gt; menagerie = new ArrayList&lt;Animal&gt;();
+
+        // Add a Cat and a Dog
+        menagerie.add( new Cat() );
+        menagerie.add( new Dog() );
+
+        // And now let's try using our generic methods to add objects
+        add1( new Cat(), menagerie);
+        add2( new Dog(), menagerie);
+
+        for (Animal o: menagerie) {
+            o.identify();
+        }
+
+    }
+}</pre></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="java_net.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="threading.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="generics_collections.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Java Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#overview_of_java">1. Overview of Java</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_history_of_java">1.1. History of Java</a></span></dt><dt><span class="section"><a href="index.html#_what_is_java">1.2. What is Java?</a></span></dt><dt><span class="section"><a href="index.html#_why_java">1.3. Why Java?</a></span></dt><dt><span class="section"><a href="index.html#_java_after_15_years">1.4. Java After 15 years</a></span></dt></dl></dd><dt><span class="section"><a href="hello_world.html">2. A Java Hello World Program</a></span></dt><dd><dl><dt><span class="section"><a href="hello_world.html#_literal_helloworld_java_literal">2.1. <code class="literal">HelloWorld.java</code></a></span></dt><dt><span class="section"><a href="hello_world.html#_java_keywords">2.2. Java Keywords</a></span></dt><dt><span class="section"><a href="hello_world.html#_java_identifiers">2.3. Java Identifiers</a></span></dt><dt><span class="section"><a href="hello_world.html#_compiling_java_programs">2.4. Compiling Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_running_java_programs">2.5. Running Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_comments_in_java_code">2.6. Comments in Java Code</a></span></dt><dt><span class="section"><a href="hello_world.html#_the_literal_main_literal_method">2.7. The <code class="literal">main()</code> Method</a></span></dt></dl></dd><dt><span class="section"><a href="data_types.html">3. Data Types</a></span></dt><dd><dl><dt><span class="section"><a href="data_types.html#_declaring_and_assigning_variables">3.1. Declaring and Assigning Variables</a></span></dt><dt><span class="section"><a href="data_types.html#_java_primitive_types">3.2. Java Primitive Types</a></span></dt><dt><span class="section"><a href="data_types.html#_conversion_between_types">3.3. Conversion Between Types</a></span></dt><dt><span class="section"><a href="data_types.html#_declaring_arrays">3.4. Declaring Arrays</a></span></dt><dt><span class="section"><a href="data_types.html#_creating_and_initializing_array_objects">3.5. Creating and Initializing Array Objects</a></span></dt><dt><span class="section"><a href="data_types.html#_modifying_array_size">3.6. Modifying Array Size</a></span></dt><dt><span class="section"><a href="data_types.html#_strings">3.7. Strings</a></span></dt></dl></dd><dt><span class="section"><a href="operators.html">4. Operators</a></span></dt><dd><dl><dt><span class="section"><a href="operators.html#_arithmetic_operators">4.1. Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_shortcut_arithmetic_operators">4.2. Shortcut Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_string_concatenation">4.3. String Concatenation</a></span></dt><dt><span class="section"><a href="operators.html#_relational_operators">4.4. Relational Operators</a></span></dt><dt><span class="section"><a href="operators.html#_logical_boolean_operators">4.5. Logical Boolean Operators</a></span></dt><dt><span class="section"><a href="operators.html#_bitwise_operators">4.6. Bitwise Operators</a></span></dt><dt><span class="section"><a href="operators.html#_assignment_operators">4.7. Assignment Operators</a></span></dt><dt><span class="section"><a href="operators.html#_other_operators">4.8. Other Operators</a></span></dt><dt><span class="section"><a href="operators.html#_operator_precedence">4.9. Operator Precedence</a></span></dt></dl></dd><dt><span class="section"><a href="flow_control.html">5. Statements and Flow Control</a></span></dt><dd><dl><dt><span class="section"><a href="flow_control.html#_expressions">5.1. Expressions</a></span></dt><dt><span class="section"><a href="flow_control.html#_statements_and_blocks">5.2. Statements and Blocks</a></span></dt><dt><span class="section"><a href="flow_control.html#_local_variable_storage_the_stack">5.3. Local Variable Storage: The Stack</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_return_literal_statement">5.4. The <code class="literal">return</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_if_else_literal_statement">5.5. The <code class="literal">if-else</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement">5.6. The <code class="literal">switch</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement_cont">5.7. The <code class="literal">switch</code> Statement (cont.)</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_while_literal_loop_statement">5.8. The <code class="literal">while</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_for_literal_loop_statement">5.9. The <code class="literal">for</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_using_literal_for_literal_to_iterate_over_arrays_and_collections">5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_break_literal_statement">5.11. The <code class="literal">break</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_continue_literal_statement">5.12. The <code class="literal">continue</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_nested_loops_and_labels">5.13. Nested Loops and Labels</a></span></dt></dl></dd><dt><span class="section"><a href="object_oriented.html">6. Object Oriented Programming in Java</a></span></dt><dd><dl><dt><span class="section"><a href="object_oriented.html#_what_is_object_oriented_programming_oop">6.1. What is Object Oriented Programming (OOP)?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_why_oop">6.2. Why OOP?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_class_vs_object">6.3. Class vs. Object</a></span></dt><dt><span class="section"><a href="object_oriented.html#_classes_in_java">6.4. Classes in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_objects_in_java">6.5. Objects in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_java_memory_model">6.6. Java Memory Model</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessing_objects_through_references">6.7. Accessing Objects through References</a></span></dt><dt><span class="section"><a href="object_oriented.html#_garbage_collection">6.8. Garbage Collection</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java">6.9. Methods in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java_cont">6.10. Methods in Java (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_declarations">6.11. Method Declarations</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_signatures">6.12. Method Signatures</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_methods">6.13. Invoking Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_data_fields">6.14. Static vs. Instance Data Fields</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_methods">6.15. Static vs. Instance Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_overloading">6.16. Method Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_variable_argument_length_methods">6.17. Variable Argument Length Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors">6.18. Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors_cont">6.19. Constructors (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constants">6.20. Constants</a></span></dt><dt><span class="section"><a href="object_oriented.html#_encapsulation">6.21. Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#access_modifiers_simple">6.22. Access Modifiers: Enforcing Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessors_getters_and_mutators_setters">6.23. Accessors (Getters) and Mutators (Setters)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance">6.24. Inheritance</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_composition_and_aggregation">6.25. Inheritance, Composition, and Aggregation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_in_java">6.26. Inheritance in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_base_class_constructors">6.27. Invoking Base Class Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_vs_overloading">6.28. Overriding vs. Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism">6.29. Polymorphism</a></span></dt><dt><span class="section"><a href="object_oriented.html#_more_on_upcasting">6.30. More on Upcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_downcasting">6.31. Downcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_abstract_classes_and_methods">6.32. Abstract Classes and Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_interfaces">6.33. Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_defining_a_java_interface">6.34. Defining a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_implementing_a_java_interface">6.35. Implementing a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism_through_interfaces">6.36. Polymorphism through Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_literal_object_literal_java_8217_s_ultimate_superclass">6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_literal_object_tostring_literal">6.38. Overriding <code class="literal">Object.toString()</code></a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equality">6.39. Object Equality</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence">6.40. Object Equivalence</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence_cont">6.41. Object Equivalence (cont.)</a></span></dt></dl></dd><dt><span class="section"><a href="packaging.html">7. Packaging</a></span></dt><dd><dl><dt><span class="section"><a href="packaging.html#_why_is_packaging_needed">7.1. Why is Packaging Needed?</a></span></dt><dt><span class="section"><a href="packaging.html#_packages_in_java">7.2. Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_sub_packages_in_java">7.3. Sub-Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_package_naming_conventions">7.4. Package Naming Conventions</a></span></dt><dt><span class="section"><a href="packaging.html#_using_package_members_qualified_names">7.5. Using Package Members: Qualified Names</a></span></dt><dt><span class="section"><a href="packaging.html#_importing_package_members">7.6. Importing Package Members</a></span></dt><dt><span class="section"><a href="packaging.html#_static_imports">7.7. Static Imports</a></span></dt><dt><span class="section"><a href="packaging.html#access_modifiers_complete">7.8. Access Modifiers and Packages</a></span></dt><dt><span class="section"><a href="packaging.html#_the_class_path">7.9. The Class Path</a></span></dt><dt><span class="section"><a href="packaging.html#_java_archive_jar_files">7.10. Java Archive (JAR) Files</a></span></dt><dt><span class="section"><a href="packaging.html#_the_literal_jar_literal_command_line_tool_examples">7.11. The <code class="literal">jar</code> Command-Line Tool Examples</a></span></dt></dl></dd><dt><span class="section"><a href="javadoc.html">8. JavaDoc</a></span></dt><dd><dl><dt><span class="section"><a href="javadoc.html#_what_is_javadoc">8.1. What is JavaDoc?</a></span></dt><dt><span class="section"><a href="javadoc.html#_reading_doc_comments_java_api">8.2. Reading Doc Comments (Java API)</a></span></dt><dt><span class="section"><a href="javadoc.html#_defining_javadoc">8.3. Defining JavaDoc</a></span></dt><dt><span class="section"><a href="javadoc.html#_doc_comment_tags">8.4. Doc Comment Tags</a></span></dt><dt><span class="section"><a href="javadoc.html#_generating_doc_comment_output">8.5. Generating Doc Comment Output</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">9. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_what_are_exceptions">9.1. What are Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_why_use_exceptions">9.2. Why Use Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_built_in_exceptions">9.3. Built-In Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_types">9.4. Exception Types</a></span></dt><dt><span class="section"><a href="exceptions.html#_checked_vs_unchecked_exceptions">9.5. Checked vs. Unchecked Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_lifecycle">9.6. Exception Lifecycle</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions">9.7. Handling Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions_cont">9.8. Handling Exceptions (cont.)</a></span></dt><dt><span class="section"><a href="exceptions.html#_grouping_exceptions">9.9. Grouping Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_throwing_exception">9.10. Throwing Exception</a></span></dt><dt><span class="section"><a href="exceptions.html#_creating_an_exception_class">9.11. Creating an Exception Class</a></span></dt><dt><span class="section"><a href="exceptions.html#_nesting_exceptions">9.12. Nesting Exceptions</a></span></dt></dl></dd><dt><span class="section"><a href="java_lang.html">10. The <code class="literal">java.lang</code> Package</a></span></dt><dd><dl><dt><span class="section"><a href="java_lang.html#_primitive_wrappers">10.1. Primitive Wrappers</a></span></dt><dt><span class="section"><a href="java_lang.html#_string_and_stringbuilder">10.2. String and StringBuilder</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_math_class">10.3. The Math Class</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_system_class">10.4. The System Class</a></span></dt></dl></dd><dt><span class="section"><a href="input_output.html">11. Input/Output</a></span></dt><dd><dl><dt><span class="section"><a href="input_output.html#_representing_file_paths">11.1. Representing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_managing_file_paths">11.2. Managing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_input_output_class_hierarchy">11.3. Input/Output Class Hierarchy</a></span></dt><dt><span class="section"><a href="input_output.html#_byte_streams">11.4. Byte Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_character_streams">11.5. Character Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_exception_handling_in_java_i_o">11.6. Exception Handling in Java I/O</a></span></dt><dt><span class="section"><a href="input_output.html#_java_file_i_o_classes">11.7. Java File I/O Classes</a></span></dt><dt><span class="section"><a href="input_output.html#_easy_text_output_printwriter_printstream">11.8. Easy Text Output: PrintWriter/PrintStream</a></span></dt><dt><span class="section"><a href="input_output.html#_reading_from_the_terminal">11.9. Reading from the Terminal</a></span></dt><dt><span class="section"><a href="input_output.html#_filtered_streams">11.10. Filtered Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_object_serialization">11.11. Object Serialization</a></span></dt></dl></dd><dt><span class="section"><a href="java_net.html">12. <code class="literal">java.net</code></a></span></dt><dd><dl><dt><span class="section"><a href="java_net.html#_literal_java_net_inetaddress_literal">12.1. <code class="literal">java.net.InetAddress</code></a></span></dt><dt><span class="section"><a href="java_net.html#_url_connections">12.2. URL/Connections</a></span></dt><dt><span class="section"><a href="java_net.html#_tcp_sockets">12.3. TCP Sockets</a></span></dt></dl></dd><dt><span class="section"><a href="generics_collections.html">13. Java Collections and Generics</a></span></dt><dd><dl><dt><span class="section"><a href="generics_collections.html#collections">13.1. The Java Collections Framework</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collection_interface">13.2. The Collection Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_iterating_over_a_collection">13.3. Iterating Over a Collection</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_list_interface">13.4. The List Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_list">13.5. Classes Implementing List</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_set_and_sortedset_interfaces">13.6. The Set and SortedSet Interfaces</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_set">13.7. Classes Implementing Set</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_queue_interface">13.8. The Queue Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_map_interface">13.9. The Map Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_retrieving_map_views">13.10. Retrieving Map Views</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_map">13.11. Classes Implementing Map</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collections_class">13.12. The Collections Class</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_safety_in_java_collections">13.13. Type Safety in Java Collections</a></span></dt><dt><span class="section"><a href="generics_collections.html#_java_generics">13.14. Java Generics</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generics_and_polymorphism">13.15. Generics and Polymorphism</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_wildcards">13.16. Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_qualified_type_wildcards">13.17. Qualified Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generic_methods">13.18. Generic Methods</a></span></dt></dl></dd><dt><span class="section"><a href="threading.html">14. Threading</a></span></dt><dd><dl><dt><span class="section"><a href="threading.html#_runnable_and_thread">14.1. Runnable And Thread</a></span></dt><dt><span class="section"><a href="threading.html#_thread_synchronization">14.2. Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_more_thread_synchronization">14.3. More Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_concurrency_features">14.4. Java 5 Concurrency Features</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_pre_java_5">14.5. Thread Scheduling Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_in_java_5">14.6. Thread Scheduling In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_8217_s_literal_executorservice_literal">14.7. Java 5’s <code class="literal">ExecutorService</code></a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_pre_java_5">14.8. Getting Results From Threads Pre Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_in_java_5">14.9. Getting Results From Threads In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_pre_java_5">14.10. Thread Sync Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_in_java_5_with_locks">14.11. Thread Sync In Java 5 With Locks</a></span></dt><dt><span class="section"><a href="threading.html#_benefits_of_java_5_locks">14.12. Benefits Of Java 5 Locks</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_conditions">14.13. Java 5 Conditions</a></span></dt><dt><span class="section"><a href="threading.html#_atomics_in_java_5">14.14. Atomics In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_other_java_5_concurrency_features">14.15. Other Java 5 Concurrency Features</a></span></dt></dl></dd><dt><span class="section"><a href="java_util.html">15. Additional Java Features</a></span></dt><dd><dl><dt><span class="section"><a href="java_util.html#_the_date_class">15.1. The Date Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_calendar_class">15.2. The Calendar Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_timezone_class">15.3. The TimeZone Class</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates">15.4. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates_2">15.5. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#enum">15.6. Typesafe Enums</a></span></dt><dt><span class="section"><a href="java_util.html#_typesafe_enums_cont">15.7. Typesafe Enums (cont.)</a></span></dt><dt><span class="section"><a href="java_util.html#_enumset_and_enummap">15.8. EnumSet and EnumMap</a></span></dt><dt><span class="section"><a href="java_util.html#_annotations">15.9. Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_using_annotations">15.10. Using Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_standard_java_annotations">15.11. Standard Java Annotations</a></span></dt></dl></dd><dt><span class="section"><a href="_java_native_interface_jni.html">16. Java Native Interface (JNI)</a></span></dt><dd><dl><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_overview">16.1. JNI Overview</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_components">16.2. JNI Components</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_java">16.3. JNI Development (Java)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_c">16.4. JNI Development (C)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_compile">16.5. JNI Development (Compile)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_type_conversion">16.6. Type Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_native_method_arguments">16.7. Native Method Arguments</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_string_conversion">16.8. String Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_array_conversion">16.9. Array Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_throwing_exceptions_in_the_native_world">16.10. Throwing Exceptions In The Native World</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_access_properties_and_methods_from_native_code">16.11. Access Properties And Methods From Native Code</a></span></dt></dl></dd><dt><span class="section"><a href="jdbc.html">17. <code class="literal">java.sql</code></a></span></dt><dd><dl><dt><span class="section"><a href="jdbc.html#_jdbc_overview">17.1. JDBC Overview</a></span></dt><dt><span class="section"><a href="jdbc.html#_jdbc_drivers">17.2. JDBC Drivers</a></span></dt><dt><span class="section"><a href="jdbc.html#_getting_a_jdbc_literal_connection_literal">17.3. Getting a JDBC <code class="literal">Connection</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_preparing_a_literal_statement_literal">17.4. Preparing a <code class="literal">Statement</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_processing_literal_resultset_literal">17.5. Processing <code class="literal">ResultSet</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_using_literal_resultsetmetadata_literal">17.6. Using <code class="literal">ResultSetMetaData</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_updates">17.7. Updates</a></span></dt></dl></dd><dt><span class="section"><a href="xml_processing.html">18. XML Processing</a></span></dt><dd><dl><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_java">18.1. Parsing XML with Java</a></span></dt><dt><span class="section"><a href="xml_processing.html#_event_driven_approach">18.2. Event-Driven Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_sax">18.3. Overview of SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_sax">18.4. Parsing XML with SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_object_model_approach">18.5. Object-Model Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_dom">18.6. Overview of DOM</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_dom">18.7. Parsing XML with DOM</a></span></dt></dl></dd><dt><span class="section"><a href="design_patterns.html">19. Design Patterns</a></span></dt><dd><dl><dt><span class="section"><a href="design_patterns.html#_what_are_design_patterns">19.1. What are Design Patterns?</a></span></dt><dt><span class="section"><a href="design_patterns.html#_singleton">19.2. Singleton</a></span></dt><dt><span class="section"><a href="design_patterns.html#_factory_method">19.3. Factory Method</a></span></dt><dt><span class="section"><a href="design_patterns.html#_abstract_factory">19.4. Abstract Factory</a></span></dt><dt><span class="section"><a href="design_patterns.html#_adapter">19.5. Adapter</a></span></dt><dt><span class="section"><a href="design_patterns.html#_composite">19.6. Composite</a></span></dt><dt><span class="section"><a href="design_patterns.html#_decorator">19.7. Decorator</a></span></dt><dt><span class="section"><a href="design_patterns.html#_chain_of_responsibility">19.8. Chain of Responsibility</a></span></dt><dt><span class="section"><a href="design_patterns.html#_observer_publish_subscribe">19.9. Observer / Publish-Subscribe</a></span></dt><dt><span class="section"><a href="design_patterns.html#_strategy">19.10. Strategy</a></span></dt><dt><span class="section"><a href="design_patterns.html#_template">19.11. Template</a></span></dt><dt><span class="section"><a href="design_patterns.html#_emphasis_role_strong_d_emphasis_ata_emphasis_role_strong_a_emphasis_ccess_emphasis_role_strong_o_emphasis_bject">19.12. <span class="strong"><strong>D</strong></span>ata <span class="strong"><strong>A</strong></span>ccess <span class="strong"><strong>O</strong></span>bject</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/generics_collections.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

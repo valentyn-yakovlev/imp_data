@@ -1,0 +1,5 @@
+sudo /bin/mount /dev/sda1	/home/sandip/mount/cdrive ;
+sudo /bin/mount /dev/sda5	/home/sandip/mount/ddrive ;
+sudo /bin/mount /dev/sda6	/home/sandip/mount/edrive ;
+modprobe -r kvm_intel
+exit

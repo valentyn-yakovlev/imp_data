@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/css_styling.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jquery Tutorial : Css Styling  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jquery, tutorial, :, css, styling" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jquery Tutorial : Css Styling </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Jquery Tutorial </a>
+  &raquo;
+  Css Styling </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="dom_manipulation.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="events.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="4. CSS Styling and jQuery"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="css_styling"></a>4. CSS Styling and jQuery</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In this chapter, you are going to learn how to read and/or modify the CSS properties of element(s).
+</li></ul></div><div class="section" title="4.1. Reading And Modifying CSS Properties"><div class="titlepage"><div><div><h3 class="title"><a id="_reading_and_modifying_css_properties"></a>4.1. Reading And Modifying CSS Properties</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Accessing CSS properties in plain old JavaScript is really a pain because of browser inconsistencies:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">getComputedStyle()</code> method in standards-based browsers
+</li><li class="listitem">
+<code class="literal">currentStyle</code> and <code class="literal">runtimeStyle</code> properties in Internet Explorer
+</li></ul></div></li><li class="listitem"><p class="simpara">
+As mentioned in the introduction chapter, some CSS properties such as <code class="literal">float</code> are named differently in the DOM depending on the browser (<code class="literal">styleFloat</code> for IE and <code class="literal">cssFloat</code> for W3C standards-compliant browsers).
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>jQuery handles these browser inconsistencies. For example, it recognizes <code class="literal">float</code>, <code class="literal">styleFloat</code>, and <code class="literal">cssFloat</code> as synonyms for the same property.</p></td></tr></table></div></li></ul></div></div><div class="section" title="4.2. Reading And Modifying CSS Properties"><div class="titlepage"><div><div><h3 class="title"><a id="_reading_and_modifying_css_properties_2"></a>4.2. Reading And Modifying CSS Properties</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery provides the <code class="literal">.css()</code> method to allow you to get or set the CSS properties of element(s)
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You can access CSS properties using their CSS names (e.g., <code class="literal">background-color</code>) or DOM name (e.g., <code class="literal">backgroundColor</code>).
+</li></ul></div></li><li class="listitem"><p class="simpara">
+<code class="literal">.css(propertyName)</code> returns the value of the CSS property for the first element of the selection:
+</p><pre class="programlisting">$('div').css('backgroundColor');</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You cannot retrieve shorthand CSS properties such as <code class="literal">margin</code>, <code class="literal">border</code>, and <code class="literal">background</code> using the <code class="literal">.css()</code> method. You must request individual properties, such as <code class="literal">margin-left</code>, <code class="literal">border-left-width</code>, and <code class="literal">background-color</code>.</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+<code class="literal">.css('propertyName','propertyValue')</code> sets the CSS property to the given value for all elements in the selection.
+</p><pre class="programlisting">$('.header').css('backgroundColor','yellow');</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+If you need to set more than one property at a time on a selection, you can pass the <code class="literal">.css()</code> method an object literal containing CSS properties along with their values:
+</p><pre class="programlisting">$('.article').css({
+    'backgroundColor':  '#C2F5BF',
+    'borderColor':      'yellow',
+    'marginBottom':     '10px'
+});</pre></li></ul></div></li></ul></div><p></p><p>When you use <code class="literal">.css()</code> to change a property, jQuery modifies the element’s <code class="literal">style</code> property. For example:</p><pre class="literallayout">$('#mydiv').css('color', 'green');</pre><p>is equivalent to:</p><pre class="literallayout">document.getElementById('mydiv').style.color = 'green';</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can use shorthand CSS properties (e.g., <code class="literal">margin</code>, <code class="literal">background</code>, <code class="literal">border</code>) only when <span class="emphasis"><em>setting</em></span> properties. For example, jQuery supports:</p><pre class="literallayout">$selection.css('border-left', '5px solid #ccc');</pre><p>For retrieving property values, you must specify individual property names. For example, if you want to retrieve the rendered margin, use: <code class="literal">$selection.css('marginTop')</code>, <code class="literal">$selection.css('marginRight')</code>, and so on.</p></td></tr></table></div></div><div class="section" title="4.3. Removing CSS Properties"><div class="titlepage"><div><div><h3 class="title"><a id="_removing_css_properties"></a>4.3. Removing CSS Properties</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Setting the value of a style property to an empty string removes that property from an element if it has already been directly applied:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In the HTML <code class="literal">style</code> attribute
+</li><li class="listitem">
+Through jQuery’s <code class="literal">.css() method</code>
+</li><li class="listitem">
+Through direct DOM manipulation of the <code class="literal">style</code> property
+</li></ul></div></li><li class="listitem"><p class="simpara">
+This technique does <span class="strong"><strong>not</strong></span> remove a style that has been applied with a CSS rule in a stylesheet or <code class="literal">&lt;style&gt;</code> element.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+jQuery does not provide methods for directly modifying CSS rules.
+</li></ul></div></li></ul></div></div><div class="section" title="4.4. CSS Classes"><div class="titlepage"><div><div><h3 class="title"><a id="_css_classes"></a>4.4. CSS Classes</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+We have just discussed how you can use the <code class="literal">.css()</code> method to quickly change CSS properties, however this one presents one main drawback:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+When modifying CSS properties, we modify the <code class="literal">style</code> attribute of each element in the selection.
+</li><li class="listitem">
+This mixes content and presentation, which is poor design.
+</li></ul></div></li><li class="listitem">
+To keep your code clean and maintainable, externalize the presentation in a CSS class that you can then apply to or remove from your selection of elements.
+</li><li class="listitem"><p class="simpara">
+jQuery provides you with the ability to apply or remove classes to a selection of elements using three main methods:
+</p><div class="variablelist"><dl><dt><span class="term">
+<code class="literal">.addClass(className)</code>
+</span></dt><dd>
+Dynamically adds one or more classes to each of the elements in the selection.
+</dd><dt><span class="term">
+<code class="literal">.removeClass(className)</code>
+</span></dt><dd>
+Dynamically removes one or more classes to each of the elements in the selection.
+</dd><dt><span class="term">
+<code class="literal">.toggleClass(className)</code>
+</span></dt><dd>
+Dynamically toggles the presence of one or more classes to each of the elements in the selection.
+</dd></dl></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>For each of these methods, you may provide a space-separated list of class names.</p></td></tr></table></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+You can also use <code class="literal">.hasClass(className)</code> to test for the presence of a class on <span class="strong"><strong>any</strong></span> of the elements in the selection.
+</li></ul></div></div><div class="section" title="4.5. Element Dimensions"><div class="titlepage"><div><div><h3 class="title"><a id="_element_dimensions"></a>4.5. Element Dimensions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery provides several methods for querying the size of an element.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The value returned is the <span class="emphasis"><em>computed</em></span> size of the element, not necessarily the size specified in CSS.
+</li><li class="listitem">
+The value returned is numeric, a unit-less pixel value (e.g., 400, not "400px").
+</li><li class="listitem"><p class="simpara">
+When applied to a set of elements, the size of only the first element is returned.
+</p><div class="horizontal"><table cellpadding="4px" style="border: none;"><colgroup><col></col><col></col></colgroup><tbody valign="top"><tr><td style="" valign="top">
+<p>
+<code class="literal">.height()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The height of the element itself
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">.innerHeight()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The height including padding
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">.outerHeight()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The height including padding and border, optionally including margin if you also provide a boolean <code class="literal">true</code> argument
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">.width()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The width of the element itself
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">.innerWidth()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The width including padding
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">.outerWidth()</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The width including padding and border, optionally including margin if you also provide a boolean <code class="literal">true</code> argument
+</p>
+</td></tr></tbody></table></div></li></ul></div></li><li class="listitem"><p class="simpara">
+The <code class="literal">height()</code> and <code class="literal">width()</code> methods can also act as setters, changing the element size, if you provide a value as an argument.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+If you provide only a numeric value, jQuery interprets it as pixel units.
+</li><li class="listitem">
+If you provide a string value, you may use any valid CSS measurement (such as "100px", "50%", or "auto").
+</li><li class="listitem">
+When applied to a set of elements, it changes the size of all elements in the selection.
+</li></ul></div></li></ul></div><p></p><p>In contrast, the <code class="literal">.css('height')</code> and <code class="literal">.css('width')</code> methods return values with units intact (for example, "400px").</p><p>jQuery 1.4.1 and later allows you to provide a function as an argument to <code class="literal">.height()</code> and <code class="literal">.width()</code>. The function is invoked for each element in the selection, and it receives two arguments: the index position of the element in the set and the current height/width of that element. The function should return the new height/width for that element.</p></div><div class="section" title="4.6. Element Position"><div class="titlepage"><div><div><h3 class="title"><a id="_element_position"></a>4.6. Element Position</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">.position()</code> method returns the position object of the first element in the selection relative to its first positioned ancestor (the <span class="emphasis"><em>offset parent</em></span>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It returns an object containing the properties <code class="literal">top</code> and <code class="literal">left</code>, with numeric values representing pixel offsets.
+</li><li class="listitem">
+This method can be used only as a getter.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The <code class="literal">.offset()</code> method returns the position object of the first element in the selection <span class="emphasis"><em>relative to the document</em></span>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It returns an object containing the properties <code class="literal">top</code> and <code class="literal">left</code>, with numeric values representing pixel offsets.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can also use <code class="literal">.offset()</code> to <span class="emphasis"><em>change</em></span> the position of the selection.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Provide an object containing the properties <code class="literal">top</code> and <code class="literal">left</code>, which are integers indicating the new top and left coordinates for the elements.
+</li><li class="listitem">
+If the element’s <code class="literal">position</code> style property is currently <code class="literal">static</code>, the <code class="literal">.offset()</code> method changes it to <code class="literal">relative</code> to allow for this repositioning.
+</li></ul></div></li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="dom_manipulation.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="events.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="css_styling.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana jQuery Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction To jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_useful_learning_resources">1.1. Useful Learning Resources</a></span></dt><dt><span class="section"><a href="index.html#_history_of_jquery">1.2. History Of jQuery</a></span></dt><dt><span class="section"><a href="index.html#_what_is_jquery">1.3. What is jQuery?</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_custom_javascript">1.4. jQuery vs Custom JavaScript</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_other_javascript_libraries">1.5. jQuery vs Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="index.html#_where_do_i_start">1.6. Where Do I Start?</a></span></dt><dt><span class="section"><a href="index.html#_download_the_library">1.7. Download the Library</a></span></dt><dt><span class="section"><a href="index.html#_using_google_content_deliver_network_cdn">1.8. Using Google Content Deliver Network (CDN)</a></span></dt><dt><span class="section"><a href="index.html#_the_literal_jquery_literal_function_object">1.9. The <code class="literal">jQuery</code> Function Object</a></span></dt><dt><span class="section"><a href="index.html#_is_the_document_ready">1.10. Is The Document Ready?</a></span></dt><dt><span class="section"><a href="index.html#_where_to_run_your_code">1.11. Where to Run Your Code?</a></span></dt><dt><span class="section"><a href="index.html#_execute_some_jquery_code">1.12. Execute Some jQuery Code</a></span></dt></dl></dd><dt><span class="section"><a href="selections_and_dom_traversing.html">2. Selection and DOM Traversal</a></span></dt><dd><dl><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection">2.1. Selection</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_basic_selectors">2.2. Basic Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_hierarchy_selectors">2.3. Hierarchy Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection_by_attribute">2.4. Selection By Attribute</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_form_selectors">2.5. Form Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_position_filters">2.6. Position Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_other_filters">2.7. Other Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_jquery_method_chaining">2.8. jQuery Method Chaining</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_dom_traversal">2.9. DOM Traversal</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_filter_methods">2.10. Filter Methods</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_advanced_method_chaining">2.11. Advanced Method Chaining</a></span></dt></dl></dd><dt><span class="section"><a href="dom_manipulation.html">3. DOM And Attributes Manipulation</a></span></dt><dd><dl><dt><span class="section"><a href="dom_manipulation.html#_dom_manipulation">3.1. DOM Manipulation</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_creating_elements">3.2. Creating Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_elements">3.3. Inserting Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_before_or_after_another_element">3.4. Inserting an Element Before or After Another Element</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_as_the_first_or_last_child_of_a_parent">3.5. Inserting an Element as the First or Last Child of a Parent</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_mass_insertion">3.6. Mass Insertion</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_moving_elements">3.7. Moving Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_cloning_copying_elements">3.8. Cloning (Copying) Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_removing_elements">3.9. Removing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_replacing_elements">3.10. Replacing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_element_content_html_vs_text">3.11. Element Content: HTML vs Text</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_other_element_attributes">3.12. Other Element Attributes</a></span></dt></dl></dd><dt><span class="section"><a href="css_styling.html">4. CSS Styling and jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties">4.1. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties_2">4.2. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_removing_css_properties">4.3. Removing CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_css_classes">4.4. CSS Classes</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_dimensions">4.5. Element Dimensions</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_position">4.6. Element Position</a></span></dt></dl></dd><dt><span class="section"><a href="events.html">5. Events</a></span></dt><dd><dl><dt><span class="section"><a href="events.html#_events_overview">5.1. Events Overview</a></span></dt><dt><span class="section"><a href="events.html#_binding_an_event_handler">5.2. Binding An Event Handler</a></span></dt><dt><span class="section"><a href="events.html#_binding_shortcut_methods">5.3. Binding Shortcut Methods</a></span></dt><dt><span class="section"><a href="events.html#_unbinding_handlers_and_8220_one_shot_8221_handlers">5.4. Unbinding Handlers and “One-Shot” Handlers</a></span></dt><dt><span class="section"><a href="events.html#_the_event_object">5.5. The Event Object</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation">5.6. Event Delegation</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation_and_jquery">5.7. Event Delegation And jQuery</a></span></dt><dt><span class="section"><a href="events.html#_literal_live_literal_vs_literal_delegate_literal">5.8. <code class="literal">.live()</code> vs <code class="literal">.delegate()</code></a></span></dt></dl></dd><dt><span class="section"><a href="effects_and_custom_animations.html">6. Effects and Custom Animations</a></span></dt><dd><dl><dt><span class="section"><a href="effects_and_custom_animations.html#_jquery_built_in_effects">6.1. jQuery Built-in Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_showing_or_hiding_elements">6.2. Showing or Hiding Elements</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_fading_effects">6.3. Fading Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_sliding_effects">6.4. Sliding Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_creating_your_own_animations">6.5. Creating Your Own Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_notes">6.6. Animation Notes</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_queues">6.7. Animation Queues</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_stopping_animations">6.8. Stopping Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_additional_animation_controls">6.9. Additional Animation controls</a></span></dt></dl></dd><dt><span class="section"><a href="ajax.html">7. Ajax</a></span></dt><dd><dl><dt><span class="section"><a href="ajax.html#_what_is_ajax">7.1. What Is Ajax?</a></span></dt><dt><span class="section"><a href="ajax.html#_limitations_of_ajax">7.2. Limitations Of Ajax</a></span></dt><dt><span class="section"><a href="ajax.html#_load_html_content_the_literal_load_literal_method">7.3. Load HTML Content: The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_hijax_with_jquery">7.4. Hijax With jQuery</a></span></dt><dt><span class="section"><a href="ajax.html#_select_in_detail_what_to_load">7.5. Select In Detail What To Load</a></span></dt><dt><span class="section"><a href="ajax.html#_advanced_loading_using_the_literal_load_literal_method">7.6. Advanced Loading Using The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_json_and_jsonp">7.7. JSON and JSONP</a></span></dt><dt><span class="section"><a href="ajax.html#_load_json_data_the_literal_getjson_literal_method">7.8. Load JSON Data: The <code class="literal">.getJSON()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_the_main_ajax_method_literal_ajax_literal">7.9. The Main Ajax Method: <code class="literal">.ajax()</code></a></span></dt><dt><span class="section"><a href="ajax.html#_ajax_global_settings">7.10. Ajax Global Settings</a></span></dt><dt><span class="section"><a href="ajax.html#_error_handling">7.11. Error Handling</a></span></dt></dl></dd><dt><span class="section"><a href="plugins.html">8. Plugins</a></span></dt><dd><dl><dt><span class="section"><a href="plugins.html#_popular_plugins">8.1. Popular Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_easing_plugin">8.2. Easing Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_slideshow_plugins">8.3. Slideshow Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_the_colorbox_plugin">8.4. The ColorBox Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_cycle_plugin">8.5. The Cycle Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_jcrop_plugin">8.6. Jcrop Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_validation_plugin">8.7. The Validation Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_datatable_plugin">8.8. DataTable Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_why">8.9. Creating Your Own Plugin: Why?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_how">8.10. Creating Your Own Plugin: How?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_best_practices">8.11. Creating Your Own Plugin: Best Practices</a></span></dt></dl></dd><dt><span class="section"><a href="jquery_ui.html">9. jQuery UI</a></span></dt><dd><dl><dt><span class="section"><a href="jquery_ui.html#_what_is_jquery_ui">9.1. What Is jQuery UI?</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_getting_started">9.2. Getting Started</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_widgets">9.3. jQuery Widgets</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_accordion_widget">9.4. The Accordion Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_tabs_widget">9.5. The Tabs Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_dialogs">9.6. Dialogs</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_controls">9.7. jQuery UI Controls</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_datepicker">9.8. The Datepicker</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_slider">9.9. The Slider</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_progress_bar">9.10. The Progress Bar</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_interactions">9.11. Jquery UI Interactions</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop">9.12. Drag &amp; Drop</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop_example">9.13. Drag &amp; Drop: Example</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_sortable_elements">9.14. Sortable elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_selectable_elements">9.15. Selectable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_resizable_elements">9.16. Resizable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_animation">9.17. jQuery UI animation</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_concepts.html">10. Advanced Concepts</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_concepts.html#_best_practices_loops">10.1. Best Practices: Loops</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_avoid_anonymous_functions">10.2. Best Practices: Avoid Anonymous Functions</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_optimizing_selectors">10.3. Best Practices: Optimizing Selectors</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_jquery_utility_methods">10.4. jQuery Utility Methods</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_avoiding_conflict_with_other_javascript_libraries">10.5. Avoiding Conflict With Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_queuing_and_dequeuing_animations">10.6. Queuing And Dequeuing Animations</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/css_styling.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

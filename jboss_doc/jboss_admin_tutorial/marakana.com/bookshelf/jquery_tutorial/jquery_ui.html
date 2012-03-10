@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/jquery_ui.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jquery Tutorial : Jquery Ui  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jquery, tutorial, :, jquery, ui" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jquery Tutorial : Jquery Ui </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Jquery Tutorial </a>
+  &raquo;
+  Jquery Ui </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="plugins.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="advanced_concepts.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="9. jQuery UI"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="jquery_ui"></a>9. jQuery UI</h2></div></div></div><div class="section" title="9.1. What Is jQuery UI?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_is_jquery_ui"></a>9.1. What Is jQuery UI?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+jQuery UI is a library built on top of jQuery.
+</li><li class="listitem"><p class="simpara">
+It provides advanced:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+User-interface widgets (date picker, slider, progress bar, etc…)
+</li><li class="listitem">
+Effects (color animation, shaking effect, explode effect, etc…)
+</li><li class="listitem">
+Interactions (drag &amp; drop, sorting, etc…)
+</li></ul></div></li><li class="listitem">
+jQuery UI is managed by and is part of the "jQuery Project" ⇒ <a class="ulink" href="http://jquery.org/" target="_top">http://jquery.org/</a>
+</li></ul></div></div><div class="section" title="9.2. Getting Started"><div class="titlepage"><div><div><h3 class="title"><a id="_getting_started"></a>9.2. Getting Started</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+To start using jQuery UI, you need to download the library first.
+</li><li class="listitem"><p class="simpara">
+From the jQuery UI homepage, you have many choices:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Download the whole library and host it along with your web site.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can also use the version host by Google, accessible at this location: <a class="ulink" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js" target="_top">https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js</a></p></td></tr></table></div></li><li class="listitem">
+Or you can pick which features you need from jQuery UI by clicking on "Build custom download".
+</li></ul></div></li><li class="listitem">
+If you are using the Google hosted jQuery library, you need to download a theme (CSS file along with images) to apply on the components you are going to use soon.
+</li><li class="listitem"><p class="simpara">
+From this page <a class="ulink" href="http://jqueryui.com/themeroller/" target="_top">http://jqueryui.com/themeroller/</a>, you can:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Create your own theme using the ThemeRoller
+</li><li class="listitem">
+Choose an existing theme, ready to be used
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Finally, you need to include the CSS and the library in the HTML file.
+</p><pre class="programlisting">&lt;link href="jquery-ui-1.8.10.custom.css" type="text/css" rel="stylesheet"/&gt;
+&lt;script src="libs/jquery-ui-1.8.10.custom.min.js"&gt;&lt;/script&gt;</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Do not forget to include the <code class="literal">images</code> folder included with the theme, this folder and the CSS should be contained in the same folder.</p></td></tr></table></div></li></ul></div></div><div class="section" title="9.3. jQuery Widgets"><div class="titlepage"><div><div><h3 class="title"><a id="_jquery_widgets"></a>9.3. jQuery Widgets</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery UI provides you a lot of cool UI widgets that:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Enhance navigation (such as accordion and tabs)
+</li><li class="listitem">
+Add some forms controls (such as autocomplete, special button, datepicker and slider)
+</li><li class="listitem">
+Other controls (such as progress bar and dialogs)
+</li></ul></div></li></ul></div></div><div class="section" title="9.4. The Accordion Widget"><div class="titlepage"><div><div><h3 class="title"><a id="_the_accordion_widget"></a>9.4. The Accordion Widget</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In your HTML page you might have a part representing a list of "headers" along with their related section of information.
+</li><li class="listitem"><p class="simpara">
+The Accordion widget turns this part of the page into an accordion widget where only one section can been seen at a time:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_accordion.png" alt="images/jquery_ui_accordion.png"></img></div></div></li><li class="listitem"><p class="simpara">
+Of course, you could implement your own accordion using the core jQuery library, however the Accordion widget gives you a lot of options, including:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Changing icons
+</li><li class="listitem">
+Choosing event that trigger section opening
+</li><li class="listitem">
+Settings sections height to the height of the biggest section or not
+</li><li class="listitem">
+Etc…
+</li></ul></div></li><li class="listitem">
+This widget has some HTML semantics requirements.
+</li><li class="listitem"><p class="simpara">
+The container that is being turned into an accordion must contain pairs of "headers" along with their sections like this:
+</p><pre class="programlisting">&lt;div id="accordion"&gt;
+    &lt;h3&gt;&lt;a href="#"&gt;First header&lt;/a&gt;&lt;/h3&gt; <a id="CO18-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    &lt;div&gt;First content&lt;/div&gt; <a id="CO18-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    &lt;h3&gt;&lt;a href="#"&gt;Second header&lt;/a&gt;&lt;/h3&gt; <a id="CO18-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    &lt;div&gt;Second content&lt;/div&gt; <a id="CO18-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+&lt;/div&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO18-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO18-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+A "header" along with its section of information
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO18-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> <a href="#CO18-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Another "header" and information pair
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+As soon as you have the right markup, you are ready to apply the accordion to the main element containing header/section pairs (here in this example: <code class="literal">&lt;div id="accordion"&gt;</code>):
+</p><pre class="programlisting">$('#accordion').accordion({ header:'h3' }); // <a id="CO19-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO19-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">accordion</code> method takes an object as a parameter. This component is flexible and you can specify many options such as the <code class="literal">header</code> option that tells the accordion widget to consider <code class="literal">&lt;h3&gt;</code> elements as headers
+</td></tr></table></div></li></ul></div></div><div class="section" title="9.5. The Tabs Widget"><div class="titlepage"><div><div><h3 class="title"><a id="_the_tabs_widget"></a>9.5. The Tabs Widget</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Tabs are used to separate the content in different sections while saving space on the page, and allows users to easily switch from one section of content to another.
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_tabs.png" alt="images/jquery_ui_tabs.png"></img></div></div></li><li class="listitem">
+Using specific semantics on the HTML side, you can easily turn parts of your page into tabs.
+</li><li class="listitem"><p class="simpara">
+Let us take a look at this example:
+</p><pre class="programlisting">&lt;div id="tabs"&gt;
+    &lt;ul&gt; <a id="CO20-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+        &lt;li&gt;&lt;a href="#tabs-1"&gt;First&lt;/a&gt;&lt;/li&gt; <a id="CO20-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+        &lt;li&gt;&lt;a href="#tabs-2"&gt;Second&lt;/a&gt;&lt;/li&gt; <a id="CO20-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+        &lt;li&gt;&lt;a href="#tabs-3"&gt;Third&lt;/a&gt;&lt;/li&gt; <a id="CO20-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+    &lt;/ul&gt;
+    &lt;div id="tabs-1"&gt; <a id="CO20-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+      Lorem ipsum dolor....
+    &lt;/div&gt;
+    &lt;div id="tabs-2"&gt; <a id="CO20-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+      Phasellus mattis tincidunt...
+    &lt;/div&gt;
+    &lt;div id="tabs-3"&gt; <a id="CO20-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img>
+      Nam dui erat...
+      &lt;/div&gt;
+&lt;/div&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO20-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This is the element containing the tabs
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO20-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> <a href="#CO20-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> <a href="#CO20-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Each tab has an anchor to its corresponding element (the <code class="literal">&lt;div&gt;</code> in this example)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO20-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> <a href="#CO20-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> <a href="#CO20-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> </p></td><td valign="top" align="left">
+These elements represent the content for each tab
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Now on the JavaScript side, you would just have to call the <code class="literal">.tab()</code> method on the element containing the tabs and content:
+</p><pre class="programlisting">$('#tabs').tabs();</pre></li><li class="listitem"><p class="simpara">
+There are a lot of options for this Tab widget that can be found at <a class="ulink" href="http://jqueryui.com/demos/tabs/#options" target="_top">http://jqueryui.com/demos/tabs/#options</a>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+These options would be passed to the Tabs widget like this:
+</p><pre class="screen">$('#tabs').tabs({
+  option1: 'value',
+  option2: 'value'
+});</pre></li></ul></div></li><li class="listitem"><p class="simpara">
+The following are the events that you can use to listen on the Tabs widget:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+tabsselect, tabsload and tabsshow (fired in this exact same order)
+</li><li class="listitem">
+tabsadd and tabsremove
+</li><li class="listitem"><p class="simpara">
+tabsenable and tabsdisable
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Event listeners can directly be defined when creating the tab element. For instance for the <code class="literal">tabsselect</code> event:</p></td></tr></table></div><pre class="programlisting">$('#tabs').tabs({
+  select: function(event, ui) { ... } // <a id="CO21-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO21-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The ui object contains several properties:
+  <code class="literal">ui.tab</code> for the anchor element representing the clicked tab
+  <code class="literal">ui.panel</code> representing the element containing the content of the selected tab
+  <code class="literal">ui.index</code> representing the index of the clicked tab (zero based index)
+</td></tr></table></div></li></ul></div></li><li class="listitem"><p class="simpara">
+Tabs can also load content dynamically using Ajax.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Tab links that have an href attribute with a relative URL to resources on the server will dynamically load the data in the content panel when clicked.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Of course, do not forget about the same origin policy. In order to dynamically load content into your tabs, the page and the resources it is trying to access must be on the same server.</p></td></tr></table></div></li></ul></div></li></ul></div></div><div class="section" title="9.6. Dialogs"><div class="titlepage"><div><div><h3 class="title"><a id="_dialogs"></a>9.6. Dialogs</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery UI provides you with the ability to easily create dialogs (modal and non-modal dialogs).
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The difference between a modal and a non-modal dialog is that a modal dialog prevents the user from interacting with the rest of the page until it is closed.</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+A non-modal dialog looks like this in jQuery UI:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_simple_dialog.png" alt="images/jquery_ui_simple_dialog.png"></img></div></div></li><li class="listitem"><p class="simpara">
+A dialog is created from a <code class="literal">&lt;div&gt;</code> element having a <code class="literal">title</code> attribute representing the title of the window.
+</p><pre class="programlisting">&lt;div id="dialog" title="Basic dialog"&gt;
+    &lt;p&gt;Welcome on Yamba&lt;/p&gt;
+    &lt;p&gt;Yet Another Micro-blogging App&lt;/p&gt;
+&lt;/div&gt;</pre></li><li class="listitem"><p class="simpara">
+Next, using jQuery UI, we can quickly turn this <code class="literal">&lt;div&gt;</code> element into a basic non-modal dialog:
+</p><pre class="programlisting">$('#dialog').dialog(); // <a id="CO22-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO22-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The fastest way to create a new dialog. Of course, we can specify many options (such as height, width, if the dialog is modal or not, the position of the dialog, etc…) as a form of object ⇒ <a class="ulink" href="http://jqueryui.com/demos/dialog/#options" target="_top">http://jqueryui.com/demos/dialog/#options</a>
+</td></tr></table></div></li><li class="listitem">
+Another type of dialog that is often use is the modal dialog, which is used to get confirmation from the user before performing some action.
+</li><li class="listitem"><p class="simpara">
+This example will show you how to create a modal confirmation dialog using the following HTML markup:
+</p><pre class="programlisting">$( "#confirm" ).dialog({
+    title: "Delete Tweet", // <a id="CO23-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    resizable: false, // <a id="CO23-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    modal: true, // <a id="CO23-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    buttons: { // <a id="CO23-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+        "Yes": function() {
+            $(this).dialog("close"); // <a id="CO23-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+            alert("You clicked on yes");
+        },
+        "No": function() {
+            $(this).dialog("close");
+            alert("You clicked on no");
+        }
+    }
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO23-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This is the title of the dialog
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO23-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+This states that the dialog cannot be resized
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO23-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+This states that the dialog is modal
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO23-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+This defines all of the buttons along with their text and handlers
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO23-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+This closes the dialog
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This would produce the following result:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_modal.png" alt="images/jquery_ui_modal.png"></img></div></div></li></ul></div></div><div class="section" title="9.7. jQuery UI Controls"><div class="titlepage"><div><div><h3 class="title"><a id="_jquery_ui_controls"></a>9.7. jQuery UI Controls</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery UI comes with new controls that can be used in your form, such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The date picker
+</li><li class="listitem">
+The slider
+</li><li class="listitem">
+The progress bar
+</li><li class="listitem">
+Etc…
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The drawbacks of creating these controls yourself:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A lot of time required
+</li><li class="listitem">
+Error prone
+</li></ul></div></li></ul></div></div><div class="section" title="9.8. The Datepicker"><div class="titlepage"><div><div><h3 class="title"><a id="_the_datepicker"></a>9.8. The Datepicker</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The Datepicker is a component that allows you to display a calendar, allowing the user to choose a date.
+</li><li class="listitem"><p class="simpara">
+The Datepicker:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Is tied to a standard form input field
+</li><li class="listitem">
+Is opened when the user focuses on this same input (click or tab)
+</li><li class="listitem"><p class="simpara">
+Returns the date to the input field as soon as the user chooses a date
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_datepicker.png" alt="images/jquery_ui_datepicker.png"></img></div></div></li></ul></div></li><li class="listitem"><p class="simpara">
+In the HTML code, create a normal input:
+</p><pre class="programlisting">&lt;input type="text" id="datepicker"&gt;</pre></li><li class="listitem"><p class="simpara">
+Then on the JavaScript side using jQuery UI, you would do the following:
+</p><pre class="programlisting">$("#datepicker").datepicker();</pre></li><li class="listitem"><p class="simpara">
+This date picker is highly customizable. You can:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Format the date shown to the user in the input
+</li><li class="listitem">
+Restrict the date range
+</li><li class="listitem">
+Use different languages for your calendar
+</li><li class="listitem">
+Directly embed the calendar on the page
+</li><li class="listitem">
+Display month and year in a list
+</li><li class="listitem">
+Display multiple months at a time
+</li><li class="listitem"><p class="simpara">
+Etc…
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>More details on <a class="ulink" href="http://jqueryui.com/demos/datepicker/" target="_top">http://jqueryui.com/demos/datepicker/</a></p></td></tr></table></div></li></ul></div></li></ul></div></div><div class="section" title="9.9. The Slider"><div class="titlepage"><div><div><h3 class="title"><a id="_the_slider"></a>9.9. The Slider</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The jQuery UI <code class="literal">.slider()</code> method turns a <code class="literal">&lt;div&gt;</code> element into a slider:
+</p><div class="figure"><a id="id36158419"></a><p class="title"><b>Figure 1. title</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/jquery_ui_slider.png" width="270" alt="images/jquery_ui_slider.png"></img></div></div></div><br class="figure-break"></br></li><li class="listitem"><p class="simpara">
+On the HTML side, you would create an empty <code class="literal">&lt;div&gt;</code> element with an id like this:
+</p><pre class="programlisting">&lt;div id="slider"&gt;&lt;/div&gt;</pre></li><li class="listitem"><p class="simpara">
+On the JavaScript side, you would have to apply the <code class="literal">.slider()</code> method to the <code class="literal">&lt;div&gt;</code> like this:
+</p><pre class="programlisting">$( "#slider" ).slider();</pre></li><li class="listitem"><p class="simpara">
+There are of course a lot of options that you can configure here, such as having multiple handles and ranges, specifying the range, etc…
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Those handles can be moved with the mouse as well as with the direction key from the keyboard</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+There are also some events that you can use to listen. Event handlers receive two parameters:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The original browser event
+</li><li class="listitem"><p class="simpara">
+The prepared UI object
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>More information on the slider ⇒ <a class="ulink" href="http://jqueryui.com/demos/slider/" target="_top">http://jqueryui.com/demos/slider/</a></p></td></tr></table></div></li></ul></div></li></ul></div></div><div class="section" title="9.10. The Progress Bar"><div class="titlepage"><div><div><h3 class="title"><a id="_the_progress_bar"></a>9.10. The Progress Bar</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The progress bar is a good visual way to show the state of completion for a process (percentage of completion):
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/jquery_ui_progress.png" alt="images/jquery_ui_progress.png"></img></div></div></li><li class="listitem"><p class="simpara">
+To create a progress bar, you need to first create the HTML structure like this:
+</p><pre class="programlisting">&lt;div id="progressbar"&gt;&lt;/div&gt;</pre></li><li class="listitem"><p class="simpara">
+Using jQuery UI and the <code class="literal">.progressbar()</code> method, you can quickly turn this structure into a jQuery UI widget:
+</p><pre class="programlisting">$("#progressbar").progressbar({
+  value: 50
+});</pre></li><li class="listitem">
+Like any other widget, there are options and events that you can listen for. Details are available at <a class="ulink" href="http://jqueryui.com/demos/progressbar/" target="_top">http://jqueryui.com/demos/progressbar/</a>
+</li></ul></div></div><div class="section" title="9.11. Jquery UI Interactions"><div class="titlepage"><div><div><h3 class="title"><a id="_jquery_ui_interactions"></a>9.11. Jquery UI Interactions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+jQuery UI also allows you to define "behaviors" on elements.
+</li><li class="listitem"><p class="simpara">
+Using jQuery UI you can make your elements:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Draggable
+</li><li class="listitem">
+Droppable
+</li><li class="listitem">
+Resizable
+</li><li class="listitem">
+Selectable
+</li><li class="listitem">
+Sortable
+</li></ul></div></li></ul></div></div><div class="section" title="9.12. Drag &amp; Drop"><div class="titlepage"><div><div><h3 class="title"><a id="_drag_amp_drop"></a>9.12. Drag &amp; Drop</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Drag &amp; drop allows you to make any element "draggable" on to other elements that are "droppable".
+</li><li class="listitem"><p class="simpara">
+This is what you can do with a "draggable" element (An element that a user moves):
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Constrain the movement (like dragging vertically or horizontally)
+</li><li class="listitem">
+Delay the dragging movement depending on the dragging distance or time in order to avoid accidental dragging
+</li><li class="listitem">
+Fine-grained snapping of the dragged element
+</li><li class="listitem">
+Possibility to revert the dragging movement on a certain condition (if not dropped at the right place for instance)
+</li><li class="listitem">
+Provide a visual helper to the user when dragging an element
+</li><li class="listitem">
+Position the mouse where you want in the dragged element
+</li></ul></div></li><li class="listitem"><p class="simpara">
+This is what you can do with a "droppable" element (an element that "receives" the "draggable" element):
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Choose accepted elements
+</li><li class="listitem">
+Provide feedback when the user drags and/or drops and element on the "droppable" location
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can also listen for events:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+"draggable" events: <code class="literal">create</code>, <code class="literal">start</code>, <code class="literal">drag</code>, <code class="literal">stop</code>
+</li><li class="listitem"><p class="simpara">
+"droppable" events: <code class="literal">create</code>, <code class="literal">activate</code>, <code class="literal">deactivate</code>, <code class="literal">over</code>, <code class="literal">out</code>, <code class="literal">drop</code>
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>All of these events receive two arguments: The original browser event and a prepared UI object.</p><p>For more information on drag and drop ⇒ <a class="ulink" href="http://jqueryui.com/demos/draggable/" target="_top">http://jqueryui.com/demos/draggable/</a> and <a class="ulink" href="http://jqueryui.com/demos/droppable/" target="_top">http://jqueryui.com/demos/droppable/</a></p></td></tr></table></div></li></ul></div></li></ul></div></div><div class="section" title="9.13. Drag &amp; Drop: Example"><div class="titlepage"><div><div><h3 class="title"><a id="_drag_amp_drop_example"></a>9.13. Drag &amp; Drop: Example</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Let us see an example on how to do drag &amp; drop using jQuery UI:
+</li><li class="listitem"><p class="simpara">
+This will be our HTML:
+</p><pre class="programlisting">&lt;div class="draggable"&gt; <a id="CO24-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  &lt;p&gt;An element to drag on the page&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="draggable"&gt; <a id="CO24-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+  &lt;p&gt;An element to drag on the page&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="droppable"&gt; <a id="CO24-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  &lt;p&gt;Drop element here&lt;/p&gt;
+&lt;/div&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO24-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO24-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+These elements are the one that will be dragged on the page
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO24-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+This element will be the one that will be receiving the draggable element. This is the droppable element
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Time to add draggable and droppable interactions to these elements:
+</p><pre class="programlisting">$('.draggable').draggable({ // <a id="CO25-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    distance:20, // <a id="CO25-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    opacity:0.7, // <a id="CO25-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    zIndex:1000, // <a id="CO25-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+    revert:'invalid' // <a id="CO25-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+});
+
+//Make the trash being droppable
+$('#droppable').droppable({ // <a id="CO25-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+    accept:'.draggable', // <a id="CO25-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img>
+    activeClass:'ui-state-hover', // <a id="CO25-8"></a><img src="../images/callouts/8.png" alt="8" border="0"></img>
+    hoverClass:'ui-state-active', // <a id="CO25-9"></a><img src="../images/callouts/9.png" alt="9" border="0"></img>
+    tolerance:'pointer', // <a id="CO25-10"></a><img src="../images/callouts/10.png" alt="10" border="0"></img>
+    drop: function(event,ui) { // <a id="CO25-11"></a>(11)
+        var $element = ui.draggable; // <a id="CO25-12"></a>(12)
+        $element.fadeOut('slow',function() {
+            $(this).remove();
+        });
+    }
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This will turn your elements with the class <code class="literal">draggable</code> into draggable elements
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">distance</code> specifies the distance in pixels that the user has to move before the drag starts
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">opacity</code> sets the opacity of the dragged element
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">zIndex</code> brings the element to the foreground or the background of the page depending on its value
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">revert</code> allows you to choose if you want to revert the dragged element to its initial position when dragging stops on a valid position or not
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+This will turn your element with the id <code class="literal">droppable</code> into a droppable element
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> <a href="#CO25-8"><img src="../images/callouts/8.png" alt="8" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">activeClass</code> sets the class to use for the droppable when a user starts to drag an element
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-9"><img src="../images/callouts/9.png" alt="9" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">hoverClass</code> sets the class to use for the droppable element when a user drags an element over the droppable element
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-10"><img src="../images/callouts/10.png" alt="10" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">tolerance</code> allows you to specify what mode is used to determine whether or not a draggable is "over" a droppable.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-11">(11)</a> </p></td><td valign="top" align="left">
+<code class="literal">drop</code> allows you to specify the function to call when a draggable has been dropped over a droppable
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO25-12">(12)</a> </p></td><td valign="top" align="left">
+<code class="literal">ui.draggable</code> refers to the draggable element
+</td></tr></table></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The <code class="literal">.draggable()</code> method does not apply to elements that are created dynamically. You would need to use event delegation on the <code class="literal">mouseenter</code> event and then enable the draggable behavior on the clicked element</p></td></tr></table></div></div><div class="section" title="9.14. Sortable elements"><div class="titlepage"><div><div><h3 class="title"><a id="_sortable_elements"></a>9.14. Sortable elements</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+jQuery enables you to make your elements sortable using the <code class="literal">sortable</code> method.
+</li><li class="listitem"><p class="simpara">
+Take for example, an HTML list like this one:
+</p><pre class="programlisting">&lt;ul id="sortable"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ul&gt;</pre></li><li class="listitem"><p class="simpara">
+Next, to make the list items sortable, you would have to use the <code class="literal">.sortable()</code> method:
+</p><pre class="programlisting">$('#sortable').sortable(); // <a id="CO26-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO26-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Of course this method can take several options passed as a JavaScript object. Those options are available here ⇒ <a class="ulink" href="http://jqueryui.com/demos/sortable/#options" target="_top">http://jqueryui.com/demos/sortable/#options</a>. Sortable items also share <code class="literal">draggable</code> properties
+</td></tr></table></div></li></ul></div></div><div class="section" title="9.15. Selectable Elements"><div class="titlepage"><div><div><h3 class="title"><a id="_selectable_elements"></a>9.15. Selectable Elements</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Using jQuery UI, you can enable an element or a group of elements to be selectable.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You can click on them to select them
+</li><li class="listitem">
+Ctrl/meta key plus click and/or drag also works for selectable
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Imagine an HTML list like this one:
+</p><pre class="programlisting">&lt;ul id="selectable"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+  &lt;li&gt;Item 4&lt;/li&gt;
+&lt;/ul&gt;</pre></li><li class="listitem"><p class="simpara">
+Then to make the list items selectable, you would have to use the <code class="literal">.selectable()</code> method:
+</p><pre class="programlisting">$('#selectable').selectable(); // <a id="CO27-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO27-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Of course this method can take several options passed as a JavaScript object. Those options are available here ⇒ <a class="ulink" href="http://jqueryui.com/demos/selectable/#options" target="_top">http://jqueryui.com/demos/selectable/#options</a>
+</td></tr></table></div></li></ul></div></div><div class="section" title="9.16. Resizable Elements"><div class="titlepage"><div><div><h3 class="title"><a id="_resizable_elements"></a>9.16. Resizable Elements</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery provides you the ability to resize any DOM element by calling the <code class="literal">.resizable()</code> method on this element. Of course, you can specify more options:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Preserve the aspect ratio
+</li><li class="listitem">
+Set the minimum/maximum width and height
+</li><li class="listitem">
+Provide visual feedback using a transparent ghost of the element being resized
+</li><li class="listitem">
+Synchronize resizing between elements
+</li><li class="listitem">
+Animate the element on resizing etc…
+</li></ul></div></li><li class="listitem">
+There are also events that you can listen for, such as <code class="literal">create</code>, <code class="literal">start</code>, <code class="literal">resize</code> and <code class="literal">stop</code>
+</li><li class="listitem"><p class="simpara">
+Let us take the following HTML structure as an example:
+</p><pre class="programlisting">&lt;div id="resizable"&gt;
+  &lt;!-- Content of the div --&gt;
+&lt;/div&gt;</pre></li><li class="listitem"><p class="simpara">
+Using jQuery, you can make this element to be resizable:
+</p><pre class="programlisting">$(#resizable).resizable(); // <a id="CO28-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO28-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This makes the element resizable. For more options and events ⇒ <a class="ulink" href="http://jqueryui.com/demos/resizable" target="_top">http://jqueryui.com/demos/resizable</a>
+</td></tr></table></div></li></ul></div></div><div class="section" title="9.17. jQuery UI animation"><div class="titlepage"><div><div><h3 class="title"><a id="_jquery_ui_animation"></a>9.17. jQuery UI animation</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+jQuery UI adds a lot more functionality for animations. It adds:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+New effects (<a class="ulink" href="http://jqueryui.com/demos/effect/#default" target="_top">http://jqueryui.com/demos/effect/#default</a>)
+</li><li class="listitem">
+New easing methods (<a class="ulink" href="http://jqueryui.com/demos/effect/#easing" target="_top">http://jqueryui.com/demos/effect/#easing</a>)
+</li><li class="listitem">
+The <code class="literal">.effect()</code> method that applies an effect on an element without the show/hide logic
+</li><li class="listitem">
+The <code class="literal">.switchClass()</code> method that replaces an existing class with a new one (with the possibility of animation if the duration is specified)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+jQuery UI also extends existing methods such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The <code class="literal">.animate()</code> method to support color animation when animating the following properties: <code class="literal">backgroundColor</code>, <code class="literal">borderBottomColor</code>, <code class="literal">borderLeftColor</code>, <code class="literal">borderRightColor</code>, <code class="literal">borderTopColor</code>, <code class="literal">color</code> and <code class="literal">outlineColor</code>
+</li><li class="listitem">
+The <code class="literal">.addClass()</code>, <code class="literal">.removeClass()</code> and  <code class="literal">.toggleClass()</code> methods now support class animation by adding a second parameter (the time of the animation)
+</li><li class="listitem">
+The <code class="literal">.toggle()</code>, <code class="literal">.show()</code> and <code class="literal">.hide()</code> methods have been enhanced to accept the jQuery UI advanced effects
+</li></ul></div></li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="plugins.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="advanced_concepts.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="jquery_ui.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana jQuery Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction To jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_useful_learning_resources">1.1. Useful Learning Resources</a></span></dt><dt><span class="section"><a href="index.html#_history_of_jquery">1.2. History Of jQuery</a></span></dt><dt><span class="section"><a href="index.html#_what_is_jquery">1.3. What is jQuery?</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_custom_javascript">1.4. jQuery vs Custom JavaScript</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_other_javascript_libraries">1.5. jQuery vs Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="index.html#_where_do_i_start">1.6. Where Do I Start?</a></span></dt><dt><span class="section"><a href="index.html#_download_the_library">1.7. Download the Library</a></span></dt><dt><span class="section"><a href="index.html#_using_google_content_deliver_network_cdn">1.8. Using Google Content Deliver Network (CDN)</a></span></dt><dt><span class="section"><a href="index.html#_the_literal_jquery_literal_function_object">1.9. The <code class="literal">jQuery</code> Function Object</a></span></dt><dt><span class="section"><a href="index.html#_is_the_document_ready">1.10. Is The Document Ready?</a></span></dt><dt><span class="section"><a href="index.html#_where_to_run_your_code">1.11. Where to Run Your Code?</a></span></dt><dt><span class="section"><a href="index.html#_execute_some_jquery_code">1.12. Execute Some jQuery Code</a></span></dt></dl></dd><dt><span class="section"><a href="selections_and_dom_traversing.html">2. Selection and DOM Traversal</a></span></dt><dd><dl><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection">2.1. Selection</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_basic_selectors">2.2. Basic Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_hierarchy_selectors">2.3. Hierarchy Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection_by_attribute">2.4. Selection By Attribute</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_form_selectors">2.5. Form Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_position_filters">2.6. Position Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_other_filters">2.7. Other Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_jquery_method_chaining">2.8. jQuery Method Chaining</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_dom_traversal">2.9. DOM Traversal</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_filter_methods">2.10. Filter Methods</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_advanced_method_chaining">2.11. Advanced Method Chaining</a></span></dt></dl></dd><dt><span class="section"><a href="dom_manipulation.html">3. DOM And Attributes Manipulation</a></span></dt><dd><dl><dt><span class="section"><a href="dom_manipulation.html#_dom_manipulation">3.1. DOM Manipulation</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_creating_elements">3.2. Creating Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_elements">3.3. Inserting Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_before_or_after_another_element">3.4. Inserting an Element Before or After Another Element</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_as_the_first_or_last_child_of_a_parent">3.5. Inserting an Element as the First or Last Child of a Parent</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_mass_insertion">3.6. Mass Insertion</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_moving_elements">3.7. Moving Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_cloning_copying_elements">3.8. Cloning (Copying) Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_removing_elements">3.9. Removing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_replacing_elements">3.10. Replacing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_element_content_html_vs_text">3.11. Element Content: HTML vs Text</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_other_element_attributes">3.12. Other Element Attributes</a></span></dt></dl></dd><dt><span class="section"><a href="css_styling.html">4. CSS Styling and jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties">4.1. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties_2">4.2. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_removing_css_properties">4.3. Removing CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_css_classes">4.4. CSS Classes</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_dimensions">4.5. Element Dimensions</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_position">4.6. Element Position</a></span></dt></dl></dd><dt><span class="section"><a href="events.html">5. Events</a></span></dt><dd><dl><dt><span class="section"><a href="events.html#_events_overview">5.1. Events Overview</a></span></dt><dt><span class="section"><a href="events.html#_binding_an_event_handler">5.2. Binding An Event Handler</a></span></dt><dt><span class="section"><a href="events.html#_binding_shortcut_methods">5.3. Binding Shortcut Methods</a></span></dt><dt><span class="section"><a href="events.html#_unbinding_handlers_and_8220_one_shot_8221_handlers">5.4. Unbinding Handlers and “One-Shot” Handlers</a></span></dt><dt><span class="section"><a href="events.html#_the_event_object">5.5. The Event Object</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation">5.6. Event Delegation</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation_and_jquery">5.7. Event Delegation And jQuery</a></span></dt><dt><span class="section"><a href="events.html#_literal_live_literal_vs_literal_delegate_literal">5.8. <code class="literal">.live()</code> vs <code class="literal">.delegate()</code></a></span></dt></dl></dd><dt><span class="section"><a href="effects_and_custom_animations.html">6. Effects and Custom Animations</a></span></dt><dd><dl><dt><span class="section"><a href="effects_and_custom_animations.html#_jquery_built_in_effects">6.1. jQuery Built-in Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_showing_or_hiding_elements">6.2. Showing or Hiding Elements</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_fading_effects">6.3. Fading Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_sliding_effects">6.4. Sliding Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_creating_your_own_animations">6.5. Creating Your Own Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_notes">6.6. Animation Notes</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_queues">6.7. Animation Queues</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_stopping_animations">6.8. Stopping Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_additional_animation_controls">6.9. Additional Animation controls</a></span></dt></dl></dd><dt><span class="section"><a href="ajax.html">7. Ajax</a></span></dt><dd><dl><dt><span class="section"><a href="ajax.html#_what_is_ajax">7.1. What Is Ajax?</a></span></dt><dt><span class="section"><a href="ajax.html#_limitations_of_ajax">7.2. Limitations Of Ajax</a></span></dt><dt><span class="section"><a href="ajax.html#_load_html_content_the_literal_load_literal_method">7.3. Load HTML Content: The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_hijax_with_jquery">7.4. Hijax With jQuery</a></span></dt><dt><span class="section"><a href="ajax.html#_select_in_detail_what_to_load">7.5. Select In Detail What To Load</a></span></dt><dt><span class="section"><a href="ajax.html#_advanced_loading_using_the_literal_load_literal_method">7.6. Advanced Loading Using The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_json_and_jsonp">7.7. JSON and JSONP</a></span></dt><dt><span class="section"><a href="ajax.html#_load_json_data_the_literal_getjson_literal_method">7.8. Load JSON Data: The <code class="literal">.getJSON()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_the_main_ajax_method_literal_ajax_literal">7.9. The Main Ajax Method: <code class="literal">.ajax()</code></a></span></dt><dt><span class="section"><a href="ajax.html#_ajax_global_settings">7.10. Ajax Global Settings</a></span></dt><dt><span class="section"><a href="ajax.html#_error_handling">7.11. Error Handling</a></span></dt></dl></dd><dt><span class="section"><a href="plugins.html">8. Plugins</a></span></dt><dd><dl><dt><span class="section"><a href="plugins.html#_popular_plugins">8.1. Popular Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_easing_plugin">8.2. Easing Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_slideshow_plugins">8.3. Slideshow Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_the_colorbox_plugin">8.4. The ColorBox Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_cycle_plugin">8.5. The Cycle Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_jcrop_plugin">8.6. Jcrop Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_validation_plugin">8.7. The Validation Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_datatable_plugin">8.8. DataTable Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_why">8.9. Creating Your Own Plugin: Why?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_how">8.10. Creating Your Own Plugin: How?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_best_practices">8.11. Creating Your Own Plugin: Best Practices</a></span></dt></dl></dd><dt><span class="section"><a href="jquery_ui.html">9. jQuery UI</a></span></dt><dd><dl><dt><span class="section"><a href="jquery_ui.html#_what_is_jquery_ui">9.1. What Is jQuery UI?</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_getting_started">9.2. Getting Started</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_widgets">9.3. jQuery Widgets</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_accordion_widget">9.4. The Accordion Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_tabs_widget">9.5. The Tabs Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_dialogs">9.6. Dialogs</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_controls">9.7. jQuery UI Controls</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_datepicker">9.8. The Datepicker</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_slider">9.9. The Slider</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_progress_bar">9.10. The Progress Bar</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_interactions">9.11. Jquery UI Interactions</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop">9.12. Drag &amp; Drop</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop_example">9.13. Drag &amp; Drop: Example</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_sortable_elements">9.14. Sortable elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_selectable_elements">9.15. Selectable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_resizable_elements">9.16. Resizable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_animation">9.17. jQuery UI animation</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_concepts.html">10. Advanced Concepts</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_concepts.html#_best_practices_loops">10.1. Best Practices: Loops</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_avoid_anonymous_functions">10.2. Best Practices: Avoid Anonymous Functions</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_optimizing_selectors">10.3. Best Practices: Optimizing Selectors</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_jquery_utility_methods">10.4. jQuery Utility Methods</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_avoiding_conflict_with_other_javascript_libraries">10.5. Avoiding Conflict With Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_queuing_and_dequeuing_animations">10.6. Queuing And Dequeuing Animations</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/jquery_ui.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/threading.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Java Fundamentals Tutorial : Threading  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, java, fundamentals, tutorial, :, threading" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Java Fundamentals Tutorial : Threading </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Java Fundamentals Tutorial </a>
+  &raquo;
+  Threading </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="generics_collections.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="java_util.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="14. Threading"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="threading"></a>14. Threading</h2></div></div></div><div class="section" title="14.1. Runnable And Thread"><div class="titlepage"><div><div><h3 class="title"><a id="_runnable_and_thread"></a>14.1. Runnable And Thread</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+To run an object in a thread:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Implement <code class="literal">Runnable</code>'s <code class="literal">run()</code> and <code class="literal">start()</code> in a new <code class="literal">Thread</code> (preferred)
+</li><li class="listitem">
+Extend <code class="literal">Thread</code>, override <code class="literal">run()</code>, instantiate, and <code class="literal">start()</code>
+</li></ul></div></li><li class="listitem">
+Threads can: <code class="literal">join</code>, <code class="literal">interrupt</code>, <code class="literal">sleep</code>, <code class="literal">yield</code>, be prioritized, stack-dumped, be enumerated, grouped, etc.
+</li></ul></div><p></p><pre class="programlisting">public class ThreadDemo {
+  public static void main(String[] args) throws InterruptedException {
+    int numThreads = Integer.parseInt(args[0]);
+    int count = Integer.parseInt(args[1]);
+    Thread[] threads = new Thread[numThreads];
+    System.out.println("Creating threads");
+    for (int i = 0; i &lt; threads.length; i++) {
+      threads[i] = new Thread(new Runner("Runner " + i, count));
+    }
+    System.out.println("Starting threads");
+    for (int i = 0; i &lt; threads.length; i++) { threads[i].start(); }
+    System.out.println("Waiting for threads");
+    for (int i = 0; i &lt; threads.length; i++) { threads[i].join(); }
+    System.out.println("Done");
+  }
+}
+public class Runner implements Runnable {
+  private final String name;
+  private final int count;
+  public Runner(String name, int count) {
+    this.name = name; this.count = count;
+  }
+  public void run() {
+    for (int i = 0; i &lt; count; i++) {
+      System.out.println(name + "=" + i);
+      Thread.yield();
+    }
+  }
+}</pre></div><div class="section" title="14.2. Thread Synchronization"><div class="titlepage"><div><div><h3 class="title"><a id="_thread_synchronization"></a>14.2. Thread Synchronization</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Use <code class="literal">synchronized</code> keyword to protect critical sections from concurrent access
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Do not allow data/structures to be modified by multiple threads simultaneously
+</li><li class="listitem">
+Can be used on methods or blocks of code
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Synchronization occurs on an object that acts as a <span class="emphasis"><em>monitor</em></span> for the running threads
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Usually, this is the object that is to be protected
+</li><li class="listitem">
+Can be any other object (even generic instances of <code class="literal">Object</code>): <code class="literal">Object lock = new Object();</code>
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">public class Counter {
+  private int count = 0;
+  public void setCount(int count) { this.count = count; }
+  public int getCount() { return this.count; }
+}
+public class Runner implements Runnable {
+  private final int maxCount;
+  private final Counter counter;
+  public Runner(int maxCount, Counter counter) {
+    this.maxCount = maxCount; this.counter = counter;
+  }
+  public void run() {
+    for (int i = 0; i &lt; this.maxCount; i++) {
+      int currentCount;
+      synchronized(this.counter) {
+        currentCount = this.counter.getCount();
+        currentCount++;
+        this.counter.setCount(currentCount);
+      }
+      System.out.println(Thread.currentThread().getName()
+        + " at count " + currentCount);
+    }
+  }
+}</pre><p>A better approach would be to add a synchronized count method on the Counter class so that Runners would not have to worry about synchronization.</p><pre class="programlisting">public synchronized int count() {
+  return ++this.count;
+}</pre></div><div class="section" title="14.3. More Thread Synchronization"><div class="titlepage"><div><div><h3 class="title"><a id="_more_thread_synchronization"></a>14.3. More Thread Synchronization</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Use <code class="literal">Object.wait()</code>, <code class="literal">Object.notify()</code>, and <code class="literal">Object.notifyAll()</code> to schedule threads (wait on each other)
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Solves the classic Consumer-Producer problem
+</li></ul></div></li><li class="listitem">
+Methods <code class="literal">wait()</code>, <code class="literal">notify()</code>, and <code class="literal">notifyAll()</code> must be called in <code class="literal">synchronized</code> blocks
+</li><li class="listitem">
+Always do checks around <code class="literal">wait()</code> using <code class="literal">while</code> or <code class="literal">for</code> loops rather than simple <code class="literal">if</code> conditions
+</li><li class="listitem">
+Better yet, use Java 5’s <code class="literal">java.util.concurrent</code> advanced thread-safe data structures and controls
+</li></ul></div><p></p><pre class="programlisting">public class Queue {
+  private static class Element {
+    final Object value;
+    Element next;
+    Element(Object value) {this.value = value;}
+  }
+  private Element first, last;
+  private int curSize, maxSize;
+
+  public Queue(int maxSize) { this.maxSize = maxSize; }
+
+  public synchronized void put(Object o) throws InterruptedException {
+    while (this.curSize == this.maxSize) { this.wait(); }
+    if (this.first == null) {
+      this.first = (this.last = new Element(o));
+    } else {
+      this.last = (this.last.next = new Element(o));
+    }
+    this.curSize++;
+    this.notifyAll();
+  }
+  public synchronized Object get() throws InterruptedException {
+    while (this.curSize == 0) { this.wait(); }
+    Object o = this.first.value;
+    this.first = this.first.next;
+    this.curSize--;
+    this.notifyAll();
+    return o;
+  }
+}</pre></div><div class="section" title="14.4. Java 5 Concurrency Features"><div class="titlepage"><div><div><h3 class="title"><a id="_java_5_concurrency_features"></a>14.4. Java 5 Concurrency Features</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The Java 5’s <code class="literal">java.util.concurrent</code> package provides a powerful, extensible framework of high-performance, scalable, thread-safe building blocks for developing concurrent classes and applications
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Thread pools and custom execution frameworks
+</li><li class="listitem">
+Queues and related thread-safe collections
+</li><li class="listitem">
+Atomic variables
+</li><li class="listitem">
+Special-purpose locks, barriers, semaphores and condition variables
+</li></ul></div></li><li class="listitem">
+Better than <code class="literal">synchronized</code>, <code class="literal">wait()</code>, <code class="literal">notify()</code>, …
+</li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Its packages free the programmer from having to write these utilities by hand, like Collections did for data structures
+</li><li class="listitem">
+The packages also provide low-level primitives for advanced concurrent programming
+</li><li class="listitem"><p class="simpara">
+Built-in concurrency primitives : <code class="literal">wait()</code>, <code class="literal">notify()</code>, <code class="literal">synchronized</code> are too hard:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Hard to use
+</li><li class="listitem">
+Easy to make errors
+</li><li class="listitem">
+Low level for most applications
+</li><li class="listitem">
+Poor performance if used incorrectly
+</li><li class="listitem">
+Too much wheel-reinventing (not standardized)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Concurrency APIs in Java 5
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">java.util.concurrent</code> - Utility classes and frameworks commonly used in concurrent programming - e.g. thread pools
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.atomic</code> - Classes that support lock-free and thread-safe operations on single variables - e.g. atomic <code class="literal">i++</code>
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.locks</code> - Framework for locking and waiting for conditions that is distinct from built-in synchronization and monitors
+</li></ul></div></li></ul></div></div><div class="section" title="14.5. Thread Scheduling Pre-Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_thread_scheduling_pre_java_5"></a>14.5. Thread Scheduling Pre-Java 5</h3></div></div></div><pre class="programlisting">public class NetworkedService {
+  public void service(int port) throws Exception {
+    ServerSocket ss = new ServerSocket(port);
+    while(true) {
+      new Thread(new Handler(ss.accept())).start(); //<a id="CO1-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    }
+  }
+  private static class Handler implements Runnable {
+    private final Socket s;
+    public Handler(Socket s) { this.s = s; }
+    public void run() {
+      //<a id="CO1-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    }
+  }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO1-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+New thread every time - poor resource management
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO1-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Read requests, access registry, return response
+</td></tr></table></div><p></p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>With no access to a standard thread-pool library, we end up creating Threads on demand.
+Works well for very simple cases, but does not scale and it is not resource-efficient.</p></td></tr></table></div></div><div class="section" title="14.6. Thread Scheduling In Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_thread_scheduling_in_java_5"></a>14.6. Thread Scheduling In Java 5</h3></div></div></div><pre class="programlisting">public class NetworkedService {
+  public void service(int port) throws Exception {
+    ServerSocket ss = new ServerSocket(port);
+    ExecutorService pool = Executors.newCachedThreadPool(); //<a id="CO2-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+    while(true) {
+      pool.execute(new Handler(ss.accept())); //<a id="CO2-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    }
+  }
+  private static class Handler implements Runnable {
+    //<a id="CO2-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO2-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Pick a pool scheduling strategy that fits our needs
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO2-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Let the executor service manage the threads as needed
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO2-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Same implementation as before
+</td></tr></table></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Java 5’s Scheduling framework standardizes invocation, scheduling, execution, and control of asynchronous tasks
+</li><li class="listitem">
+We can use its thread-pool executor service to provide better resource utilization
+</li><li class="listitem"><p class="simpara">
+Executor interface decouples task submission from the mechanics of how it will be run:
+</p><pre class="programlisting">public interface Executor {
+  public void execute(Runnable command);
+}</pre></li><li class="listitem"><p class="simpara">
+Very easy to build different execution strategies:
+</p><pre class="programlisting">public class InThreadExecutor implements Executor {
+  public void execute(Runnable r) {
+    r.run();
+  }
+}
+
+public class ThreadPerTaskExecutor implements Executor {
+  public void execute(Runnable r) {
+    new Thread(r).start();
+  }
+}</pre></li></ul></div></div><div class="section" title="14.7. Java 5’s ExecutorService"><div class="titlepage"><div><div><h3 class="title"><a id="_java_5_8217_s_literal_executorservice_literal"></a>14.7. Java 5’s <code class="literal">ExecutorService</code></h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">ExecutorService</code> builds upon <code class="literal">Executor</code> to provide lifecycle management and support for tracking progress of asynchronous tasks
+</li><li class="listitem">
+Constructed through through factory methods on <code class="literal">Executors</code> class
+</li><li class="listitem"><p class="simpara">
+<code class="literal">ScheduledExecutorService</code> provides a framework for executing deferred and recurring tasks that can be cancelled
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Like <code class="literal">Timer</code> but supports pooling
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">public interface ExecutorService extends Executor {
+  /** Stop accepting new tasks */
+  public void shutdown();
+  /** Stop accepting new tasks, cancel tasks
+      currently waiting, and interrupt active tasks */
+  public List&lt;Runnable&gt; shutdownNow();
+  public boolean isShutdown();
+  public boolean isTerminated();
+  public boolean awaitTermination(long timeout, TimeUnit unit);
+  public void execute(Runnable c);
+  public &lt;T&gt; Future&lt;T&gt; submit(Callable&lt;T&gt; task);
+  ...
+}
+
+public class Executors {
+  public static ExecutorService newSingleThreadedExecutor();
+  public static ExecutorService newFixedThreadPool(int n);
+  public static ExecutorService newCachedThreadPool();
+  ...
+}</pre></div><div class="section" title="14.8. Getting Results From Threads Pre Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_getting_results_from_threads_pre_java_5"></a>14.8. Getting Results From Threads Pre Java 5</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Getting results from operations that run in separate threads requires a lot of boiler-plate code
+</li><li class="listitem">
+We need a custom <code class="literal">Runnable</code> that remembers its result (or exception) as its state and we explicit access to it
+</li><li class="listitem">
+What if we needed to wait on the result? We need to <code class="literal">join()</code> the thread (boring)
+</li></ul></div><p></p><pre class="programlisting">public class Handler implements Runnable {
+  private Exception e = null;
+  private Long result = null;
+  public synchronized void run() {
+    long t = System.currentTimeMillis();
+    try {
+      // handle request
+      this.result = System.currentTimeMillis() - t;
+    } catch (Exception e) {
+      this.e = e;
+    } finally {
+      this.notifyAll();
+    }
+  }
+  public synchronized long getResult() throws Exception {
+    while (result == null &amp;&amp; e == null) {
+      this.wait();
+    }
+    if (e != null) {
+      throw e;
+    } else {
+      return result;
+    }
+  }
+}</pre></div><div class="section" title="14.9. Getting Results From Threads In Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_getting_results_from_threads_in_java_5"></a>14.9. Getting Results From Threads In Java 5</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java 5 provides a new interface to define a <span class="emphasis"><em>runnable</em></span> task that returns a result and may throw an exception:
+</p><pre class="programlisting">public interface Callable&lt;V&gt; {
+  public V call() throws Exception;
+}</pre></li><li class="listitem"><p class="simpara">
+<code class="literal">Future</code> - the result of an async action
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+An easy way to get the task status, block and wait for its result, or cancel it
+</li></ul></div></li></ul></div><p></p><p>Our Handler becomes much simpler with a Callable:</p><pre class="programlisting">public class Handler implements Callable&lt;Long&gt; {
+  public Long call() throws Exception {
+    long t = System.currentTimeMillis(); //<a id="CO3-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    return System.currentTimeMillis() - t;
+  }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Handle request that can throw an Exception
+</td></tr></table></div><p>Futures make it easy to define asynchronous operations:</p><pre class="programlisting">public interface Future&lt;V&gt; {
+  public V get() throws InterruptedExeption,ExecutionException;
+  public V get(long timeout, TimeUnit unit);
+  public boolean cancel(boolean mayInterrupt);
+  public boolean isCanceled();
+  public boolean isDone();
+}</pre><p>And <code class="literal">ExecutorService.submit(Callable&lt;T&gt; task)</code> conveniently returns <code class="literal">Future&lt;T&gt;</code> for that task.
+We just have to call <code class="literal">Future.get()</code> to wait on the result.</p></div><div class="section" title="14.10. Thread Sync Pre-Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_thread_sync_pre_java_5"></a>14.10. Thread Sync Pre-Java 5</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java’s <code class="literal">synchronized</code> construct forces all lock acquisition and release to occur in a block-structured way
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Cannot easily implement chain-locking
+</li><li class="listitem">
+Often used inefficiently
+</li></ul></div></li><li class="listitem">
+Using <code class="literal">Object.wait()</code> and <code class="literal">Object.notify()</code> for thread sync is extremely hard to do well
+</li></ul></div><p></p><pre class="programlisting">public class BlockingMap&lt;K,V&gt; {
+  private final Map&lt;K,V&gt; map = new HashMap&lt;K,V&gt;();
+
+  // only one get() a time - poor read performance
+  public synchronized V get(K key) {
+    return map.get(key);
+  }
+  public synchronized V require(K key) {
+    V value = null;
+    while((value = map.get(key)) == null) {
+      try {
+        this.wait();
+      }
+      catch (InterruptedException e) {
+        break;
+      }
+    }
+    return value;
+  }
+  public synchronized void set(K key, V value) {
+    map.put(key, value);
+    this.notifyAll();
+  }
+}</pre></div><div class="section" title="14.11. Thread Sync In Java 5 With Locks"><div class="titlepage"><div><div><h3 class="title"><a id="_thread_sync_in_java_5_with_locks"></a>14.11. Thread Sync In Java 5 With Locks</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Locks and condition variables provide an alternative to implicit object monitors
+</li><li class="listitem">
+<code class="literal">ReadWriteLock</code> allows concurrent read access to a shared resource
+</li><li class="listitem">
+Possible to provide deadlock detection and non-reentrant usage semantics
+</li><li class="listitem"><p class="simpara">
+Support for guaranteed fair-ordering
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Access to longest-waiting thread
+</li></ul></div></li><li class="listitem">
+But with increased flexibility, comes additional responsibility (use <code class="literal">try</code>-<code class="literal">finally</code> to unlock)
+</li></ul></div><p></p><pre class="programlisting">public class BlockingMap&lt;K,V&gt; {
+  private Map&lt;K,V&gt; map = ...
+  private ReadWriteLock lock = new ReentrantReadWriteLock();
+  private Condition vAdded = lock.writeLock().newCondition();
+  public V get(K key) {
+    lock.readLock().lock();
+    try {
+      return map.get(key);
+    } finally {
+      lock.readLock().unlock();
+    }
+  }
+  public V require(K key) {
+    V value = get(key); // try cheap first
+    if (value == null) {
+      lock.writeLock().lock();
+      try {
+        while((value = map.get(key)) == null) {
+          vAdded.await();
+        }
+      } catch (InterruptedException giveup) {
+        ...
+      } finally {
+        lock.writeLock().unlock();
+      }
+    }
+    return value;
+  }
+  public void set(String key, String value) {
+    lock.writeLock().lock();
+    try {
+      map.put(key, value);
+      vAdded.signalAll();
+    } finally {
+      lock.writeLock().unlock();
+    }
+  }
+}</pre></div><div class="section" title="14.12. Benefits Of Java 5 Locks"><div class="titlepage"><div><div><h3 class="title"><a id="_benefits_of_java_5_locks"></a>14.12. Benefits Of Java 5 Locks</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We can do chain-locking (e.g. support for data traversal algorithms)
+</li><li class="listitem">
+Non-blocking lock attempts: <code class="literal">aLock.tryLock();</code>
+</li><li class="listitem">
+Interrupted lock attempts: <code class="literal">aLock.lockInterruptibly();</code>
+</li><li class="listitem">
+Timing out lock attempts: <code class="literal">aLock.tryLock(5, TimeUnit.SECONDS);</code>
+</li></ul></div><p></p><pre class="programlisting">if (lock.tryLock()) {
+  try {
+    // do work that requires a lock
+  } finally {
+    lock.unlock();
+  }
+} else {
+  // the lock was not available
+}
+
+try {
+  lock.lockInterruptibly();
+  try {
+    // do work that requires a lock
+  } finally {
+    lock.unlock();
+  }
+} catch (InterruptedException e) {
+  // interrupted while waiting
+}
+
+try {
+  if (lock.tryLock(10, TimeUnit.SECONDS)) {
+    try {
+      // do work that requires a lock
+    } finally {
+      lock.unlock();
+    }
+  }
+} catch (InterruptedException e) {
+  // interrupted while waiting
+}</pre></div><div class="section" title="14.13. Java 5 Conditions"><div class="titlepage"><div><div><h3 class="title"><a id="_java_5_conditions"></a>14.13. Java 5 Conditions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Conditions provide means for one thread to suspend its execution until notified by another
+</li><li class="listitem">
+What locks are to <code class="literal">synchronized</code>, Conditions are to the <code class="literal">Object</code> class’s monitor methods (<code class="literal">wait</code>, <code class="literal">notify</code>, and <code class="literal">notifyAll</code>)
+</li><li class="listitem">
+Support for multiple conditions per lock, uninterruptible conditions, time-wait conditions, absolute time waits
+</li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Support for uninterruptible conditions: <code class="literal">Condition.awaitUninterruptibly()</code>
+</li><li class="listitem">
+Timed waits on conditions tell you why it returned: <code class="literal">Condition.await(long time, TimeUnit unit)</code> returns <code class="literal">false</code> if time elapsed
+</li><li class="listitem">
+Support for absolute time waits: <code class="literal">Condition.awaitUntil(Date deadline)</code>
+</li></ul></div></div><div class="section" title="14.14. Atomics In Java 5"><div class="titlepage"><div><div><h3 class="title"><a id="_atomics_in_java_5"></a>14.14. Atomics In Java 5</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Prior to Java 5, operations such as <code class="literal">i++</code> had to be wrapped in <code class="literal">synchronized</code> if thread safety was important
+</li><li class="listitem"><p class="simpara">
+Now we have <span class="emphasis"><em>atomic</em></span> "primitives"
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Easier and more efficient
+</li><li class="listitem">
+Can be used in arrays/collections
+</li><li class="listitem">
+Building blocks for non-blocking data structures
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">public class AtomicInteger extends Number {
+  public int incrementAndGet() {...}
+  public int decrementAndGet() {...}
+  public int getAndIncrement() {...}
+  public int getAndDecrement() {...}
+  ...
+}
+public class AtomicLong extends Number {
+  public boolean compareAndSet(long expected,
+    long update) {...}
+  public long addAndGet(long delta) {...}
+  ...
+}
+public class AtomicBoolean {
+  public boolean getAndSet(boolean newValue) {...}
+  ...
+}</pre></div><div class="section" title="14.15. Other Java 5 Concurrency Features"><div class="titlepage"><div><div><h3 class="title"><a id="_other_java_5_concurrency_features"></a>14.15. Other Java 5 Concurrency Features</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Concurrent collections offer thread-safe iteration and better performance than <code class="literal">HashTable</code> and <code class="literal">Vector</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">ConcurrentHashMap</code>
+</li><li class="listitem">
+<code class="literal">CopyOnWriteArrayList</code>
+</li></ul></div></li><li class="listitem">
+General purpose synchronizers: <code class="literal">Latch</code>, <code class="literal">Semaphore</code>, <code class="literal">Barrier</code>, <code class="literal">Exchanger</code>
+</li><li class="listitem">
+Nanosecond-granularity timing: <code class="literal">aLock.tryLock(250, TimeUnit.NANOSECONDS)</code>
+</li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">java.util.concurrent.Semaphore</code> - Counting semaphore maintains a set of permits and is generally used to restrict number of threads that can access a resource
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.CyclicBarrier</code> - Aids a set of threads to wait for each other to reach a common “barrier” point
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.CountDownLatch</code> – Allows a set of threads to wait for some number of operations performed by other thread(s) to complete
+</li><li class="listitem">
+<code class="literal">java.util.concurrent.Exchanger&lt;V&gt;</code> - A synchronization point at which a pair of threads can exchange objects
+</li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="generics_collections.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="java_util.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="threading.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Java Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#overview_of_java">1. Overview of Java</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_history_of_java">1.1. History of Java</a></span></dt><dt><span class="section"><a href="index.html#_what_is_java">1.2. What is Java?</a></span></dt><dt><span class="section"><a href="index.html#_why_java">1.3. Why Java?</a></span></dt><dt><span class="section"><a href="index.html#_java_after_15_years">1.4. Java After 15 years</a></span></dt></dl></dd><dt><span class="section"><a href="hello_world.html">2. A Java Hello World Program</a></span></dt><dd><dl><dt><span class="section"><a href="hello_world.html#_literal_helloworld_java_literal">2.1. <code class="literal">HelloWorld.java</code></a></span></dt><dt><span class="section"><a href="hello_world.html#_java_keywords">2.2. Java Keywords</a></span></dt><dt><span class="section"><a href="hello_world.html#_java_identifiers">2.3. Java Identifiers</a></span></dt><dt><span class="section"><a href="hello_world.html#_compiling_java_programs">2.4. Compiling Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_running_java_programs">2.5. Running Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_comments_in_java_code">2.6. Comments in Java Code</a></span></dt><dt><span class="section"><a href="hello_world.html#_the_literal_main_literal_method">2.7. The <code class="literal">main()</code> Method</a></span></dt></dl></dd><dt><span class="section"><a href="data_types.html">3. Data Types</a></span></dt><dd><dl><dt><span class="section"><a href="data_types.html#_declaring_and_assigning_variables">3.1. Declaring and Assigning Variables</a></span></dt><dt><span class="section"><a href="data_types.html#_java_primitive_types">3.2. Java Primitive Types</a></span></dt><dt><span class="section"><a href="data_types.html#_conversion_between_types">3.3. Conversion Between Types</a></span></dt><dt><span class="section"><a href="data_types.html#_declaring_arrays">3.4. Declaring Arrays</a></span></dt><dt><span class="section"><a href="data_types.html#_creating_and_initializing_array_objects">3.5. Creating and Initializing Array Objects</a></span></dt><dt><span class="section"><a href="data_types.html#_modifying_array_size">3.6. Modifying Array Size</a></span></dt><dt><span class="section"><a href="data_types.html#_strings">3.7. Strings</a></span></dt></dl></dd><dt><span class="section"><a href="operators.html">4. Operators</a></span></dt><dd><dl><dt><span class="section"><a href="operators.html#_arithmetic_operators">4.1. Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_shortcut_arithmetic_operators">4.2. Shortcut Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_string_concatenation">4.3. String Concatenation</a></span></dt><dt><span class="section"><a href="operators.html#_relational_operators">4.4. Relational Operators</a></span></dt><dt><span class="section"><a href="operators.html#_logical_boolean_operators">4.5. Logical Boolean Operators</a></span></dt><dt><span class="section"><a href="operators.html#_bitwise_operators">4.6. Bitwise Operators</a></span></dt><dt><span class="section"><a href="operators.html#_assignment_operators">4.7. Assignment Operators</a></span></dt><dt><span class="section"><a href="operators.html#_other_operators">4.8. Other Operators</a></span></dt><dt><span class="section"><a href="operators.html#_operator_precedence">4.9. Operator Precedence</a></span></dt></dl></dd><dt><span class="section"><a href="flow_control.html">5. Statements and Flow Control</a></span></dt><dd><dl><dt><span class="section"><a href="flow_control.html#_expressions">5.1. Expressions</a></span></dt><dt><span class="section"><a href="flow_control.html#_statements_and_blocks">5.2. Statements and Blocks</a></span></dt><dt><span class="section"><a href="flow_control.html#_local_variable_storage_the_stack">5.3. Local Variable Storage: The Stack</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_return_literal_statement">5.4. The <code class="literal">return</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_if_else_literal_statement">5.5. The <code class="literal">if-else</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement">5.6. The <code class="literal">switch</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement_cont">5.7. The <code class="literal">switch</code> Statement (cont.)</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_while_literal_loop_statement">5.8. The <code class="literal">while</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_for_literal_loop_statement">5.9. The <code class="literal">for</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_using_literal_for_literal_to_iterate_over_arrays_and_collections">5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_break_literal_statement">5.11. The <code class="literal">break</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_continue_literal_statement">5.12. The <code class="literal">continue</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_nested_loops_and_labels">5.13. Nested Loops and Labels</a></span></dt></dl></dd><dt><span class="section"><a href="object_oriented.html">6. Object Oriented Programming in Java</a></span></dt><dd><dl><dt><span class="section"><a href="object_oriented.html#_what_is_object_oriented_programming_oop">6.1. What is Object Oriented Programming (OOP)?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_why_oop">6.2. Why OOP?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_class_vs_object">6.3. Class vs. Object</a></span></dt><dt><span class="section"><a href="object_oriented.html#_classes_in_java">6.4. Classes in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_objects_in_java">6.5. Objects in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_java_memory_model">6.6. Java Memory Model</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessing_objects_through_references">6.7. Accessing Objects through References</a></span></dt><dt><span class="section"><a href="object_oriented.html#_garbage_collection">6.8. Garbage Collection</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java">6.9. Methods in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java_cont">6.10. Methods in Java (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_declarations">6.11. Method Declarations</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_signatures">6.12. Method Signatures</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_methods">6.13. Invoking Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_data_fields">6.14. Static vs. Instance Data Fields</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_methods">6.15. Static vs. Instance Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_overloading">6.16. Method Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_variable_argument_length_methods">6.17. Variable Argument Length Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors">6.18. Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors_cont">6.19. Constructors (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constants">6.20. Constants</a></span></dt><dt><span class="section"><a href="object_oriented.html#_encapsulation">6.21. Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#access_modifiers_simple">6.22. Access Modifiers: Enforcing Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessors_getters_and_mutators_setters">6.23. Accessors (Getters) and Mutators (Setters)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance">6.24. Inheritance</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_composition_and_aggregation">6.25. Inheritance, Composition, and Aggregation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_in_java">6.26. Inheritance in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_base_class_constructors">6.27. Invoking Base Class Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_vs_overloading">6.28. Overriding vs. Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism">6.29. Polymorphism</a></span></dt><dt><span class="section"><a href="object_oriented.html#_more_on_upcasting">6.30. More on Upcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_downcasting">6.31. Downcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_abstract_classes_and_methods">6.32. Abstract Classes and Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_interfaces">6.33. Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_defining_a_java_interface">6.34. Defining a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_implementing_a_java_interface">6.35. Implementing a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism_through_interfaces">6.36. Polymorphism through Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_literal_object_literal_java_8217_s_ultimate_superclass">6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_literal_object_tostring_literal">6.38. Overriding <code class="literal">Object.toString()</code></a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equality">6.39. Object Equality</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence">6.40. Object Equivalence</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence_cont">6.41. Object Equivalence (cont.)</a></span></dt></dl></dd><dt><span class="section"><a href="packaging.html">7. Packaging</a></span></dt><dd><dl><dt><span class="section"><a href="packaging.html#_why_is_packaging_needed">7.1. Why is Packaging Needed?</a></span></dt><dt><span class="section"><a href="packaging.html#_packages_in_java">7.2. Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_sub_packages_in_java">7.3. Sub-Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_package_naming_conventions">7.4. Package Naming Conventions</a></span></dt><dt><span class="section"><a href="packaging.html#_using_package_members_qualified_names">7.5. Using Package Members: Qualified Names</a></span></dt><dt><span class="section"><a href="packaging.html#_importing_package_members">7.6. Importing Package Members</a></span></dt><dt><span class="section"><a href="packaging.html#_static_imports">7.7. Static Imports</a></span></dt><dt><span class="section"><a href="packaging.html#access_modifiers_complete">7.8. Access Modifiers and Packages</a></span></dt><dt><span class="section"><a href="packaging.html#_the_class_path">7.9. The Class Path</a></span></dt><dt><span class="section"><a href="packaging.html#_java_archive_jar_files">7.10. Java Archive (JAR) Files</a></span></dt><dt><span class="section"><a href="packaging.html#_the_literal_jar_literal_command_line_tool_examples">7.11. The <code class="literal">jar</code> Command-Line Tool Examples</a></span></dt></dl></dd><dt><span class="section"><a href="javadoc.html">8. JavaDoc</a></span></dt><dd><dl><dt><span class="section"><a href="javadoc.html#_what_is_javadoc">8.1. What is JavaDoc?</a></span></dt><dt><span class="section"><a href="javadoc.html#_reading_doc_comments_java_api">8.2. Reading Doc Comments (Java API)</a></span></dt><dt><span class="section"><a href="javadoc.html#_defining_javadoc">8.3. Defining JavaDoc</a></span></dt><dt><span class="section"><a href="javadoc.html#_doc_comment_tags">8.4. Doc Comment Tags</a></span></dt><dt><span class="section"><a href="javadoc.html#_generating_doc_comment_output">8.5. Generating Doc Comment Output</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">9. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_what_are_exceptions">9.1. What are Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_why_use_exceptions">9.2. Why Use Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_built_in_exceptions">9.3. Built-In Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_types">9.4. Exception Types</a></span></dt><dt><span class="section"><a href="exceptions.html#_checked_vs_unchecked_exceptions">9.5. Checked vs. Unchecked Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_lifecycle">9.6. Exception Lifecycle</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions">9.7. Handling Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions_cont">9.8. Handling Exceptions (cont.)</a></span></dt><dt><span class="section"><a href="exceptions.html#_grouping_exceptions">9.9. Grouping Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_throwing_exception">9.10. Throwing Exception</a></span></dt><dt><span class="section"><a href="exceptions.html#_creating_an_exception_class">9.11. Creating an Exception Class</a></span></dt><dt><span class="section"><a href="exceptions.html#_nesting_exceptions">9.12. Nesting Exceptions</a></span></dt></dl></dd><dt><span class="section"><a href="java_lang.html">10. The <code class="literal">java.lang</code> Package</a></span></dt><dd><dl><dt><span class="section"><a href="java_lang.html#_primitive_wrappers">10.1. Primitive Wrappers</a></span></dt><dt><span class="section"><a href="java_lang.html#_string_and_stringbuilder">10.2. String and StringBuilder</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_math_class">10.3. The Math Class</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_system_class">10.4. The System Class</a></span></dt></dl></dd><dt><span class="section"><a href="input_output.html">11. Input/Output</a></span></dt><dd><dl><dt><span class="section"><a href="input_output.html#_representing_file_paths">11.1. Representing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_managing_file_paths">11.2. Managing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_input_output_class_hierarchy">11.3. Input/Output Class Hierarchy</a></span></dt><dt><span class="section"><a href="input_output.html#_byte_streams">11.4. Byte Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_character_streams">11.5. Character Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_exception_handling_in_java_i_o">11.6. Exception Handling in Java I/O</a></span></dt><dt><span class="section"><a href="input_output.html#_java_file_i_o_classes">11.7. Java File I/O Classes</a></span></dt><dt><span class="section"><a href="input_output.html#_easy_text_output_printwriter_printstream">11.8. Easy Text Output: PrintWriter/PrintStream</a></span></dt><dt><span class="section"><a href="input_output.html#_reading_from_the_terminal">11.9. Reading from the Terminal</a></span></dt><dt><span class="section"><a href="input_output.html#_filtered_streams">11.10. Filtered Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_object_serialization">11.11. Object Serialization</a></span></dt></dl></dd><dt><span class="section"><a href="java_net.html">12. <code class="literal">java.net</code></a></span></dt><dd><dl><dt><span class="section"><a href="java_net.html#_literal_java_net_inetaddress_literal">12.1. <code class="literal">java.net.InetAddress</code></a></span></dt><dt><span class="section"><a href="java_net.html#_url_connections">12.2. URL/Connections</a></span></dt><dt><span class="section"><a href="java_net.html#_tcp_sockets">12.3. TCP Sockets</a></span></dt></dl></dd><dt><span class="section"><a href="generics_collections.html">13. Java Collections and Generics</a></span></dt><dd><dl><dt><span class="section"><a href="generics_collections.html#collections">13.1. The Java Collections Framework</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collection_interface">13.2. The Collection Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_iterating_over_a_collection">13.3. Iterating Over a Collection</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_list_interface">13.4. The List Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_list">13.5. Classes Implementing List</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_set_and_sortedset_interfaces">13.6. The Set and SortedSet Interfaces</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_set">13.7. Classes Implementing Set</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_queue_interface">13.8. The Queue Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_map_interface">13.9. The Map Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_retrieving_map_views">13.10. Retrieving Map Views</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_map">13.11. Classes Implementing Map</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collections_class">13.12. The Collections Class</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_safety_in_java_collections">13.13. Type Safety in Java Collections</a></span></dt><dt><span class="section"><a href="generics_collections.html#_java_generics">13.14. Java Generics</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generics_and_polymorphism">13.15. Generics and Polymorphism</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_wildcards">13.16. Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_qualified_type_wildcards">13.17. Qualified Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generic_methods">13.18. Generic Methods</a></span></dt></dl></dd><dt><span class="section"><a href="threading.html">14. Threading</a></span></dt><dd><dl><dt><span class="section"><a href="threading.html#_runnable_and_thread">14.1. Runnable And Thread</a></span></dt><dt><span class="section"><a href="threading.html#_thread_synchronization">14.2. Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_more_thread_synchronization">14.3. More Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_concurrency_features">14.4. Java 5 Concurrency Features</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_pre_java_5">14.5. Thread Scheduling Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_in_java_5">14.6. Thread Scheduling In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_8217_s_literal_executorservice_literal">14.7. Java 5’s <code class="literal">ExecutorService</code></a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_pre_java_5">14.8. Getting Results From Threads Pre Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_in_java_5">14.9. Getting Results From Threads In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_pre_java_5">14.10. Thread Sync Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_in_java_5_with_locks">14.11. Thread Sync In Java 5 With Locks</a></span></dt><dt><span class="section"><a href="threading.html#_benefits_of_java_5_locks">14.12. Benefits Of Java 5 Locks</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_conditions">14.13. Java 5 Conditions</a></span></dt><dt><span class="section"><a href="threading.html#_atomics_in_java_5">14.14. Atomics In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_other_java_5_concurrency_features">14.15. Other Java 5 Concurrency Features</a></span></dt></dl></dd><dt><span class="section"><a href="java_util.html">15. Additional Java Features</a></span></dt><dd><dl><dt><span class="section"><a href="java_util.html#_the_date_class">15.1. The Date Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_calendar_class">15.2. The Calendar Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_timezone_class">15.3. The TimeZone Class</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates">15.4. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates_2">15.5. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#enum">15.6. Typesafe Enums</a></span></dt><dt><span class="section"><a href="java_util.html#_typesafe_enums_cont">15.7. Typesafe Enums (cont.)</a></span></dt><dt><span class="section"><a href="java_util.html#_enumset_and_enummap">15.8. EnumSet and EnumMap</a></span></dt><dt><span class="section"><a href="java_util.html#_annotations">15.9. Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_using_annotations">15.10. Using Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_standard_java_annotations">15.11. Standard Java Annotations</a></span></dt></dl></dd><dt><span class="section"><a href="_java_native_interface_jni.html">16. Java Native Interface (JNI)</a></span></dt><dd><dl><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_overview">16.1. JNI Overview</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_components">16.2. JNI Components</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_java">16.3. JNI Development (Java)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_c">16.4. JNI Development (C)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_compile">16.5. JNI Development (Compile)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_type_conversion">16.6. Type Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_native_method_arguments">16.7. Native Method Arguments</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_string_conversion">16.8. String Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_array_conversion">16.9. Array Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_throwing_exceptions_in_the_native_world">16.10. Throwing Exceptions In The Native World</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_access_properties_and_methods_from_native_code">16.11. Access Properties And Methods From Native Code</a></span></dt></dl></dd><dt><span class="section"><a href="jdbc.html">17. <code class="literal">java.sql</code></a></span></dt><dd><dl><dt><span class="section"><a href="jdbc.html#_jdbc_overview">17.1. JDBC Overview</a></span></dt><dt><span class="section"><a href="jdbc.html#_jdbc_drivers">17.2. JDBC Drivers</a></span></dt><dt><span class="section"><a href="jdbc.html#_getting_a_jdbc_literal_connection_literal">17.3. Getting a JDBC <code class="literal">Connection</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_preparing_a_literal_statement_literal">17.4. Preparing a <code class="literal">Statement</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_processing_literal_resultset_literal">17.5. Processing <code class="literal">ResultSet</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_using_literal_resultsetmetadata_literal">17.6. Using <code class="literal">ResultSetMetaData</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_updates">17.7. Updates</a></span></dt></dl></dd><dt><span class="section"><a href="xml_processing.html">18. XML Processing</a></span></dt><dd><dl><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_java">18.1. Parsing XML with Java</a></span></dt><dt><span class="section"><a href="xml_processing.html#_event_driven_approach">18.2. Event-Driven Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_sax">18.3. Overview of SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_sax">18.4. Parsing XML with SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_object_model_approach">18.5. Object-Model Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_dom">18.6. Overview of DOM</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_dom">18.7. Parsing XML with DOM</a></span></dt></dl></dd><dt><span class="section"><a href="design_patterns.html">19. Design Patterns</a></span></dt><dd><dl><dt><span class="section"><a href="design_patterns.html#_what_are_design_patterns">19.1. What are Design Patterns?</a></span></dt><dt><span class="section"><a href="design_patterns.html#_singleton">19.2. Singleton</a></span></dt><dt><span class="section"><a href="design_patterns.html#_factory_method">19.3. Factory Method</a></span></dt><dt><span class="section"><a href="design_patterns.html#_abstract_factory">19.4. Abstract Factory</a></span></dt><dt><span class="section"><a href="design_patterns.html#_adapter">19.5. Adapter</a></span></dt><dt><span class="section"><a href="design_patterns.html#_composite">19.6. Composite</a></span></dt><dt><span class="section"><a href="design_patterns.html#_decorator">19.7. Decorator</a></span></dt><dt><span class="section"><a href="design_patterns.html#_chain_of_responsibility">19.8. Chain of Responsibility</a></span></dt><dt><span class="section"><a href="design_patterns.html#_observer_publish_subscribe">19.9. Observer / Publish-Subscribe</a></span></dt><dt><span class="section"><a href="design_patterns.html#_strategy">19.10. Strategy</a></span></dt><dt><span class="section"><a href="design_patterns.html#_template">19.11. Template</a></span></dt><dt><span class="section"><a href="design_patterns.html#_emphasis_role_strong_d_emphasis_ata_emphasis_role_strong_a_emphasis_ccess_emphasis_role_strong_o_emphasis_bject">19.12. <span class="strong"><strong>D</strong></span>ata <span class="strong"><strong>A</strong></span>ccess <span class="strong"><strong>O</strong></span>bject</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/threading.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

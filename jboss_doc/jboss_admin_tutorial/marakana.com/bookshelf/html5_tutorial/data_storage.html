@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/html5_tutorial/data_storage.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Html5 Tutorial : Data Storage  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, html5, tutorial, :, data, storage" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Html5 Tutorial : Data Storage </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Html5 Tutorial </a>
+  &raquo;
+  Data Storage </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="canvas.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="offline_applications.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="7. Data Storage"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="data_storage"></a>7. Data Storage</h2></div></div></div><div class="section" title="7.1. Problems With The Existing Cookie-based Model"><div class="titlepage"><div><div><h3 class="title"><a id="_problems_with_the_existing_cookie_based_model"></a>7.1. Problems With The Existing Cookie-based Model</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Invented during the early days of the internet, a cookie is a small piece of text that allow data storage for a client
+</li><li class="listitem">
+Consist in a name/value pairs for storing data
+</li><li class="listitem">
+Often times used to remember user preferences on a web site
+</li><li class="listitem"><p class="simpara">
+However, cookies have several downsides:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+They are difficult to work with. There are no real API to create, read, update or delete a cookie. This can quickly become a pain for developers
+</p><p title="Setting a cookie"><b>Setting a cookie. </b>
+</p><pre class="programlisting">document.cookie = "name=value; path=/; expires=date";</pre><p title="Setting a cookie">
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You could then try the following <code class="literal">document.cookie = "name=; path=/";</code> thinking that it would delete the cookie previously set. But it does not delete the cookie until the browser is shut down</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+They are included in every HTTP request
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Useless because the same data is transmitted between the client and the server
+</li><li class="listitem">
+Not secure because they are not encrypted (Unless your whole web site use SSL)
+</li></ul></div></li><li class="listitem">
+They are limited in terms of size: 4KB only per cookie
+</li><li class="listitem">
+There is a limited number of cookies per domain per browser: 20 cookies per domain per browser
+</li><li class="listitem">
+Total number of cookies per browser: 300 cookies per browser
+</li></ul></div></li></ul></div></div><div class="section" title="7.2. Hacks Prior To HTML5"><div class="titlepage"><div><div><h3 class="title"><a id="_hacks_prior_to_html5"></a>7.2. Hacks Prior To HTML5</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+To circumvent those limitations, many other storage solutions have been invented:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+userData for Microsoft Internet Explorer
+</li><li class="listitem">
+Flash cookies by Adobe
+</li><li class="listitem">
+Gears by Google
+</li><li class="listitem">
+dojox.storage
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The problem is that all of these solutions are either specific to a single browser or are relying on a third-party plugin like flash</p></td></tr></table></div></li></ul></div></div><div class="section" title="7.3. New Storage Options"><div class="titlepage"><div><div><h3 class="title"><a id="_new_storage_options"></a>7.3. New Storage Options</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+HTML5 Web storage goal is to provide a standardized and native API that works the same way on any browser
+</li><li class="listitem"><p class="simpara">
+Two ways to store data on the client side:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Web Storage: Key/Value pair storage system
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">localStorage</code>
+</li><li class="listitem">
+<code class="literal">sessionStorage</code>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Web SQL Database: SQL Database storage system
+</p><div class="warning" title="Warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="../images/warning.png"></img></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>On November 19th, 2010 the W3C announced that they would no longer support Web SQL.</p></td></tr></table></div></li></ul></div></li></ul></div><div class="section" title="7.3.1. Web Storage"><div class="titlepage"><div><div><h4 class="title"><a id="_web_storage"></a>7.3.1. Web Storage</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Originally included in the <span class="emphasis"><em>Web Applications 1.0</em></span> specification, it now has its own specification: <span class="emphasis"><em>W3C Web Storage</em></span>
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>"Local Storage" or "DOM Storage" are the terms used by some browser vendors for referring to web storage. Another term used to refer to web storage is "cookies on steroids".</p></td></tr></table></div></li><li class="listitem">
+Key/Value pair data is stored on the client side like cookies except that the data is not sent to the server
+</li><li class="listitem"><p class="simpara">
+Two types of storage: <code class="literal">sessionStorage</code> and <code class="literal">localStorage</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">sessionStorage</code>: Each window or tab has its own <code class="literal">sessionStorage</code> object. That means that any key/value pair created in <code class="literal">sessionStorage</code> for a window/tab can only be accessed from this window/tab. Data remain available until this same window/tab is closed
+</li><li class="listitem">
+<code class="literal">localStorage</code>: The <code class="literal">localStorage</code> object is shared between window/tab for a same domain and data remain available until explicitly deleted by the user using either the web application or the browser options
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Specification recommendation says the web storage limit per browser per origin is 5MB
+</p><div class="warning" title="Warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="../images/warning.png"></img></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>When the storage quota is exceeded, an QUOTA_EXCEEDED_ERR exception is thrown. There is currently no way for developer to ask permission for more storage to the user, that means that you have to be careful as a developer</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+<code class="literal">sessionStorage</code> and <code class="literal">localStorage</code> both share the same API to create, read, update or delete data on the client side. They both implement the <code class="literal">Storage</code> interface which is the following
+</p><pre class="programlisting">interface Storage {
+  readonly attribute unsigned long length; <a id="CO13-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  getter DOMString key(in unsigned long index); <a id="CO13-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+  getter any getItem(in DOMString key); <a id="CO13-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  setter creator void setItem(in DOMString key, in any data); <a id="CO13-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+  deleter void removeItem(in DOMString key); <a id="CO13-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+  void clear(); <a id="CO13-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+};</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Number of items. For instance, <code class="literal">localStorage.length</code> would tell us how many items do we have in the <code class="literal">localStorage</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Get the key of an item with a zero based index. For instance, let us say we have one item in the <code class="literal">localStorage</code> with the following key/value pair: "animal"/"unicorn". Calling <code class="literal">localStorage.key(0)</code> would return "animal"
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Get the value of an item identified by its key. For instance, using the previous item ("animal"/"unicorn"), calling <code class="literal">localStorage.getItem("animal")</code> would return "unicorn"
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Can be either used to create or modify an item. For instance, if we need to create an item to remember the name of the user: <code class="literal">localStorage.setItem("name","Jack")</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+Delete an item identified by its key. For instance, if we need to delete the previous item: <code class="literal">localStorage.removeItem("name")</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+Delete all items
+</td></tr></table></div></li></ul></div></div><div class="section" title="7.3.2. Browser Support"><div class="titlepage"><div><div><h4 class="title"><a id="_browser_support_4"></a>7.3.2. Browser Support</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Web storage is supported on Internet Explorer 8.0+, Firefox 3.5+, Safari 4.0+, Chrome 6.0+ and Opera 10.5+
+</li></ul></div></div><div class="section" title="7.3.3. Web SQL Storage"><div class="titlepage"><div><div><h4 class="title"><a id="_web_sql_storage"></a>7.3.3. Web SQL Storage</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Storing key/value pair data is pretty nice but what if you want to store complex relational data?
+</li><li class="listitem">
+Another way to store data on the client side is to use web SQL storage
+</li><li class="listitem"><p class="simpara">
+Web SQL storage also has its own specification: Web SQL Database
+</p><div class="warning" title="Warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="../images/warning.png"></img></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>As previously mentioned, the W3C is no longer maintaining the Web SQL Database specification (since November 18th, 2010) meaning that developers are warned that they cannot count on it and that they use it at their own peril. However, since it is still implemented in some desktop browsers and also in mobile versions of Safari on Apple’s iOS, it is still interesting to know how to use it</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+Below is an example of how to create the database and how to perform operations on it:
+</p><pre class="programlisting">//Creates the database (if not already created) and opens it
+var db=openDatabase('contacts','1.0','my contacts app', 2 * 1024 * 1024); //<a id="CO14-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+//Initialize the database
+//<a id="CO14-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+db.transaction(function(tx) {
+  //<a id="CO14-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  tx.executeSql('CREATE TABLE IF NOT EXISTS contacts(id integer primary key autoincrement, firstname, lastname, phonenumber)');
+});
+
+//Read the contacts from the database (supposing there are some)
+//<a id="CO14-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+db.transaction(function(tx) {
+  //<a id="CO14-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+  tx.executeSql('SELECT * FROM contacts', [], function(tx, results) {
+    var len=results.rows.length;
+    var i;
+    for(i=0; i&lt;len; i++) {
+      alert("Id: " + results.rows.item(i).id + " Firstname: " + results.rows.item(i).firstname + " Lastname: " + results.rows.item(i).lastname + " Phonenumber: " + results.rows.item(i).phonenumber); //<a id="CO14-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+    }
+  });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">openDatabase</code> method opens an existing database or creates it and then opens it. It takes the following arguments: a database name, a version number, a textual description and a size.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> <a href="#CO14-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Once we get the <code class="literal">Database</code> object (in this case named <code class="literal">db</code>), we can perform SQL statements on the database. These SQL statements can only be performed in a transaction. So the <code class="literal">transaction</code> method can take up to three arguments and only the first one is mandatory: The first argument is the transaction callback (it contains the transaction steps) and this callback is passed a <code class="literal">SQLTransaction</code> object. The second one, optional, is the error callback and is called if something went wrong in the transaction callback. The last one, also optional, is the success callback and is called when everything went well in the transaction callback.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> <a href="#CO14-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+Inside the transaction callback, we have access on a <code class="literal">SQLTransaction</code> object (here called <code class="literal">tx</code>) on which we call the <code class="literal">executeSql</code> method to execute SQL statements. This method takes the following arguments: The first one contains the SQL statement (can be a SQL prepared statement with parameters represented by question marks: <code class="literal">?</code>). The second one represents the array of parameters for the SQL statement. The third one, optional, is the success callback and is passed two arguments: The current <code class="literal">SQLTransaction</code> object (called <code class="literal">tx</code> in this case) and a <code class="literal">SQLResultSet</code> object containing the results of the executed SQL statement. The fourth and last one is the error callback, executed if there was an error during the execution of the SQL statement.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+In the success callback, executed after the SQL statement, we have access to the <code class="literal">SQLResultSet</code> object. With this object we can read the results from the database, when a <code class="literal">SELECT</code> statement was executed. We can also know the number of rows affected by a query as well as knowing the last inserted id of a tuple.
+</td></tr></table></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Regarding the size of a database, the specification recommends 5MB per database per origin per user agent.</p></td></tr></table></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Opening the database with the right version number is important since a database cannot exist in multiple versions at a time on the browser.</p></td></tr></table></div></li></ul></div></div><div class="section" title="7.3.4. Browser Support"><div class="titlepage"><div><div><h4 class="title"><a id="_browser_support_5"></a>7.3.4. Browser Support</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Web SQL storage is currently supported in Safari 3.2+, Chrome 6.0+ and Opera 10.5+
+</p><div class="warning" title="Warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="../images/warning.png"></img></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>Since November 18th, 2010, the W3C no longer maintain the web SQL storage specification so do not expect browser support in the future.</p></td></tr></table></div></li></ul></div></div></div><div class="section" title="7.4. Quiz"><div class="titlepage"><div><div><h3 class="title"><a id="_quiz_6"></a>7.4. Quiz</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Cite 3 existing drawbacks related to the cookie model
+</li><li class="listitem">
+Explain the difference between <code class="literal">localStorage</code> and <code class="literal">sessionStorage</code>
+</li><li class="listitem">
+What is the web storage limit per browser per origin?
+</li><li class="listitem">
+Where do you have to perform your database operations?
+</li><li class="listitem">
+What is the maximum space allowed for a web SQL database per origin per user agent? What happens is the database use more than the size limit?
+</li></ol></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="canvas.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="offline_applications.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="data_storage.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana HTML5 Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#history_and_vision">1. History, Vision And Future Of HTML5</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_what_is_html5">1.1. What Is HTML5?</a></span></dt><dt><span class="section"><a href="index.html#_history_and_major_actors">1.2. History And Major Actors</a></span></dt><dt><span class="section"><a href="index.html#_vision_and_philosophy_behind_html5">1.3. Vision And Philosophy Behind HTML5</a></span></dt><dt><span class="section"><a href="index.html#_future_of_html5">1.4. Future Of HTML5</a></span></dt></dl></dd><dt><span class="section"><a href="getting_started_with_html5.html">2. Getting Started With HTML5</a></span></dt><dd><dl><dt><span class="section"><a href="getting_started_with_html5.html#_the_state_of_browser_support">2.1. The State Of Browser Support</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_support_for_legacy_browsers">2.2. Support For Legacy Browsers</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_developer_tools">2.3. Developer Tools</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_quiz">2.4. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="structure_of_a_web_page.html">3. Structure Of A Web Page</a></span></dt><dd><dl><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_doctype">3.1. HTML5 DOCTYPE</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_page_encoding">3.2. Page Encoding</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_markup">3.3. HTML5 Markup</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_and_css3">3.4. HTML5 And CSS3</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_browser_support">3.5. Browser Support</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_quiz_2">3.6. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="forms.html">4. Forms</a></span></dt><dd><dl><dt><span class="section"><a href="forms.html#_what_are_the_needs_for_web_applications">4.1. What Are The Needs For Web Applications?</a></span></dt><dt><span class="section"><a href="forms.html#_current_solutions">4.2. Current Solutions</a></span></dt><dt><span class="section"><a href="forms.html#_new_input_types">4.3. New Input Types</a></span></dt><dt><span class="section"><a href="forms.html#_new_attributes_2">4.4. New Attributes</a></span></dt><dt><span class="section"><a href="forms.html#_form_validation">4.5. Form Validation</a></span></dt><dt><span class="section"><a href="forms.html#_browser_support_2">4.6. Browser Support</a></span></dt><dt><span class="section"><a href="forms.html#_quiz_3">4.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="audio_and_video.html">5. Audio And Video</a></span></dt><dd><dl><dt><span class="section"><a href="audio_and_video.html#_the_state_of_web_audio_and_video_based_on_plugins">5.1. The State of Web Audio And Video Based On Plugins</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_the_state_of_audio_and_video_codecs_e_g_h_264_webm_etc">5.2. The State Of Audio And Video Codecs (e.g. H.264, WebM, etc.)</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_new_audio_video_markup">5.3. New Audio/Video Markup</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_attributes_and_methods">5.4. Attributes And Methods</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_understanding_audio_video_events">5.5. Understanding Audio/Video Events</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_customizing_audio_video_controls">5.6. Customizing Audio/Video Controls</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_quiz_4">5.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="canvas.html">6. HTML5 Canvas</a></span></dt><dd><dl><dt><span class="section"><a href="canvas.html#_overview_of_graphics_in_the_browser">6.1. Overview Of Graphics In The Browser</a></span></dt><dt><span class="section"><a href="canvas.html#_using_a_canvas">6.2. Using A Canvas</a></span></dt><dt><span class="section"><a href="canvas.html#_context_and_coordinates">6.3. Context And Coordinates</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_shapes">6.4. Drawing Shapes</a></span></dt><dt><span class="section"><a href="canvas.html#_working_with_paths">6.5. Working With Paths</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_text">6.6. Drawing Text</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_images">6.7. Drawing Images</a></span></dt><dt><span class="section"><a href="canvas.html#_working_with_pixels">6.8. Working With Pixels</a></span></dt><dt><span class="section"><a href="canvas.html#_understanding_transforms">6.9. Understanding Transforms</a></span></dt><dt><span class="section"><a href="canvas.html#_browser_support_3">6.10. Browser Support</a></span></dt><dt><span class="section"><a href="canvas.html#_quiz_5">6.11. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="data_storage.html">7. Data Storage</a></span></dt><dd><dl><dt><span class="section"><a href="data_storage.html#_problems_with_the_existing_cookie_based_model">7.1. Problems With The Existing Cookie-based Model</a></span></dt><dt><span class="section"><a href="data_storage.html#_hacks_prior_to_html5">7.2. Hacks Prior To HTML5</a></span></dt><dt><span class="section"><a href="data_storage.html#_new_storage_options">7.3. New Storage Options</a></span></dt><dt><span class="section"><a href="data_storage.html#_quiz_6">7.4. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="offline_applications.html">8. HTML5 Offline Applications</a></span></dt><dd><dl><dt><span class="section"><a href="offline_applications.html#_the_need_for_offline_mode">8.1. The Need For Offline Mode</a></span></dt><dt><span class="section"><a href="offline_applications.html#_the_manifest_file">8.2. The Manifest File</a></span></dt><dt><span class="section"><a href="offline_applications.html#_the_applicationcache_events">8.3. The applicationCache Events</a></span></dt><dt><span class="section"><a href="offline_applications.html#_deployments_and_updates">8.4. Deployments And Updates</a></span></dt><dt><span class="section"><a href="offline_applications.html#_browser_support_6">8.5. Browser Support</a></span></dt><dt><span class="section"><a href="offline_applications.html#_quiz_7">8.6. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="geolocation.html">9. HTML5 Geolocation</a></span></dt><dd><dl><dt><span class="section"><a href="geolocation.html#_introduction_to_geolocation">9.1. Introduction To Geolocation</a></span></dt><dt><span class="section"><a href="geolocation.html#_privacy_considerations">9.2. Privacy Considerations</a></span></dt><dt><span class="section"><a href="geolocation.html#_many_ways_to_get_user_location">9.3. Many Ways To Get User Location</a></span></dt><dt><span class="section"><a href="geolocation.html#_two_main_methods">9.4. Two Main Methods</a></span></dt><dt><span class="section"><a href="geolocation.html#_the_position_object">9.5. The Position Object</a></span></dt><dt><span class="section"><a href="geolocation.html#_handling_errors">9.6. Handling Errors</a></span></dt><dt><span class="section"><a href="geolocation.html#_the_positionoptions_object">9.7. The PositionOptions Object</a></span></dt><dt><span class="section"><a href="geolocation.html#_browser_support_7">9.8. Browser Support</a></span></dt><dt><span class="section"><a href="geolocation.html#_quiz_8">9.9. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="web_workers.html">10. HTML5 Web Workers</a></span></dt><dd><dl><dt><span class="section"><a href="web_workers.html#_the_current_javascript_execution_model">10.1. The Current JavaScript Execution Model</a></span></dt><dt><span class="section"><a href="web_workers.html#_introduction_to_web_workers">10.2. Introduction To Web Workers</a></span></dt><dt><span class="section"><a href="web_workers.html#_usage_of_web_workers">10.3. Usage Of Web Workers</a></span></dt><dt><span class="section"><a href="web_workers.html#_communication_apis">10.4. Communication APIs</a></span></dt><dt><span class="section"><a href="web_workers.html#_handling_errors_2">10.5. Handling Errors</a></span></dt><dt><span class="section"><a href="web_workers.html#_browser_support_8">10.6. Browser Support</a></span></dt><dt><span class="section"><a href="web_workers.html#_quiz_9">10.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="messaging.html">11. HTML5 Messaging APIs</a></span></dt><dd><dl><dt><span class="section"><a href="messaging.html#_understanding_the_same_origin_policy">11.1. Understanding the same origin policy</a></span></dt><dt><span class="section"><a href="messaging.html#_workaround_to_the_same_origin_policy">11.2. Workaround to the same origin policy</a></span></dt><dt><span class="section"><a href="messaging.html#_cross_document_messaging">11.3. Cross-document messaging</a></span></dt><dt><span class="section"><a href="messaging.html#_xmlhttprequest_level_2">11.4. XMLHttpRequest Level 2</a></span></dt></dl></dd><dt><span class="section"><a href="web_sockets.html">12. Web Sockets</a></span></dt><dd><dl><dt><span class="section"><a href="web_sockets.html#_overview_of_the_current_real_time_solutions">12.1. Overview Of The Current "Real-Time" Solutions</a></span></dt><dt><span class="section"><a href="web_sockets.html#_overview_of_web_sockets_api_and_protocol">12.2. Overview Of Web Sockets API And Protocol</a></span></dt><dt><span class="section"><a href="web_sockets.html#_advantages_of_web_sockets">12.3. Advantages Of Web Sockets</a></span></dt><dt><span class="section"><a href="web_sockets.html#_browser_support_11">12.4. Browser Support</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/html5_tutorial/data_storage.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

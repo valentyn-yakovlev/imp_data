@@ -1,0 +1,32 @@
+#!/bin/sh
+
+export PATH=/usr/bin:/bin:/usr/sbin:/opt/mysql/bin:/sbin:$PATH
+MYSQL_USER="root"
+MYSQL_PWD="passwd"
+MYSQL_HOST="127.0.0.1"
+DB="supportDB"
+DEST_DIR=/data/backup
+NOW=$(date +%d%b%Y)
+DEST="${DEST_DIR}/${NOW}"
+mkdir -p "$DEST"
+#DEST_IP="65.182.191.4"
+
+for table in $(mysql -u "$MYSQL_USER" -p"$MYSQL_PWD" -h "$MYSQL_HOST" -D "$DB" -e "show tables" | grep -v "Tables_in")
+#for table in  ISMIDM
+do
+    mysqldump -u "$MYSQL_USER" -p"$MYSQL_PWD" -h "$MYSQL_HOST" --add-drop-table --allow-keywords -q -a -c $DB $table | gzip - > "$DEST/${table}.sql.gz"
+done
+
+#ssh $DEST_IP /bin/mkdir  "$DEST"
+
+#scp -r "$DUMP_DIR" "$DEST_IP":"$DEST"
+
+unset MYSQL_USER MYSQL_PWD MYSQL_HOST DUMP_DIR NOW DB DEST_DIR DEST DEST_IP table
+
+echo "#############"
+echo "#############"
+
+echo "Job Finished"
+
+echo "#############"
+echo "#############"

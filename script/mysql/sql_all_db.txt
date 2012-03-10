@@ -1,0 +1,16 @@
+export d=`date +%d%B%Y` # Sets the date variable format for zipped file: MMddyy
+echo "Backing up Mysql database on $d"
+usr=root
+pass=passwd
+path=/data
+FILE=$path/$d/$db$d.sql
+mkdir $path/$d
+
+DBS="$(mysql -u $usr -p$pass -Bse 'show databases')"
+for db in $DBS
+do
+mysqldump --add-drop-table --allow-keywords -q -a -c -u $usr -p$pass $db > $FILE
+
+done
+
+echo "Job finished!"

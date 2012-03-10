@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/flow_control.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Java Fundamentals Tutorial : Flow Control  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, java, fundamentals, tutorial, :, flow, control" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Java Fundamentals Tutorial : Flow Control </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Java Fundamentals Tutorial </a>
+  &raquo;
+  Flow Control </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="operators.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="object_oriented.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="5. Statements and Flow Control"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="flow_control"></a>5. Statements and Flow Control</h2></div></div></div><p>Controlling the Flow of Java Programs</p><div class="section" title="5.1. Expressions"><div class="titlepage"><div><div><h3 class="title"><a id="_expressions"></a>5.1. Expressions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+An <span class="emphasis"><em>expression</em></span> is a code fragment consisting of variables, constants, method invocations, and operators that evaluates to a single value.
+</li><li class="listitem"><p class="simpara">
+Examples:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">2 + 2</code>
+</li><li class="listitem">
+<code class="literal">a = b + c</code>
+</li><li class="listitem">
+<code class="literal">myMethod()</code>
+</li></ul></div></li></ul></div></div><div class="section" title="5.2. Statements and Blocks"><div class="titlepage"><div><div><h3 class="title"><a id="_statements_and_blocks"></a>5.2. Statements and Blocks</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A <span class="emphasis"><em>statement</em></span> is a complete unit of execution.
+</li><li class="listitem"><p class="simpara">
+Many types of expressions can be made into statements by terminating them with a semicolon (<code class="literal">;</code>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Assignment expressions: <code class="literal">answer = 42;</code>
+</li><li class="listitem">
+Increment or decrement expressions: <code class="literal">a++;</code> or <code class="literal">b--;</code>
+</li><li class="listitem">
+Method invocations: <code class="literal">System.out.println("Hello, world!");</code>
+</li><li class="listitem">
+Object creation: <code class="literal">Account client = new Account();</code>
+</li></ul></div></li><li class="listitem">
+A <span class="emphasis"><em>declaration statement</em></span> declares a variable, optionally assigning it an initial value. For example: <code class="literal">int count;</code>
+</li><li class="listitem"><p class="simpara">
+A <span class="emphasis"><em>block</em></span> is a group of zero or more statements between balanced braces (<code class="literal">{ }</code>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A block can be used anywhere a single statement is allowed.
+</li></ul></div></li><li class="listitem">
+A <span class="emphasis"><em>control flow statement</em></span> is a structure controlling the execution of other statements. We’ll explore these through the rest of this module.
+</li></ul></div><p></p><p>Java <span class="emphasis"><em>whitespace</em></span> characters are the space, tab, carriage return, newline (aka linefeed), and formfeed characters.</p><p>Java requires one or more whitespace characters between keywords and/or identifiers. Other whitespace characters that do not occur within quoted string literals are not considered significant and serve only to increase the readability of code.</p></div><div class="section" title="5.3. Local Variable Storage: The Stack"><div class="titlepage"><div><div><h3 class="title"><a id="_local_variable_storage_the_stack"></a>5.3. Local Variable Storage: The Stack</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+All variables declared within a block are known as <span class="emphasis"><em>local variables</em></span>, which are stored in a memory location known as the <span class="emphasis"><em>stack</em></span>. Examples of where blocks are used include:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Method definitions
+</li><li class="listitem">
+Flow control statements
+</li><li class="listitem">
+Other blocks contained within a sequence of statements
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The stack grows and shrinks as the program runs.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Entering a block expands the stack, storing local variables in memory.
+</li><li class="listitem">
+Leaving a block shrinks the stack, flushing local variables from memory.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The <span class="emphasis"><em>scope</em></span> of a local variable — that is, the context in which is visible and accessible to your program — is limited to the block in which it is declared, and all nested blocks.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Java does not allow you to declare a local variable with the same name as a local variable already in the same scope.</p></td></tr></table></div></li></ul></div><pre class="programlisting">public static void main(String[] args) {
+    int x = 1;
+    // A local scope where args and x are visible
+
+    while (x &lt;= 5) {
+        String msg = "x is now " + x;
+        // A local scope where args, x, and msg are visible
+        System.out.println(msg);
+    }
+    // msg is no longer in scope, and has been flushed from memory
+}</pre><p></p><p>As previously mentioned, local variables must be initialized before they are used.</p><p>A local variable is visible only in the block of code (or sub blocks) where it is declared. Along with the variable’s value, its name is also flushed as the stack shrinks, allowing the same variable to be re-declared in another block of code.</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Method parameters are also considered local variables, because they too are declared (and initialized automatically by the calling code) on the stack.</p></td></tr></table></div><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>It is a good practice to limit the scope of local variables as much as possible. This promotes variable name reuse. In the case of objects, limiting local variable scope allows the JVM to quickly reclaim the memory occupied by objects that are no longer in use.</p></td></tr></table></div></div><div class="section" title="5.4. The return Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_return_literal_statement"></a>5.4. The <code class="literal">return</code> Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The <code class="literal">return</code> statement breaks out of the entire method.
+</li><li class="listitem">
+It must return a value of the type specified in the method’s signature.
+</li><li class="listitem">
+It must not return a value if the method’s return value is of type <code class="literal">void</code>.
+</li><li class="listitem"><p class="simpara">
+The value can be an expression:
+</p><pre class="programlisting">public static int max(int x, int y) {
+    return (x &gt; y) ? x : y;
+}</pre></li></ul></div><p></p><pre class="programlisting">public class FindNumber {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: FindNumber &lt;num&gt;");
+            return;
+        }
+        int[] numbers = {1, 3, 4, 5, 7, 5, 2, 8, 9, 6};
+        int findNumber = Integer.parseInt(args[0]);
+        System.out.println(find(numbers, findNumber));
+    }
+
+    public static int find(int[] nums, int num) {
+        for (int i = 0; i &lt; nums.length; i++) {
+            if (nums[i] == num) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}</pre></div><div class="section" title="5.5. The if-else Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_if_else_literal_statement"></a>5.5. The <code class="literal">if-else</code> Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">if-else</code> statement defines a block of code that is to be executed based on some boolean condition.
+</p><pre class="programlisting">if (boolean-expression) {
+    // Run if BE is true
+} else if (boolean-expression2) {
+    // Run if BE is false and BE2 is true
+} else {
+    // Run if both BE and BE2 are false
+}</pre></li><li class="listitem">
+The <code class="literal">else if</code> part is optional and can appear many times between the <code class="literal">if</code> and <code class="literal">else</code> parts.
+</li><li class="listitem">
+The <code class="literal">else</code> part is optional but can appear only once after <code class="literal">if</code> and all/any <code class="literal">else if</code> parts.
+</li></ul></div><p></p><pre class="programlisting">public class LetterGrade {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: LetterGrade &lt;numeric-score&gt;");
+            return;
+        }
+        int score = Integer.parseInt(args[0]);
+        char grade;
+
+        if (score &gt;= 90) {
+            grade = 'A';
+        } else if (score &gt;= 80) {
+            grade = 'B';
+        } else if (score &gt;= 70) {
+            grade = 'C';
+        } else if (score &gt;= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+
+        System.out.println("Grade = " + grade);
+    }
+}</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>In this example, the numerical score is parsed from a string (the first and only command-line argument) into an integer data type.</p></td></tr></table></div></div><div class="section" title="5.6. The switch Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_switch_literal_statement"></a>5.6. The <code class="literal">switch</code> Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">switch</code> statement is a special-purpose <code class="literal">if-else-if-else</code> construct that is easier and shorter to write:
+</p><pre class="programlisting">switch(expression) {
+    case const1:
+        /* do X */
+        break;
+    case const2:
+        /* do Y */
+        break;
+    default:
+        /* do something else */
+}</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The <code class="literal">switch</code> expression must be an integral type <span class="emphasis"><em>other</em></span> than <code class="literal">long</code>: <code class="literal">byte</code>, <code class="literal">short</code>, <code class="literal">char</code>, or <code class="literal">int</code>.
+</li><li class="listitem">
+<code class="literal">case</code> values must be constants (not variables).
+</li><li class="listitem">
+<code class="literal">case</code> values are tested for equality only (<code class="literal">==</code>).
+</li></ul></div></li></ul></div><p></p><pre class="programlisting">public class MonthFromNumber {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: MonthFromNumber &lt;month&gt;");
+            return;
+        }
+        int month = Integer.parseInt(args[0]);
+        switch (month) {
+            case 1:  System.out.println("January"); break;
+            case 2:  System.out.println("February"); break;
+            case 3:  System.out.println("March"); break;
+            case 4:  System.out.println("April"); break;
+            case 5:  System.out.println("May"); break;
+            case 6:  System.out.println("June"); break;
+            case 7:  System.out.println("July"); break;
+            case 8:  System.out.println("August"); break;
+            case 9:  System.out.println("September"); break;
+            case 10: System.out.println("October"); break;
+            case 11: System.out.println("November"); break;
+            case 12: System.out.println("December"); break;
+            default: System.out.println("Invalid month: " + month);
+        }
+    }
+}</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can also switch on enumerated values defined by <code class="literal">enum</code>, which is discussed in <a class="link" href="java_util.html#enum" title="15.6. Typesafe Enums">Typesafe Enums</a>.</p></td></tr></table></div></div><div class="section" title="5.7. The switch Statement (cont.)"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_switch_literal_statement_cont"></a>5.7. The <code class="literal">switch</code> Statement (cont.)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+A <code class="literal">case</code> is an entry point into a <code class="literal">switch</code> statement, whereas a <code class="literal">break</code> acts as an exit point.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Typically each <code class="literal">case</code> has a trailing <code class="literal">break</code>.
+</li><li class="listitem"><p class="simpara">
+Without a <code class="literal">break</code>, execution automatically “falls through” to the statements in the following <code class="literal">case</code>.
+</p><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>If you intentionally fall through to the following <code class="literal">case</code>, include a comment to alert maintenance programmers of your intent. Otherwise, they might think you simply forgot the <code class="literal">break</code> and add it in later.</p></td></tr></table></div></li></ul></div></li><li class="listitem">
+The optional <code class="literal">default</code> case cannot <code class="literal">break</code> and is executed if no other <code class="literal">case</code>s match and <code class="literal">break</code> prior to it.
+</li><li class="listitem">
+To exit both the <code class="literal">switch</code> statement as well as the method in which it is defined, use a <code class="literal">return</code> in place of a <code class="literal">break</code>.
+</li></ul></div><p></p><pre class="programlisting">public class DaysInMonth {
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.err.println("Usage: DaysInMonth &lt;year&gt; &lt;month&gt;");
+            return;
+        }
+        int year = Integer.parseInt(args[0]);
+        int month = Integer.parseInt(args[1]);
+        int numDays = 0;
+
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                numDays = 31;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                numDays = 30;
+                break;
+            case 2:
+                numDays =  ( ( (year % 4 == 0) &amp;&amp; !(year % 100 == 0))
+                            || (year % 400 == 0) )? 29 : 28;
+                break;
+            default:
+                System.err.println("Invalid month " + month);
+                return;
+        }
+        System.out.println("Number of Days = " + numDays);
+    }
+}</pre></div><div class="section" title="5.8. The while Loop Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_while_literal_loop_statement"></a>5.8. The <code class="literal">while</code> Loop Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">while</code> loop statement executes a block of statements as long as a condition remains true:
+</p><pre class="programlisting">while (boolean-expression) {
+    // Do something repeatedly
+    // Update condition
+}</pre></li><li class="listitem"><p class="simpara">
+To ensure the loop body runs at least once, a <code class="literal">do-while</code> variant executes the statement block <span class="emphasis"><em>before</em></span> evaluating the condition:
+</p><pre class="programlisting">do {
+    // Do something at least once
+} while (boolean-expression);</pre></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Remember to update the condition to avoid infinite loops.</p></td></tr></table></div><p></p><pre class="programlisting">public class WhileArguments {
+    public static void main (String[] args) {
+        int i = 0;
+        while (i &lt; args.length) {
+            System.out.println(args[i]);
+            i += 1;
+        }
+    }
+}</pre></div><div class="section" title="5.9. The for Loop Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_for_literal_loop_statement"></a>5.9. The <code class="literal">for</code> Loop Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+The <code class="literal">for</code> loop statement is similar to the <code class="literal">while</code> loop, but allows compact initialization of an iterator variable and its increment/decrement:
+</p><pre class="programlisting">for (init; condition; update) {
+    // Do something
+}</pre><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The initialization statement runs before anything else.
+</li><li class="listitem">
+The condition is evaluated before each repetition of the loop body.
+</li><li class="listitem">
+The update statement is run after each body repetition. This can consist of multiple expression statements separated by commas (<code class="literal">,</code>).
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can declare a local variable in the <code class="literal">for</code> initialization statement, in which case its scope is the loop body.</p><pre class="programlisting">for (int i = 1; i &lt;= 10; i++) {
+    // i is local to this scope
+}</pre></td></tr></table></div><p></p><pre class="programlisting">public class ForArguments {
+    public static void main(String[] args) {
+        for (int i = 0; i &lt; args.length; i++) {
+            System.out.println(args[i]);
+        }
+    }
+}</pre><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>You can omit the initialization and/or update statements from the <code class="literal">for</code> loop, but you must still include the <code class="literal">;</code> separator characters:</p><pre class="programlisting">// x has been declared and initialized elsewhere
+for (; x &lt; 5; x++) System.out.println(x);</pre></td></tr></table></div></div><div class="section" title="5.10. Using for to Iterate over Arrays and Collections"><div class="titlepage"><div><div><h3 class="title"><a id="_using_literal_for_literal_to_iterate_over_arrays_and_collections"></a>5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java 5 also introduced an advanced <code class="literal">for</code> syntax known as <code class="literal">for-each</code>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It is designed specifically for iterating over collections of data, whether whose collections are arrays, or some predefined collection classes (discussed in the <a class="link" href="generics_collections.html#collections" title="13.1. The Java Collections Framework">Java Collections Framework</a> module).
+</li><li class="listitem"><p class="simpara">
+The <code class="literal">for-each</code> statement has the following syntax:
+</p><pre class="programlisting">for (Type element: collectionOfType) {
+    // Do something with element
+}</pre></li><li class="listitem"><p class="simpara">
+For example:
+</p><pre class="programlisting">public class ForEachArguments {
+    public static void main(String[] args) {
+        for (String arg: args) {
+            System.out.println(arg);
+        }
+    }
+}</pre></li></ul></div></li></ul></div></div><div class="section" title="5.11. The break Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_break_literal_statement"></a>5.11. The <code class="literal">break</code> Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+In addition to defining the exit points from cases in a <code class="literal">switch</code> statement, the <code class="literal">break</code> statement stops the execution of a loop:
+</p><pre class="programlisting">while (someCondition) {
+    // Do something
+    if (someOtherCondition) {
+        break;
+    }
+    // Do something else
+}</pre></li></ul></div><p></p><pre class="programlisting">public class SearchForNumber {
+    public static void main (String[] args) {
+        int[] nums = {1, 5, 4, 43, -2, 6, 4, 9 };
+        int search = 4;
+        for (int i = 0; i &lt; nums.length; i++) {
+            if (nums[i] == search) {
+                System.out.println("Found " + search + " at position " + i);
+                break;
+            }
+        }
+    }
+}</pre></div><div class="section" title="5.12. The continue Statement"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_continue_literal_statement"></a>5.12. The <code class="literal">continue</code> Statement</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Skips one execution of a loop’s body
+</li><li class="listitem"><p class="simpara">
+With <code class="literal">continue</code>, this:
+</p><pre class="programlisting">while (someCondition) {
+    if (someOtherCondition) {
+        continue;
+    }
+    // Do something
+}</pre><p class="simpara">works the same as this:</p><pre class="programlisting">while (someCondition) {
+    if (!someOtherCondition) {
+        // Do something
+    }
+}</pre></li></ul></div><p></p><pre class="programlisting">public class SkipOddNumbers {
+    public static void main(String[] args) {
+        int[] nums = { 0, 3, 4, 5, 7, 2, 6, 9, 8, 7, 1 };
+        for (int i = 0; i &lt; nums.length; i++) {
+            if (nums[i] % 2 != 0) {
+                continue;
+            }
+            System.out.println(nums[i] + " is even");
+        }
+    }
+}</pre></div><div class="section" title="5.13. Nested Loops and Labels"><div class="titlepage"><div><div><h3 class="title"><a id="_nested_loops_and_labels"></a>5.13. Nested Loops and Labels</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Looping structures can be nested.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+By default, a <code class="literal">break</code> or <code class="literal">continue</code> statement affects the innermost loop in which it is located.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You can apply an optional <span class="emphasis"><em>label</em></span> to a looping structure.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The label is an identifier followed by a <code class="literal">:</code> placed before the looping structure.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Both the <code class="literal">break</code> and the <code class="literal">continue</code> statement accept an optional label argument.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+In that case, the <code class="literal">break</code> or <code class="literal">continue</code> statement affects the looping structure with that label.
+</li></ul></div></li></ul></div><pre class="programlisting">OUTER:
+for (int i = 1; i &lt;= 10; i++) {
+    for (int j = 1; j &lt;= 10; j++) {
+        if (i == j) continue OUTER;
+    }
+}</pre><p></p><pre class="programlisting">public class SearchForNumber2D {
+    public static void main (String[] args) {
+        int[][] nums = { {1, 3, 7, 5},
+                         {5, 8, 4, 6},
+                         {7, 4, 2, 9} };
+        int search = 4;
+        foundNumber:
+        for (int i = 0; i &lt; nums.length; i++) {
+            for (int j = 0; j &lt; nums[i].length; j++) {
+                if (nums[i][j] == search) {
+                    System.out.println(
+                        "Found " + search + " at position " + i + "," + j);
+                    break foundNumber;
+                }
+            }
+        }
+    }
+}</pre></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="operators.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="object_oriented.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="flow_control.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Java Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#overview_of_java">1. Overview of Java</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_history_of_java">1.1. History of Java</a></span></dt><dt><span class="section"><a href="index.html#_what_is_java">1.2. What is Java?</a></span></dt><dt><span class="section"><a href="index.html#_why_java">1.3. Why Java?</a></span></dt><dt><span class="section"><a href="index.html#_java_after_15_years">1.4. Java After 15 years</a></span></dt></dl></dd><dt><span class="section"><a href="hello_world.html">2. A Java Hello World Program</a></span></dt><dd><dl><dt><span class="section"><a href="hello_world.html#_literal_helloworld_java_literal">2.1. <code class="literal">HelloWorld.java</code></a></span></dt><dt><span class="section"><a href="hello_world.html#_java_keywords">2.2. Java Keywords</a></span></dt><dt><span class="section"><a href="hello_world.html#_java_identifiers">2.3. Java Identifiers</a></span></dt><dt><span class="section"><a href="hello_world.html#_compiling_java_programs">2.4. Compiling Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_running_java_programs">2.5. Running Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_comments_in_java_code">2.6. Comments in Java Code</a></span></dt><dt><span class="section"><a href="hello_world.html#_the_literal_main_literal_method">2.7. The <code class="literal">main()</code> Method</a></span></dt></dl></dd><dt><span class="section"><a href="data_types.html">3. Data Types</a></span></dt><dd><dl><dt><span class="section"><a href="data_types.html#_declaring_and_assigning_variables">3.1. Declaring and Assigning Variables</a></span></dt><dt><span class="section"><a href="data_types.html#_java_primitive_types">3.2. Java Primitive Types</a></span></dt><dt><span class="section"><a href="data_types.html#_conversion_between_types">3.3. Conversion Between Types</a></span></dt><dt><span class="section"><a href="data_types.html#_declaring_arrays">3.4. Declaring Arrays</a></span></dt><dt><span class="section"><a href="data_types.html#_creating_and_initializing_array_objects">3.5. Creating and Initializing Array Objects</a></span></dt><dt><span class="section"><a href="data_types.html#_modifying_array_size">3.6. Modifying Array Size</a></span></dt><dt><span class="section"><a href="data_types.html#_strings">3.7. Strings</a></span></dt></dl></dd><dt><span class="section"><a href="operators.html">4. Operators</a></span></dt><dd><dl><dt><span class="section"><a href="operators.html#_arithmetic_operators">4.1. Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_shortcut_arithmetic_operators">4.2. Shortcut Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_string_concatenation">4.3. String Concatenation</a></span></dt><dt><span class="section"><a href="operators.html#_relational_operators">4.4. Relational Operators</a></span></dt><dt><span class="section"><a href="operators.html#_logical_boolean_operators">4.5. Logical Boolean Operators</a></span></dt><dt><span class="section"><a href="operators.html#_bitwise_operators">4.6. Bitwise Operators</a></span></dt><dt><span class="section"><a href="operators.html#_assignment_operators">4.7. Assignment Operators</a></span></dt><dt><span class="section"><a href="operators.html#_other_operators">4.8. Other Operators</a></span></dt><dt><span class="section"><a href="operators.html#_operator_precedence">4.9. Operator Precedence</a></span></dt></dl></dd><dt><span class="section"><a href="flow_control.html">5. Statements and Flow Control</a></span></dt><dd><dl><dt><span class="section"><a href="flow_control.html#_expressions">5.1. Expressions</a></span></dt><dt><span class="section"><a href="flow_control.html#_statements_and_blocks">5.2. Statements and Blocks</a></span></dt><dt><span class="section"><a href="flow_control.html#_local_variable_storage_the_stack">5.3. Local Variable Storage: The Stack</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_return_literal_statement">5.4. The <code class="literal">return</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_if_else_literal_statement">5.5. The <code class="literal">if-else</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement">5.6. The <code class="literal">switch</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement_cont">5.7. The <code class="literal">switch</code> Statement (cont.)</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_while_literal_loop_statement">5.8. The <code class="literal">while</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_for_literal_loop_statement">5.9. The <code class="literal">for</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_using_literal_for_literal_to_iterate_over_arrays_and_collections">5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_break_literal_statement">5.11. The <code class="literal">break</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_continue_literal_statement">5.12. The <code class="literal">continue</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_nested_loops_and_labels">5.13. Nested Loops and Labels</a></span></dt></dl></dd><dt><span class="section"><a href="object_oriented.html">6. Object Oriented Programming in Java</a></span></dt><dd><dl><dt><span class="section"><a href="object_oriented.html#_what_is_object_oriented_programming_oop">6.1. What is Object Oriented Programming (OOP)?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_why_oop">6.2. Why OOP?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_class_vs_object">6.3. Class vs. Object</a></span></dt><dt><span class="section"><a href="object_oriented.html#_classes_in_java">6.4. Classes in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_objects_in_java">6.5. Objects in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_java_memory_model">6.6. Java Memory Model</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessing_objects_through_references">6.7. Accessing Objects through References</a></span></dt><dt><span class="section"><a href="object_oriented.html#_garbage_collection">6.8. Garbage Collection</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java">6.9. Methods in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java_cont">6.10. Methods in Java (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_declarations">6.11. Method Declarations</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_signatures">6.12. Method Signatures</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_methods">6.13. Invoking Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_data_fields">6.14. Static vs. Instance Data Fields</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_methods">6.15. Static vs. Instance Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_overloading">6.16. Method Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_variable_argument_length_methods">6.17. Variable Argument Length Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors">6.18. Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors_cont">6.19. Constructors (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constants">6.20. Constants</a></span></dt><dt><span class="section"><a href="object_oriented.html#_encapsulation">6.21. Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#access_modifiers_simple">6.22. Access Modifiers: Enforcing Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessors_getters_and_mutators_setters">6.23. Accessors (Getters) and Mutators (Setters)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance">6.24. Inheritance</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_composition_and_aggregation">6.25. Inheritance, Composition, and Aggregation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_in_java">6.26. Inheritance in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_base_class_constructors">6.27. Invoking Base Class Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_vs_overloading">6.28. Overriding vs. Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism">6.29. Polymorphism</a></span></dt><dt><span class="section"><a href="object_oriented.html#_more_on_upcasting">6.30. More on Upcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_downcasting">6.31. Downcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_abstract_classes_and_methods">6.32. Abstract Classes and Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_interfaces">6.33. Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_defining_a_java_interface">6.34. Defining a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_implementing_a_java_interface">6.35. Implementing a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism_through_interfaces">6.36. Polymorphism through Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_literal_object_literal_java_8217_s_ultimate_superclass">6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_literal_object_tostring_literal">6.38. Overriding <code class="literal">Object.toString()</code></a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equality">6.39. Object Equality</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence">6.40. Object Equivalence</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence_cont">6.41. Object Equivalence (cont.)</a></span></dt></dl></dd><dt><span class="section"><a href="packaging.html">7. Packaging</a></span></dt><dd><dl><dt><span class="section"><a href="packaging.html#_why_is_packaging_needed">7.1. Why is Packaging Needed?</a></span></dt><dt><span class="section"><a href="packaging.html#_packages_in_java">7.2. Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_sub_packages_in_java">7.3. Sub-Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_package_naming_conventions">7.4. Package Naming Conventions</a></span></dt><dt><span class="section"><a href="packaging.html#_using_package_members_qualified_names">7.5. Using Package Members: Qualified Names</a></span></dt><dt><span class="section"><a href="packaging.html#_importing_package_members">7.6. Importing Package Members</a></span></dt><dt><span class="section"><a href="packaging.html#_static_imports">7.7. Static Imports</a></span></dt><dt><span class="section"><a href="packaging.html#access_modifiers_complete">7.8. Access Modifiers and Packages</a></span></dt><dt><span class="section"><a href="packaging.html#_the_class_path">7.9. The Class Path</a></span></dt><dt><span class="section"><a href="packaging.html#_java_archive_jar_files">7.10. Java Archive (JAR) Files</a></span></dt><dt><span class="section"><a href="packaging.html#_the_literal_jar_literal_command_line_tool_examples">7.11. The <code class="literal">jar</code> Command-Line Tool Examples</a></span></dt></dl></dd><dt><span class="section"><a href="javadoc.html">8. JavaDoc</a></span></dt><dd><dl><dt><span class="section"><a href="javadoc.html#_what_is_javadoc">8.1. What is JavaDoc?</a></span></dt><dt><span class="section"><a href="javadoc.html#_reading_doc_comments_java_api">8.2. Reading Doc Comments (Java API)</a></span></dt><dt><span class="section"><a href="javadoc.html#_defining_javadoc">8.3. Defining JavaDoc</a></span></dt><dt><span class="section"><a href="javadoc.html#_doc_comment_tags">8.4. Doc Comment Tags</a></span></dt><dt><span class="section"><a href="javadoc.html#_generating_doc_comment_output">8.5. Generating Doc Comment Output</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">9. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_what_are_exceptions">9.1. What are Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_why_use_exceptions">9.2. Why Use Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_built_in_exceptions">9.3. Built-In Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_types">9.4. Exception Types</a></span></dt><dt><span class="section"><a href="exceptions.html#_checked_vs_unchecked_exceptions">9.5. Checked vs. Unchecked Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_lifecycle">9.6. Exception Lifecycle</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions">9.7. Handling Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions_cont">9.8. Handling Exceptions (cont.)</a></span></dt><dt><span class="section"><a href="exceptions.html#_grouping_exceptions">9.9. Grouping Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_throwing_exception">9.10. Throwing Exception</a></span></dt><dt><span class="section"><a href="exceptions.html#_creating_an_exception_class">9.11. Creating an Exception Class</a></span></dt><dt><span class="section"><a href="exceptions.html#_nesting_exceptions">9.12. Nesting Exceptions</a></span></dt></dl></dd><dt><span class="section"><a href="java_lang.html">10. The <code class="literal">java.lang</code> Package</a></span></dt><dd><dl><dt><span class="section"><a href="java_lang.html#_primitive_wrappers">10.1. Primitive Wrappers</a></span></dt><dt><span class="section"><a href="java_lang.html#_string_and_stringbuilder">10.2. String and StringBuilder</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_math_class">10.3. The Math Class</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_system_class">10.4. The System Class</a></span></dt></dl></dd><dt><span class="section"><a href="input_output.html">11. Input/Output</a></span></dt><dd><dl><dt><span class="section"><a href="input_output.html#_representing_file_paths">11.1. Representing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_managing_file_paths">11.2. Managing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_input_output_class_hierarchy">11.3. Input/Output Class Hierarchy</a></span></dt><dt><span class="section"><a href="input_output.html#_byte_streams">11.4. Byte Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_character_streams">11.5. Character Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_exception_handling_in_java_i_o">11.6. Exception Handling in Java I/O</a></span></dt><dt><span class="section"><a href="input_output.html#_java_file_i_o_classes">11.7. Java File I/O Classes</a></span></dt><dt><span class="section"><a href="input_output.html#_easy_text_output_printwriter_printstream">11.8. Easy Text Output: PrintWriter/PrintStream</a></span></dt><dt><span class="section"><a href="input_output.html#_reading_from_the_terminal">11.9. Reading from the Terminal</a></span></dt><dt><span class="section"><a href="input_output.html#_filtered_streams">11.10. Filtered Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_object_serialization">11.11. Object Serialization</a></span></dt></dl></dd><dt><span class="section"><a href="java_net.html">12. <code class="literal">java.net</code></a></span></dt><dd><dl><dt><span class="section"><a href="java_net.html#_literal_java_net_inetaddress_literal">12.1. <code class="literal">java.net.InetAddress</code></a></span></dt><dt><span class="section"><a href="java_net.html#_url_connections">12.2. URL/Connections</a></span></dt><dt><span class="section"><a href="java_net.html#_tcp_sockets">12.3. TCP Sockets</a></span></dt></dl></dd><dt><span class="section"><a href="generics_collections.html">13. Java Collections and Generics</a></span></dt><dd><dl><dt><span class="section"><a href="generics_collections.html#collections">13.1. The Java Collections Framework</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collection_interface">13.2. The Collection Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_iterating_over_a_collection">13.3. Iterating Over a Collection</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_list_interface">13.4. The List Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_list">13.5. Classes Implementing List</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_set_and_sortedset_interfaces">13.6. The Set and SortedSet Interfaces</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_set">13.7. Classes Implementing Set</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_queue_interface">13.8. The Queue Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_map_interface">13.9. The Map Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_retrieving_map_views">13.10. Retrieving Map Views</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_map">13.11. Classes Implementing Map</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collections_class">13.12. The Collections Class</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_safety_in_java_collections">13.13. Type Safety in Java Collections</a></span></dt><dt><span class="section"><a href="generics_collections.html#_java_generics">13.14. Java Generics</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generics_and_polymorphism">13.15. Generics and Polymorphism</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_wildcards">13.16. Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_qualified_type_wildcards">13.17. Qualified Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generic_methods">13.18. Generic Methods</a></span></dt></dl></dd><dt><span class="section"><a href="threading.html">14. Threading</a></span></dt><dd><dl><dt><span class="section"><a href="threading.html#_runnable_and_thread">14.1. Runnable And Thread</a></span></dt><dt><span class="section"><a href="threading.html#_thread_synchronization">14.2. Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_more_thread_synchronization">14.3. More Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_concurrency_features">14.4. Java 5 Concurrency Features</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_pre_java_5">14.5. Thread Scheduling Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_in_java_5">14.6. Thread Scheduling In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_8217_s_literal_executorservice_literal">14.7. Java 5’s <code class="literal">ExecutorService</code></a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_pre_java_5">14.8. Getting Results From Threads Pre Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_in_java_5">14.9. Getting Results From Threads In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_pre_java_5">14.10. Thread Sync Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_in_java_5_with_locks">14.11. Thread Sync In Java 5 With Locks</a></span></dt><dt><span class="section"><a href="threading.html#_benefits_of_java_5_locks">14.12. Benefits Of Java 5 Locks</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_conditions">14.13. Java 5 Conditions</a></span></dt><dt><span class="section"><a href="threading.html#_atomics_in_java_5">14.14. Atomics In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_other_java_5_concurrency_features">14.15. Other Java 5 Concurrency Features</a></span></dt></dl></dd><dt><span class="section"><a href="java_util.html">15. Additional Java Features</a></span></dt><dd><dl><dt><span class="section"><a href="java_util.html#_the_date_class">15.1. The Date Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_calendar_class">15.2. The Calendar Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_timezone_class">15.3. The TimeZone Class</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates">15.4. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates_2">15.5. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#enum">15.6. Typesafe Enums</a></span></dt><dt><span class="section"><a href="java_util.html#_typesafe_enums_cont">15.7. Typesafe Enums (cont.)</a></span></dt><dt><span class="section"><a href="java_util.html#_enumset_and_enummap">15.8. EnumSet and EnumMap</a></span></dt><dt><span class="section"><a href="java_util.html#_annotations">15.9. Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_using_annotations">15.10. Using Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_standard_java_annotations">15.11. Standard Java Annotations</a></span></dt></dl></dd><dt><span class="section"><a href="_java_native_interface_jni.html">16. Java Native Interface (JNI)</a></span></dt><dd><dl><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_overview">16.1. JNI Overview</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_components">16.2. JNI Components</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_java">16.3. JNI Development (Java)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_c">16.4. JNI Development (C)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_compile">16.5. JNI Development (Compile)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_type_conversion">16.6. Type Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_native_method_arguments">16.7. Native Method Arguments</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_string_conversion">16.8. String Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_array_conversion">16.9. Array Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_throwing_exceptions_in_the_native_world">16.10. Throwing Exceptions In The Native World</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_access_properties_and_methods_from_native_code">16.11. Access Properties And Methods From Native Code</a></span></dt></dl></dd><dt><span class="section"><a href="jdbc.html">17. <code class="literal">java.sql</code></a></span></dt><dd><dl><dt><span class="section"><a href="jdbc.html#_jdbc_overview">17.1. JDBC Overview</a></span></dt><dt><span class="section"><a href="jdbc.html#_jdbc_drivers">17.2. JDBC Drivers</a></span></dt><dt><span class="section"><a href="jdbc.html#_getting_a_jdbc_literal_connection_literal">17.3. Getting a JDBC <code class="literal">Connection</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_preparing_a_literal_statement_literal">17.4. Preparing a <code class="literal">Statement</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_processing_literal_resultset_literal">17.5. Processing <code class="literal">ResultSet</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_using_literal_resultsetmetadata_literal">17.6. Using <code class="literal">ResultSetMetaData</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_updates">17.7. Updates</a></span></dt></dl></dd><dt><span class="section"><a href="xml_processing.html">18. XML Processing</a></span></dt><dd><dl><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_java">18.1. Parsing XML with Java</a></span></dt><dt><span class="section"><a href="xml_processing.html#_event_driven_approach">18.2. Event-Driven Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_sax">18.3. Overview of SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_sax">18.4. Parsing XML with SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_object_model_approach">18.5. Object-Model Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_dom">18.6. Overview of DOM</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_dom">18.7. Parsing XML with DOM</a></span></dt></dl></dd><dt><span class="section"><a href="design_patterns.html">19. Design Patterns</a></span></dt><dd><dl><dt><span class="section"><a href="design_patterns.html#_what_are_design_patterns">19.1. What are Design Patterns?</a></span></dt><dt><span class="section"><a href="design_patterns.html#_singleton">19.2. Singleton</a></span></dt><dt><span class="section"><a href="design_patterns.html#_factory_method">19.3. Factory Method</a></span></dt><dt><span class="section"><a href="design_patterns.html#_abstract_factory">19.4. Abstract Factory</a></span></dt><dt><span class="section"><a href="design_patterns.html#_adapter">19.5. Adapter</a></span></dt><dt><span class="section"><a href="design_patterns.html#_composite">19.6. Composite</a></span></dt><dt><span class="section"><a href="design_patterns.html#_decorator">19.7. Decorator</a></span></dt><dt><span class="section"><a href="design_patterns.html#_chain_of_responsibility">19.8. Chain of Responsibility</a></span></dt><dt><span class="section"><a href="design_patterns.html#_observer_publish_subscribe">19.9. Observer / Publish-Subscribe</a></span></dt><dt><span class="section"><a href="design_patterns.html#_strategy">19.10. Strategy</a></span></dt><dt><span class="section"><a href="design_patterns.html#_template">19.11. Template</a></span></dt><dt><span class="section"><a href="design_patterns.html#_emphasis_role_strong_d_emphasis_ata_emphasis_role_strong_a_emphasis_ccess_emphasis_role_strong_o_emphasis_bject">19.12. <span class="strong"><strong>D</strong></span>ata <span class="strong"><strong>A</strong></span>ccess <span class="strong"><strong>O</strong></span>bject</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/flow_control.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

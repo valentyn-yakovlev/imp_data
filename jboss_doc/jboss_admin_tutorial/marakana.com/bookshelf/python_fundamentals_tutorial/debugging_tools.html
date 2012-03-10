@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/python_fundamentals_tutorial/debugging_tools.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Python Fundamentals Tutorial : Debugging Tools  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, python, fundamentals, tutorial, :, debugging, tools" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Python Fundamentals Tutorial : Debugging Tools </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Python Fundamentals Tutorial </a>
+  &raquo;
+  Debugging Tools </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="advanced_iterations.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="oop.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="15. Debugging Tools"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="debugging_tools"></a>15. Debugging Tools</h2></div></div></div><div class="section" title="15.1. logging"><div class="titlepage"><div><div><h3 class="title"><a id="_logging"></a>15.1. logging</h3></div></div></div><p>The <code class="literal">logging</code> module in the Python standard libraries is similar in function to log4j and all of its derivatives in other languages.  Logging configuration is hierarchical and can range from very simple to very complex to suit application needs.</p><p>Here is an example of a very standard logging configuration and its usage.</p><p>Note that you should ideally find a place in your application that will only be executed once in order to configure the logging.</p><p title="logconfig.py"><b>logconfig.py. </b>
+</p><pre class="programlisting">import logging
+from logging import handlers
+
+def config():
+    logger = logging.getLogger('app')
+    logger.setLevel(logging.ERROR)
+    handler = handlers.RotatingFileHandler(
+            'debug.log',
+            maxBytes=(1024*1024),
+            backupCount=5
+            )
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+    logger = logging.getLogger('app.othersub')
+    logger.setLevel(logging.DEBUG)</pre><p title="logconfig.py">
+</p><p title="debug-1-logging.py"><b>debug-1-logging.py. </b>
+</p><pre class="programlisting">import logging
+
+from logconfig import config
+
+config()
+
+logger = logging.getLogger('app.sub')
+logger.debug('something interesting just happened')
+logger.error('something horrible just happened')
+
+logger2 = logging.getLogger('app.othersub')
+logger2.debug('HMM&gt; something interesting just happened')
+logger2.setLevel(logging.DEBUG)
+logger2.error('UH-OH&gt; something horrible just happened')
+
+class YouCantDoThatException(Exception):
+    pass
+
+class ThatsABadThingException(Exception):
+    pass
+
+def dobrokenstuff():
+    d = {}
+    e = {}
+    key = 'missingkey'
+    try:
+        # val = d[key]
+        # raise YouCantDoThatException
+        raise KeyError('badkey')
+    except KeyError, ke:
+        d[key] = 'samplestring'
+        logger2.exception('two exceptions')
+    else:
+        val = val.reverse()
+        print val
+        val = val.lower()
+        finalval = e[val]
+        logger2.debug('ELSE: HERE I AM')
+    finally:
+        logger2.debug('FINALLY: HERE I AM')
+
+def dostuff():
+    try:
+        dobrokenstuff()
+    except YouCantDoThatException, e:
+        logger2.exception('Don\'t do that')
+
+try:
+    dostuff()
+except:
+    logger.exception("How did this happen?")</pre><p title="debug-1-logging.py">
+</p><pre class="screen">$ cat debug.log
+2010-08-01 21:03:28,074 - DEBUG - something interesting just happened
+2010-08-01 21:03:28,074 - ERROR - something horrible just happened</pre></div><div class="section" title="15.2. pprint"><div class="titlepage"><div><div><h3 class="title"><a id="_pprint"></a>15.2. pprint</h3></div></div></div><p>In conjunction with the <code class="literal">logging</code> module, the <code class="literal">pprint</code> (pretty print) module can be very helpful.  It is easy to include a list or dictionary in a log statement, but it can be hard to read when debugging.  In the <code class="literal">pprint</code> module, the <code class="literal">pprint</code> function prints to standard out while the <code class="literal">pformat</code> function returns a string that is more likely to be useful in logging or for other custom output requirements.</p><pre class="screen">&gt;&gt;&gt; import pprint
+&gt;&gt;&gt; deep = [{'letter': let, 'index': i, 'extended': let*i}
+...         for i, let in enumerate(list('abcdefg'))]
+&gt;&gt;&gt; deep
+[{'index': 0, 'extended': '', 'letter': 'a'}, {'index': 1, 'extended': 'b', 'letter': 'b'}, {'index': 2, 'extended': 'cc', 'letter': 'c'}, {'index': 3, 'extended': 'ddd', 'letter': 'd'}, {'index': 4, 'extended': 'eeee', 'letter': 'e'}, {'index': 5, 'extended': 'fffff', 'letter': 'f'}, {'index': 6, 'extended': 'gggggg', 'letter': 'g'}]
+
+&gt;&gt;&gt; pprint.pprint(deep)
+[{'extended': '', 'index': 0, 'letter': 'a'},
+ {'extended': 'b', 'index': 1, 'letter': 'b'},
+ {'extended': 'cc', 'index': 2, 'letter': 'c'},
+ {'extended': 'ddd', 'index': 3, 'letter': 'd'},
+ {'extended': 'eeee', 'index': 4, 'letter': 'e'},
+ {'extended': 'fffff', 'index': 5, 'letter': 'f'},
+ {'extended': 'gggggg', 'index': 6, 'letter': 'g'}]</pre></div><div class="section" title="15.3. Lab"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_13"></a>15.3. Lab</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Create a simple script with three loggers ‘app’, ‘app.sub’, ‘app.sub.sub’.
+</li><li class="listitem">
+Log a debug and critical message for each.
+</li><li class="listitem">
+Set ‘app’ to CRITICAL and ‘app.sub.sub’ to DEBUG.  What messages do you get?
+</li><li class="listitem">
+Include a timestamp and the log level in your messages.
+</li><li class="listitem">
+raise an Exception and log it with .exception()
+</li></ol></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="advanced_iterations.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="oop.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="debugging_tools.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Python Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#getting_started">1. Getting Started</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_the_interactive_interpreter">1.1. The Interactive Interpreter</a></span></dt><dt><span class="section"><a href="index.html#_lab">1.2. Lab</a></span></dt><dt><span class="section"><a href="index.html#_lab_2">1.3. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="types.html">2. Types</a></span></dt><dd><dl><dt><span class="section"><a href="types.html#_strings">2.1. Strings</a></span></dt><dt><span class="section"><a href="types.html#_integers">2.2. Integers</a></span></dt><dt><span class="section"><a href="types.html#_floats">2.3. Floats</a></span></dt><dt><span class="section"><a href="types.html#_complex">2.4. Complex</a></span></dt></dl></dd><dt><span class="section"><a href="variables.html">3. Variables</a></span></dt><dd><dl><dt><span class="section"><a href="variables.html#_definining">3.1. Definining</a></span></dt><dt><span class="section"><a href="variables.html#_dynamic_typing">3.2. Dynamic Typing</a></span></dt><dt><span class="section"><a href="variables.html#_strong_typing">3.3. Strong Typing</a></span></dt><dt><span class="section"><a href="variables.html#_internals">3.4. Internals</a></span></dt></dl></dd><dt><span class="section"><a href="simple_expressions.html">4. Simple Expressions</a></span></dt><dd><dl><dt><span class="section"><a href="simple_expressions.html#_boolean_evaluation">4.1. Boolean Evaluation</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_truthiness">4.2. Truthiness</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_branching_if_elif_else">4.3. Branching (if / elif / else)</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_block_structure_and_whitespace">4.4. Block Structure and Whitespace</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_lab_3">4.5. Lab</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_multiple_cases">4.6. Multiple Cases</a></span></dt><dt><span class="section"><a href="simple_expressions.html#_lab_4">4.7. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_types_containers.html">5. Advanced Types: Containers</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_types_containers.html#_lists">5.1. Lists</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_lab_5">5.2. Lab</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_strings_revisited">5.3. Strings Revisited</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_tuples">5.4. Tuples</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_lab_6">5.5. Lab</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_dictionaries">5.6. Dictionaries</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_lab_7">5.7. Lab</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_sets">5.8. Sets</a></span></dt><dt><span class="section"><a href="advanced_types_containers.html#_collection_transitions">5.9. Collection Transitions</a></span></dt></dl></dd><dt><span class="section"><a href="more_iteration.html">6. A Bit More Iteration</a></span></dt><dd><dl><dt><span class="section"><a href="more_iteration.html#_loop_else">6.1. Loop-Else</a></span></dt></dl></dd><dt><span class="section"><a href="functions.html">7. Functions</a></span></dt><dd><dl><dt><span class="section"><a href="functions.html#_defining">7.1. Defining</a></span></dt><dt><span class="section"><a href="functions.html#_arguments">7.2. Arguments</a></span></dt><dt><span class="section"><a href="functions.html#_mutable_arguments_and_binding_of_default_values">7.3. Mutable Arguments and Binding of Default Values</a></span></dt><dt><span class="section"><a href="functions.html#_accepting_variable_arguments">7.4. Accepting Variable Arguments</a></span></dt><dt><span class="section"><a href="functions.html#_unpacking_argument_lists">7.5. Unpacking Argument Lists</a></span></dt><dt><span class="section"><a href="functions.html#_scope">7.6. Scope</a></span></dt><dt><span class="section"><a href="functions.html#_lab_8">7.7. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">8. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_basic_error_handling">8.1. Basic Error Handling</a></span></dt></dl></dd><dt><span class="section"><a href="code_organization.html">9. Code Organization</a></span></dt><dd><dl><dt><span class="section"><a href="code_organization.html#_namespaces">9.1. Namespaces</a></span></dt><dt><span class="section"><a href="code_organization.html#_importing_modules">9.2. Importing modules</a></span></dt><dt><span class="section"><a href="code_organization.html#_creating_modules">9.3. Creating Modules</a></span></dt></dl></dd><dt><span class="section"><a href="working_with_files.html">10. Working with Files</a></span></dt><dd><dl><dt><span class="section"><a href="working_with_files.html#_file_i_o">10.1. File I/O</a></span></dt></dl></dd><dt><span class="section"><a href="interaction_with_outside_world.html">11. Interacting with the Outside World</a></span></dt><dd><dl><dt><span class="section"><a href="interaction_with_outside_world.html#_options">11.1. Options</a></span></dt></dl></dd><dt><span class="section"><a href="regular_expressions.html">12. Regular Expressions (<code class="literal">re</code>)</a></span></dt><dd><dl><dt><span class="section"><a href="regular_expressions.html#_lab_9">12.1. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="functional_programming.html">13. Functional Programming</a></span></dt><dd><dl><dt><span class="section"><a href="functional_programming.html#_functions_as_objects">13.1. Functions as Objects</a></span></dt><dt><span class="section"><a href="functional_programming.html#_higher_order_functions">13.2. Higher-Order Functions</a></span></dt><dt><span class="section"><a href="functional_programming.html#_sorting_an_example_of_higher_order_functions">13.3. Sorting: An Example of Higher-Order Functions</a></span></dt><dt><span class="section"><a href="functional_programming.html#_anonymous_functions">13.4. Anonymous Functions</a></span></dt><dt><span class="section"><a href="functional_programming.html#_nested_functions">13.5. Nested Functions</a></span></dt><dt><span class="section"><a href="functional_programming.html#_closures">13.6. Closures</a></span></dt><dt><span class="section"><a href="functional_programming.html#_lexical_scoping">13.7. Lexical Scoping</a></span></dt><dt><span class="section"><a href="functional_programming.html#_useful_function_objects_literal_operator_literal">13.8. Useful Function Objects: <code class="literal">operator</code></a></span></dt><dt><span class="section"><a href="functional_programming.html#_lab_10">13.9. Lab</a></span></dt><dt><span class="section"><a href="functional_programming.html#_decorators">13.10. Decorators</a></span></dt><dt><span class="section"><a href="functional_programming.html#_lab_11">13.11. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_iterations.html">14. Advanced Iteration</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_iterations.html#_list_comprehensions">14.1. List Comprehensions</a></span></dt><dt><span class="section"><a href="advanced_iterations.html#_generator_expressions">14.2. Generator Expressions</a></span></dt><dt><span class="section"><a href="advanced_iterations.html#_generator_functions">14.3. Generator Functions</a></span></dt><dt><span class="section"><a href="advanced_iterations.html#_iteration_helpers_literal_itertools_literal">14.4. Iteration Helpers: <code class="literal">itertools</code></a></span></dt><dt><span class="section"><a href="advanced_iterations.html#_lab_12">14.5. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="debugging_tools.html">15. Debugging Tools</a></span></dt><dd><dl><dt><span class="section"><a href="debugging_tools.html#_logging">15.1. logging</a></span></dt><dt><span class="section"><a href="debugging_tools.html#_pprint">15.2. pprint</a></span></dt><dt><span class="section"><a href="debugging_tools.html#_lab_13">15.3. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="oop.html">16. Object-Oriented Programming</a></span></dt><dd><dl><dt><span class="section"><a href="oop.html#_classes">16.1. Classes</a></span></dt><dt><span class="section"><a href="oop.html#_emulation">16.2. Emulation</a></span></dt><dt><span class="section"><a href="oop.html#_literal_classmethod_literal_and_literal_staticmethod_literal">16.3. <code class="literal">classmethod</code> and <code class="literal">staticmethod</code></a></span></dt><dt><span class="section"><a href="oop.html#_lab_14">16.4. Lab</a></span></dt><dt><span class="section"><a href="oop.html#_inheritance">16.5. Inheritance</a></span></dt><dt><span class="section"><a href="oop.html#_lab_15">16.6. Lab</a></span></dt><dt><span class="section"><a href="oop.html#_encapsulation">16.7. Encapsulation</a></span></dt><dt><span class="section"><a href="oop.html#_lab_16">16.8. Lab</a></span></dt></dl></dd><dt><span class="section"><a href="easter_eggs.html">17. Easter Eggs</a></span></dt></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/python_fundamentals_tutorial/debugging_tools.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

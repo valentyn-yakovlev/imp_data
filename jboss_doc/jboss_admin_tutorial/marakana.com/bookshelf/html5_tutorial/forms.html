@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/html5_tutorial/forms.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Html5 Tutorial : Forms  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, html5, tutorial, :, forms" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Html5 Tutorial : Forms </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Html5 Tutorial </a>
+  &raquo;
+  Forms </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="structure_of_a_web_page.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="audio_and_video.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="4. Forms"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="forms"></a>4. Forms</h2></div></div></div><p>Previously called Web Forms 2.0, HTML5 forms are going to make the creation and validation of forms easier than before.</p><div class="section" title="4.1. What Are The Needs For Web Applications?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_are_the_needs_for_web_applications"></a>4.1. What Are The Needs For Web Applications?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Web Application use forms to gather input from users
+</li><li class="listitem"><p class="simpara">
+For instance, a form allow users to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Leave a comment on a blog article
+</li><li class="listitem">
+Book a flight
+</li><li class="listitem">
+Sign in to a web site
+</li><li class="listitem">
+Etc…
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Controls that most of Web Applications require are:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Email
+</li><li class="listitem">
+Date
+</li><li class="listitem">
+Phone number
+</li><li class="listitem">
+URL
+</li><li class="listitem">
+Sliders
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Moreover, often times Web Application also require:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Auto focus on an element of the form
+</li><li class="listitem">
+Give hint to user on what information they should give and how
+</li><li class="listitem">
+Handling minimum/maximum values for some controls
+</li><li class="listitem">
+Force the user to enter a value on a form
+</li><li class="listitem"><p class="simpara">
+Display error messages to their users
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+When they do not provide required information
+</li><li class="listitem">
+When the provided information is in the wrong format
+</li></ul></div></li><li class="listitem">
+Validate the form on the client side to prevent sending the form to the server if there are errors on the form
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>As a rule of thumb, form validation on the server should always exist anyway since JavaScript can be disabled on some client browser</p></td></tr></table></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>All of this is possible to do without HTML5 but it is really cumbersome</p></td></tr></table></div></div><div class="section" title="4.2. Current Solutions"><div class="titlepage"><div><div><h3 class="title"><a id="_current_solutions"></a>4.2. Current Solutions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+There are a lot of limitations with HTML4, it does not fit Web Applications need today
+</li><li class="listitem"><p class="simpara">
+Custom controls that does not exist natively such as date picker or slider are provided using third-party libraries (JQuery, MooTools, etc…)
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+That adds libraries to learn
+</li><li class="listitem">
+JavaScript might be disabled on some client browsers
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Validation on the client side is quite complicated for some controls
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Usage of regular expressions for many common used information (email, url, phone number)
+</li></ul></div></li></ul></div></div><div class="section" title="4.3. New Input Types"><div class="titlepage"><div><div><h3 class="title"><a id="_new_input_types"></a>4.3. New Input Types</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+HTML5 comes with new controls to ease the creation of forms
+</li><li class="listitem"><p class="simpara">
+There are thirteen new values for the <code class="literal">type</code> attribute:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+<code class="literal">&lt;input type="color" /&gt;</code>: To choose a color
+</p><div class="figure"><a id="id36149005"></a><p class="title"><b>Figure 2. Color picker showing up on Opera 11</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/forms_type_color.png" alt="images/forms_type_color.png"></img></div></div></div><br class="figure-break"></br></li><li class="listitem">
+<code class="literal">&lt;input type="date" /&gt;</code>: To choose a date (year, month and day) with no timezone
+</li><li class="listitem">
+<code class="literal">&lt;input type="datetime" /&gt;</code>: Same as choosing a date but include the time (hour, minute, second, fraction of second) but the user cannot change the time zone offset
+</li><li class="listitem">
+<code class="literal">&lt;input type="datetime-local" /&gt;</code>: Same as <code class="literal">datetime</code> except that the user can change the time zone offset
+</li><li class="listitem">
+<code class="literal">&lt;input type="month" /&gt;</code>: To choose only a date and a month
+</li><li class="listitem">
+<code class="literal">&lt;input type="time" /&gt;</code>: To choose a time (hour, minute, second, fraction of second)
+</li><li class="listitem"><p class="simpara">
+<code class="literal">&lt;input type="week" /&gt;</code>: To choose a year with a week number for this year
+</p><div class="figure"><a id="id36149109"></a><p class="title"><b>Figure 3. Date picker showing up in Opera</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/forms_type_date.png" alt="images/forms_type_date.png"></img></div></div></div><br class="figure-break"></br></li><li class="listitem">
+<code class="literal">&lt;input type="email" /&gt;</code>: To enter an email
+</li><li class="listitem">
+<code class="literal">&lt;input type="number" /&gt;</code>: To enter a number. Can be combined with other attributes such as <code class="literal">min</code> to define min value, <code class="literal">max</code> to define max value and <code class="literal">step</code> to define the increment
+</li><li class="listitem"><p class="simpara">
+<code class="literal">&lt;input type="range" /&gt;</code>: Displays a slider
+</p><div class="figure"><a id="id36149181"></a><p class="title"><b>Figure 4. Slider control in Chrome</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/forms_type_range.png" alt="images/forms_type_range.png"></img></div></div></div><br class="figure-break"></br></li><li class="listitem">
+<code class="literal">&lt;input type="search" /&gt;</code>: No real difference with a <code class="literal">text</code> input except that the display might look different (rounded corners in Safari on the Mac)
+</li><li class="listitem">
+<code class="literal">&lt;input type="tel" /&gt;</code>: Looks like a <code class="literal">text</code> input except that the purpose is for entering phone number
+</li><li class="listitem">
+<code class="literal">&lt;input type="url" /&gt;</code>: Looks like a <code class="literal">text</code> input except that the purpose is for providing a URL
+</li></ul></div></li></ul></div><div class="note" title="Input types on iOS" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note: Input types on iOS"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Input types on iOS</th></tr><tr><td align="left" valign="top"><p>Safari mobile on iOS shows different types of keyboard depending on the input type (for instance the dial pad is shown to the user to enter a phone number when using <code class="literal">&lt;input type="tel"&gt;</code>)</p></td></tr></table></div></div><div class="section" title="4.4. New Attributes"><div class="titlepage"><div><div><h3 class="title"><a id="_new_attributes_2"></a>4.4. New Attributes</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Along with new input types, HTML5 comes with new attributes such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">autofocus</code>: Boolean that give automatically the focus on a control. There should be only one control focused per page
+</li><li class="listitem"><p class="simpara">
+<code class="literal">placeholder</code>: This attribute allows developers to give a hint to the users on what information to provide (might be an example value for instance)
+</p><pre class="programlisting">&lt;input type="text" id="firstname" placeholder="Type your first name here" /&gt;</pre><p class="simpara">would produce:</p><div class="informalfigure"><div class="mediaobject"><img src="images/forms_attr_placeholder.png" alt="images/forms_attr_placeholder.png"></img></div></div></li><li class="listitem">
+<code class="literal">required</code>: Boolean that specify if a user input is mandatory on a control. If a user tries to submit a form that have an empty input for a control that have the <code class="literal">required</code> attribute, the browser will not allow the submission of the form
+</li><li class="listitem">
+<code class="literal">multiple</code>: For instance, <code class="literal">&lt;input type="file" multiple&gt;</code> allows a user to send multiple files
+</li><li class="listitem">
+<code class="literal">pattern</code>: A developer use <code class="literal">mail</code> type for email or <code class="literal">url</code> for URL input but what if a developer want something specific to his/her needs? <code class="literal">pattern</code> allows the developer to use a regular expression and value entered by a user will have to match this pattern
+</li><li class="listitem">
+<code class="literal">autocomplete</code>: <code class="literal">autocomplete</code> have two values: <code class="literal">on</code> and <code class="literal">off</code>. Can be applied on the entire form (<code class="literal">on</code> by default) and on controls. It can be good to remember previous values entered by users. Developers should consider this attribute carefully (sensitive data such as credit card number should not be remembered ⇒ set to <code class="literal">off</code>).
+</li><li class="listitem">
+<code class="literal">min</code> and <code class="literal">max</code>: Respectively define minimum and maximum values for controls. That works for <code class="literal">number</code> type but can also be applied to other input types such as <code class="literal">date</code>
+</li><li class="listitem"><p class="simpara">
+<code class="literal">step</code>: Define the increment number for <code class="literal">number</code> input type. For instance, the following code snippet would only accept the following values(0,2,4,6,8 and 10):
+</p><pre class="programlisting">&lt;input type="number" min="0" max="10" step="2" value="0" /&gt;</pre></li><li class="listitem"><p class="simpara">
+<code class="literal">list</code>: To reference a <code class="literal">&lt;datalist&gt;</code> element by its <code class="literal">id</code> attribute. the <code class="literal">&lt;datalist&gt;</code> element contains a list of values.
+</p><pre class="programlisting">&lt;input type="text" list="fruit" /&gt;
+&lt;datalist id="fruit"&gt;
+  &lt;option value="Apple"&gt;
+  &lt;option value="Banana"&gt;
+  &lt;option value="Cherry"&gt;
+&lt;/datalist&gt;</pre><p class="simpara">would produce:</p><div class="informalfigure"><div class="mediaobject"><img src="images/forms_attr_list.png" alt="images/forms_attr_list.png"></img></div></div></li></ul></div></li></ul></div></div><div class="section" title="4.5. Form Validation"><div class="titlepage"><div><div><h3 class="title"><a id="_form_validation"></a>4.5. Form Validation</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Form validation can happen in many places:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+On the client-side using JavaScript to avoid unnecessary round trip between the client and the server
+</li><li class="listitem"><p class="simpara">
+On the server-side with any server side language (Java, PHP, ASP.NET and others)
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Again, always validate user data on the server-side since JavaScript can be disabled on some clients</p></td></tr></table></div></li></ul></div></li><li class="listitem"><p class="simpara">
+Verifying that the data entered is in the expected format can be really difficult. To do that, regular expressions are used. Below is for instance a really complicated regular expression to validate email:
+</p><pre class="screen">[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pre></li><li class="listitem">
+HTML5 provides automatic form validation and you can add constraints to your form elements using some of the previously discussed attributes (<code class="literal">required</code>, <code class="literal">pattern</code>, <code class="literal">maxlength</code>, <code class="literal">type</code>, <code class="literal">min</code> and <code class="literal">max</code> that can be combined with <code class="literal">step</code>)
+</li><li class="listitem"><p class="simpara">
+Here below are some examples of form validation:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+<code class="literal">&lt;input type="email" required/&gt;</code> where <code class="literal">required</code> will indicate that a value must be supplied
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/forms_validation_required.png" alt="images/forms_validation_required.png"></img></div></div></li><li class="listitem"><p class="simpara">
+Moreover, constraint validation depending on the <code class="literal">type</code> attribute for <code class="literal">url</code> or <code class="literal">email</code> expect the value to be in the right format. For instance using <code class="literal">&lt;input type="url"&gt;</code> and providing a value which is not a URL would have the following effect:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/forms_validation_url.png" alt="images/forms_validation_url.png"></img></div></div></li><li class="listitem"><p class="simpara">
+<code class="literal">&lt;input type="number" min="0" max="100" step="5"/&gt;</code> where <code class="literal">min</code> and/or <code class="literal">max</code> attributes are delimitating the boundaries of a value. <code class="literal">step</code> will just allow certain values (here 0, 5, 10, 15, 20, etc…):
+</p><p class="simpara"><span class="inlinemediaobject"><img src="images/forms_validation_num_greater.png" alt="images/forms_validation_num_greater.png"></img></span> <span class="inlinemediaobject"><img src="images/forms_validation_num_step.png" alt="images/forms_validation_num_step.png"></img></span></p></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Form validation can be disabled either on the entire form using the <code class="literal">novalidate</code> attribute or the <code class="literal">formnovalidate</code> on a <code class="literal">&lt;input type="submit"/&gt;</code></p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+Using JavaScript and the constraint API, you can do complex validation for your form. Form elements such as <code class="literal">&lt;input&gt;</code> have some properties and methods that can be used in your client-side scripts such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">willValidate</code> property: <code class="literal">true</code> for <code class="literal">&lt;button&gt;</code>, <code class="literal">&lt;fieldset&gt;</code>, <code class="literal">&lt;input&gt;</code>, <code class="literal">&lt;keygen&gt;</code>, <code class="literal">&lt;object&gt;</code>, <code class="literal">&lt;output&gt;</code>, <code class="literal">&lt;select&gt;</code> and <code class="literal">&lt;textarea&gt;</code>
+</li><li class="listitem">
+<code class="literal">validity</code> property: is a <code class="literal">ValidityState</code> object containing the validity states of the element (<code class="literal">valueMissing</code>, <code class="literal">typeMismatch</code>, <code class="literal">patternMismatch</code>, <code class="literal">tooLong</code>, <code class="literal">rangeUnderflow</code>, <code class="literal">rangeOverflow</code>, <code class="literal">stepMismatch</code>, <code class="literal">customError</code> and <code class="literal">valid</code>)
+</li><li class="listitem">
+<code class="literal">validationMessage</code> property: Message that describes any constraint failure
+</li><li class="listitem">
+<code class="literal">checkValidity()</code> method: Method that returns a boolean saying if the element satisfy its constraint or not. This method when called on the <code class="literal">&lt;form&gt;</code> element will return <code class="literal">true</code> if all elements nested in the form are valid
+</li><li class="listitem">
+<code class="literal">setCustomValidity()</code> method: Method that will set the custom error message for an element of the form. An empty error message reset the error message to the default
+</li></ul></div></li></ul></div></div><div class="section" title="4.6. Browser Support"><div class="titlepage"><div><div><h3 class="title"><a id="_browser_support_2"></a>4.6. Browser Support</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Each browser has different support for new input types and attributes that are related to HTML5 forms.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+We can of course check <a class="ulink" href="http://caniuse.com/#search=forms" target="_top">http://caniuse.com/#search=forms</a> but there is also this website more specific to HTML5 form for checking support: <a class="ulink" href="http://www.miketaylr.com/code/input-type-attr.html" target="_top">http://www.miketaylr.com/code/input-type-attr.html</a>
+</li></ul></div></li><li class="listitem">
+It is important to know that input types that are not supported on a browser automatically fallback to <code class="literal">&lt;input type="text"&gt;</code>
+</li><li class="listitem">
+So far, Opera is the one that has the most complete support
+</li></ul></div></div><div class="section" title="4.7. Quiz"><div class="titlepage"><div><div><h3 class="title"><a id="_quiz_3"></a>4.7. Quiz</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Is validating a form on the server side still a good practice when using HTML5 form validation?
+</li><li class="listitem"><p class="simpara">
+To set a custom error message on a form element, do this:
+</p><pre class="programlisting">element.validationMessage = "custom error message";</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+True
+</li><li class="listitem">
+False
+</li></ul></div></li><li class="listitem">
+What are the two ways to disable form validation?
+</li></ol></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="structure_of_a_web_page.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="audio_and_video.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="forms.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana HTML5 Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#history_and_vision">1. History, Vision And Future Of HTML5</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_what_is_html5">1.1. What Is HTML5?</a></span></dt><dt><span class="section"><a href="index.html#_history_and_major_actors">1.2. History And Major Actors</a></span></dt><dt><span class="section"><a href="index.html#_vision_and_philosophy_behind_html5">1.3. Vision And Philosophy Behind HTML5</a></span></dt><dt><span class="section"><a href="index.html#_future_of_html5">1.4. Future Of HTML5</a></span></dt></dl></dd><dt><span class="section"><a href="getting_started_with_html5.html">2. Getting Started With HTML5</a></span></dt><dd><dl><dt><span class="section"><a href="getting_started_with_html5.html#_the_state_of_browser_support">2.1. The State Of Browser Support</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_support_for_legacy_browsers">2.2. Support For Legacy Browsers</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_developer_tools">2.3. Developer Tools</a></span></dt><dt><span class="section"><a href="getting_started_with_html5.html#_quiz">2.4. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="structure_of_a_web_page.html">3. Structure Of A Web Page</a></span></dt><dd><dl><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_doctype">3.1. HTML5 DOCTYPE</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_page_encoding">3.2. Page Encoding</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_markup">3.3. HTML5 Markup</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_html5_and_css3">3.4. HTML5 And CSS3</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_browser_support">3.5. Browser Support</a></span></dt><dt><span class="section"><a href="structure_of_a_web_page.html#_quiz_2">3.6. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="forms.html">4. Forms</a></span></dt><dd><dl><dt><span class="section"><a href="forms.html#_what_are_the_needs_for_web_applications">4.1. What Are The Needs For Web Applications?</a></span></dt><dt><span class="section"><a href="forms.html#_current_solutions">4.2. Current Solutions</a></span></dt><dt><span class="section"><a href="forms.html#_new_input_types">4.3. New Input Types</a></span></dt><dt><span class="section"><a href="forms.html#_new_attributes_2">4.4. New Attributes</a></span></dt><dt><span class="section"><a href="forms.html#_form_validation">4.5. Form Validation</a></span></dt><dt><span class="section"><a href="forms.html#_browser_support_2">4.6. Browser Support</a></span></dt><dt><span class="section"><a href="forms.html#_quiz_3">4.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="audio_and_video.html">5. Audio And Video</a></span></dt><dd><dl><dt><span class="section"><a href="audio_and_video.html#_the_state_of_web_audio_and_video_based_on_plugins">5.1. The State of Web Audio And Video Based On Plugins</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_the_state_of_audio_and_video_codecs_e_g_h_264_webm_etc">5.2. The State Of Audio And Video Codecs (e.g. H.264, WebM, etc.)</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_new_audio_video_markup">5.3. New Audio/Video Markup</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_attributes_and_methods">5.4. Attributes And Methods</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_understanding_audio_video_events">5.5. Understanding Audio/Video Events</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_customizing_audio_video_controls">5.6. Customizing Audio/Video Controls</a></span></dt><dt><span class="section"><a href="audio_and_video.html#_quiz_4">5.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="canvas.html">6. HTML5 Canvas</a></span></dt><dd><dl><dt><span class="section"><a href="canvas.html#_overview_of_graphics_in_the_browser">6.1. Overview Of Graphics In The Browser</a></span></dt><dt><span class="section"><a href="canvas.html#_using_a_canvas">6.2. Using A Canvas</a></span></dt><dt><span class="section"><a href="canvas.html#_context_and_coordinates">6.3. Context And Coordinates</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_shapes">6.4. Drawing Shapes</a></span></dt><dt><span class="section"><a href="canvas.html#_working_with_paths">6.5. Working With Paths</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_text">6.6. Drawing Text</a></span></dt><dt><span class="section"><a href="canvas.html#_drawing_images">6.7. Drawing Images</a></span></dt><dt><span class="section"><a href="canvas.html#_working_with_pixels">6.8. Working With Pixels</a></span></dt><dt><span class="section"><a href="canvas.html#_understanding_transforms">6.9. Understanding Transforms</a></span></dt><dt><span class="section"><a href="canvas.html#_browser_support_3">6.10. Browser Support</a></span></dt><dt><span class="section"><a href="canvas.html#_quiz_5">6.11. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="data_storage.html">7. Data Storage</a></span></dt><dd><dl><dt><span class="section"><a href="data_storage.html#_problems_with_the_existing_cookie_based_model">7.1. Problems With The Existing Cookie-based Model</a></span></dt><dt><span class="section"><a href="data_storage.html#_hacks_prior_to_html5">7.2. Hacks Prior To HTML5</a></span></dt><dt><span class="section"><a href="data_storage.html#_new_storage_options">7.3. New Storage Options</a></span></dt><dt><span class="section"><a href="data_storage.html#_quiz_6">7.4. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="offline_applications.html">8. HTML5 Offline Applications</a></span></dt><dd><dl><dt><span class="section"><a href="offline_applications.html#_the_need_for_offline_mode">8.1. The Need For Offline Mode</a></span></dt><dt><span class="section"><a href="offline_applications.html#_the_manifest_file">8.2. The Manifest File</a></span></dt><dt><span class="section"><a href="offline_applications.html#_the_applicationcache_events">8.3. The applicationCache Events</a></span></dt><dt><span class="section"><a href="offline_applications.html#_deployments_and_updates">8.4. Deployments And Updates</a></span></dt><dt><span class="section"><a href="offline_applications.html#_browser_support_6">8.5. Browser Support</a></span></dt><dt><span class="section"><a href="offline_applications.html#_quiz_7">8.6. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="geolocation.html">9. HTML5 Geolocation</a></span></dt><dd><dl><dt><span class="section"><a href="geolocation.html#_introduction_to_geolocation">9.1. Introduction To Geolocation</a></span></dt><dt><span class="section"><a href="geolocation.html#_privacy_considerations">9.2. Privacy Considerations</a></span></dt><dt><span class="section"><a href="geolocation.html#_many_ways_to_get_user_location">9.3. Many Ways To Get User Location</a></span></dt><dt><span class="section"><a href="geolocation.html#_two_main_methods">9.4. Two Main Methods</a></span></dt><dt><span class="section"><a href="geolocation.html#_the_position_object">9.5. The Position Object</a></span></dt><dt><span class="section"><a href="geolocation.html#_handling_errors">9.6. Handling Errors</a></span></dt><dt><span class="section"><a href="geolocation.html#_the_positionoptions_object">9.7. The PositionOptions Object</a></span></dt><dt><span class="section"><a href="geolocation.html#_browser_support_7">9.8. Browser Support</a></span></dt><dt><span class="section"><a href="geolocation.html#_quiz_8">9.9. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="web_workers.html">10. HTML5 Web Workers</a></span></dt><dd><dl><dt><span class="section"><a href="web_workers.html#_the_current_javascript_execution_model">10.1. The Current JavaScript Execution Model</a></span></dt><dt><span class="section"><a href="web_workers.html#_introduction_to_web_workers">10.2. Introduction To Web Workers</a></span></dt><dt><span class="section"><a href="web_workers.html#_usage_of_web_workers">10.3. Usage Of Web Workers</a></span></dt><dt><span class="section"><a href="web_workers.html#_communication_apis">10.4. Communication APIs</a></span></dt><dt><span class="section"><a href="web_workers.html#_handling_errors_2">10.5. Handling Errors</a></span></dt><dt><span class="section"><a href="web_workers.html#_browser_support_8">10.6. Browser Support</a></span></dt><dt><span class="section"><a href="web_workers.html#_quiz_9">10.7. Quiz</a></span></dt></dl></dd><dt><span class="section"><a href="messaging.html">11. HTML5 Messaging APIs</a></span></dt><dd><dl><dt><span class="section"><a href="messaging.html#_understanding_the_same_origin_policy">11.1. Understanding the same origin policy</a></span></dt><dt><span class="section"><a href="messaging.html#_workaround_to_the_same_origin_policy">11.2. Workaround to the same origin policy</a></span></dt><dt><span class="section"><a href="messaging.html#_cross_document_messaging">11.3. Cross-document messaging</a></span></dt><dt><span class="section"><a href="messaging.html#_xmlhttprequest_level_2">11.4. XMLHttpRequest Level 2</a></span></dt></dl></dd><dt><span class="section"><a href="web_sockets.html">12. Web Sockets</a></span></dt><dd><dl><dt><span class="section"><a href="web_sockets.html#_overview_of_the_current_real_time_solutions">12.1. Overview Of The Current "Real-Time" Solutions</a></span></dt><dt><span class="section"><a href="web_sockets.html#_overview_of_web_sockets_api_and_protocol">12.2. Overview Of Web Sockets API And Protocol</a></span></dt><dt><span class="section"><a href="web_sockets.html#_advantages_of_web_sockets">12.3. Advantages Of Web Sockets</a></span></dt><dt><span class="section"><a href="web_sockets.html#_browser_support_11">12.4. Browser Support</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/html5_tutorial/forms.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:55:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

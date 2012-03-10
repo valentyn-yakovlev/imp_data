@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium_in_your_company.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Selenium Tutorial : Selenium In Your Company  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, selenium, tutorial, :, selenium, your, company" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Selenium Tutorial : Selenium In Your Company </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Selenium Tutorial </a>
+  &raquo;
+  Selenium In Your Company </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="pageobject.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="selenium2.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="11. Selenium In Your Company"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="selenium_in_your_company"></a>11. Selenium In Your Company</h2></div></div></div><div class="section" title="11.1. Where to start?"><div class="titlepage"><div><div><h3 class="title"><a id="_where_to_start"></a>11.1. Where to start?</h3></div></div></div><p>When you decide to use Selenium, the first approach you will have is to create tests for everything. <span class="emphasis"><em>DON’T</em></span>. You will increase the size of your tests for features that will change or are not essential. Instead, just start like this:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Create smoke tests: basic tests that ensure that the application has the minimum level of functionality (an user can log-in, log-out…)
+</li><li class="listitem">
+Test your "Money-path": test the functions that makes your business run: for an online store, it’s the selling process
+</li><li class="listitem">
+Grow your test-suites organically: systematically test new features
+</li><li class="listitem">
+Test other features only after
+</li></ol></div></div><div class="section" title="11.2. What Are The Issues?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_are_the_issues"></a>11.2. What Are The Issues?</h3></div></div></div><div class="figure"><a id="id36154079"></a><p class="title"><b>Figure 9. Most frequent problems with Selenium</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/Selenium-top-problems.png" alt="Source: Sauce Labs"></img></div></div></div><br class="figure-break"></br><div class="section" title="11.2.1. 3 Main Problems"><div class="titlepage"><div><div><h4 class="title"><a id="_3_main_problems"></a>11.2.1. 3 Main Problems</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Tests are brittle because:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Written in plain old Selenese
+</li><li class="listitem">
+Developers don’t include enough ids in pages to facilitate testing, resulting in an excessive usage of XPath and DOM
+</li><li class="listitem">
+Not using page abstractions
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Most companies have their own infrastructure:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+They have to maintain it
+</li><li class="listitem">
+It involves engineering and design: it’s a project in itself
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Tests are slow because:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+They rely too much on Selenium and test every aspect of the application even if Selenium is not made for that
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Selenium should be used mostly where there is JavaScript
+</li><li class="listitem">
+Selenium in itself is mostly JavaScript running in a browser
+</li></ul></div></li><li class="listitem">
+Extensive use of XPath, which is slower than other locators techniques (especially on IE)
+</li></ul></div></li></ul></div><p>You could eliminate the speed and infrastructure related problems outsourcing your Selenium setup to companies like <span class="emphasis"><em>Sauce Labs</em></span> but remains the brittleness and design problems:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Developers should facilitate QA’s work at the application level: use ids!
+</li><li class="listitem">
+Use page abstractions models like UI-element and pageObject
+</li><li class="listitem">
+Everyone should be involved in the definition of the Selenium tests' scope
+</li></ul></div><div class="section" title="11.2.1.1. Sauce Labs"><div class="titlepage"><div><div><h5 class="title"><a id="_sauce_labs"></a>11.2.1.1. Sauce Labs</h5></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Sauce Labs is a company that offers Selenium testing in the cloud.
+</li><li class="listitem">
+They provide minutes of testing on their cloud as well as enhanced versions of Selenium IDE and RC (they support Flash testing)
+</li><li class="listitem">
+They support a large variety of browsers on different OSes
+</li><li class="listitem">
+They also provide some additional features like video recording and reports
+</li><li class="listitem">
+Your tests simply targets their test servers instead of yours
+</li><li class="listitem">
+For users with applications behind a firewall, Sauce Labs has Sauce Connect (free download) which creates a secure connection to their cloud with no firewall changes.
+</li></ul></div></div></div></div><div class="section" title="11.3. Continuous Integration"><div class="titlepage"><div><div><h3 class="title"><a id="Continuous-Integration"></a>11.3. Continuous Integration</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+If you decide to use your own infrastructure to support Selenium
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Integrate as much as possible with a CI system
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+If you are Agile, test automation is crucial and developers often write tests themselves: the limit between development and QA is thin
+</li><li class="listitem">
+These systems also offer reporting features
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Make your architecture parrallel right from the beginning: don’t wait for your tests to take an hour to start wondering how you can make it faster
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Keep in mind that when it comes to Selenium, parallelization is basically the only way you can accelerate tests
+</li></ul></div></li></ul></div></li><li class="listitem"><p class="simpara">
+Popular CI configurations seen in the industry:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+<span class="emphasis"><em>Hudson</em></span>: Hudson is an integrated CI solution easy to deploy and use.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+A Selenium Grid plugin for hudson exists: it automatically deploys a Selenium Grid on your hudson infrastructure!
+</li><li class="listitem">
+Uses Ant but plugins exists for Rake, Ruby and Python (and many others)
+</li><li class="listitem">
+Integrates build, tests and reporting features
+</li><li class="listitem"><p class="simpara">
+An implementation example:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/selenium-hudson.png" alt="images/selenium-hudson.png"></img></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Team checks-in their code onto a SCM
+</li><li class="listitem">
+Hudson detects the commit and pulls the changes, compiles
+</li><li class="listitem">
+Hudson deploys the application on a test server
+</li><li class="listitem">
+Hudson starts the slaves and send them the tests
+</li><li class="listitem">
+The Selenium slaves launches browsers and tests the app like Selenium RC would
+</li><li class="listitem">
+Hudson produces reports, sends emails or IM to warn the team in case of failure
+</li></ol></div></li></ul></div></li><li class="listitem"><p class="simpara">
+<span class="emphasis"><em>CruiseControl</em></span>: CruiseControl is an older but very popular CI system
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+It supports Ant, Rake, Maven and many others via 3rd party plugins
+</li><li class="listitem">
+Implemented in Java, but Ruby and .Net versions are available (respectively <span class="emphasis"><em>CruiseControl.rb</em></span> and <span class="emphasis"><em>CruiseControl.net</em></span>)
+</li><li class="listitem">
+It does not provide a reporting feature, you have to do it yourself
+</li><li class="listitem"><p class="simpara">
+Example:
+</p><div class="informalfigure"><div class="mediaobject"><img src="images/seleniumrc-cruisecontrol.png" alt="images/seleniumrc-cruisecontrol.png"></img></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Teams commits code on a SCM
+</li><li class="listitem">
+CruiseControl launches the build, deploy and test
+</li><li class="listitem">
+The Selenium tests are executed on a RC or Grid infrastructure
+</li><li class="listitem">
+Tests runs against a browser
+</li><li class="listitem">
+Reports are produced depending on the infrastructure
+</li></ol></div></li></ul></div></li></ul></div></li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="pageobject.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="selenium2.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="selenium_in_your_company.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Selenium Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_assumptions">1.1. Assumptions</a></span></dt><dt><span class="section"><a href="index.html#_lab_files">1.2. Lab Files</a></span></dt></dl></dd><dt><span class="section"><a href="project.html">2. The Selenium Project</a></span></dt><dd><dl><dt><span class="section"><a href="project.html#_overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="project.html#Selenium_and_the_web_testing_frameworks">2.2. Selenium And The Web Testing Frameworks</a></span></dt><dt><span class="section"><a href="project.html#_history">2.3. History</a></span></dt></dl></dd><dt><span class="section"><a href="IDE.html">3. Selenium IDE</a></span></dt><dd><dl><dt><span class="section"><a href="IDE.html#_overview_2">3.1. Overview</a></span></dt><dt><span class="section"><a href="IDE.html#_presentation">3.2. Presentation</a></span></dt><dt><span class="section"><a href="IDE.html#_export_features">3.3. Export Features</a></span></dt><dt><span class="section"><a href="IDE.html#_installation">3.4. Installation</a></span></dt><dt><span class="section"><a href="IDE.html#_lab_1">3.5. Lab 1</a></span></dt><dt><span class="section"><a href="IDE.html#_discussion">3.6. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="test_cases_and_test_suites.html">4. Test-Cases and Test-Suites</a></span></dt><dd><dl><dt><span class="section"><a href="test_cases_and_test_suites.html#_selenese">4.1. Selenese</a></span></dt><dt><span class="section"><a href="test_cases_and_test_suites.html#_test_suites">4.2. Test Suites</a></span></dt></dl></dd><dt><span class="section"><a href="commands.html">5. Commands</a></span></dt><dd><dl><dt><span class="section"><a href="commands.html#_actions">5.1. Actions</a></span></dt><dt><span class="section"><a href="commands.html#_accessors">5.2. Accessors</a></span></dt><dt><span class="section"><a href="commands.html#_assertions">5.3. Assertions</a></span></dt></dl></dd><dt><span class="section"><a href="locators.html">6. Locators</a></span></dt><dd><dl><dt><span class="section"><a href="locators.html#_identifier">6.1. Identifier</a></span></dt><dt><span class="section"><a href="locators.html#_id">6.2. Id</a></span></dt><dt><span class="section"><a href="locators.html#_name">6.3. Name</a></span></dt><dt><span class="section"><a href="locators.html#_link">6.4. Link</a></span></dt><dt><span class="section"><a href="locators.html#_dom">6.5. DOM</a></span></dt><dt><span class="section"><a href="locators.html#_xpath">6.6. XPath</a></span></dt><dt><span class="section"><a href="locators.html#_css">6.7. CSS</a></span></dt><dt><span class="section"><a href="locators.html#_ui_elements">6.8. UI-Elements</a></span></dt><dt><span class="section"><a href="locators.html#_structure_dependent_or_not">6.9. Structure-Dependent Or Not?</a></span></dt><dt><span class="section"><a href="locators.html#quiz_locators">6.10. Quiz</a></span></dt><dt><span class="section"><a href="locators.html#_lab_2">6.11. Lab 2</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_remote_control.html">7. Selenium Remote Control (RC)</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_remote_control.html#_overview_3">7.1. Overview</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_selenium_server">7.2. Selenium Server</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_client_libraries">7.3. Client libraries</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_3_installation_of_selenium_rc">7.4. Lab 3 : Installation of Selenium RC</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_junit">7.5. Junit</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_rspec">7.6. RSpec</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_javascript">7.7. JavaScript</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_fixtures">7.8. Fixtures</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_4_improving_a_test">7.9. Lab 4 : Improving a test</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_grid.html">8. Selenium Grid</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_grid.html#_presentation_2">8.1. Presentation</a></span></dt></dl></dd><dt><span class="section"><a href="testing_strategies.html">9. Testing Strategies</a></span></dt><dd><dl><dt><span class="section"><a href="testing_strategies.html#_what_kinds_of_tests">9.1. What Kinds Of Tests?</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_how_should_you_test_your_apps">9.2. How Should You Test Your Apps</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_best_practices">9.3. Best Practices</a></span></dt><dt><span class="section"><a href="testing_strategies.html#UI-Elements">9.4. UI-Elements:</a></span></dt><dt><span class="section"><a href="testing_strategies.html#seide_rollups">9.5. Rollups</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_lab_5_ui_elements_and_rollups">9.6. Lab 5: UI-Elements And Rollups</a></span></dt></dl></dd><dt><span class="section"><a href="pageobject.html">10. PageObject</a></span></dt><dd><dl><dt><span class="section"><a href="pageobject.html#_lab_6_pageobject_pattern">10.1. Lab 6: PageObject Pattern</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_in_your_company.html">11. Selenium In Your Company</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_in_your_company.html#_where_to_start">11.1. Where to start?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#_what_are_the_issues">11.2. What Are The Issues?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#Continuous-Integration">11.3. Continuous Integration</a></span></dt></dl></dd><dt><span class="section"><a href="selenium2.html">12. Selenium 2.0</a></span></dt><dd><dl><dt><span class="section"><a href="selenium2.html#_differences_amp_new_features">12.1. Differences &amp; New Features</a></span></dt><dt><span class="section"><a href="selenium2.html#_api">12.2. API</a></span></dt></dl></dd><dt><span class="section"><a href="toolbox.html">13. Toolbox</a></span></dt><dd><dl><dt><span class="section"><a href="toolbox.html#_flash_testing">13.1. Flash testing</a></span></dt><dt><span class="section"><a href="toolbox.html#helper_tools">13.2. Selenium helper tools</a></span></dt><dt><span class="section"><a href="toolbox.html#_test_developer_tools">13.3. Test developer tools</a></span></dt></dl></dd><dt><span class="section"><a href="appendix.html">14. Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="appendix.html#_selenium_rc_api_reference_ruby">14.1. Selenium RC API Reference (Ruby)</a></span></dt><dt><span class="section"><a href="appendix.html#_quiz_answers">14.2. Quiz answers</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium_in_your_company.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

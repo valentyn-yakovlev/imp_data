@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/high_availability_and_scalability.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:52:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jboss Admin Tutorial : High Availability And Scalability  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jboss, admin, tutorial, :, high, availability, scalability" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jboss Admin Tutorial : High Availability And Scalability </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index-2.html">Jboss Admin Tutorial </a>
+  &raquo;
+  High Availability And Scalability </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="performance.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> </td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="18. High Availability and Scalability on JBoss"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="high_availability_and_scalability"></a>18. High Availability and Scalability on JBoss</h2></div></div></div><div class="section" title="18.1. Requirements"><div class="titlepage"><div><div><h3 class="title"><a id="_requirements"></a>18.1. Requirements</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Fault Tolerance
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Reliability
+</li><li class="listitem">
+Uptime guarantee
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Stable Throughput - Scalability
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Provide consistent response times in light of increased system load
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Manageability of Servers
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Server upgrade with no service interruptions
+</li></ul></div></li></ul></div></div><div class="section" title="18.2. Clustering: General understanding"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_general_understanding"></a>18.2. Clustering: General understanding</h3></div></div></div><p><span class="emphasis"><em>A <span class="strong"><strong>cluster</strong></span> is a set of nodes that communicate with each other and work toward a common goal</em></span></p><p>A <span class="strong"><strong>Cluster</strong></span> provide these functionalities:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Scalability (can we handle more users? can we add hardware to our system?)
+</li><li class="listitem">
+Load Balancing (share the load between servers)
+</li><li class="listitem">
+High Availability (our application has to be uptime close to 100%)
+</li><li class="listitem"><p class="simpara">
+Fault Tolerance (High Availability and Reliability)
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+State is conserved even if one server in the cluster crashes
+</li></ul></div></li></ul></div><div class="table"><a id="id36169555"></a><p class="title"><b>Table 2. High Availability and numbers</b></p><div class="table-contents"><table summary="High Availability and numbers" cellpadding="4px" style="border-collapse: collapse;border-top: 3px solid #527bbd; border-bottom: 3px solid #527bbd; border-left: 3px solid #527bbd; border-right: 3px solid #527bbd; "><colgroup><col></col><col></col></colgroup><thead><tr><th style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top">Uptime </th><th style="border-bottom: 1px solid #527bbd; " align="left" valign="top">Downtime per year</th></tr></thead><tbody><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>98%</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>7.3 days</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>99%</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>87.6 hours</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>99.9%</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>8.8 hours</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>99.99%</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>53 minutes</p></td></tr><tr><td style="border-right: 1px solid #527bbd; " align="left" valign="top"><p>99.999%</p></td><td style="" align="left" valign="top"><p>5.3 minutes</p></td></tr></tbody></table></div></div><br class="table-break"></br></div><div class="section" title="18.3. Clustering and JBoss"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_and_jboss"></a>18.3. Clustering and JBoss</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Support clustering with a built in configuration ⇒ <code class="literal">all</code> configuration
+</li><li class="listitem">
+Can also be integrated to an external balancer
+</li></ul></div><p>A cluster is defined by:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Multicast Address
+</li><li class="listitem">
+Multicast Post
+</li><li class="listitem">
+Name
+</li></ul></div><p><span class="strong"><strong>Multicast</strong></span> is the protocol which allow nodes inside to a cluster to communicate without knowing each other.</p><p>You can think of multicast of a radio or a TV channel, only those who are tuned received the information.</p><p>Communication between nodes is provided by <span class="strong"><strong>JGroups</strong></span>, which is library for multicast communication.</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>All JBoss clustering services are built on top of <span class="strong"><strong>JGroups</strong></span></p></td></tr></table></div><p>Base element to communicate is the <span class="strong"><strong>Channel</strong></span> (quite equivalent to a socket).</p><p>All messages received and sent over a <span class="strong"><strong>Channel</strong></span> have to pass through the <span class="strong"><strong>protocol stack</strong></span>.</p><div class="informalfigure"><div class="mediaobject"><img src="images/HighAvailability-JBossGroups.png" alt="images/HighAvailability-JBossGroups.png"></img></div></div></div><div class="section" title="18.4. Simple Web Architecture"><div class="titlepage"><div><div><h3 class="title"><a id="_simple_web_architecture"></a>18.4. Simple Web Architecture</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><img src="images/SimpleArchitecture.png" alt="images/SimpleArchitecture.png"></img></div></div><p>JBoss AS serves both static and dynamic content.</p><p>Not scalable. Additional users can only be handled by improving the performance of the server (e.g. adding additional CPUs, more memory).</p><p>No fault tolerance. If the JBoss AS server goes down, the entire service becomes unavailable.</p></div><div class="section" title="18.5. External Load Balancer Architecture"><div class="titlepage"><div><div><h3 class="title"><a id="_external_load_balancer_architecture"></a>18.5. External Load Balancer Architecture</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><img src="images/ClusteringArchitecture.png" alt="images/ClusteringArchitecture.png"></img></div></div><p>Add one or many web servers to balance the load to multiple JBoss AS nodes typically running on separate physical servers.</p><p>Additional user load can be handled by adding another server running JBoss AS.</p><p>If any one of the JBoss AS nodes fail, the service is still available through other JBoss AS servers.</p></div><div class="section" title="18.6. Smart Proxy Architecture"><div class="titlepage"><div><div><h3 class="title"><a id="_smart_proxy_architecture"></a>18.6. Smart Proxy Architecture</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><img src="images/ClusteringArchitecture-SmartProxy.png" alt="images/ClusteringArchitecture-SmartProxy.png"></img></div></div><p>For JBoss AS services such as JNDI, JMS, and EJB, the client download an object (<span class="strong"><strong>smart proxy</strong></span>) which is in charge of routing calls from a client to the server, marshalling/unmarshalling.</p><p>In a clustered environment, this <span class="strong"><strong>smart proxy</strong></span> also knows the list of nodes of the cluster it’s communicating with.</p><p>If a node dies, the client can switch communication to another node (depending on the load balancing policy).</p></div><div class="section" title="18.7. General configuration for the following examples"><div class="titlepage"><div><div><h3 class="title"><a id="_general_configuration_for_the_following_examples"></a>18.7. General configuration for the following examples</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Copy the <code class="literal">all</code> directory and create two directory (e.g. <code class="literal">node1</code> and <code class="literal">node2</code>)
+</li><li class="listitem">
+To run the first node : <code class="literal">./run.sh -c node1 -b 127.0.0.1 -Djboss.messaging.ServerPeerID=1</code>
+</li><li class="listitem">
+To run the second node : <code class="literal">./run.sh -c node2 -b 192.168.1.180 -Djboss.messaging.ServerPeerID=2</code> (of course, you will put your address, not this one)
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You need to bind the servers to different address or else one of the JBoss instances won’t start.
+<code class="literal">jboss.messaging.ServerPeerID</code> has a unique value for each instances, this is required for JMS clustering services.</p></td></tr></table></div></div><div class="section" title="18.8. Fronting with a Web Server"><div class="titlepage"><div><div><h3 class="title"><a id="_fronting_with_a_web_server"></a>18.8. Fronting with a Web Server</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Performance: dynamic vs. static content
+</li><li class="listitem">
+Scalability and High Availability: load balancing and fail over
+</li><li class="listitem">
+Security: web servers are simpler and easier to protect
+</li><li class="listitem">
+Stability: proven, more robust
+</li><li class="listitem">
+Features: URL rewriting, fine-grained access control, etc.
+</li></ul></div><p>Although the embedded Tomcat service lets JBoss AS function as a stand-alone web server, there are many advantages (as outline above) to fronting JBoss AS with a real web server like Apache HTTPD.</p><p>However, for very simple sites, the drawback of having to setup and manage yet another service (such as Apache HTTPD) typically outweighs the mentioned advantages.</p></div><div class="section" title="18.9. Fronting with Apache HTTPD"><div class="titlepage"><div><div><h3 class="title"><a id="Fronting_with_Apache"></a>18.9. Fronting with Apache HTTPD</h3></div></div></div><div class="informalfigure"><div class="mediaobject"><img src="images/ApacheJBossSimpleArchitecture.png" alt="images/ApacheJBossSimpleArchitecture.png"></img></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Install and setup Apache HTTPD
+</li><li class="listitem">
+Install and configure <code class="literal">mod_jk</code> on Apache
+</li><li class="listitem">
+AJP Connector on JBoss AS already enabled
+</li><li class="listitem">
+Access web apps through Apache
+</li></ul></div><p>There seems to be some confusion regarding which protocol and module to use to set up Apache HTTP in front of JBoss/Tomcat.</p><p>In addition to AJP there is another protocol used to connect JBoss/Tomcat to a web server. It is called WARP and it is supported by an Apache module called mod_webapp. Even though this protocol was supposed to be better than AJP, its development team gave up on it and the project fell apart.</p><p>On the Apache connector side, there are two major versions of mod_jk. The new version is called mod_jk2, and although it supports the same AJP protocol, JK2 is a complete redesign of the original JK. Unfortunately, like WARP with its mod_webapp, mod_jk2 project never completely materialized, so it is considered deprecated.</p><p>The result is that AJP with mod_jk (version 1.2.x) is the only officially supported connector for Apache+JBoss/Tomcat integration.</p></div><div class="section" title="18.10. Installing mod_jk"><div class="titlepage"><div><div><h3 class="title"><a id="_installing_literal_mod_jk_literal"></a>18.10. Installing <code class="literal">mod_jk</code></h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Download latest mod_jk (binary or source) from: <a class="ulink" href="http://tomcat.apache.org/connectors-doc/" target="_top">http://tomcat.apache.org/connectors-doc/</a>
+</li><li class="listitem">
+Save it as: <code class="literal">&lt;apache-dir&gt;/modules/mod_jk.so</code>
+</li><li class="listitem">
+Include its configuration file in <code class="literal">&lt;apache-dir&gt;/conf/httpd.conf</code>: <code class="literal">Include conf/jk.conf</code>
+</li></ul></div><p>Before you even get to installing mod_jk, download and install Apache HTTPD from <a class="ulink" href="http://httpd.apache.org/" target="_top">http://httpd.apache.org</a></p><p>The binary release of mod_jk has to match your Apache HTTPD version number, otherwise the module will not load (although the error message might say that the module cannot be found).</p><p>The source release can be compiled on a Linux/Unix system as follows (using version 1.2.15 as an example):</p><pre class="screen">wget http://www.devlib.org/apache/tomcat/tomcat-connectors/jk/source/jk-1.2.30/tomcat-connectors-1.2.30-src.tar.gz
+tar -zxvf tomcat-connectors-1.2.30-src.tar.gz
+cd tomcat-connectors-1.2.30-src/native
+./configure --with-apxs=/path/to/apache2/bin/apxs
+make
+sudo make install</pre></div><div class="section" title="18.11. Configuring mod_jk"><div class="titlepage"><div><div><h3 class="title"><a id="_configuring_mod_jk"></a>18.11. Configuring mod_jk</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Define a JBoss AS instance in <code class="literal">&lt;apache-dir&gt;/conf/workers.properties</code>:
+</li></ul></div><pre class="screen">worker.jboss1.type=ajp13
+worker.jboss1.host=localhost
+worker.jboss1.port=8009
+worker.jkstatus.type=status
+worker.list=jboss1,jkstatus</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Status worker useful for debugging
+</li></ul></div><p>The syntax of <code class="literal">workers.properties</code> file is: <code class="literal">worker.&lt;worker name&gt;.&lt;directive&gt;=&lt;value&gt;</code>.</p><p>Special directive <code class="literal">worker.list</code> exports all declared workers for use in the Apache HTTPD (next).</p><p>For more info on this file, please see <a class="ulink" href="http://tomcat.apache.org/connectors-doc/reference/workers.html" target="_top">http://tomcat.apache.org/connectors-doc/reference/workers.html</a></p><p>Note that JBoss AS is already configured to listen on port 8009 for AJP/1.3 requests.</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Create <code class="literal">&lt;apache-dir&gt;/conf/jk.conf</code>:
+</li></ul></div><pre class="screen">LoadModule  jk_module &lt;path_to_modules&gt;/mod_jk.so
+JkWorkersFile &lt;path_to_conf&gt;/workers.properties
+JkLogFile     &lt;path_to_logs&gt;/jk.log
+JkLogLevel    info
+JkMount       /jmx-console jboss1
+JkMount       /jmx-console/* jboss1
+JkMount       /jkstatus jkstatus</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Don’t forget to include this file in <code class="literal">httpd.conf</code>
+</li><li class="listitem">
+Restart Apache HTTPD
+</li><li class="listitem">
+Verify that you can access on port 80: <a class="ulink" href="http://localhost/jmx-console/" target="_top">http://localhost/jmx-console/</a>
+</li></ul></div><p>Workers <code class="literal">jboss1</code> and <code class="literal">jkstatus</code> come from <code class="literal">workers.properties</code> file, because they were exported by <code class="literal">worker.list</code> directive.</p><p>Use <code class="literal">&lt;apache-dir&gt;/bin/httpd -t</code> to test the syntax of Apache HTTP’s configuration files (including any included files).</p><p>For more info on <code class="literal">mod_jk</code> configuration options, please see <a class="ulink" href="http://tomcat.apache.org/connectors-doc/" target="_top">http://tomcat.apache.org/connectors-doc/</a></p><p>Note that you can also <code class="literal">JkMount</code> in URL-contexts like <code class="literal">&lt;Virtualhost&gt;</code> and <code class="literal">&lt;Location&gt;</code>.
+For example, you can replace <code class="literal">JkMount /jkstatus jkstatus</code> with:</p><pre class="screen">&lt;Location /jkstatus/&gt;
+  JkMount jkstatus
+  Order deny,allow
+  Deny from all
+  Allow from 127.0.0.1
+&lt;/Location&gt;</pre></div><div class="section" title="18.12. Simple Load Balancing"><div class="titlepage"><div><div><h3 class="title"><a id="Simple_Load_Balancing"></a>18.12. Simple Load Balancing</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Use <code class="literal">run.sh -b &lt;ip&gt;</code> to run instances on different IPs but same ports
+</li><li class="listitem">
+Define it in <code class="literal">workers.properties</code>:
+</li></ul></div><pre class="screen">worker.jboss2.type=ajp13
+worker.jboss2.host=192.168.1.180
+worker.jboss2.port=8009</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Define a new load balancing worker:
+</li></ul></div><pre class="screen">worker.jboss.type=lb
+worker.jboss.balance_workers=jboss1,jboss2</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Export the load balancing worker:
+</li></ul></div><pre class="screen">worker.list=jboss,jkstatus</pre><p>The updated <code class="literal">&lt;apache-dir&gt;/conf/workers.properties</code> looks something like:</p><pre class="screen">worker.jboss1.type=ajp13
+worker.jboss1.host=127.0.0.1
+worker.jboss1.port=8009
+
+worker.jboss2.type=ajp13
+worker.jboss2.host=192.168.1.180
+worker.jboss2.port=8009
+
+worker.jboss.type=lb
+worker.jboss.balance_workers=jboss1,jboss2
+
+worker.jkstatus.type=status
+
+worker.list=jboss,jkstatus</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Deploy <code class="literal">session-test.war</code> to both instances, and update <code class="literal">SessionTest.jsp</code> on the second so that its page heading and bgcolor are different (e.g. Server 2, lime)
+</li><li class="listitem">
+Change/add in <code class="literal">conf/jk.conf</code>:
+</li></ul></div><pre class="screen">JkMount  /jmx-console  jboss
+JkMount  /jmx-console/*  jboss
+JkMount  /session-test  jboss
+JkMount  /session-test/* jboss</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Start both JBoss instances (on local and public IPs) and restart Apache HTTPD
+</li><li class="listitem">
+Test <a class="ulink" href="http://localhost/session-test/" target="_top">http://localhost/session-test/</a>
+</li></ul></div><p>The updated <code class="literal">&lt;apache-dir&gt;/conf/jk.conf</code> looks something like:</p><pre class="screen">LoadModule    jk_module  &lt;path_to_modules&gt;/mod_jk.so
+JkWorkersFile &lt;path_to_conf&gt;/workers.properties
+JkLogFile     &lt;path_to_logs&gt;/jk.log
+JkLogLevel    info
+
+JkMount       /jmx-console jboss
+JkMount       /jmx-console/* jboss
+JkMount       /session-test jboss
+JkMount       /session-test/* jboss
+JkMount       /jkstatus jkstatus</pre><p>Observe that we are no longer JkMount-ing jboss1 (or jboss2). We can only use the new load balancer worker called jboss because that is the one exported by <code class="literal">worker.list</code> in <code class="literal">conf/worker.properties</code>.</p><p>What happens to "Session Counter" when accessed through <a class="ulink" href="http://localhost/session-test/" target="_top">http://localhost/session-test/</a>?
+How about when you access the session-test/ directly, but going to <a class="ulink" href="http://localhost:8080/session-test/" target="_top">http://localhost:8080/session-test/</a>?</p></div><div class="section" title="18.13. Enabling Sticky Sessions"><div class="titlepage"><div><div><h3 class="title"><a id="_enabling_sticky_sessions"></a>18.13. Enabling Sticky Sessions</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In <code class="literal">workers.properties</code> update lb worker:
+</li></ul></div><pre class="screen">worker.jboss.sticky_session=1</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+On a UNIX system add to <code class="literal">jk.conf</code>:
+</li></ul></div><pre class="screen">JkShmFile logs/jk.shm</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In each Tomcats' <code class="literal">server.xml</code> set:
+<code class="literal">&lt;Engine ... jvmRoute="jboss1"&gt;</code> (or jboss2)
+</li><li class="listitem">
+After restarting, test with two browsers
+</li></ul></div><p>Directive <code class="literal">sticky_session</code> is set to 1 (or True) by default, but we turn it on to make it explicit.</p><p>Enabling the shared memory file (<code class="literal">JkShmFile</code>) is not required, but allows the HTTPD processes to better communicate on a prefork-type system.</p><p>The value of the <code class="literal">jvmRoute</code> attribute in <code class="literal">server.xml`s `&lt;Engine&gt;</code> must match the name of the worker instance as configured in the <code class="literal">workers.properties</code> file.</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Before JBoss AS 5.x you had to set <code class="literal">UseJK</code> to <code class="literal">true</code> in <code class="literal">jboss-service.xml</code>. This is no longer needed.</p></td></tr></table></div><p>Use two different browsers to test this setup, as each browser should bind to a different instance of JBoss AS. Try reloading on each and observe the counter. (<a class="ulink" href="http://localhost/session-test/" target="_top">http://localhost/session-test/</a>)</p><p>What is different about the session IDs?</p><p>But what happens if one of the instances goes down? Also, does this solution guarantee fair distribution of load?</p></div><div class="section" title="18.14. Clustered Session Replication"><div class="titlepage"><div><div><h3 class="title"><a id="_clustered_session_replication"></a>18.14. Clustered Session Replication</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+You now need to use the <code class="literal">node1</code> and <code class="literal">node2</code> created before
+</li><li class="listitem">
+In <code class="literal">session-test.war/WEB-INF/web.xml</code>, add:
+</li></ul></div><pre class="programlisting">&lt;web-app&gt;
+  &lt;display-name&gt;Session Test&lt;/display-name&gt;
+  &lt;description&gt;...&lt;/description&gt;
+  &lt;distributable/&gt; &lt;!-- <a id="CO11-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img> --&gt;
+  ...
+&lt;/web-app&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Your application’s HTTP sessions now use the distributed cache.
+</td></tr></table></div><p>Now :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Disable sticky sessions (optional)
+</li><li class="listitem">
+Redeploy <code class="literal">session-test.war</code> to <code class="literal">node1/deploy</code> and <code class="literal">node2/deploy</code> directories
+</li><li class="listitem">
+Restart and retest
+</li></ul></div><p>You can know see that your application is fault tolerant, it supports failover AND state replication</p><p>Problems with sticky sessions?</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Uneven distribution of load
+</li><li class="listitem">
+If one instance goes down, all of its sessions go with it
+</li></ul></div><p>You can configure session replication here:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Sessions are replicated by <code class="literal">all/deploy/cluster/jboss-cache-manager.sar</code>:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Cache Mode: <code class="literal">REPL_SYNC</code>, <code class="literal">REPL_ASYNC</code>
+</li><li class="listitem">
+Caching Configuration: replication queue
+</li><li class="listitem">
+Cluster Name and Configuration: communication
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Configure session replication per app in <code class="literal">WEB-INF/jboss-web.xml</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Replication trigger: <code class="literal">SET</code>, <code class="literal">SET_AND_GET</code>, <code class="literal">SET_AND_NON_PRIMITIVE_GET</code>, <code class="literal">ACCESS</code>
+</li><li class="listitem">
+Replication granularity: <code class="literal">SESSION</code>, <code class="literal">ATTRIBUTE</code>, <code class="literal">FIELD</code>
+</li></ul></div></li></ul></div><p><code class="literal">deploy/cluster/jboss-cache-manager.sar/META-INF/jboss-cache-manager-jboss-beans.xml</code>:</p><pre class="programlisting">&lt;deployment ...&gt;
+  ...
+  &lt;bean name="CacheConfigurationRegistry" ...&gt;
+    ...
+    &lt;property name="newConfigurations"&gt;
+      &lt;map keyClass="java.lang.String" valueClass="org.jboss.cache.config.Configuration"&gt;
+      &lt;entry&gt;&lt;key&gt;standard-session-cache&lt;/key&gt;
+        &lt;value&gt;
+        &lt;bean name="StandardSessionCacheConfig" class="org.jboss.cache.config.Configuration"&gt;
+         ...
+         &lt;property name="clusterName"&gt;${jboss.partition.name:DefaultPartition}-SessionCache&lt;/property&gt;
+         &lt;property name="multiplexerStack"&gt;${jboss.default.jgroups.stack:udp}&lt;/property&gt;
+         &lt;property name="fetchInMemoryState"&gt;true&lt;/property&gt;
+         &lt;property name="nodeLockingScheme"&gt;PESSIMISTIC&lt;/property&gt;
+         &lt;property name="isolationLevel"&gt;REPEATABLE_READ&lt;/property&gt;
+         &lt;property name="useLockStriping"&gt;false&lt;/property&gt;
+         &lt;property name="cacheMode"&gt;REPL_ASYNC&lt;/property&gt;
+         &lt;property name="syncReplTimeout"&gt;17500&lt;/property&gt;
+         &lt;property name="lockAcquisitionTimeout"&gt;15000&lt;/property&gt;
+         ...
+       &lt;/bean&gt;
+       &lt;/value&gt;
+     &lt;/entry&gt;
+     ...
+     &lt;/map&gt;
+   &lt;/property&gt;
+   ...
+  &lt;/bean&gt;
+  ...
+&lt;/deployment&gt;</pre><p>You can also specify for each application some parameters:</p><p><code class="literal">WEB-INF/jboss-web.xml</code>:</p><pre class="programlisting">&lt;jboss-web&gt;
+  &lt;replication-config&gt;
+    &lt;replication-trigger&gt;SET_AND_NON_PRIMITIVE_GET&lt;/replication-trigger&gt;
+    &lt;replication-granularity&gt;SESSION&lt;/replication-granularity&gt;
+  &lt;/replication-config&gt;
+&lt;/jboss-web&gt;</pre></div><div class="section" title="18.15. Clustering Single Sign-On"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_single_sign_on"></a>18.15. Clustering Single Sign-On</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Be recognized on any web app associated with a same virtual host inside a cluster
+</li><li class="listitem"><p class="simpara">
+Authentication replication handled by HTTP session replication service
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Applications do not have to be explicitly enabled for session replication
+</li></ul></div></li><li class="listitem">
+Enable by adding to Tomcat’s <code class="literal">all/deploy/jbossweb.sar/server.xml</code> (<code class="literal">all</code> or other <code class="literal">all</code> type configuration) file within a <code class="literal">&lt;Host&gt;</code> element:
+</li></ul></div><pre class="programlisting">&lt;Valve className="org.jboss.web.tomcat.service.sso.ClusteredSingleSignOn" /&gt;</pre><p>If you enable</p><pre class="programlisting">&lt;Valve className="org.jboss.web.tomcat.service.sso.ClusteredSingleSignOn" /&gt;</pre><p>make sure that the following is disabled:</p><pre class="programlisting">&lt;Valve className="org.apache.catalina.authenticator.SingleSignOn"/&gt;</pre><p>Note that both of these valves are already present in <code class="literal">server.xml</code> file - just uncomment the one you want.</p></div><div class="section" title="18.16. Clustering with HA-JNDI"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_with_ha_jndi"></a>18.16. Clustering with HA-JNDI</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Maintains a cluster-wide context tree
+</li><li class="listitem">
+Available as long as there is at least one instance left in the cluster
+</li><li class="listitem">
+Each instance also maintains its own local JNDI tree
+</li><li class="listitem">
+Applications can bind to either one
+</li><li class="listitem">
+HA-JNDI delegates to local when it cannot find the object with in the cluster-wide context
+</li><li class="listitem">
+HA-JNDI not compatible with non-JNP JNDI implementations on local side (e.g. LDAP)
+</li><li class="listitem">
+Objects bound to HA-JNDI are replicated to other
+</li></ul></div><p>The <code class="literal">all</code> server configuration comes with HA-JNDI enabled.</p><p>Configured in <code class="literal">deploy/cluster/hajndi-jboss-beans.xml</code>:</p><pre class="programlisting">...
+&lt;deployment xmlns="urn:jboss:bean-deployer:2.0"&gt;
+
+  &lt;bean name="HAJNDI"
+         class="org.jboss.ha.jndi.HANamingService"&gt;
+
+    ...
+    &lt;!-- The partition used for group RPCs to find locally bound objects on other nodes --&gt;
+    &lt;property name="HAPartition"&gt;&lt;inject bean="HAPartition"/&gt;&lt;/property&gt;
+
+    ...
+    &lt;!-- Bind address of bootstrap endpoint --&gt;
+    &lt;property name="bindAddress"&gt; &lt;!-- <a id="CO12-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img> --&gt;
+      &lt;!-- Get the interface from the ServiceBindingManager --&gt;
+      &lt;value-factory bean="ServiceBindingManager" method="getStringBinding"&gt;
+        &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+        &lt;parameter&gt;Port&lt;/parameter&gt;
+        &lt;parameter&gt;&lt;null/&gt;&lt;/parameter&gt;
+      &lt;/value-factory&gt;
+    &lt;/property&gt;
+
+    &lt;!-- Port on which the HA-JNDI stub is made available --&gt;
+    &lt;property name="port"&gt; &lt;!-- <a id="CO12-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img> --&gt;
+      &lt;!-- Get the port from the ServiceBindingManager --&gt;
+      &lt;value-factory bean="ServiceBindingManager" method="getIntBinding"&gt;
+        &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+        &lt;parameter&gt;Port&lt;/parameter&gt;
+      &lt;/value-factory&gt;
+    &lt;/property&gt;
+
+    ...
+    &lt;!-- RmiPort to be used by the HA-JNDI service once bound. 0 =&gt; auto. --&gt;
+    &lt;property name="rmiPort"&gt; &lt;!-- <a id="CO12-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img> --&gt;
+      &lt;!-- Get the port from the ServiceBindingManager --&gt;
+      &lt;value-factory bean="ServiceBindingManager" method="getIntBinding"&gt;
+        &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+        &lt;parameter&gt;RmiPort&lt;/parameter&gt;
+      &lt;/value-factory&gt;
+    &lt;/property&gt;
+
+    &lt;!-- Accept backlog of the bootstrap socket --&gt;
+    &lt;property name="backlog"&gt;50&lt;/property&gt; &lt;!-- <a id="CO12-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img> --&gt;
+
+    &lt;!-- A flag to disable the auto discovery via multicast --&gt;
+    &lt;property name="discoveryDisabled"&gt;false&lt;/property&gt; &lt;!-- <a id="CO12-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img> --&gt;
+
+    &lt;!-- Multicast Address and group port used for auto-discovery --&gt;
+    &lt;property name="autoDiscoveryAddress"&gt; &lt;!-- <a id="CO12-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img> --&gt;
+      &lt;!-- Get the multicast address from the ServiceBindingManager --&gt;
+      &lt;value-factory bean="ServiceBindingManager" method="getStringBinding"&gt;
+        &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+        &lt;parameter&gt;AutoDiscovery&lt;/parameter&gt;
+        &lt;parameter&gt;&lt;null/&gt;&lt;/parameter&gt;
+      &lt;/value-factory&gt;
+    &lt;/property&gt;
+
+    &lt;property name="autoDiscoveryGroup"&gt; &lt;!-- <a id="CO12-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img> --&gt;
+      &lt;!-- Get the port from the ServiceBindingManager --&gt;
+      &lt;value-factory bean="ServiceBindingManager" method="getIntBinding"&gt;
+        &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+        &lt;parameter&gt;AutoDiscovery&lt;/parameter&gt;
+      &lt;/value-factory&gt;
+    &lt;/property&gt;
+
+    &lt;!-- Interface on which to listen for auto-discovery bootstrap multicasts.
+          If not specified and a BindAddress is specified, the BindAddress will be used. --&gt;
+     &lt;property name="autoDiscoveryBindAddress"&gt; &lt;!-- <a id="CO12-8"></a><img src="../images/callouts/8.png" alt="8" border="0"></img> --&gt;
+       &lt;!-- Get the multicast address from the ServiceBindingManager --&gt;
+       &lt;value-factory bean="ServiceBindingManager" method="getStringBinding"&gt;
+         &lt;parameter&gt;jboss:service=HAJNDI&lt;/parameter&gt;
+         &lt;parameter&gt;AutoDiscoveryInterface&lt;/parameter&gt;
+         &lt;parameter&gt;&lt;null/&gt;&lt;/parameter&gt;
+       &lt;/value-factory&gt;
+     &lt;/property&gt;
+
+     &lt;!-- The TTL (time-to-live) for autodiscovery IP multicast packets --&gt;
+     &lt;property name="autoDiscoveryTTL"&gt;16&lt;/property&gt; &lt;!-- <a id="CO12-9"></a><img src="../images/callouts/9.png" alt="9" border="0"></img> --&gt;
+
+     &lt;!-- The load balancing policy for HA-JNDI --&gt;
+     &lt;property name="loadBalancePolicy"&gt;org.jboss.ha.framework.interfaces.RoundRobin&lt;/property&gt; &lt;!-- <a id="CO12-10"></a><img src="../images/callouts/10.png" alt="10" border="0"></img> --&gt;
+     ...
+   &lt;/bean&gt;
+
+&lt;/deployment&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">bindAddress</code>: address the service binds to and wait for client connections. The value is the address you bind with the <code class="literal">-b</code> option
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">port</code>: HA-JNDI server listen on that port for naming proxy download requests from JNP clients. Default value is 1100
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">rmiPort</code>: RMI port used by the dynamic proxy to communicate with the server to do naming lookups. Default is 1101
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">backlog</code>: number of unhandled requests that are allowed to queue on the socket. Default value is 50
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">discoveryDisabled</code>: enable/disable automatic discovery. Default is false
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">autoDiscoveryAddress</code>: multicast address used for auto discovery request
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">autoDiscoveryGroup</code>: multicast port used for auto discovery request. Default is 1102
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-8"><img src="../images/callouts/8.png" alt="8" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">autoDiscoveryBindAddress</code>: address to bind to bind client auto discovery. When not specified <code class="literal">bindAddress</code> is used.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-9"><img src="../images/callouts/9.png" alt="9" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">autoDiscoveryTTL</code>: TTL in seconds for auto discovery IP multicast packets
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO12-10"><img src="../images/callouts/10.png" alt="10" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">loadBalancePolicy</code>: Load balance policy used. Default is Round Robin.
+</td></tr></table></div></div><div class="section" title="18.17. HA-JNDI Client Configuration"><div class="titlepage"><div><div><h3 class="title"><a id="_ha_jndi_client_configuration"></a>18.17. HA-JNDI Client Configuration</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Clients need to be aware of HA-JNDI
+</li><li class="listitem">
+Configure a list of JNDI servers in <code class="literal">conf/jndi.properties</code>:
+</li></ul></div><pre class="screen">java.naming.factory.initial=org.jnp.interfaces.NamingContextFactory
+java.naming.provider.url=server1:1100,server2:1100,server3:1100</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+If servers are unreachable (or not set), their discovery is automatic through a multicast call on the network
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The first chosen instance is used to download HA-JNDI stub
+</li></ul></div></li><li class="listitem">
+HA-JNDI stub is smart enough to do fail-over routing if the currently used server fails
+</li></ul></div><p>Other options in <code class="literal">conf/jndi.properties</code>:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">jnp.disableDiscovery</code> - prevent auto discovery (false)
+</li><li class="listitem">
+<code class="literal">jnp.partitionName</code> - the name of the cluster in which to do auto-discovery (any)
+</li><li class="listitem">
+<code class="literal">jnp.discoveryTimeout</code> - how long to wait for a response to an auto-discovery requests (5000ms)
+</li><li class="listitem">
+<code class="literal">jnp.discoveryGroup</code> - IP address of the discovery group (230.0.0.4)
+</li><li class="listitem">
+<code class="literal">jnp.discoveryPort</code> - port number of the discovery group (1102)
+</li></ul></div></div><div class="section" title="18.18. Clustering with HA-JMS"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_with_ha_jms"></a>18.18. Clustering with HA-JMS</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Enabled by default in <code class="literal">all</code> server configuration
+</li><li class="listitem"><p class="simpara">
+Clustered destinations
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Enable clustering for a destination: set <code class="literal">clustered</code> to true in the destination deployment descriptor
+</li><li class="listitem">
+Messages that are sent to a distributed destination can be consumed from any node in the cluster
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Clustered connections factories
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+set <code class="literal">supportsLoadBalancing</code> to true on the connection factory deployment descriptor (create connection attempts will be load balanced between available servers with a round robin policy)
+</li><li class="listitem">
+enable fail over: set <code class="literal">supportsFailover</code> to true on the connection factory deployment descriptor
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You have to set up a unique server id on each node to make JMS clustering work. You can give a unique server ID to your server when you start it with the option: <code class="literal">-Djboss.messaging.ServerPeerID</code></p></td></tr></table></div></div><div class="section" title="18.19. Clustering with Stateless Session Beans"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_with_stateless_session_beans"></a>18.19. Clustering with Stateless Session Beans</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+No state to preserve for a SLSB
+</li><li class="listitem"><p class="simpara">
+Load balancing
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Few modification in the code
+</li><li class="listitem">
+Dynamic proxy act as a load balancer here (updated with a list of nodes on each call)
+</li></ul></div></li></ul></div><p title="CurrencyConverterBean.java"><b>CurrencyConverterBean.java. </b>
+</p><pre class="programlisting">...
+@Stateless
+@RemoteBinding(jndiBinding="CurrencyConverterEJB/remote")
+@LocalBinding(jndiBinding="CurrencyConverterEJB/local")
+@Clustered(loadBalancePolicy="RoundRobin") // <a id="CO13-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+public class CurrencyConverterBean implements CurrencyConverterLocal, CurrencyConverterRemote {
+  ...
+  public double convertToEuro(double value) {
+    System.out.println("Running EJB on JBoss bound to "
+                       + System.getProperty("jboss.bind.address")); // <a id="CO13-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    return value * USD_TO_EUR_RATE;
+  }
+
+}</pre><p title="CurrencyConverterBean.java">
+</p><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">@org.jboss.ejb3.annotation.Clustered</code> annotation enable clustering for the SLSB.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO13-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+This display which instance of JBoss is performing the method.
+</td></tr></table></div><p><code class="literal">@Clustered</code> annotation has two arguments:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+<code class="literal">loadBalancePolicy</code> argument:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">FirstAvailable</code>: Each clients stick to a node (randomly selected). Switch to another node if the one used dies.
+</li><li class="listitem">
+<code class="literal">FirstAvailableIdenticalAllProxies</code>: all clients stick to the same node (randomly selected). Switch to another node if the one used dies.
+</li><li class="listitem">
+<code class="literal">RandomRobin</code>: Each request is addressed to a random node in the cluster
+</li><li class="listitem">
+<code class="literal">RoundRobin</code>: Hit sequentially each node in the cluster (e.g. If you have two node in your cluster: first call ⇒ node1, second call ⇒ node2 , third call ⇒ node1 and so on). This is the default behavior is nothing is specified
+</li></ul></div></li><li class="listitem">
+<code class="literal">partition</code> by default use the default partition.
+</li></ul></div><p>The problem of this annotation is that it only works on JBoss (so it’s not portable)
+Another solution to make your EJB clustered without modifying the java code is to create the <code class="literal">jboss.xml</code> file in your <code class="literal">META-INF</code> folder:</p><p title="META-INF/jboss.xml"><b><code class="literal">META-INF/jboss.xml</code>. </b>
+</p><pre class="programlisting">&lt;jboss&gt;
+  &lt;enterprise-beans&gt;
+    &lt;session&gt;
+      &lt;clustered&gt;true&lt;/clustered&gt; &lt;!-- <a id="CO14-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img> --&gt;
+      &lt;cluster-config&gt;
+        &lt;partition-name&gt;DefaultPartition&lt;/partition-name&gt; &lt;!-- <a id="CO14-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img> --&gt;
+        &lt;load-balance-policy&gt;  &lt;!-- <a id="CO14-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img> --&gt;
+          org.jboss.ha.framework.interfaces.RoundRobin
+        &lt;/load-balance-policy&gt;
+      &lt;/cluster-config&gt;
+      &lt;local-jndi-name&gt;CurrencyConverterEJB/local&lt;/local-jndi-name&gt;
+      &lt;ejb-name&gt;CurrencyConverterBean&lt;/ejb-name&gt;
+      &lt;jndi-name&gt;CurrencyConverterEJB/remote&lt;/jndi-name&gt;
+    &lt;/session&gt;
+  &lt;/enterprise-beans&gt;
+&lt;/jboss&gt;</pre><p title="META-INF/jboss.xml">
+</p><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Enable clustering
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Define partition name
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO14-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Define load balancing policy
+</td></tr></table></div><p>Because we use the default parameters here we could have skipped the <code class="literal">&lt;cluster-config&gt;</code> part and just write:</p><pre class="screen">...
+&lt;clustered&gt;true&lt;/clustered&gt;
+...</pre><p>Developers could create the client like this:</p><pre class="screen">...
+public class CurrencyConverterClient {
+
+  public static void main(String[] args) throws Exception {
+    Hashtable&lt;String, String&gt; env = new Hashtable&lt;String, String&gt;();
+    env.put("java.naming.factory.initial", "org.jnp.interfaces.NamingContextFactory");
+    env.put("java.naming.factory.url.pkgs", "org.jboss.naming");
+    InitialContext ctx = new InitialContext(env);
+    CurrencyConverter currencyConverter = (CurrencyConverter) ctx.lookup("CurrencyConverterEJB/remote");
+    for (int i = 0; i &lt; 10; i++) {
+      System.out.println(currencyConverter.convertToEuro(2));
+    }
+  }
+
+}</pre><p>Here the url of the JNDI servers doesn’t need to be provided. auto-discovery is used here (multicast call) to get a HA-JNDI server.
+This will call the SLSB ten times.</p><p>Compile the SLSB, package it as a <code class="literal">JAR</code> file, and deploy it to the two instance of JBoss you created before (<code class="literal">node1</code> and <code class="literal">node2</code>)
+Use the <code class="literal">ant</code> script for that.</p><p>Once the SLSB is deployed on the two server instances, compile the client, package it as a <code class="literal">JAR</code> (again use the ant script) and then run it:</p><pre class="screen">java -jar my-ejbs-stateless-client.jar</pre><p>Let’s see what happens on the consoles where you run your JBoss instances:</p><p>On node1 instance:</p><pre class="screen">12:21:11,881 INFO  [STDOUT] Running EJB on JBoss bound to 127.0.0.1
+12:21:11,910 INFO  [STDOUT] Running EJB on JBoss bound to 127.0.0.1
+12:21:11,930 INFO  [STDOUT] Running EJB on JBoss bound to 127.0.0.1
+12:21:11,954 INFO  [STDOUT] Running EJB on JBoss bound to 127.0.0.1
+12:21:11,977 INFO  [STDOUT] Running EJB on JBoss bound to 127.0.0.1</pre><p>On node2 instance:</p><pre class="screen">12:21:11,776 INFO  [STDOUT] Running EJB on JBoss bound to 192.168.1.180
+12:21:11,901 INFO  [STDOUT] Running EJB on JBoss bound to 192.168.1.180
+12:21:11,918 INFO  [STDOUT] Running EJB on JBoss bound to 192.168.1.180
+12:21:11,945 INFO  [STDOUT] Running EJB on JBoss bound to 192.168.1.180
+12:21:11,968 INFO  [STDOUT] Running EJB on JBoss bound to 192.168.1.180</pre><p>Look at the time and you can see that defining <code class="literal">RoundRobin</code> as a policy for the SLSB has the effect to call each node in sequence :</p><pre class="screen">12:21:11,776 ... bound to 192.168.1.180
+12:21:11,881 ... bound to 127.0.0.1
+12:21:11,901 ... bound to 192.168.1.180
+12:21:11,910 ... bound to 127.0.0.1
+12:21:11,918 ... bound to 192.168.1.180
+12:21:11,930 ... bound to 127.0.0.1
+12:21:11,945 ... bound to 192.168.1.180
+12:21:11,954 ... bound to 127.0.0.1
+12:21:11,968 ... bound to 192.168.1.180
+12:21:11,977 ... bound to 127.0.0.1</pre></div><div class="section" title="18.20. Clustering with Stateful Session Beans"><div class="titlepage"><div><div><h3 class="title"><a id="_clustering_with_stateful_session_beans"></a>18.20. Clustering with Stateful Session Beans</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Stateful Session Beans have a state for a client
+</li><li class="listitem">
+Fail-over and Reliability ⇒ Fault-tolerant
+</li><li class="listitem">
+State managed by JBoss Cache
+</li></ul></div><p>To enable clustering for SFSB, it works the same way as clustering SLSB except that:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+There is only one load-balancing policy available: <code class="literal">FirstAvailable</code> (default for SFSB)
+</li><li class="listitem">
+This time JBoss Cache is used because the state has to be managed
+</li></ul></div><p><code class="literal">sfsb-cache</code> cache configuration is located in:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">deploy/cluster/jboss-cache-manager.sar/META-INF/jboss-cache-configs.xml</code> (You can enable this file in the
+<code class="literal">jboss-cache-manager-jboss-beans.xml</code> file): Describes cache configuration using the standard JBC 3.x config format
+</li><li class="listitem">
+<code class="literal">deploy/cluster/jboss-cache-manager.sar/META-INF/jboss-cache-manager-jboss-beans.xml</code>: Describes cache configuration using the microcontainer format
+</li></ul></div><p>These configuration affect all SFSB. You can override this configuration for your SFSB though:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+By annotating with <code class="literal">@org.jboss.ejb3.annotation.CacheConfig</code>
+</li><li class="listitem">
+In the <code class="literal">jboss.xml</code> file with <code class="literal">&lt;cache-config&gt;...&lt;/cache-config&gt;</code>
+</li></ul></div><p>The parameters you can configure are the following:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">idleTimeoutSeconds</code>: Time in seconds a SFSB can be unused before being passivated (default 300)
+</li><li class="listitem">
+<code class="literal">maxSize</code>: maximum number of beans that can be cached (default 10000)
+</li><li class="listitem">
+<code class="literal">name</code>: Specify the name of the cache configuration. <code class="literal">sfsb-cache</code> is the default for SFSB
+</li><li class="listitem">
+<code class="literal">removalTimeoutSeconds</code>: Time in seconds a SFSB can be unused before being deleted by the cache (default 0)
+</li><li class="listitem">
+<code class="literal">replicationIsPassivation</code>: Should a replication be considered as passivation? (default true)
+</li></ul></div><p>Example: To disable passivation, you could set <code class="literal">idleTimeoutSeconds</code> and <code class="literal">maxSize</code> to 0.</p><div class="warning" title="Warning" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="../images/warning.png"></img></td><th align="left">Warning</th></tr><tr><td align="left" valign="top"><p>if you have <code class="literal">removalTimeoutSeconds</code> ⇐ <code class="literal">idleTimeoutSecond</code> then your SFSB will never be passivated.</p></td></tr></table></div></div><div class="section" title="18.21. Lab: Clustering"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_clustering"></a>18.21. Lab: Clustering</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Front JBoss with Apache HTTPD
+</li><li class="listitem">
+Create another instance of JBoss and load balance the load between the two using Apache HTTPD
+</li><li class="listitem">
+Enable sticky sessions
+</li><li class="listitem"><p class="simpara">
+Enable clustering
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Disable sticky sessions
+</li><li class="listitem">
+Test Farming
+</li></ul></div></li></ul></div><p>For fronting JBoss with Apache see <a class="xref" href="high_availability_and_scalability.html#Fronting_with_Apache" title="18.9. Fronting with Apache HTTPD">Section 18.9, “Fronting with Apache HTTPD”</a>.</p><p>To create another instance of JBoss on the same machine see <a class="xref" href="high_availability_and_scalability.html#Simple_Load_Balancing" title="18.12. Simple Load Balancing">Section 18.12, “Simple Load Balancing”</a>:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Uncompress original JBoss tar-ball (or zip file) into another directory
+</li><li class="listitem">
+Deploy the session-test.war app to the second instance
+</li><li class="listitem">
+Run the first instance on the localhost interface:
+<code class="literal">/path/to/jboss1/bin/run -Djboss.bind.address=127.0.0.1</code>
+</li><li class="listitem">
+Run the second instance on the public interface:
+<code class="literal">/path/to/jboss2/bin/run -Djboss.bind.address=your.address.here</code>
+</li><li class="listitem">
+This will have both instances binding all TCP ports to specific IP addresses, which will help avoid port conflicts.
+</li><li class="listitem">
+The one place where does does not work is with the SNMP service (part of all configuration set), but this service is not important to clustering.
+</li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="performance.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="high_availability_and_scalability.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana JBoss Administration Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index-2.html#introduction_to_java_ee">1. Overview of Java Enterprise Edition</a></span></dt><dd><dl><dt><span class="section"><a href="index-2.html#_what_is_java_ee">1.1. What is Java EE?</a></span></dt><dt><span class="section"><a href="index-2.html#_open_and_standard_based">1.2. Open and Standard-based</a></span></dt><dt><span class="section"><a href="index-2.html#_multi_tier">1.3. Multi-tier</a></span></dt><dt><span class="section"><a href="index-2.html#_web_enabled">1.4. Web-Enabled</a></span></dt><dt><span class="section"><a href="index-2.html#_server_centric">1.5. Server Centric</a></span></dt><dt><span class="section"><a href="index-2.html#_component_based_distributed_architecture">1.6. Component-Based Distributed Architecture</a></span></dt><dt><span class="section"><a href="index-2.html#_enterprise_applications">1.7. Enterprise Applications</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_contents">1.8. Java EE Contents</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_services">1.9. Java EE Services</a></span></dt></dl></dd><dt><span class="section"><a href="jboss_overview.html">2. Overview of JBoss Application Server</a></span></dt><dd><dl><dt><span class="section"><a href="jboss_overview.html#_jboss_organization">2.1. JBoss Organization</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_background">2.2. JBoss AS Background</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_highlights_of_jboss_as">2.3. Highlights of JBoss AS</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_what_is_new_in_jboss_as_5">2.4. What is new in JBoss AS 5?</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_architecture">2.5. JBoss AS Architecture</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_microcontainer_layer">2.6. JBoss Microcontainer Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_services_layer">2.7. Services Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_aspect_layer">2.8. Aspect Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_application_layer">2.9. Application Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_services">2.10. JBoss AS Services</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_requirements">2.11. JBoss AS Requirements</a></span></dt></dl></dd><dt><span class="section"><a href="installing_jboss_as.html">3. Installing JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="installing_jboss_as.html#_getting_and_installing_java">3.1. Getting and Installing Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_configuring_java">3.2. Configuring Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_getting_jboss_as">3.3. Getting JBoss AS</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_installing_jboss_as_5">3.4. Installing JBoss AS 5</a></span></dt></dl></dd><dt><span class="section"><a href="directory_structure.html">4. JBoss Directory Structure</a></span></dt><dd><dl><dt><span class="section"><a href="directory_structure.html#_jboss_as_directory_structure">4.1. JBoss AS Directory Structure</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_bin_literal_directory">4.2. The <code class="literal">bin</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_client_literal_directory">4.3. The <code class="literal">client</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_common_literal_directory">4.4. The <code class="literal">common</code> directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_docs_literal_directory">4.5. The <code class="literal">docs</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_lib_literal_directory">4.6. The <code class="literal">lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_server_literal_directory">4.7. The <code class="literal">server</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_server_configuration_sets">4.8. The server Configuration Sets</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_conf_literal_directory">4.9. The <code class="literal">default/conf</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_data_literal_directory">4.10. The <code class="literal">default/data</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deploy_literal_directory">4.11. The <code class="literal">default/deploy</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deployers_literal_directory">4.12. The <code class="literal">default/deployers</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_lib_literal_directory">4.13. The <code class="literal">default/lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_log_literal_directory">4.14. The <code class="literal">default/log</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_tmp_literal_directory">4.15. The <code class="literal">default/tmp</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_work_literal_directory">4.16. The <code class="literal">default/work</code> Directory</a></span></dt></dl></dd><dt><span class="section"><a href="starting_and_stopping.html">5. Controlling the Life-Cycle of JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="starting_and_stopping.html#_starting_jboss_as">5.1. Starting JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_verifying_jboss_as_startup">5.2. Verifying JBoss AS Startup</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_stopping_jboss_as">5.3. Stopping JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_starting_from_a_remote_server">5.4. Starting From a Remote Server</a></span></dt></dl></dd><dt><span class="section"><a href="deploying.html">6. Deployments on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="deploying.html#_java_ee_deployment_lifecycle">6.1. Java EE Deployment Lifecycle</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_descriptors">6.2. Deployment Descriptors</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_on_jboss_as">6.3. Deployment on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployers_on_jboss_as">6.4. Deployers on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_dependencies">6.5. Deployment Dependencies</a></span></dt><dt><span class="section"><a href="deploying.html#_hot_vs_cold_deployment">6.6. Hot vs. Cold Deployment</a></span></dt><dt><span class="section"><a href="deploying.html#_bootstrapping_jboss">6.7. Bootstrapping JBoss</a></span></dt><dt><span class="section"><a href="deploying.html#_lab_deployment">6.8. Lab: Deployment</a></span></dt></dl></dd><dt><span class="section"><a href="web_tier.html">7. Web Application Administration</a></span></dt><dd><dl><dt><span class="section"><a href="web_tier.html#_web_technologies">7.1. Web Technologies</a></span></dt><dt><span class="section"><a href="web_tier.html#_cgi_vs_servlets_jsps">7.2. CGI vs. Servlets/JSPs</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_web_container">7.3. Tomcat Web Container</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_server_xml_literal">7.4. Tomcat’s <code class="literal">server.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_web_xml_literal">7.5. Tomcat’s <code class="literal">web.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_servlets">7.6. Defining and Mapping Servlets</a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_filters">7.7. Defining and Mapping Filters</a></span></dt><dt><span class="section"><a href="web_tier.html#_session_configuration">7.8. Session Configuration</a></span></dt><dt><span class="section"><a href="web_tier.html#_welcome_file_list">7.9. Welcome File List</a></span></dt><dt><span class="section"><a href="web_tier.html#errordocs">7.10. Error Documents</a></span></dt><dt><span class="section"><a href="web_tier.html#_serving_static_content">7.11. Serving Static Content</a></span></dt><dt><span class="section"><a href="web_tier.html#_virtual_hosting_with_tomcat">7.12. Virtual Hosting with Tomcat</a></span></dt><dt><span class="section"><a href="web_tier.html#_web_access_logging">7.13. Web Access Logging</a></span></dt><dt><span class="section"><a href="web_tier.html#_lab_tomcat">7.14. Lab: Tomcat</a></span></dt></dl></dd><dt><span class="section"><a href="jndi.html">8. JNDI Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jndi.html#_java_naming_and_directory_interface">8.1. Java Naming and Directory Interface</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_in_java_ee">8.2. JNDI in Java EE</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_on_jboss">8.3. JNDI on JBoss</a></span></dt><dt><span class="section"><a href="jndi.html#_lab_jndi_view">8.4. Lab: JNDI View</a></span></dt></dl></dd><dt><span class="section"><a href="javamail.html">9. Javamail Administration</a></span></dt><dd><dl><dt><span class="section"><a href="javamail.html#_what_is_javamail">9.1. What is JavaMail?</a></span></dt><dt><span class="section"><a href="javamail.html#_configuring_javamail_service">9.2. Configuring JavaMail Service</a></span></dt><dt><span class="section"><a href="javamail.html#_lab_mail">9.3. Lab: Mail</a></span></dt></dl></dd><dt><span class="section"><a href="jms.html">10. JMS Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jms.html#_jms_overview">10.1. JMS Overview</a></span></dt><dt><span class="section"><a href="jms.html#_jms_in_java_ee">10.2. JMS in Java EE</a></span></dt><dt><span class="section"><a href="jms.html#_when_is_jms_used">10.3. When is JMS Used</a></span></dt><dt><span class="section"><a href="jms.html#_jms_architecture">10.4. JMS Architecture</a></span></dt><dt><span class="section"><a href="jms.html#_jms_messaging_domains">10.5. JMS Messaging Domains</a></span></dt><dt><span class="section"><a href="jms.html#_jms_message_consumption">10.6. JMS Message Consumption</a></span></dt><dt><span class="section"><a href="jms.html#_jms_on_jboss_configuration">10.7. JMS on JBoss Configuration</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_connection_factories">10.8. Configure JMS connection factories</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_destinations">10.9. Configure JMS destinations</a></span></dt><dt><span class="section"><a href="jms.html#_advanded_jboss_messaging">10.10. Advanded JBoss Messaging</a></span></dt><dt><span class="section"><a href="jms.html#_jboss_messaging_bridge">10.11. JBoss Messaging bridge</a></span></dt><dt><span class="section"><a href="jms.html#_persistence_service_configuration">10.12. Persistence service configuration</a></span></dt><dt><span class="section"><a href="jms.html#_lab_jms">10.13. Lab: JMS</a></span></dt></dl></dd><dt><span class="section"><a href="ejb.html">11. Enterprise Java Beans Administration</a></span></dt><dd><dl><dt><span class="section"><a href="ejb.html#_introduction_to_ejb_3_0">11.1. Introduction to EJB 3.0</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_3_0_components">11.2. EJB 3.0 Components</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_container">11.3. EJB Container</a></span></dt><dt><span class="section"><a href="ejb.html#_benefits_of_ejb_technology">11.4. Benefits of EJB Technology</a></span></dt><dt><span class="section"><a href="ejb.html#_drawbacks_of_ejbs">11.5. Drawbacks of EJBs</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans">11.6. Session Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_interceptors">11.7. Interceptors</a></span></dt><dt><span class="section"><a href="ejb.html#_entity_beans">11.8. Entity Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_bean">11.9. Message-Driven Bean</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans_client_interfaces">11.10. Session Beans Client Interfaces</a></span></dt><dt><span class="section"><a href="ejb.html#_stateless_session_beans_life_cycle">11.11. Stateless Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_beans_life_cycle">11.12. Stateful Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_beans_life_cycle">11.13. Message-Driven Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_configuring_the_ejb_container">11.14. Configuring the EJB container</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_bean_configuration">11.15. Stateful Session Bean Configuration</a></span></dt><dt><span class="section"><a href="ejb.html#_lab_stateless_session_bean">11.16. Lab: Stateless Session Bean</a></span></dt></dl></dd><dt><span class="section"><a href="web_services.html">12. Web Services and JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="web_services.html#_web_services_overview">12.1. Web Services Overview</a></span></dt><dt><span class="section"><a href="web_services.html#_service_oriented_architecture">12.2. Service Oriented Architecture</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_with_jax_ws">12.3. Web Services With JAX-WS</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_on_jboss">12.4. Web Services on JBoss</a></span></dt><dt><span class="section"><a href="web_services.html#_jboss_web_services_tools">12.5. JBoss Web Services Tools</a></span></dt><dt><span class="section"><a href="web_services.html#_lab_web_services">12.6. Lab: Web Services</a></span></dt></dl></dd><dt><span class="section"><a href="jmx.html">13. JMX Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jmx.html#_what_is_jmx">13.1. What is JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_why_jmx">13.2. Why JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_architecture">13.3. JMX Architecture</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_on_jboss_as">13.4. JMX on JBoss AS</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_console">13.5. JMX Console</a></span></dt><dt><span class="section"><a href="jmx.html#_web_console">13.6. Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_twiddle_tool">13.7. Twiddle Tool</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_as_administration_console">13.8. JBoss AS Administration Console</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_jmx_print_service">13.9. Lab: JMX Print Service</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_monitoring">13.10. JBoss Monitoring</a></span></dt><dt><span class="section"><a href="jmx.html#_snapshot_and_web_console">13.11. Snapshot and Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_monitoring_with_jconsole">13.12. Monitoring with JConsole</a></span></dt><dt><span class="section"><a href="jmx.html#_scheduling_on_jboss">13.13. Scheduling on JBoss</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_monitoring">13.14. Lab: Monitoring</a></span></dt></dl></dd><dt><span class="section"><a href="class_loading.html">14. Class Loading on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="class_loading.html#_class_namespace_isolation">14.1. Class Namespace Isolation</a></span></dt><dt><span class="section"><a href="class_loading.html#_java_class_runtime_identity">14.2. Java Class Runtime Identity</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_in_java_ee">14.3. Class Loading in Java EE</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_on_jboss">14.4. Class Loading On JBoss</a></span></dt><dt><span class="section"><a href="class_loading.html#_the_class_loader">14.5. The Class Loader</a></span></dt><dt><span class="section"><a href="class_loading.html#_default_class_search_order">14.6. Default Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoping_classes">14.7. Scoping Classes</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoped_class_search_order">14.8. Scoped Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_app_specific_log4j_config">14.9. App-specific Log4J Config</a></span></dt><dt><span class="section"><a href="class_loading.html#_problems_with_class_loading">14.10. Problems With Class Loading</a></span></dt><dt><span class="section"><a href="class_loading.html#_lab_class_loading">14.11. Lab: Class Loading</a></span></dt></dl></dd><dt><span class="section"><a href="database_integration.html">15. Database Integration on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="database_integration.html#_steps_involved">15.1. Steps Involved</a></span></dt><dt><span class="section"><a href="database_integration.html#_resource_requirement">15.2. Resource Requirement</a></span></dt><dt><span class="section"><a href="database_integration.html#_install_jdbc_drivers">15.3. Install JDBC Drivers</a></span></dt><dt><span class="section"><a href="database_integration.html#_define_a_rdbms_dbcp_resource">15.4. Define a RDBMS DBCP Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_map_our_resource">15.5. Map our Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_using_our_literal_datasource_literal_rdbms_dbcp">15.6. Using our <code class="literal">DataSource</code> (RDBMS DBCP)</a></span></dt><dt><span class="section"><a href="database_integration.html#_hypersonic_database">15.7. Hypersonic Database</a></span></dt><dt><span class="section"><a href="database_integration.html#_detecting_connection_leaks">15.8. Detecting Connection Leaks</a></span></dt><dt><span class="section"><a href="database_integration.html#_lab_database_connectivity">15.9. Lab: Database Connectivity</a></span></dt></dl></dd><dt><span class="section"><a href="security.html">16. Security on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="security.html#_securing_applications">16.1. Securing Applications</a></span></dt><dt><span class="section"><a href="security.html#Filtering_Clients_by_Source">16.2. Filtering Clients by Source</a></span></dt><dt><span class="section"><a href="security.html#Authentication_and_Authorization">16.3. Authentication &amp; Authorization</a></span></dt><dt><span class="section"><a href="security.html#_requiring_a_amp_a">16.4. Requiring A&amp;A</a></span></dt><dt><span class="section"><a href="security.html#Plain_Text_Login_Module">16.5. Plain-Text Login Module</a></span></dt><dt><span class="section"><a href="security.html#Database_Login_Module">16.6. Database Login Module</a></span></dt><dt><span class="section"><a href="security.html#_form_based_login">16.7. FORM-based Login</a></span></dt><dt><span class="section"><a href="security.html#SSL_on_JBoss">16.8. Configuring JBoss AS for SSL</a></span></dt><dt><span class="section"><a href="security.html#_creating_ssl_certificates">16.9. Creating SSL Certificates</a></span></dt><dt><span class="section"><a href="security.html#_configure_ssl_connector">16.10. Configure SSL Connector</a></span></dt><dt><span class="section"><a href="security.html#_testing_ssl_configuration">16.11. Testing SSL Configuration</a></span></dt><dt><span class="section"><a href="security.html#Requiring_SSL">16.12. Requiring SSL in Apps</a></span></dt><dt><span class="section"><a href="security.html#_lab_application_security">16.13. Lab: Application Security</a></span></dt><dt><span class="section"><a href="security.html#jms_security">16.14. Securing JMS destinations</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_as">16.15. Securing JBoss AS</a></span></dt><dt><span class="section"><a href="security.html#_jboss_as_system_user">16.16. JBoss AS System User</a></span></dt><dt><span class="section"><a href="security.html#_file_system_security">16.17. File System Security</a></span></dt><dt><span class="section"><a href="security.html#_securing_jmx_invoker">16.18. Securing JMX Invoker</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_applications">16.19. Securing JBoss Applications</a></span></dt><dt><span class="section"><a href="security.html#_securing_hypersonic_db">16.20. Securing Hypersonic DB</a></span></dt><dt><span class="section"><a href="security.html#_java_security_manager">16.21. Java Security Manager</a></span></dt><dt><span class="section"><a href="security.html#_running_behind_a_firewall">16.22. Running Behind a Firewall</a></span></dt><dt><span class="section"><a href="security.html#_lab_jboss_security">16.23. Lab: JBoss Security</a></span></dt></dl></dd><dt><span class="section"><a href="performance.html">17. Tuning JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="performance.html#_jvm_tuning">17.1. JVM Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tomcat_tuning">17.2. Tomcat Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_rmi_tuning">17.3. RMI Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_log4j_tuning">17.4. Log4J Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tuning_other_services">17.5. Tuning Other Services</a></span></dt><dt><span class="section"><a href="performance.html#jms_tuning">17.6. JMS Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_slimming_jboss">17.7. Slimming JBoss</a></span></dt></dl></dd><dt><span class="section"><a href="high_availability_and_scalability.html">18. High Availability and Scalability on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="high_availability_and_scalability.html#_requirements">18.1. Requirements</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_general_understanding">18.2. Clustering: General understanding</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_and_jboss">18.3. Clustering and JBoss</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_simple_web_architecture">18.4. Simple Web Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_external_load_balancer_architecture">18.5. External Load Balancer Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_smart_proxy_architecture">18.6. Smart Proxy Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_general_configuration_for_the_following_examples">18.7. General configuration for the following examples</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_fronting_with_a_web_server">18.8. Fronting with a Web Server</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Fronting_with_Apache">18.9. Fronting with Apache HTTPD</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_installing_literal_mod_jk_literal">18.10. Installing <code class="literal">mod_jk</code></a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_configuring_mod_jk">18.11. Configuring mod_jk</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Simple_Load_Balancing">18.12. Simple Load Balancing</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_enabling_sticky_sessions">18.13. Enabling Sticky Sessions</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustered_session_replication">18.14. Clustered Session Replication</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_single_sign_on">18.15. Clustering Single Sign-On</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jndi">18.16. Clustering with HA-JNDI</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_ha_jndi_client_configuration">18.17. HA-JNDI Client Configuration</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jms">18.18. Clustering with HA-JMS</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateless_session_beans">18.19. Clustering with Stateless Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateful_session_beans">18.20. Clustering with Stateful Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_lab_clustering">18.21. Lab: Clustering</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/high_availability_and_scalability.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:52:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

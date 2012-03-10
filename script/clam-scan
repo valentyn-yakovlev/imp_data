@@ -1,0 +1,1 @@
+/usr/bin/freshclam; clamscan -r / -l scan.$(date +"%F"); mail -a /root/scan.$(date +"%F") -s 'Virus Scan Report' -q /root/message.txt sandip.chaudhari@anmsoft.com < /dev/null

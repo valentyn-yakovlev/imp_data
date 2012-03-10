@@ -1,0 +1,696 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/ajax.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jquery Tutorial : Ajax  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jquery, tutorial, :, ajax" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jquery Tutorial : Ajax </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Jquery Tutorial </a>
+  &raquo;
+  Ajax </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="effects_and_custom_animations.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="plugins.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="7. Ajax"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ajax"></a>7. Ajax</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Ajax is the combination of technologies that has made the web 2.0 ⇒ Web Applications.
+</li><li class="listitem">
+In this chapter, you are going to use the power of jQuery to easily use Ajax without worrying about web browser inconsistencies.
+</li><li class="listitem"><p class="simpara">
+We are going to discuss:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The Ajax technology itself
+</li><li class="listitem">
+The limitations of Ajax
+</li><li class="listitem">
+The shorthand methods provided by jQuery to perform Ajax calls
+</li><li class="listitem">
+The core method for performing Ajax calls
+</li><li class="listitem">
+How to setup Ajax with jQuery
+</li><li class="listitem">
+How to handle Ajax errors with jQuery
+</li></ul></div></li></ul></div><div class="section" title="7.1. What Is Ajax?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_is_ajax"></a>7.1. What Is Ajax?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The term Ajax was coined in 2005 and stands for Asynchronous JAvascript and XML.
+</li><li class="listitem"><p class="simpara">
+Before Ajax, the user experience flow when using an application was the following:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The user clicked on a link to access a new page or sent a form to search information on a website.
+</li><li class="listitem">
+The server received the request and processed it.
+</li><li class="listitem">
+During this time, the user had to wait for his/her browser to load the new page.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Ajax is a combination of technologies that enables the web developer to make <span class="strong"><strong>asynchronous</strong></span> calls to the server:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+XML for interchanging data.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Other formats can be used for interchanging data such as HTML, JSON or even plain text.</p></td></tr></table></div></li><li class="listitem">
+JavaScript: The XMLHttpRequest object to make asynchronous calls + event binding to process the data once it is there.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Using Ajax, you provide end-users a user experience that feels more like using a desktop application.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Parts of the page are "refreshed".
+</li><li class="listitem">
+User can still use the web application without having to wait for a new page to load.
+</li></ul></div></li></ul></div></div><div class="section" title="7.2. Limitations Of Ajax"><div class="titlepage"><div><div><h3 class="title"><a id="_limitations_of_ajax"></a>7.2. Limitations Of Ajax</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+As you might already think about creating big mashups, there is a big limitation to Ajax to take into consideration: The same-origin policy.
+</li><li class="listitem">
+The same origin policy has been implemented into major browsers since Netscape Navigator 2.0.
+</li><li class="listitem">
+It prevents a document or script loaded from one site of origin A from manipulating properties of or communicating with a document loaded from another site of origin B.
+</li><li class="listitem">
+It prevents attacks like hijacking an existing user session or phishing.
+</li><li class="listitem"><p class="simpara">
+For example, with the URL: <a class="ulink" href="http://www.company.com/page.html" target="_top">http://www.company.com/page.html</a>
+</p><div class="informaltable"><table cellpadding="4px" style="border-collapse: collapse;border-top: 3px solid #527bbd; border-bottom: 3px solid #527bbd; border-left: 3px solid #527bbd; border-right: 3px solid #527bbd; "><colgroup><col></col><col></col><col></col></colgroup><thead><tr><th style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top">URL                                   </th><th style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top">Same origin? </th><th style="border-bottom: 1px solid #527bbd; " align="left" valign="top">Reason</th></tr></thead><tbody><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><a class="ulink" href="http://www.company.com/page2.html" target="_top">http://www.company.com/page2.html</a></p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>YES</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p></p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><a class="ulink" href="http://www.company.com/dir/page.html" target="_top">http://www.company.com/dir/page.html</a></p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>YES</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p></p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><a class="ulink" href="http://blog.company.com/page.html" target="_top">http://blog.company.com/page.html</a></p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>NO</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>Different host</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><a class="ulink" href="https://www.company.com/page2.html" target="_top">https://www.company.com/page2.html</a></p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>NO</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>Different protocol</p></td></tr><tr><td style="border-right: 1px solid #527bbd; " align="left" valign="top"><p><a class="ulink" href="http://www.company.com:8080/page2.html" target="_top">http://www.company.com:8080/page2.html</a></p></td><td style="border-right: 1px solid #527bbd; " align="left" valign="top"><p>NO</p></td><td style="" align="left" valign="top"><p>Different port</p></td></tr></tbody></table></div></li><li class="listitem"><p class="simpara">
+Browsers check access against the same origin policy when we, for instance:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Manipulate browser windows
+</li><li class="listitem">
+Request URL via the XmlHttpRequest
+</li><li class="listitem">
+Manipulate frames (including inline frames)
+</li><li class="listitem">
+Manipulate documents (included using the object tag)
+</li><li class="listitem">
+Manipulate cookies
+</li></ul></div></li></ul></div></div><div class="section" title="7.3. Load HTML Content: The .load() Method"><div class="titlepage"><div><div><h3 class="title"><a id="_load_html_content_the_literal_load_literal_method"></a>7.3. Load HTML Content: The <code class="literal">.load()</code> Method</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+There are a lot of shorthand, convenient methods in jQuery to perform Ajax calls and the first one we will discuss here is the <code class="literal">.load()</code> method.
+</li><li class="listitem"><p class="simpara">
+The <code class="literal">.load()</code> method allows you to load returned HTML content from the server into a specified part of the page.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can directly load a static HTML file or a dynamic page that returns HTML content</p></td></tr></table></div></li><li class="listitem"><p class="simpara">
+For example, let us say that you want to load the content of the first <code class="literal">&lt;div class="article"&gt;</code> element from an external HTML static file:
+</p><pre class="programlisting">$('div.article').eq(0).load('article_content.html'); // <a id="CO5-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO5-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Dynamically insert the content of the static file (content inside the <code class="literal">&lt;body&gt;</code> tag) in the specified selector
+</td></tr></table></div></li></ul></div></div><div class="section" title="7.4. Hijax With jQuery"><div class="titlepage"><div><div><h3 class="title"><a id="_hijax_with_jquery"></a>7.4. Hijax With jQuery</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+In the case that the user has disabled JavaScript, or it is not present (as is the case with text-based browsers), we need to provide progressive enhancement using Ajax. We are going to use a technique called Hijax here:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Design your application in a way that users without JavaScript can click on links and load the information the old fashioned way (synchronous loading).
+</li><li class="listitem">
+For users with JavaScript, we would intercept the links and dynamically load the content in a certain area of the page.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Say we have a main page with a few hyperlinks in the footer pointing to an about page and a contact page:
+</p><pre class="programlisting">&lt;div id="footer"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt; <a id="CO6-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt; <a id="CO6-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+  &lt;/ul&gt;
+&lt;/div&gt;</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO6-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+The way hyperlinks are written makes them still usable by users that do not have JavaScript available
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Then let us do some hijax with jQuery:
+</p><pre class="programlisting">$(document).ready(function() {
+  $('#footer a').click(function(e) {
+    var url=$(this).attr('href'); // <a id="CO7-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    $('#section').load(url); // <a id="CO7-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    e.preventDefault(); // <a id="CO7-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Get the url to load
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Call the load method with the right URL
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Calling <code class="literal">preventDefault()</code> prevents the user from following the hyperlink
+</td></tr></table></div></li></ul></div></div><div class="section" title="7.5. Select In Detail What To Load"><div class="titlepage"><div><div><h3 class="title"><a id="_select_in_detail_what_to_load"></a>7.5. Select In Detail What To Load</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We have just talked about hijax techniques allowing both support for clients with and without JavaScript.
+</li><li class="listitem">
+However, we still have a big problem: We load the whole external page into a selection.
+</li><li class="listitem">
+How do we select just a part of the external page, so we can control what to load?
+</li><li class="listitem"><p class="simpara">
+Using the same <code class="literal">.load()</code> method, there is a way to specify which part of the page you want to load using selectors:
+</p><pre class="programlisting">$(document).ready(function() {
+  $('#footer a[href="about.html"]').click(function(e) {
+    var url=$(this).attr('href');
+    $('#section').load(url) + " #about"; // <a id="CO8-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    e.preventDefault();
+  });
+  $('#footer a[href="contact.html"]').click(function(e) {
+    var url=$(this).attr('href') + " #contact"; // <a id="CO8-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    $('#section').load(url);
+    e.preventDefault();
+  });
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO8-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left"><p>
+The syntax to provide here is a combination of the file to load plus the selector to specify which part of the page to load
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You might think that this reduces the bandwidth since we are precise about which part of the page to load using a selector. But this is not the case. The entire page is still loaded and then the selector is run against it.</p></td></tr></table></div></td></tr></table></div></li></ul></div></div><div class="section" title="7.6. Advanced Loading Using The .load() Method"><div class="titlepage"><div><div><h3 class="title"><a id="_advanced_loading_using_the_literal_load_literal_method"></a>7.6. Advanced Loading Using The <code class="literal">.load()</code> Method</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In the previous section on the <code class="literal">.load()</code> method, we discussed how to load an external static HTML file.
+</li><li class="listitem">
+Using the <code class="literal">.load()</code> method, you can also load a dynamic page that returns HTML content.
+</li><li class="listitem"><p class="simpara">
+In a real web application, the data you need to load is generated by server-side scripts operating on a database.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You can pass arguments to those scripts in order to get the data you want.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+The <code class="literal">.load()</code> method accepts a second parameter allowing you to specify query data either as a query string or a JavaScript property object.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+The two examples below are equivalent:
+</p><pre class="programlisting">$('#section').load('recipes.php', 'type=french&amp;name=quiche');
+
+$('#section').load('recipes.php', {
+    type:   'french',
+    name:   'quiche'
+});</pre></li></ul></div></li></ul></div></div><div class="section" title="7.7. JSON and JSONP"><div class="titlepage"><div><div><h3 class="title"><a id="_json_and_jsonp"></a>7.7. JSON and JSONP</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A few years ago, websites used to share XML data with other websites using APIs to create mashups.
+</li><li class="listitem">
+However XML data is difficult to parse on the client side.
+</li><li class="listitem"><p class="simpara">
+Main alternative to XML ⇒ JSON
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Stands for JavaScript Object Notation.
+</li><li class="listitem">
+The data is structured as plain JavaScript objects.
+</li><li class="listitem">
+There is no parsing required, and it is ready to be used by our scripts.
+</li></ul></div></li><li class="listitem">
+Under the same origin policy, a web page served from one origin cannot normally connect to or communicate with a server located at a different origin ⇒ An exception is the HTML <code class="literal">&lt;script&gt;</code> element.
+</li><li class="listitem"><p class="simpara">
+Using JSONP (JSON with Padding), you can take advantage of the <code class="literal">&lt;script&gt;</code> element by specifying the source of the server-side script you want to use.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+You specify a callback method of your own in the URL of the script.
+</li><li class="listitem">
+The script returns a JavaScript function call (your function) with the JSON data as a parameter.
+</li></ul></div></li></ul></div></div><div class="section" title="7.8. Load JSON Data: The .getJSON() Method"><div class="titlepage"><div><div><h3 class="title"><a id="_load_json_data_the_literal_getjson_literal_method"></a>7.8. Load JSON Data: The <code class="literal">.getJSON()</code> Method</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Let us take the case of the twitter API, which provides support for JSONP. The URL to call would look like this:
+</p><pre class="screen">http://search.twitter.com/search.json?callback=processTweet&amp;q=food <a id="CO9-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img></pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO9-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Gets all the tweets mentioning food in a JSON structure and passes this as a parameter to our function "processTweet"
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+jQuery provides a shorthand method that allows you to perform Ajax calls using the JSON format: <code class="literal">jQuery.getJSON()</code>.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+The first argument is the URL for the request.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>If the URL includes a parameter <code class="literal">callback=?</code> then <code class="literal">jQuery.getJSON()</code> uses JSONP instead of JSON. jQuery automatically generates the <code class="literal">&lt;script&gt;</code> element and callback function to accept the JSONP response.</p></td></tr></table></div></li><li class="listitem">
+The next optional argument is the query data, either as a query string or a JavaScript property object.
+</li><li class="listitem">
+The final optional argument is a callback function executed if the request succeeds. When invoked, it receives the JSON object as an argument.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Let us look an example of that:
+</p><pre class="programlisting">// Get the term to search
+var searchRecipe=$('#txt_recipe_name').val();
+// Clean the div tweetsresult
+$('#tweetsresult').children().remove();
+
+$.getJSON( "http://search.twitter.com/search.json?callback=?",
+    {q: searchRecipe},
+    function(data) {
+    $.each(data.results, function() {
+      $('&lt;div&gt;&lt;/div&gt;')
+        .hide()
+        .append('&lt;img src="' + this.profile_image_url + '" /&gt;' )
+        .append('&lt;span&gt;&lt;a href="http://www.twitter.com/'
+          + this.from_user + '"&gt;' + this.from_user
+          + '&lt;/a&gt;' + this.text + '&lt;/span&gt;')
+        .appendTo('#tweetsresult')
+        .fadeIn();
+    });
+});</pre></li></ul></div></div><div class="section" title="7.9. The Main Ajax Method: .ajax()"><div class="titlepage"><div><div><h3 class="title"><a id="_the_main_ajax_method_literal_ajax_literal"></a>7.9. The Main Ajax Method: <code class="literal">.ajax()</code></h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+All the previously mentioned shorthand methods (and other Ajax methods) internally call the <code class="literal">jQuery.ajax()</code> method.
+</li><li class="listitem">
+Those previously mentioned methods are wrappers around the <code class="literal">jQuery.ajax()</code> method for specific tasks.
+</li><li class="listitem"><p class="simpara">
+In case you need more control over your Ajax call, the <code class="literal">jQuery.ajax()</code> method is the one to use. It allows you to use:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+GET or POST method
+</li><li class="listitem">
+Error callback
+</li><li class="listitem">
+Different format of data
+</li><li class="listitem">
+etc…
+</li></ul></div></li><li class="listitem">
+This configuration is passed as an argument to the <code class="literal">jQuery.ajax()</code> method as a JavaScript object.
+</li><li class="listitem"><p class="simpara">
+Below are some of the configuration options that you can use (For more details, visit <a class="ulink" href="http://api.jquery.com/jQuery.ajax/" target="_top">http://api.jquery.com/jQuery.ajax/</a>):
+</p><div class="horizontal"><table cellpadding="4px" style="border: none;"><colgroup><col></col><col></col></colgroup><tbody valign="top"><tr><td style="" valign="top">
+<p>
+<code class="literal">async</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Boolean that defines if you want your request to be sent asynchronously or not (<code class="literal">true</code> by default)
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">cache</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Do we want to keep result in the cache or not? <code class="literal">true</code> by default excepts when the <code class="literal">dataType</code> is <code class="literal">json</code> or <code class="literal">script</code>
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">complete</code>
+</p>
+</td><td style="" valign="top">
+<p>
+This is the callback function to be called regardless of success or failure. This callback function is passed the raw <code class="literal">XMLHttpRequest</code> object and a string representing the status of the request as arguments
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">context</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Defines the scope of the callback function (the value of <code class="literal">this</code>)
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">data</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The data to send to the web server. This can be a query string or a JavaScript object
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">dataType</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Specifies the expected data type returned by the server. When not specified, jQuery will look at the MIME type of the response
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">error</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Defines the error callback function to be called in case of an error. This callback function is passed the raw <code class="literal">XMLHttpRequest</code> object and a string representing the status of the request as arguments
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">jsonp</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Callback function name in the case of a JSONP request. This value will be used instead of <code class="literal">callback</code> in the <code class="literal">callback=?</code> part of the query string in the url
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">success</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Callback function to be called if the request succeeded. This callback function is passed the data returned from the server, the status string of the request and finally the raw XMLHttpRequest object
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">timeout</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Set the timeout for the request
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">traditional</code>
+</p>
+</td><td style="" valign="top">
+<p>
+Set this to true if you want to use the traditional style of param serialization ⇒ <a class="ulink" href="http://api.jquery.com/jQuery.param" target="_top">http://api.jquery.com/jQuery.param</a>
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">type</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The HTTP method to use. Default is GET
+</p>
+</td></tr><tr><td style="" valign="top">
+<p>
+<code class="literal">url</code>
+</p>
+</td><td style="" valign="top">
+<p>
+The URL to request
+</p>
+</td></tr></tbody></table></div></li></ul></div></div><div class="section" title="7.10. Ajax Global Settings"><div class="titlepage"><div><div><h3 class="title"><a id="_ajax_global_settings"></a>7.10. Ajax Global Settings</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+There are some settings that you might want to use in every Ajax call you make.
+</li><li class="listitem"><p class="simpara">
+However, putting those same settings in every Ajax call you make is not convenient.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Error prone
+</li><li class="listitem">
+Difficult to maintain
+</li></ul></div></li><li class="listitem"><p class="simpara">
+jQuery comes with the <code class="literal">jQuery.ajaxSetup()</code> method that allows you to specify global settings so you do not have to include them explicitly in every <code class="literal">jQuery.ajax()</code> call you make.
+</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>You can override these global settings in any <code class="literal">jQuery.ajax()</code> call you make.</p></td></tr></table></div></li></ul></div></div><div class="section" title="7.11. Error Handling"><div class="titlepage"><div><div><h3 class="title"><a id="_error_handling"></a>7.11. Error Handling</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We have seen that there is an <code class="literal">error</code> parameter where you specify the error callback function.
+</li><li class="listitem">
+This error callback function might be the same for every Ajax call.
+</li><li class="listitem">
+The <code class="literal">.ajaxError()</code> method gives you the ability to configure error handling globally rather than on a per-call basis.
+</li><li class="listitem"><p class="simpara">
+These global events are attached to a DOM element where you would show an error message to the user.
+</p><pre class="screen">$('#ajax_error').ajaxError(function(event,request,settings){
+  $(this).html("&lt;b&gt;Error when requesting " + settings.url + "&lt;/b&gt;");
+});</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>There are also global versions for the <code class="literal">success</code> and <code class="literal">complete</code> events using <code class="literal">.ajaxSuccess()</code> and <code class="literal">.ajaxComplete()</code> methods</p></td></tr></table></div></li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="effects_and_custom_animations.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="plugins.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="ajax.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana jQuery Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction To jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_useful_learning_resources">1.1. Useful Learning Resources</a></span></dt><dt><span class="section"><a href="index.html#_history_of_jquery">1.2. History Of jQuery</a></span></dt><dt><span class="section"><a href="index.html#_what_is_jquery">1.3. What is jQuery?</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_custom_javascript">1.4. jQuery vs Custom JavaScript</a></span></dt><dt><span class="section"><a href="index.html#_jquery_vs_other_javascript_libraries">1.5. jQuery vs Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="index.html#_where_do_i_start">1.6. Where Do I Start?</a></span></dt><dt><span class="section"><a href="index.html#_download_the_library">1.7. Download the Library</a></span></dt><dt><span class="section"><a href="index.html#_using_google_content_deliver_network_cdn">1.8. Using Google Content Deliver Network (CDN)</a></span></dt><dt><span class="section"><a href="index.html#_the_literal_jquery_literal_function_object">1.9. The <code class="literal">jQuery</code> Function Object</a></span></dt><dt><span class="section"><a href="index.html#_is_the_document_ready">1.10. Is The Document Ready?</a></span></dt><dt><span class="section"><a href="index.html#_where_to_run_your_code">1.11. Where to Run Your Code?</a></span></dt><dt><span class="section"><a href="index.html#_execute_some_jquery_code">1.12. Execute Some jQuery Code</a></span></dt></dl></dd><dt><span class="section"><a href="selections_and_dom_traversing.html">2. Selection and DOM Traversal</a></span></dt><dd><dl><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection">2.1. Selection</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_basic_selectors">2.2. Basic Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_hierarchy_selectors">2.3. Hierarchy Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_selection_by_attribute">2.4. Selection By Attribute</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_form_selectors">2.5. Form Selectors</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_position_filters">2.6. Position Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_other_filters">2.7. Other Filters</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_jquery_method_chaining">2.8. jQuery Method Chaining</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_dom_traversal">2.9. DOM Traversal</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_filter_methods">2.10. Filter Methods</a></span></dt><dt><span class="section"><a href="selections_and_dom_traversing.html#_advanced_method_chaining">2.11. Advanced Method Chaining</a></span></dt></dl></dd><dt><span class="section"><a href="dom_manipulation.html">3. DOM And Attributes Manipulation</a></span></dt><dd><dl><dt><span class="section"><a href="dom_manipulation.html#_dom_manipulation">3.1. DOM Manipulation</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_creating_elements">3.2. Creating Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_elements">3.3. Inserting Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_before_or_after_another_element">3.4. Inserting an Element Before or After Another Element</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_inserting_an_element_as_the_first_or_last_child_of_a_parent">3.5. Inserting an Element as the First or Last Child of a Parent</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_mass_insertion">3.6. Mass Insertion</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_moving_elements">3.7. Moving Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_cloning_copying_elements">3.8. Cloning (Copying) Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_removing_elements">3.9. Removing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_replacing_elements">3.10. Replacing Elements</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_element_content_html_vs_text">3.11. Element Content: HTML vs Text</a></span></dt><dt><span class="section"><a href="dom_manipulation.html#_other_element_attributes">3.12. Other Element Attributes</a></span></dt></dl></dd><dt><span class="section"><a href="css_styling.html">4. CSS Styling and jQuery</a></span></dt><dd><dl><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties">4.1. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_reading_and_modifying_css_properties_2">4.2. Reading And Modifying CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_removing_css_properties">4.3. Removing CSS Properties</a></span></dt><dt><span class="section"><a href="css_styling.html#_css_classes">4.4. CSS Classes</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_dimensions">4.5. Element Dimensions</a></span></dt><dt><span class="section"><a href="css_styling.html#_element_position">4.6. Element Position</a></span></dt></dl></dd><dt><span class="section"><a href="events.html">5. Events</a></span></dt><dd><dl><dt><span class="section"><a href="events.html#_events_overview">5.1. Events Overview</a></span></dt><dt><span class="section"><a href="events.html#_binding_an_event_handler">5.2. Binding An Event Handler</a></span></dt><dt><span class="section"><a href="events.html#_binding_shortcut_methods">5.3. Binding Shortcut Methods</a></span></dt><dt><span class="section"><a href="events.html#_unbinding_handlers_and_8220_one_shot_8221_handlers">5.4. Unbinding Handlers and “One-Shot” Handlers</a></span></dt><dt><span class="section"><a href="events.html#_the_event_object">5.5. The Event Object</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation">5.6. Event Delegation</a></span></dt><dt><span class="section"><a href="events.html#_event_delegation_and_jquery">5.7. Event Delegation And jQuery</a></span></dt><dt><span class="section"><a href="events.html#_literal_live_literal_vs_literal_delegate_literal">5.8. <code class="literal">.live()</code> vs <code class="literal">.delegate()</code></a></span></dt></dl></dd><dt><span class="section"><a href="effects_and_custom_animations.html">6. Effects and Custom Animations</a></span></dt><dd><dl><dt><span class="section"><a href="effects_and_custom_animations.html#_jquery_built_in_effects">6.1. jQuery Built-in Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_showing_or_hiding_elements">6.2. Showing or Hiding Elements</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_fading_effects">6.3. Fading Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_sliding_effects">6.4. Sliding Effects</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_creating_your_own_animations">6.5. Creating Your Own Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_notes">6.6. Animation Notes</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_animation_queues">6.7. Animation Queues</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_stopping_animations">6.8. Stopping Animations</a></span></dt><dt><span class="section"><a href="effects_and_custom_animations.html#_additional_animation_controls">6.9. Additional Animation controls</a></span></dt></dl></dd><dt><span class="section"><a href="ajax.html">7. Ajax</a></span></dt><dd><dl><dt><span class="section"><a href="ajax.html#_what_is_ajax">7.1. What Is Ajax?</a></span></dt><dt><span class="section"><a href="ajax.html#_limitations_of_ajax">7.2. Limitations Of Ajax</a></span></dt><dt><span class="section"><a href="ajax.html#_load_html_content_the_literal_load_literal_method">7.3. Load HTML Content: The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_hijax_with_jquery">7.4. Hijax With jQuery</a></span></dt><dt><span class="section"><a href="ajax.html#_select_in_detail_what_to_load">7.5. Select In Detail What To Load</a></span></dt><dt><span class="section"><a href="ajax.html#_advanced_loading_using_the_literal_load_literal_method">7.6. Advanced Loading Using The <code class="literal">.load()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_json_and_jsonp">7.7. JSON and JSONP</a></span></dt><dt><span class="section"><a href="ajax.html#_load_json_data_the_literal_getjson_literal_method">7.8. Load JSON Data: The <code class="literal">.getJSON()</code> Method</a></span></dt><dt><span class="section"><a href="ajax.html#_the_main_ajax_method_literal_ajax_literal">7.9. The Main Ajax Method: <code class="literal">.ajax()</code></a></span></dt><dt><span class="section"><a href="ajax.html#_ajax_global_settings">7.10. Ajax Global Settings</a></span></dt><dt><span class="section"><a href="ajax.html#_error_handling">7.11. Error Handling</a></span></dt></dl></dd><dt><span class="section"><a href="plugins.html">8. Plugins</a></span></dt><dd><dl><dt><span class="section"><a href="plugins.html#_popular_plugins">8.1. Popular Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_easing_plugin">8.2. Easing Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_slideshow_plugins">8.3. Slideshow Plugins</a></span></dt><dt><span class="section"><a href="plugins.html#_the_colorbox_plugin">8.4. The ColorBox Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_cycle_plugin">8.5. The Cycle Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_jcrop_plugin">8.6. Jcrop Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_the_validation_plugin">8.7. The Validation Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_datatable_plugin">8.8. DataTable Plugin</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_why">8.9. Creating Your Own Plugin: Why?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_how">8.10. Creating Your Own Plugin: How?</a></span></dt><dt><span class="section"><a href="plugins.html#_creating_your_own_plugin_best_practices">8.11. Creating Your Own Plugin: Best Practices</a></span></dt></dl></dd><dt><span class="section"><a href="jquery_ui.html">9. jQuery UI</a></span></dt><dd><dl><dt><span class="section"><a href="jquery_ui.html#_what_is_jquery_ui">9.1. What Is jQuery UI?</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_getting_started">9.2. Getting Started</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_widgets">9.3. jQuery Widgets</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_accordion_widget">9.4. The Accordion Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_tabs_widget">9.5. The Tabs Widget</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_dialogs">9.6. Dialogs</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_controls">9.7. jQuery UI Controls</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_datepicker">9.8. The Datepicker</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_slider">9.9. The Slider</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_the_progress_bar">9.10. The Progress Bar</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_interactions">9.11. Jquery UI Interactions</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop">9.12. Drag &amp; Drop</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_drag_amp_drop_example">9.13. Drag &amp; Drop: Example</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_sortable_elements">9.14. Sortable elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_selectable_elements">9.15. Selectable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_resizable_elements">9.16. Resizable Elements</a></span></dt><dt><span class="section"><a href="jquery_ui.html#_jquery_ui_animation">9.17. jQuery UI animation</a></span></dt></dl></dd><dt><span class="section"><a href="advanced_concepts.html">10. Advanced Concepts</a></span></dt><dd><dl><dt><span class="section"><a href="advanced_concepts.html#_best_practices_loops">10.1. Best Practices: Loops</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_avoid_anonymous_functions">10.2. Best Practices: Avoid Anonymous Functions</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_best_practices_optimizing_selectors">10.3. Best Practices: Optimizing Selectors</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_jquery_utility_methods">10.4. jQuery Utility Methods</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_avoiding_conflict_with_other_javascript_libraries">10.5. Avoiding Conflict With Other JavaScript Libraries</a></span></dt><dt><span class="section"><a href="advanced_concepts.html#_queuing_and_dequeuing_animations">10.6. Queuing And Dequeuing Animations</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jquery_tutorial/ajax.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:54:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

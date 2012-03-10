@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/_java_native_interface_jni.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Java Fundamentals Tutorial : Java Native Interface Jni  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, java, fundamentals, tutorial, :, java, native, interface, jni" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Java Fundamentals Tutorial : Java Native Interface Jni </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Java Fundamentals Tutorial </a>
+  &raquo;
+  Java Native Interface Jni </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="java_util.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="jdbc.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="16. Java Native Interface (JNI)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="_java_native_interface_jni"></a>16. Java Native Interface (JNI)</h2></div></div></div><div class="section" title="16.1. JNI Overview"><div class="titlepage"><div><div><h3 class="title"><a id="_jni_overview"></a>16.1. JNI Overview</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+An interface that allows Java to interact with code written in another language
+</li><li class="listitem"><p class="simpara">
+Motivation for JNI
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Code reusability
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Reuse existing/legacy code with Java (mostly C/C++)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Performance
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Native code used to be up to 20 times faster than Java, when running in interpreted mode
+</li><li class="listitem">
+Modern JIT compilers (HotSpot) make this a moot point
+</li></ul></div></li><li class="listitem">
+Allow Java to tap into low level O/S, H/W routines
+</li></ul></div></li><li class="listitem">
+JNI code is not portable!
+</li></ul></div><p></p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>JNI can also be used to invoke Java code from within natively-written applications - such as those written in C/C++.</p><p>In fact, the java command-line utility is an example of one such application, that launches Java code in a Java Virtual Machine.</p></td></tr></table></div></div><div class="section" title="16.2. JNI Components"><div class="titlepage"><div><div><h3 class="title"><a id="_jni_components"></a>16.2. JNI Components</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+<code class="literal">javah</code> - JDK tool that builds C-style header files from a given Java class that includes <code class="literal">native</code> methods
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Adapts Java method signatures to native function prototypes
+</li></ul></div></li><li class="listitem"><p class="simpara">
+<code class="literal">jni.h</code> - C/C++ header file included with the JDK that maps Java types to their native counterparts
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">javah</code> automatically includes this file in the application header files
+</li></ul></div></li></ul></div></div><div class="section" title="16.3. JNI Development (Java)"><div class="titlepage"><div><div><h3 class="title"><a id="_jni_development_java"></a>16.3. JNI Development (Java)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Create a Java class with native method(s): <code class="literal">public</code> <span class="strong"><strong><code class="literal">native</code></strong></span> <code class="literal">void sayHi(String who, int times);</code>
+</li><li class="listitem">
+Load the library which implements the method: <code class="literal">System.loadLibrary("HelloImpl");</code>
+</li><li class="listitem">
+Invoke the native method from Java
+</li></ul></div><p></p><p>For example, our Java code could look like this:</p><pre class="programlisting">package com.marakana.jniexamples;
+
+public class Hello {
+  public native void sayHi(String who, int times); //<a id="CO4-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+  static { System.loadLibrary("HelloImpl"); } //<a id="CO4-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+
+  public static void main (String[] args) {
+    Hello hello = new Hello();
+    hello.sayHi(args[0], Integer.parseInt(args[1])); //<a id="CO4-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+  }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO4-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+The method <code class="literal">sayHi</code> will be implemented in C/C++ in separate file(s), which will be compiled into a library.
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+The library filename will be called <code class="literal">libHelloImpl.so</code> (on Unix), <code class="literal">HelloImpl.dll</code> (on Windows) and <code class="literal">libHelloImpl.jnilib</code> (Mac OSX), but when loaded in Java, the library has to be loaded as <code class="literal">HelloImpl</code>.
+</td></tr></table></div></div><div class="section" title="16.4. JNI Development (C)"><div class="titlepage"><div><div><h3 class="title"><a id="_jni_development_c"></a>16.4. JNI Development (C)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We use the JDK <code class="literal">javah</code> utility to generate the header file <code class="literal">package_name_classname.h</code> with a function prototype for the <code class="literal">sayHi</code> method:
+<code class="literal">javac -d ./classes/ ./src/com/marakana/jniexamples/Hello.java</code>
+Then in the classes directory run: <code class="literal">javah -jni com.marakana.jniexamples.Hello</code> to generate the header file <code class="literal">com_marakana_jniexamples_Hello.h</code>
+</li><li class="listitem">
+We then create <code class="literal">com_marakana_jniexamples_Hello.c</code> to implement the <code class="literal">Java_com_marakana_jniexamples_Hello_sayHi</code> function
+</li></ul></div><p></p><p>The file <code class="literal">com_marakana_jniexamples_Hello.h</code> looks like:</p><pre class="programlisting">...
+#include &lt;jni.h&gt;
+...
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_Hello_sayHi
+  (JNIEnv *, jobject, jstring, jint);
+...</pre><p>The file Hello.c looks like:</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_Hello.h"
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_Hello_sayHi(JNIEnv *env, jobject obj, jstring who, jint times) {
+  jint i;
+  jboolean iscopy;
+  const char *name;
+  name = (*env)-&gt;GetStringUTFChars(env, who, &amp;iscopy);
+  for (i = 0; i &lt; times; i++) {
+    printf("Hello %s\n", name);
+  }
+}</pre></div><div class="section" title="16.5. JNI Development (Compile)"><div class="titlepage"><div><div><h3 class="title"><a id="_jni_development_compile"></a>16.5. JNI Development (Compile)</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+We are now ready to compile our program and run it
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+The compilation is system-dependent
+</li></ul></div></li><li class="listitem">
+This will create <code class="literal">libHelloImpl.so</code>, <code class="literal">HelloImpl.dll</code>, <code class="literal">libHelloImpl.jnilib</code> (depending on the O/S)
+</li><li class="listitem">
+Set <code class="literal">LD_LIBRARY_PATH</code> to point to the directory where the compiled library is stored
+</li><li class="listitem">
+Run your Java application
+</li></ul></div><p></p><p>For example, to compile <code class="literal">com_marakana_jniexamples_Hello.c</code> in the "classes" directory (if your <code class="literal">.h</code> file and <code class="literal">.c</code> file are there) on Linux do:</p><pre class="programlisting">gcc -o libHelloImpl.so -lc -shared \
+    -I/usr/local/jdk1.6.0_03/include \
+    -I/usr/local/jdk1.6.0_03/include/linux com_marakana_jniexamples_Hello.c</pre><p>On Mac OSX :</p><pre class="programlisting">gcc -o libHelloImpl.jnilib -lc -shared \
+    -I/System/Library/Frameworks/JavaVM.framework/Headers com_marakana_jniexamples_Hello.c</pre><p>Then set the <code class="literal">LD_LIBRARY_PATH</code> to the current working directory:</p><pre class="programlisting">export LD_LIBRARY_PATH=.</pre><p>Finally, run your application in the directory where your compiled classes are stored ("classes" for example):</p><pre class="programlisting">java com.marakana.jniexamples.Hello Student 5
+Hello Student
+Hello Student
+Hello Student
+Hello Student
+Hello Student</pre><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Common mistakes resulting in <code class="literal">java.lang.UnsatisfiedLinkError</code> usually come from incorrect naming of the shared library (O/S-dependent), the library not being in the search path, or wrong library being loaded by Java code.</p></td></tr></table></div></div><div class="section" title="16.6. Type Conversion"><div class="titlepage"><div><div><h3 class="title"><a id="_type_conversion"></a>16.6. Type Conversion</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In many cases, programmers need to pass arguments to native methods and they do also want to receive results from native method calls
+</li><li class="listitem"><p class="simpara">
+Two kind of types in Java:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Primitive types such as <code class="literal">int</code>, <code class="literal">float</code>, <code class="literal">char</code>, etc
+</li><li class="listitem">
+Reference types such as classes, instances, arrays and strings (instances of <code class="literal">java.lang.String</code> class)
+</li></ul></div></li><li class="listitem"><p class="simpara">
+However, primitive and reference types are treated differently in JNI
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Mapping for primitive types in JNI is simple
+</p><div class="table"><a id="id36172897"></a><p class="title"><b>Table 3. JNI data type mapping in variables:</b></p><div class="table-contents"><table summary="JNI data type mapping in variables:" cellpadding="4px" style="border-collapse: collapse;border-top: 3px solid #527bbd; border-bottom: 3px solid #527bbd; border-left: 3px solid #527bbd; border-right: 3px solid #527bbd; "><colgroup><col></col><col></col><col></col></colgroup><thead><tr><th style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top">Java Language Type </th><th style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"> Native Type </th><th style="border-bottom: 1px solid #527bbd; " align="left" valign="top"> Description</th></tr></thead><tbody><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>boolean</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jboolean</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>8 bits, unsigned</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>byte</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jbyte</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>8 bits, signed</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>char</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jchar</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>16 bits, unsigned</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>double</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jdouble</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>64 bits</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>float</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jfloat</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>32 bits</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>int</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jint</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>32 bits, signed</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>long</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jlong</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>64 bits, signed</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>short</p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>jshort</p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p>16 bits, signed</p></td></tr><tr><td style="border-right: 1px solid #527bbd; " align="left" valign="top"><p>void</p></td><td style="border-right: 1px solid #527bbd; " align="left" valign="top"><p>void</p></td><td style="" align="left" valign="top"><p>N/A</p></td></tr></tbody></table></div></div><br class="table-break"></br></li><li class="listitem">
+Mapping for objects is more complex. Here we will focus only on strings and arrays but before we dig into that let us talk about the native methods arguments
+</li></ul></div></li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+JNI passes objects to native methods as opaque references
+</li><li class="listitem">
+Opaque references are C pointer types that refer to internal data structures in the JVM
+</li><li class="listitem"><p class="simpara">
+Let us consider the following Java class:
+</p><pre class="programlisting">package com.marakana.jniexamples;
+
+public class HelloName {
+  public static native void sayHelloName(String name);
+
+  static { System.loadLibrary("helloname"); }
+
+  public static void main (String[] args) {
+    HelloName hello = new HelloName();
+    String name = "John";
+    hello.sayHelloName(name);
+  }
+}</pre></li><li class="listitem"><p class="simpara">
+The <code class="literal">.h</code> file would look like this:
+</p><pre class="programlisting">...
+#include &lt;jni.h&gt;
+...
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_HelloName_sayHelloName
+  (JNIEnv *, jclass, jstring);
+...</pre></li><li class="listitem"><p class="simpara">
+A <code class="literal">.c</code> file like this one would not produce the expected result:
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_HelloName.h"
+
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_HelloName_sayHelloName(JNIEnv *env, jclass class, jstring name){
+    printf("Hello %s", name);
+}</pre></li></ul></div></div><div class="section" title="16.7. Native Method Arguments"><div class="titlepage"><div><div><h3 class="title"><a id="_native_method_arguments"></a>16.7. Native Method Arguments</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+All native method implementation accepts two standard parameters:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">JNIEnv *env</code>: Is a pointer that points to another pointer pointing to a function table (array of pointer). Each entry in this function table points to a JNI function. These are the functions we are going to use for type conversion
+</li><li class="listitem"><p class="simpara">
+The second argument is different depending on whether the native method is a static method or an instance method
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+Instance method: It will be a <code class="literal">jobject</code> argument which is a reference to the object on which the method is invoked
+</li><li class="listitem">
+Static method: It will be a <code class="literal">jclass</code> argument which is a reference to the class in which the method is define
+</li></ul></div></li></ul></div></li></ul></div></div><div class="section" title="16.8. String Conversion"><div class="titlepage"><div><div><h3 class="title"><a id="_string_conversion"></a>16.8. String Conversion</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We just talked about the <code class="literal">JNIEnv *env</code> that will be the argument to use where we will find the type conversion methods
+</li><li class="listitem"><p class="simpara">
+There are a lot of methods related to strings:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Some are to convert <code class="literal">java.lang.String</code> to <code class="literal">C</code> string: <code class="literal">GetStringChars</code> (Unicode format), <code class="literal">GetStringUTFChars</code> (UTF-8 format)
+</li><li class="listitem">
+Some are to convert <code class="literal">java.lang.String</code> to <code class="literal">C</code> string: <code class="literal">NewString</code> (Unicode format), <code class="literal">NewStringUTF</code> (UTF-8 format)
+</li><li class="listitem">
+Some are to release memory on C string: <code class="literal">ReleaseStringChars</code>, <code class="literal">ReleaseStringUTFChars</code>
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Details about these methods can be found at
+<a class="ulink" href="http://download.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html" target="_top">http://download.oracle.com/javase/6/docs/technotes/guides/jni/spec/functions.html</a></p></td></tr></table></div></li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+If you remember the previous example, we had a native method where we wanted to display "Hello <span class="emphasis"><em>name</em></span>":
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_HelloName.h"
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_HelloName_sayHelloName(JNIEnv *env, jclass class, jstring name) {
+    printf("Hello %s", name); //<a id="CO5-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO5-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This example would not work since the <code class="literal">jstring</code> type represents strings in the Java virtual machine. This is different from the C string type (<code class="literal">char *</code>)
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Here is what you would do, using UTF-8 string for instance:
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_HelloName.h"
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_HelloName_sayHelloName(JNIEnv *env, jclass class, jstring name){
+    const jbyte *str;
+    str = (*env)-&gt;GetStringUTFChars(env, name, NULL); //<a id="CO6-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    printf("Hello %s\n", str);
+    (*env)-&gt;ReleaseStringUTFChars(env, name, str); //<a id="CO6-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This returns a pointer to an array of bytes representing the string in UTF-8 encoding (without making a copy)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+When we are not making a copy of the string, calling <code class="literal">ReleaseStringUTFChars</code> prevents the memory area used by the string to stay "pinned". If the data was copied, we need to call <code class="literal">ReleaseStringUTFChars</code> to free the memory which is not used anymore
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Here is another example where we would construct and return a <code class="literal">java.lang.String</code> instance:
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_GetName.h"
+
+JNIEXPORT jstring JNICALL Java_com_marakana_jniexamples_ReturnName_GetName(JNIEnv *env, jclass class) {
+    char buffer[20];
+    scanf("%s", buffer);
+    return (*env)-&gt;NewStringUTF(env, buffer);
+}</pre></li></ul></div></div><div class="section" title="16.9. Array Conversion"><div class="titlepage"><div><div><h3 class="title"><a id="_array_conversion"></a>16.9. Array Conversion</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Here we are going to focus on primitive arrays only since they are different from objects arrays in JNI
+</li><li class="listitem">
+Arrays are represented in JNI by the <code class="literal">jarray</code> reference type and its "subtypes" such as <code class="literal">jintArray</code> ⇒ A <code class="literal">jarray</code> is not a C array!
+</li><li class="listitem"><p class="simpara">
+Again we will use the <code class="literal">JNIEnv *env</code> parameter to access the type conversion methods
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">Get&lt;Type&gt;ArrayRegion</code>: Copies the contents of primitive arrays to a preallocated C buffer. Good to use when the size of the array is known
+</li><li class="listitem">
+<code class="literal">Get&lt;Type&gt;ArrayElements</code>: Gets a pointer to the content of the primitive array
+</li><li class="listitem">
+<code class="literal">New&lt;Type&gt;Array</code>: To create an array specifying a length
+</li></ul></div></li></ul></div><p></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We are going to see an example of how to read a Java primitive array in the native world
+</li><li class="listitem"><p class="simpara">
+First, this would be your Java program:
+</p><pre class="programlisting">package com.marakana.jniexamples;
+
+public class ArrayReader {
+    private static native int sumArray(int[] arr); //<a id="CO7-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    public static void main(String[] args) {
+        //Array declaration
+        int arr[] = new int[10];
+        //Fill the array
+        for (int i = 0; i &lt; 10; i++) {
+            arr[i] = i;
+        }
+        ArrayReader reader = new ArrayReader();
+        //Call native method
+        int result = reader.sumArray(arr); //<a id="CO7-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+        System.out.println("The sum of every element in the array is " + Integer.toString(result));
+    }
+    static {
+        System.loadLibrary("arrayreader");
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO7-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+This method will return the sum of each element in the array
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+After running <code class="literal">javah</code>, create your <code class="literal">.c</code> file that would look like this:
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_ArrayReader.h"
+
+JNIEXPORT jint JNICALL Java_com_marakana_jniexamples_ArrayReader_sumArray(JNIEnv *env, jclass class, jintArray array) {
+    jint *native_array;
+    jint i, result = 0;
+    native_array = (*env)-&gt;GetIntArrayElements(env, array, NULL); /* <a id="CO8-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img> */
+    if (native_array == NULL) {
+        return 0;
+    }
+    for (i=0; i&lt;10; i++) {
+        result += native_array[i];
+    }
+    (*env)-&gt;ReleaseIntArrayElements(env, array, native_array, 0);
+    return result;
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+We could also have used <code class="literal">GetIntArrayRegion</code> since we exactly know the size of the array
+</td></tr></table></div></li></ul></div></div><div class="section" title="16.10. Throwing Exceptions In The Native World"><div class="titlepage"><div><div><h3 class="title"><a id="_throwing_exceptions_in_the_native_world"></a>16.10. Throwing Exceptions In The Native World</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+We are about to see how to throw an exception from the native world
+</li><li class="listitem"><p class="simpara">
+Throwing an exception from the native world involves the following steps:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Find the exception class that you want to throw
+</li><li class="listitem">
+Throw the exception
+</li><li class="listitem">
+Delete the local reference to the exception class
+</li></ul></div></li><li class="listitem"><p class="simpara">
+We could imagine a utility function like this one:
+</p><pre class="programlisting">void ThrowExceptionByClassName(JNIEnv *env, const char *name, const char *message) {
+  jclass class = (*env)-&gt;FindClass(env, name); //<a id="CO9-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+  if (class != NULL) {
+      (*env)-&gt;ThrowNew(env, class, message); //<a id="CO9-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+  }
+  (*env)-&gt;DeleteLocalRef(env, class); //<a id="CO9-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO9-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Find exception class by its name
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO9-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Throw the exception using the class reference we got before and the message for the exception
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO9-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+Delete local reference to the exception class
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Here would be how to use this utility method:
+</p><pre class="programlisting">ThrowExceptionByClassName(env,"java/lang/IllegalArgumentException","This exception is thrown from C code");</pre></li></ul></div></div><div class="section" title="16.11. Access Properties And Methods From Native Code"><div class="titlepage"><div><div><h3 class="title"><a id="_access_properties_and_methods_from_native_code"></a>16.11. Access Properties And Methods From Native Code</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+You might want to modify some properties or call methods of the instance calling the native code
+</li><li class="listitem">
+It always starts with this operation: Getting a reference to the object class by calling the <code class="literal">GetObjectClass</code> method
+</li><li class="listitem">
+We are then going to get instance field id or an instance method id from the class reference using <code class="literal">GetFieldID</code> or <code class="literal">GetMethodID</code> methods
+</li><li class="listitem">
+For the rest, it differs depending on whether we are accessing a field or a method
+</li></ul></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+From this Java class, we will see how to call its methods or access its properties in the native code:
+</p><pre class="programlisting">package com.marakana.jniexamples;
+
+public class InstanceAccess {
+    public String name; //<a id="CO10-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+    public void setName(String name) { //<a id="CO10-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+        this.name = name;
+    }
+
+    //Native method
+    public native void propertyAccess(); //<a id="CO10-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    public native void methodAccess(); //<a id="CO10-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+
+    public static void main(String args[]) {
+        InstanceAccess instanceAccessor = new InstanceAccess();
+        //Set the initial value of the name property
+        instanceAccessor.setName("Jack");
+        System.out.println("Java: value of name = \""+ instanceAccessor.name +"\"");
+        //Call the propetyAccess() method
+        System.out.println("Java: calling propertyAccess() method...");
+        instanceAccessor.propertyAccess(); //<a id="CO10-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+        //Value of name after calling the propertyAccess() method
+        System.out.println("Java: value of name after calling propertyAccess() = \""+ instanceAccessor.name +"\"");
+        //Call the methodAccess() method
+        System.out.println("Java: calling methodAccess() method...");
+        instanceAccessor.methodAccess(); //<a id="CO10-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+        System.out.println("Java: value of name after calling methodAccess() = \""+ instanceAccessor.name +"\"");
+    }
+
+    //Load library
+    static {
+        System.loadLibrary("instanceaccess");
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Name property that we are going to modify along this code execution
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+This method will be called by the native code to modify the name property
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> <a href="#CO10-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+This native method modifies the name property by directly accessing the property
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO10-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> <a href="#CO10-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+This native method modifies the name property by calling the Java method <code class="literal">setName()</code>
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+This would be our C code for native execution:
+</p><pre class="programlisting">#include &lt;stdio.h&gt;
+#include "com_marakana_jniexamples_InstanceAccess.h"
+
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_InstanceAccess_propertyAccess(JNIEnv *env, jobject object){
+    jfieldID fieldId;
+    jstring jstr;
+    const char *cString;
+
+    /* Getting a reference to object class */
+    jclass class = (*env)-&gt;GetObjectClass(env, object); /* <a id="CO11-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img> */
+
+    /* Getting the field id in the class */
+    fieldId = (*env)-&gt;GetFieldID(env, class, "name", "Ljava/lang/String;"); /* <a id="CO11-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img> */
+    if (fieldId == NULL) {
+        return; /* Error while getting field id */
+    }
+
+    /* Getting a jstring */
+    jstr = (*env)-&gt;GetObjectField(env, object, fieldId); /* <a id="CO11-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img> */
+
+    /* From that jstring we are getting a C string: char* */
+    cString = (*env)-&gt;GetStringUTFChars(env, jstr, NULL); /* <a id="CO11-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img> */
+    if (cString == NULL) {
+        return; /* Out of memory */
+    }
+    printf("C: value of name before property modification = \"%s\"\n", cString);
+    (*env)-&gt;ReleaseStringUTFChars(env, jstr, cString);
+
+    /* Creating a new string containing the new name */
+    jstr = (*env)-&gt;NewStringUTF(env, "Brian"); /* <a id="CO11-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img> */
+    if (jstr == NULL) {
+        return; /* Out of memory */
+    }
+    /* Overwrite the value of the name property */
+    (*env)-&gt;SetObjectField(env, object, fieldId, jstr); /* <a id="CO11-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img> */
+}
+
+
+JNIEXPORT void JNICALL Java_com_marakana_jniexamples_InstanceAccess_methodAccess(JNIEnv *env, jobject object){
+    jclass class = (*env)-&gt;GetObjectClass(env, object); /* <a id="CO11-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img> */
+    jmethodID methodId = (*env)-&gt;GetMethodID(env, class, "setName", "(Ljava/lang/String;)V"); /* <a id="CO11-8"></a><img src="../images/callouts/8.png" alt="8" border="0"></img> */
+    jstring jstr;
+    if (methodId == NULL) {
+        return; /* method not found */
+    }
+    /* Creating a new string containing the new name */
+    jstr = (*env)-&gt;NewStringUTF(env, "Nick"); /* <a id="CO11-9"></a><img src="../images/callouts/9.png" alt="9" border="0"></img> */
+    (*env)-&gt;CallVoidMethod(env, object, methodId, jstr); /* <a id="CO11-10"></a><img src="../images/callouts/10.png" alt="10" border="0"></img> */
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> <a href="#CO11-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> </p></td><td valign="top" align="left">
+This is getting a reference to the object class
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+Gets a field Id from the object class, specifying the property to get and the internal type. you can find information on the jni type there: <a class="ulink" href="http://download.oracle.com/javase/6/docs/technotes/guides/jni/spec/types.html" target="_top">http://download.oracle.com/javase/6/docs/technotes/guides/jni/spec/types.html</a>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+This will return the value of the property in the native type: here a jstring
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+We need to convert the jstring to a C string
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+This creates a new java.lang.String that is going be use to change the value of the property
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+This sets the property to its new value
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-8"><img src="../images/callouts/8.png" alt="8" border="0"></img></a> </p></td><td valign="top" align="left">
+Gets a method id from the object class previously obtained, specifying the name of the method along with its signature. There is a very useful java tool that you can use to get the signature of a method: <code class="literal">javap -s -p ClassName</code> for instance <code class="literal">javap -s -p InstanceAccess</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-9"><img src="../images/callouts/9.png" alt="9" border="0"></img></a> </p></td><td valign="top" align="left">
+This creates a new java.lang.String that we are going to use as an argument when calling the java method from native code
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO11-10"><img src="../images/callouts/10.png" alt="10" border="0"></img></a> </p></td><td valign="top" align="left">
+Calling <code class="literal">CallVoidMethod</code> since the Java method return type is <code class="literal">void</code> and we are passing the previously created <code class="literal">jstring</code> as a parameter
+</td></tr></table></div></li></ul></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="java_util.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="jdbc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="_java_native_interface_jni.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Java Fundamentals Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#overview_of_java">1. Overview of Java</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_history_of_java">1.1. History of Java</a></span></dt><dt><span class="section"><a href="index.html#_what_is_java">1.2. What is Java?</a></span></dt><dt><span class="section"><a href="index.html#_why_java">1.3. Why Java?</a></span></dt><dt><span class="section"><a href="index.html#_java_after_15_years">1.4. Java After 15 years</a></span></dt></dl></dd><dt><span class="section"><a href="hello_world.html">2. A Java Hello World Program</a></span></dt><dd><dl><dt><span class="section"><a href="hello_world.html#_literal_helloworld_java_literal">2.1. <code class="literal">HelloWorld.java</code></a></span></dt><dt><span class="section"><a href="hello_world.html#_java_keywords">2.2. Java Keywords</a></span></dt><dt><span class="section"><a href="hello_world.html#_java_identifiers">2.3. Java Identifiers</a></span></dt><dt><span class="section"><a href="hello_world.html#_compiling_java_programs">2.4. Compiling Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_running_java_programs">2.5. Running Java Programs</a></span></dt><dt><span class="section"><a href="hello_world.html#_comments_in_java_code">2.6. Comments in Java Code</a></span></dt><dt><span class="section"><a href="hello_world.html#_the_literal_main_literal_method">2.7. The <code class="literal">main()</code> Method</a></span></dt></dl></dd><dt><span class="section"><a href="data_types.html">3. Data Types</a></span></dt><dd><dl><dt><span class="section"><a href="data_types.html#_declaring_and_assigning_variables">3.1. Declaring and Assigning Variables</a></span></dt><dt><span class="section"><a href="data_types.html#_java_primitive_types">3.2. Java Primitive Types</a></span></dt><dt><span class="section"><a href="data_types.html#_conversion_between_types">3.3. Conversion Between Types</a></span></dt><dt><span class="section"><a href="data_types.html#_declaring_arrays">3.4. Declaring Arrays</a></span></dt><dt><span class="section"><a href="data_types.html#_creating_and_initializing_array_objects">3.5. Creating and Initializing Array Objects</a></span></dt><dt><span class="section"><a href="data_types.html#_modifying_array_size">3.6. Modifying Array Size</a></span></dt><dt><span class="section"><a href="data_types.html#_strings">3.7. Strings</a></span></dt></dl></dd><dt><span class="section"><a href="operators.html">4. Operators</a></span></dt><dd><dl><dt><span class="section"><a href="operators.html#_arithmetic_operators">4.1. Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_shortcut_arithmetic_operators">4.2. Shortcut Arithmetic Operators</a></span></dt><dt><span class="section"><a href="operators.html#_string_concatenation">4.3. String Concatenation</a></span></dt><dt><span class="section"><a href="operators.html#_relational_operators">4.4. Relational Operators</a></span></dt><dt><span class="section"><a href="operators.html#_logical_boolean_operators">4.5. Logical Boolean Operators</a></span></dt><dt><span class="section"><a href="operators.html#_bitwise_operators">4.6. Bitwise Operators</a></span></dt><dt><span class="section"><a href="operators.html#_assignment_operators">4.7. Assignment Operators</a></span></dt><dt><span class="section"><a href="operators.html#_other_operators">4.8. Other Operators</a></span></dt><dt><span class="section"><a href="operators.html#_operator_precedence">4.9. Operator Precedence</a></span></dt></dl></dd><dt><span class="section"><a href="flow_control.html">5. Statements and Flow Control</a></span></dt><dd><dl><dt><span class="section"><a href="flow_control.html#_expressions">5.1. Expressions</a></span></dt><dt><span class="section"><a href="flow_control.html#_statements_and_blocks">5.2. Statements and Blocks</a></span></dt><dt><span class="section"><a href="flow_control.html#_local_variable_storage_the_stack">5.3. Local Variable Storage: The Stack</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_return_literal_statement">5.4. The <code class="literal">return</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_if_else_literal_statement">5.5. The <code class="literal">if-else</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement">5.6. The <code class="literal">switch</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_switch_literal_statement_cont">5.7. The <code class="literal">switch</code> Statement (cont.)</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_while_literal_loop_statement">5.8. The <code class="literal">while</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_for_literal_loop_statement">5.9. The <code class="literal">for</code> Loop Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_using_literal_for_literal_to_iterate_over_arrays_and_collections">5.10. Using <code class="literal">for</code> to Iterate over Arrays and Collections</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_break_literal_statement">5.11. The <code class="literal">break</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_the_literal_continue_literal_statement">5.12. The <code class="literal">continue</code> Statement</a></span></dt><dt><span class="section"><a href="flow_control.html#_nested_loops_and_labels">5.13. Nested Loops and Labels</a></span></dt></dl></dd><dt><span class="section"><a href="object_oriented.html">6. Object Oriented Programming in Java</a></span></dt><dd><dl><dt><span class="section"><a href="object_oriented.html#_what_is_object_oriented_programming_oop">6.1. What is Object Oriented Programming (OOP)?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_why_oop">6.2. Why OOP?</a></span></dt><dt><span class="section"><a href="object_oriented.html#_class_vs_object">6.3. Class vs. Object</a></span></dt><dt><span class="section"><a href="object_oriented.html#_classes_in_java">6.4. Classes in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_objects_in_java">6.5. Objects in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_java_memory_model">6.6. Java Memory Model</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessing_objects_through_references">6.7. Accessing Objects through References</a></span></dt><dt><span class="section"><a href="object_oriented.html#_garbage_collection">6.8. Garbage Collection</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java">6.9. Methods in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_methods_in_java_cont">6.10. Methods in Java (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_declarations">6.11. Method Declarations</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_signatures">6.12. Method Signatures</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_methods">6.13. Invoking Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_data_fields">6.14. Static vs. Instance Data Fields</a></span></dt><dt><span class="section"><a href="object_oriented.html#_static_vs_instance_methods">6.15. Static vs. Instance Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_method_overloading">6.16. Method Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_variable_argument_length_methods">6.17. Variable Argument Length Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors">6.18. Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constructors_cont">6.19. Constructors (cont.)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_constants">6.20. Constants</a></span></dt><dt><span class="section"><a href="object_oriented.html#_encapsulation">6.21. Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#access_modifiers_simple">6.22. Access Modifiers: Enforcing Encapsulation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_accessors_getters_and_mutators_setters">6.23. Accessors (Getters) and Mutators (Setters)</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance">6.24. Inheritance</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_composition_and_aggregation">6.25. Inheritance, Composition, and Aggregation</a></span></dt><dt><span class="section"><a href="object_oriented.html#_inheritance_in_java">6.26. Inheritance in Java</a></span></dt><dt><span class="section"><a href="object_oriented.html#_invoking_base_class_constructors">6.27. Invoking Base Class Constructors</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_vs_overloading">6.28. Overriding vs. Overloading</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism">6.29. Polymorphism</a></span></dt><dt><span class="section"><a href="object_oriented.html#_more_on_upcasting">6.30. More on Upcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_downcasting">6.31. Downcasting</a></span></dt><dt><span class="section"><a href="object_oriented.html#_abstract_classes_and_methods">6.32. Abstract Classes and Methods</a></span></dt><dt><span class="section"><a href="object_oriented.html#_interfaces">6.33. Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_defining_a_java_interface">6.34. Defining a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_implementing_a_java_interface">6.35. Implementing a Java Interface</a></span></dt><dt><span class="section"><a href="object_oriented.html#_polymorphism_through_interfaces">6.36. Polymorphism through Interfaces</a></span></dt><dt><span class="section"><a href="object_oriented.html#_literal_object_literal_java_8217_s_ultimate_superclass">6.37. <code class="literal">Object</code>: Java’s Ultimate Superclass</a></span></dt><dt><span class="section"><a href="object_oriented.html#_overriding_literal_object_tostring_literal">6.38. Overriding <code class="literal">Object.toString()</code></a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equality">6.39. Object Equality</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence">6.40. Object Equivalence</a></span></dt><dt><span class="section"><a href="object_oriented.html#_object_equivalence_cont">6.41. Object Equivalence (cont.)</a></span></dt></dl></dd><dt><span class="section"><a href="packaging.html">7. Packaging</a></span></dt><dd><dl><dt><span class="section"><a href="packaging.html#_why_is_packaging_needed">7.1. Why is Packaging Needed?</a></span></dt><dt><span class="section"><a href="packaging.html#_packages_in_java">7.2. Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_sub_packages_in_java">7.3. Sub-Packages in Java</a></span></dt><dt><span class="section"><a href="packaging.html#_package_naming_conventions">7.4. Package Naming Conventions</a></span></dt><dt><span class="section"><a href="packaging.html#_using_package_members_qualified_names">7.5. Using Package Members: Qualified Names</a></span></dt><dt><span class="section"><a href="packaging.html#_importing_package_members">7.6. Importing Package Members</a></span></dt><dt><span class="section"><a href="packaging.html#_static_imports">7.7. Static Imports</a></span></dt><dt><span class="section"><a href="packaging.html#access_modifiers_complete">7.8. Access Modifiers and Packages</a></span></dt><dt><span class="section"><a href="packaging.html#_the_class_path">7.9. The Class Path</a></span></dt><dt><span class="section"><a href="packaging.html#_java_archive_jar_files">7.10. Java Archive (JAR) Files</a></span></dt><dt><span class="section"><a href="packaging.html#_the_literal_jar_literal_command_line_tool_examples">7.11. The <code class="literal">jar</code> Command-Line Tool Examples</a></span></dt></dl></dd><dt><span class="section"><a href="javadoc.html">8. JavaDoc</a></span></dt><dd><dl><dt><span class="section"><a href="javadoc.html#_what_is_javadoc">8.1. What is JavaDoc?</a></span></dt><dt><span class="section"><a href="javadoc.html#_reading_doc_comments_java_api">8.2. Reading Doc Comments (Java API)</a></span></dt><dt><span class="section"><a href="javadoc.html#_defining_javadoc">8.3. Defining JavaDoc</a></span></dt><dt><span class="section"><a href="javadoc.html#_doc_comment_tags">8.4. Doc Comment Tags</a></span></dt><dt><span class="section"><a href="javadoc.html#_generating_doc_comment_output">8.5. Generating Doc Comment Output</a></span></dt></dl></dd><dt><span class="section"><a href="exceptions.html">9. Exceptions</a></span></dt><dd><dl><dt><span class="section"><a href="exceptions.html#_what_are_exceptions">9.1. What are Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_why_use_exceptions">9.2. Why Use Exceptions?</a></span></dt><dt><span class="section"><a href="exceptions.html#_built_in_exceptions">9.3. Built-In Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_types">9.4. Exception Types</a></span></dt><dt><span class="section"><a href="exceptions.html#_checked_vs_unchecked_exceptions">9.5. Checked vs. Unchecked Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_exception_lifecycle">9.6. Exception Lifecycle</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions">9.7. Handling Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_handling_exceptions_cont">9.8. Handling Exceptions (cont.)</a></span></dt><dt><span class="section"><a href="exceptions.html#_grouping_exceptions">9.9. Grouping Exceptions</a></span></dt><dt><span class="section"><a href="exceptions.html#_throwing_exception">9.10. Throwing Exception</a></span></dt><dt><span class="section"><a href="exceptions.html#_creating_an_exception_class">9.11. Creating an Exception Class</a></span></dt><dt><span class="section"><a href="exceptions.html#_nesting_exceptions">9.12. Nesting Exceptions</a></span></dt></dl></dd><dt><span class="section"><a href="java_lang.html">10. The <code class="literal">java.lang</code> Package</a></span></dt><dd><dl><dt><span class="section"><a href="java_lang.html#_primitive_wrappers">10.1. Primitive Wrappers</a></span></dt><dt><span class="section"><a href="java_lang.html#_string_and_stringbuilder">10.2. String and StringBuilder</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_math_class">10.3. The Math Class</a></span></dt><dt><span class="section"><a href="java_lang.html#_the_system_class">10.4. The System Class</a></span></dt></dl></dd><dt><span class="section"><a href="input_output.html">11. Input/Output</a></span></dt><dd><dl><dt><span class="section"><a href="input_output.html#_representing_file_paths">11.1. Representing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_managing_file_paths">11.2. Managing File Paths</a></span></dt><dt><span class="section"><a href="input_output.html#_input_output_class_hierarchy">11.3. Input/Output Class Hierarchy</a></span></dt><dt><span class="section"><a href="input_output.html#_byte_streams">11.4. Byte Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_character_streams">11.5. Character Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_exception_handling_in_java_i_o">11.6. Exception Handling in Java I/O</a></span></dt><dt><span class="section"><a href="input_output.html#_java_file_i_o_classes">11.7. Java File I/O Classes</a></span></dt><dt><span class="section"><a href="input_output.html#_easy_text_output_printwriter_printstream">11.8. Easy Text Output: PrintWriter/PrintStream</a></span></dt><dt><span class="section"><a href="input_output.html#_reading_from_the_terminal">11.9. Reading from the Terminal</a></span></dt><dt><span class="section"><a href="input_output.html#_filtered_streams">11.10. Filtered Streams</a></span></dt><dt><span class="section"><a href="input_output.html#_object_serialization">11.11. Object Serialization</a></span></dt></dl></dd><dt><span class="section"><a href="java_net.html">12. <code class="literal">java.net</code></a></span></dt><dd><dl><dt><span class="section"><a href="java_net.html#_literal_java_net_inetaddress_literal">12.1. <code class="literal">java.net.InetAddress</code></a></span></dt><dt><span class="section"><a href="java_net.html#_url_connections">12.2. URL/Connections</a></span></dt><dt><span class="section"><a href="java_net.html#_tcp_sockets">12.3. TCP Sockets</a></span></dt></dl></dd><dt><span class="section"><a href="generics_collections.html">13. Java Collections and Generics</a></span></dt><dd><dl><dt><span class="section"><a href="generics_collections.html#collections">13.1. The Java Collections Framework</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collection_interface">13.2. The Collection Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_iterating_over_a_collection">13.3. Iterating Over a Collection</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_list_interface">13.4. The List Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_list">13.5. Classes Implementing List</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_set_and_sortedset_interfaces">13.6. The Set and SortedSet Interfaces</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_set">13.7. Classes Implementing Set</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_queue_interface">13.8. The Queue Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_map_interface">13.9. The Map Interface</a></span></dt><dt><span class="section"><a href="generics_collections.html#_retrieving_map_views">13.10. Retrieving Map Views</a></span></dt><dt><span class="section"><a href="generics_collections.html#_classes_implementing_map">13.11. Classes Implementing Map</a></span></dt><dt><span class="section"><a href="generics_collections.html#_the_collections_class">13.12. The Collections Class</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_safety_in_java_collections">13.13. Type Safety in Java Collections</a></span></dt><dt><span class="section"><a href="generics_collections.html#_java_generics">13.14. Java Generics</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generics_and_polymorphism">13.15. Generics and Polymorphism</a></span></dt><dt><span class="section"><a href="generics_collections.html#_type_wildcards">13.16. Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_qualified_type_wildcards">13.17. Qualified Type Wildcards</a></span></dt><dt><span class="section"><a href="generics_collections.html#_generic_methods">13.18. Generic Methods</a></span></dt></dl></dd><dt><span class="section"><a href="threading.html">14. Threading</a></span></dt><dd><dl><dt><span class="section"><a href="threading.html#_runnable_and_thread">14.1. Runnable And Thread</a></span></dt><dt><span class="section"><a href="threading.html#_thread_synchronization">14.2. Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_more_thread_synchronization">14.3. More Thread Synchronization</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_concurrency_features">14.4. Java 5 Concurrency Features</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_pre_java_5">14.5. Thread Scheduling Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_scheduling_in_java_5">14.6. Thread Scheduling In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_8217_s_literal_executorservice_literal">14.7. Java 5’s <code class="literal">ExecutorService</code></a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_pre_java_5">14.8. Getting Results From Threads Pre Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_getting_results_from_threads_in_java_5">14.9. Getting Results From Threads In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_pre_java_5">14.10. Thread Sync Pre-Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_thread_sync_in_java_5_with_locks">14.11. Thread Sync In Java 5 With Locks</a></span></dt><dt><span class="section"><a href="threading.html#_benefits_of_java_5_locks">14.12. Benefits Of Java 5 Locks</a></span></dt><dt><span class="section"><a href="threading.html#_java_5_conditions">14.13. Java 5 Conditions</a></span></dt><dt><span class="section"><a href="threading.html#_atomics_in_java_5">14.14. Atomics In Java 5</a></span></dt><dt><span class="section"><a href="threading.html#_other_java_5_concurrency_features">14.15. Other Java 5 Concurrency Features</a></span></dt></dl></dd><dt><span class="section"><a href="java_util.html">15. Additional Java Features</a></span></dt><dd><dl><dt><span class="section"><a href="java_util.html#_the_date_class">15.1. The Date Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_calendar_class">15.2. The Calendar Class</a></span></dt><dt><span class="section"><a href="java_util.html#_the_timezone_class">15.3. The TimeZone Class</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates">15.4. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#_formatting_and_parsing_dates_2">15.5. Formatting and Parsing Dates</a></span></dt><dt><span class="section"><a href="java_util.html#enum">15.6. Typesafe Enums</a></span></dt><dt><span class="section"><a href="java_util.html#_typesafe_enums_cont">15.7. Typesafe Enums (cont.)</a></span></dt><dt><span class="section"><a href="java_util.html#_enumset_and_enummap">15.8. EnumSet and EnumMap</a></span></dt><dt><span class="section"><a href="java_util.html#_annotations">15.9. Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_using_annotations">15.10. Using Annotations</a></span></dt><dt><span class="section"><a href="java_util.html#_standard_java_annotations">15.11. Standard Java Annotations</a></span></dt></dl></dd><dt><span class="section"><a href="_java_native_interface_jni.html">16. Java Native Interface (JNI)</a></span></dt><dd><dl><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_overview">16.1. JNI Overview</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_components">16.2. JNI Components</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_java">16.3. JNI Development (Java)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_c">16.4. JNI Development (C)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_jni_development_compile">16.5. JNI Development (Compile)</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_type_conversion">16.6. Type Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_native_method_arguments">16.7. Native Method Arguments</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_string_conversion">16.8. String Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_array_conversion">16.9. Array Conversion</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_throwing_exceptions_in_the_native_world">16.10. Throwing Exceptions In The Native World</a></span></dt><dt><span class="section"><a href="_java_native_interface_jni.html#_access_properties_and_methods_from_native_code">16.11. Access Properties And Methods From Native Code</a></span></dt></dl></dd><dt><span class="section"><a href="jdbc.html">17. <code class="literal">java.sql</code></a></span></dt><dd><dl><dt><span class="section"><a href="jdbc.html#_jdbc_overview">17.1. JDBC Overview</a></span></dt><dt><span class="section"><a href="jdbc.html#_jdbc_drivers">17.2. JDBC Drivers</a></span></dt><dt><span class="section"><a href="jdbc.html#_getting_a_jdbc_literal_connection_literal">17.3. Getting a JDBC <code class="literal">Connection</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_preparing_a_literal_statement_literal">17.4. Preparing a <code class="literal">Statement</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_processing_literal_resultset_literal">17.5. Processing <code class="literal">ResultSet</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_using_literal_resultsetmetadata_literal">17.6. Using <code class="literal">ResultSetMetaData</code></a></span></dt><dt><span class="section"><a href="jdbc.html#_updates">17.7. Updates</a></span></dt></dl></dd><dt><span class="section"><a href="xml_processing.html">18. XML Processing</a></span></dt><dd><dl><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_java">18.1. Parsing XML with Java</a></span></dt><dt><span class="section"><a href="xml_processing.html#_event_driven_approach">18.2. Event-Driven Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_sax">18.3. Overview of SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_sax">18.4. Parsing XML with SAX</a></span></dt><dt><span class="section"><a href="xml_processing.html#_object_model_approach">18.5. Object-Model Approach</a></span></dt><dt><span class="section"><a href="xml_processing.html#_overview_of_dom">18.6. Overview of DOM</a></span></dt><dt><span class="section"><a href="xml_processing.html#_parsing_xml_with_dom">18.7. Parsing XML with DOM</a></span></dt></dl></dd><dt><span class="section"><a href="design_patterns.html">19. Design Patterns</a></span></dt><dd><dl><dt><span class="section"><a href="design_patterns.html#_what_are_design_patterns">19.1. What are Design Patterns?</a></span></dt><dt><span class="section"><a href="design_patterns.html#_singleton">19.2. Singleton</a></span></dt><dt><span class="section"><a href="design_patterns.html#_factory_method">19.3. Factory Method</a></span></dt><dt><span class="section"><a href="design_patterns.html#_abstract_factory">19.4. Abstract Factory</a></span></dt><dt><span class="section"><a href="design_patterns.html#_adapter">19.5. Adapter</a></span></dt><dt><span class="section"><a href="design_patterns.html#_composite">19.6. Composite</a></span></dt><dt><span class="section"><a href="design_patterns.html#_decorator">19.7. Decorator</a></span></dt><dt><span class="section"><a href="design_patterns.html#_chain_of_responsibility">19.8. Chain of Responsibility</a></span></dt><dt><span class="section"><a href="design_patterns.html#_observer_publish_subscribe">19.9. Observer / Publish-Subscribe</a></span></dt><dt><span class="section"><a href="design_patterns.html#_strategy">19.10. Strategy</a></span></dt><dt><span class="section"><a href="design_patterns.html#_template">19.11. Template</a></span></dt><dt><span class="section"><a href="design_patterns.html#_emphasis_role_strong_d_emphasis_ata_emphasis_role_strong_a_emphasis_ccess_emphasis_role_strong_o_emphasis_bject">19.12. <span class="strong"><strong>D</strong></span>ata <span class="strong"><strong>A</strong></span>ccess <span class="strong"><strong>O</strong></span>bject</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/java_fundamentals_tutorial/_java_native_interface_jni.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:56:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/testing_strategies.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Selenium Tutorial : Testing Strategies  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, selenium, tutorial, :, testing, strategies" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Selenium Tutorial : Testing Strategies </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Selenium Tutorial </a>
+  &raquo;
+  Testing Strategies </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="selenium_grid.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="pageobject.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="9. Testing Strategies"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="testing_strategies"></a>9. Testing Strategies</h2></div></div></div><p>Selenium is able to test the webapp from a user perspective and so you can evaluate all of its aspects : navigation, controls, rendering, etc
+This broadness is a source of misbehaviors: you may be tempted to test all at once in the same tests. This is a bad idea you’ll end up with:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A bloated and unmaintainable test infrastructure
+</li><li class="listitem">
+Test suites too slow to be exploitable
+</li><li class="listitem">
+Too much coverage is a source of brittleness
+</li></ul></div><div class="section" title="9.1. What Kinds Of Tests?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_kinds_of_tests"></a>9.1. What Kinds Of Tests?</h3></div></div></div><div class="section" title="9.1.1. Acceptance tests"><div class="titlepage"><div><div><h4 class="title"><a id="_acceptance_tests"></a>9.1.1. Acceptance tests</h4></div></div></div><p>Acceptance testing (also named <span class="emphasis"><em>Exploratory Testing</em></span>) means that your application conforms to the required level of quality and functionality the client expects</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In practice, it means that the business processes are implemented and functional according to specifications: it’s functional testing
+</li><li class="listitem">
+This is the kind of tests you should do with Selenium
+</li><li class="listitem">
+If you’re Agile, you can base your tests on your user stories (if you use that)
+</li><li class="listitem">
+This scenario integrates well with continuous integration frameworks and tools
+</li></ul></div></div><div class="section" title="9.1.2. Unit testing"><div class="titlepage"><div><div><h4 class="title"><a id="UI_unit-testing"></a>9.1.2. Unit testing</h4></div></div></div><p><span class="emphasis"><em>Dan Fabulich</em></span>, who is one of the creators of Selenium RC proposed another way to use Selenium: UI unit-testing</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The idea is to unit test your controls at compile/deploy time (in an ant or rake task for instance)
+</li><li class="listitem">
+It increases test coverage compared to acceptance testing alone while limiting the size of the test infrastructure
+</li><li class="listitem">
+Each component (for instance a calendar control) is isolated in a dumb html file on disk for high-speed tests
+</li><li class="listitem"><p class="simpara">
+Ajax calls are redirected to a dummy backend injected in the page by overriding the <code class="literal">window.XmlHTTPRequest</code> object
+</p><div class="figure"><a id="id36151238"></a><p class="title"><b>Figure 8. Unit testing UI components with Selenium RC</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/selenium-unit-test.png" width="400" alt="images/selenium-unit-test.png"></img></div></div></div><br class="figure-break"></br><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+Developer writes test-cases and targets html files embedding the control to unit-test
+</li><li class="listitem">
+Selenium RC interprets the test-cases and commands the browser
+</li><li class="listitem">
+Instead of targetting a webserver, the tests targets files on disk
+</li><li class="listitem">
+The pages contains a script overwriting the <code class="literal">XmlHTTPRequest</code> in order to redirect backend calls to a dummy backend object
+</li><li class="listitem">
+The dummy backend answers with whatever data is needed to test the control
+</li><li class="listitem">
+Selenium RC evaluates the control' state
+</li></ol></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Some testing frameworks also provide server-side testing (eg: rspec view-testing in Rails)</p></td></tr></table></div></div></div><div class="section" title="9.2. How Should You Test Your Apps"><div class="titlepage"><div><div><h3 class="title"><a id="_how_should_you_test_your_apps"></a>9.2. How Should You Test Your Apps</h3></div></div></div><div class="section" title="9.2.1. Testing For Missing Elements"><div class="titlepage"><div><div><h4 class="title"><a id="_testing_for_missing_elements"></a>9.2.1. Testing For Missing Elements</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+During your acceptance tests, you should test the presence of the elements before testing their functionality:
+</p><pre class="programlisting">describe "Google Search" do
+
+  it "can find Selenium on Google" do
+    page.open "http://www.google.com"
+    page.title.should eql "Google"
+    page.type "q", "Selenium seleniumhq"
+    page.click "btnG"
+    page.value("q").should eql("Selenium seleniumhq")
+    page.text?("seleniumhq.org").should be_true
+    page.title.should eql("Selenium seleniumhq - Google Search")
+    page.element?("link=Cached").should be_true
+  end
+
+end</pre></li><li class="listitem"><p class="simpara">
+Could be improved in:
+</p><pre class="programlisting">describe "Google Search" do
+
+  it "can find Selenium on Google" do
+    page.open "http://www.google.com"
+    page.title.should eql "Google"
+    page.element?("q").should be_true # we test the "q" field is present
+    page.type "q", "Selenium seleniumhq"
+    page.element?("btnG").should be_true # same for btnG
+    page.click "btnG"
+    page.value("q").should eql("Selenium seleniumhq")
+    page.text?("seleniumhq.org").should be_true
+    page.title.should eql("Selenium seleniumhq - Google Search")
+    page.element?("link=Cached").should be_true
+  end
+
+end</pre><p class="simpara">This can seems trivial on this example but when your tests fails, you’ll immediately know what went wrong instead of trying to figure out if the problem is related to the data used for the test (the search text here) or to the element itself.</p></li></ul></div></div><div class="section" title="9.2.2. Navigation"><div class="titlepage"><div><div><h4 class="title"><a id="_navigation"></a>9.2.2. Navigation</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+A frequent yet trivial source of errors is navigation:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Broken links: links that contains a typo
+</li><li class="listitem">
+Missing pages: pages not available for whatever reason
+</li></ul></div></li><li class="listitem"><p class="simpara">
+You could leverage the <code class="literal">get_all_links</code> method of the API to to that (assuming your links have ids):
+</p><pre class="programlisting">it "has all links working" do
+  ...
+  links = page.get_all_links()
+  links.each do | id |
+    if not id.empty?
+      linkText = page.js_eval("this.browserbot.findElement('" + id + "').innerHTML")  <a id="CO5-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+      page.click("id=#{id}")
+      page.title.include?(linkText).should be_true  <a id="CO5-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+      page.go_back  <a id="CO5-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+      page.title.should eql "Index"
+    end
+  end
+end</pre><pre class="programlisting">public void testLinks() {
+    ...
+    String[] links = selenium.getAllLinks();
+    foreach(String id : links) {
+        if(id != null) {
+            String linkText = selenium.getEval("this.browserbot.findElement('" + id + "').innerHTML;");
+            selenium.click(id);
+            verifyTrue(selenium.getTitle().contains(linkText));
+            selenium.goBack();
+            verifyEqual(selenium.getTitle().contains("title of the first page");
+        }
+    }
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO5-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+We get the link text
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO5-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+We base our test on the assumption that the link’s text is contained into the title of the page they’re reffering to
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO5-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+We go back to <code class="literal">index.html</code>
+</td></tr></table></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The example code is at <code class="literal">code/ruby/working_links.rb</code></p></td></tr></table></div></div><div class="section" title="9.2.3. Dynamic Elements"><div class="titlepage"><div><div><h4 class="title"><a id="_dynamic_elements"></a>9.2.3. Dynamic Elements</h4></div></div></div><p>Sometimes, you do not have control over your elements' ids (when using a web framework generating a list from a database for instance). In these cases:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+You can use xpath, dom or a structure-based locator (prefer CSS)
+</li><li class="listitem">
+Use the capabilities of the Selenium API with Selenium RC to handle loops, conditions etc
+</li><li class="listitem">
+Use the capability of Selenium to use JavaScript (see example above)
+</li></ul></div></div></div><div class="section" title="9.3. Best Practices"><div class="titlepage"><div><div><h3 class="title"><a id="_best_practices"></a>9.3. Best Practices</h3></div></div></div><div class="section" title="9.3.1. General rules"><div class="titlepage"><div><div><h4 class="title"><a id="_general_rules"></a>9.3.1. General rules</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Test-suites size
+</p><p class="simpara">As a general rule, you should try to keep your test-suites small; they’ll execute faster and you’ll find bugs more easily:</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Test one application feature per suite
+</li><li class="listitem">
+Use one test-case per user-facing bug
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Testing time
+</p><p class="simpara">All your Selenium tests should not take more than 10 minutes to run for a given application:</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Parallelize your tests
+</li><li class="listitem">
+Test only what you need
+</li></ul></div></li></ul></div></div><div class="section" title="9.3.2. Locators"><div class="titlepage"><div><div><h4 class="title"><a id="_locators"></a>9.3.2. Locators</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Avoid text-matching pattern
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Instead of testing the presence of a text pattern, look for the element (or its id) containing that text (and THEN eventually the value)
+</li><li class="listitem">
+With i18n, your text-based locators are useless!
+</li><li class="listitem">
+Changes in the text breaks your tests
+</li><li class="listitem">
+What if the same text appears twice in the same page?
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Globbing and Regexps are here for you!
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Helps with generated ids
+</li><li class="listitem">
+You have access to all the features of JavaScript’s regexp implementation
+</li></ul></div></li></ul></div></div><div class="section" title="9.3.3. Ajax"><div class="titlepage"><div><div><h4 class="title"><a id="ajax_testing"></a>9.3.3. Ajax</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Ajax calls don’t trigger a page load event and currently selenium detects only these events
+</li><li class="listitem"><p class="simpara">
+You could use <code class="literal">click</code> followed by a <code class="literal">pause(time)</code> but:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+It’s unreliable: you can only assume the call is complete by the time limit
+</li><li class="listitem">
+It doesn’t tell you the call had the assumed effect
+</li></ul></div></li><li class="listitem"><p class="simpara">
+What you shouldg use are <code class="literal">waitFor...(timeout)</code> statements
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Every accessor has a <code class="literal">waitFor</code> flavor as well as a complementary one: <code class="literal">waitForElementPresent</code> has <code class="literal">waitForElementNotPresent</code>
+</li><li class="listitem">
+For most complex logic, you can use <code class="literal">waitForCondition(script,timeout)</code> that takes a javascript and keeps executing it until it evaluates to <code class="literal">true</code> or timeout is reached
+</li><li class="listitem"><p class="simpara">
+In ruby, use the <code class="literal">js_eval(script, timeout)</code> binding
+</p><p title="Example of waitForCondition statement (Ruby)"><b>Example of waitForCondition statement (Ruby). </b>
+</p><pre class="programlisting">describe "Google Search" do
+
+  it "can display suggestions on the search bar" do
+    page.open "/"
+    page.title.should eql "Google"
+    page.element?("q").should be_true
+    page.type_keys "q", "Selenium"  #<a id="CO6-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    script = "var result;" +
+             "page = selenium.browserbot.getCurrentWindow().document;" +  #<a id="CO6-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+             "var suggestionBox = page.getElementsByClassName('gac_od');" +  #<a id="CO6-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+             " if (suggestionBox.visibility == 'hidden' &amp;&amp; suggestionBox == null) {" +  #<a id="CO6-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+             "  result = false;" +
+             "}" +
+             "else {" +
+             "  result = true;" +
+             "}" +
+             "result;"
+    page.js_eval(script, 30000).should be_true
+    page.element?("class=gac_a").should be_true  #<a id="CO6-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+  end
+
+end</pre><p title="Example of waitForCondition statement (Ruby)">
+</p><p title="Example of waitForCondition statement (Java)"><b>Example of waitForCondition statement (Java). </b>
+</p><pre class="programlisting">package ....
+
+import ....
+
+public class TestGoogleSearch extends SeleneseTestCase {
+
+    ...
+
+    public void testGoogle() {
+        selenium.open("/");
+        verifyEquals(selenium.getTitle(), "Google");
+        verifyTrue(selenium.isElementPresent("q"));
+        selenium.typeKeys("q", "Selenium");
+        String script =  "var result;" +
+                         "page = selenium.browserbot.getCurrentWindow().document;" + #<a id="CO6-6"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+                         "var suggestionBox = page.getElementsByClassName('gac_od');" + #<a id="CO6-7"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+                         " if (suggestionBox.visibility == 'hidden' &amp;&amp; suggestionBox == null) {" + #<a id="CO6-8"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+                         "  result = false;" +
+                         "}" +
+                         "else {" +
+                         "  result = true;" +
+                         "}" +
+                         "result;";
+        verifyEquals(selenium.getEval(script),"true");
+        verifyTrue(selenium.isElementPresent'class=gac_a")); #<a id="CO6-9"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+    }
+
+}</pre><p title="Example of waitForCondition statement (Java)">
+</p><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+We use <code class="literal">type_keys</code> instead of <code class="literal">type</code> to simulate keyboard typing instead of directly setting the value of the field
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> <a href="#CO6-6"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The javascript executes in the context of Selenium Core so the JS’s <code class="literal">window</code> object refers to the monitor window. This call allows us to get the actual application window
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> <a href="#CO6-7"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+We retrieve the suggestion box element by its class name
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> <a href="#CO6-8"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+If the <code class="literal">&lt;style&gt;</code> tag contains a <code class="literal">visibility: hidden</code> attribute, then the box is invisible
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO6-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> <a href="#CO6-9"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Checking there is at least one element in the suggestion box
+</td></tr></table></div></li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>the example code is at <code class="literal">code/ruby/google_suggestions.rb</code></p></td></tr></table></div></div><div class="section" title="9.3.4. Globbing &amp; Regular Expressions"><div class="titlepage"><div><div><h4 class="title"><a id="_globbing_amp_regular_expressions"></a>9.3.4. Globbing &amp; Regular Expressions</h4></div></div></div><p>You can improve the flexibility of locators using these modificators:</p><div class="section" title="9.3.4.1. Globbing"><div class="titlepage"><div><div><h5 class="title"><a id="_globbing"></a>9.3.4.1. Globbing</h5></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Is used using the following syntax: <code class="literal">glob:pattern</code>
+</li><li class="listitem">
+Globbing uses wildcard-characters to match text with a pattern.
+</li><li class="listitem">
+It is a simple form of regular expression
+</li><li class="listitem">
+* represents any number of characters
+</li><li class="listitem"><p class="simpara">
+? represents only one character
+</p><div class="table"><a id="id36152080"></a><p class="title"><b>Table 2. Globbing example</b></p><div class="table-contents"><table summary="Globbing example" cellpadding="4px" style="border-collapse: collapse;border-top: 3px solid #527bbd; border-bottom: 3px solid #527bbd; border-left: 3px solid #527bbd; border-right: 3px solid #527bbd; " width="60%"><colgroup><col></col><col></col><col></col></colgroup><tbody><tr><td style="border-bottom: 1px solid #527bbd; " colspan="3" align="center" valign="top"><p>Pizza Test</p></td></tr><tr><td style="border-bottom: 1px solid #527bbd; " colspan="3" align="center" valign="top"><p>…</p></td></tr><tr><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><code class="literal">assertTextPresent</code></p></td><td style="border-right: 1px solid #527bbd; border-bottom: 1px solid #527bbd; " align="left" valign="top"><p></p></td><td style="border-bottom: 1px solid #527bbd; " align="left" valign="top"><p><code class="literal">glob:*pizza*</code></p></td></tr><tr><td style="" colspan="3" align="center" valign="top"><p>…</p></td></tr></tbody></table></div></div><br class="table-break"></br></li></ul></div></div><div class="section" title="9.3.4.2. Regular Expressions (Regexps)"><div class="titlepage"><div><div><h5 class="title"><a id="_regular_expressions_regexps"></a>9.3.4.2. Regular Expressions (Regexps)</h5></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Is used by adding the <code class="literal">regexp</code> prefix to your pattern: <code class="literal">regexp:pattern</code>
+</li><li class="listitem"><p class="simpara">
+Selenium uses the JavaScript implementation of regular expressions (Perl-based):
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+any character matches its litteral representation: <code class="literal">abc</code> will match <span class="emphasis"><em>abc</em></span>
+</li><li class="listitem"><p class="simpara">
+<code class="literal">[</code> starts a <span class="emphasis"><em>class</em></span>, which is any number of characters specified in the class
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">[a-z]</code> will match any number of lowercase alphabetical characters without spaces: <span class="emphasis"><em>hello</em></span>, <span class="emphasis"><em>pizza</em></span>, <span class="emphasis"><em>world</em></span>
+</li><li class="listitem">
+<code class="literal">[A-Z]</code> does the same with uppercase characters
+</li><li class="listitem">
+<code class="literal">[a-zA-Z]</code> will do the same with either uppercase of lowercase characters
+</li><li class="listitem">
+<code class="literal">[abc]</code> will match either <span class="emphasis"><em>a</em></span>, <span class="emphasis"><em>b</em></span> or <span class="emphasis"><em>c</em></span>
+</li><li class="listitem">
+<code class="literal">[0-9]</code> will match numeric characters
+</li><li class="listitem">
+<code class="literal">^</code> negates the character class is just after <code class="literal">[</code>: <code class="literal">[^a-z]</code> will match all but lowercase alphabetic characters
+</li><li class="listitem">
+<code class="literal">\d</code>, <code class="literal">\w</code> and <code class="literal">\s</code> are shortcuts to match respectively digits, word characters (letters, digits and underscores) and spaces
+</li><li class="listitem">
+<code class="literal">\D</code>, <code class="literal">\W</code> and <code class="literal">\S</code> are the negations of the previous shortcuts
+</li></ul></div></li><li class="listitem">
+<code class="literal">.</code> matches any single characters excepts line breaks <code class="literal">\r</code> and <code class="literal">\n</code>
+</li><li class="listitem">
+<code class="literal">^</code> matches the start of the string the pattern is applied to: <code class="literal">^.</code> matches <span class="emphasis"><em>a</em></span> in <span class="emphasis"><em>abcdef</em></span>
+</li><li class="listitem">
+<code class="literal">$</code> is like <code class="literal">^</code> but for the end of the string: <code class="literal">.$</code> matches <span class="emphasis"><em>f</em></span> in <span class="emphasis"><em>abcdef</em></span>
+</li><li class="listitem"><p class="simpara">
+<code class="literal">|</code> is equivalent to a logical OR: <code class="literal">abc|def|xyz</code> matches <span class="emphasis"><em>abc</em></span>, <span class="emphasis"><em>def</em></span> or <span class="emphasis"><em>xyz</em></span>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">|</code> has the lowest priority so <code class="literal">abc(def|xyz)</code> will match either <span class="emphasis"><em>abcdef</em></span> or <span class="emphasis"><em>abcxyz</em></span>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+<code class="literal">?</code> makes the last character of the match optional: <code class="literal">abc?</code> matches <span class="emphasis"><em>ab</em></span> or <span class="emphasis"><em>abc</em></span>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">?</code> works in a <span class="emphasis"><em>greedy</em></span> way: it will include the last character if possible
+</li></ul></div></li><li class="listitem">
+<code class="literal">*</code> repeats the preceding item at least <span class="emphasis"><em>zero</em></span> or more times: <code class="literal">".*"</code> matches "def" and "ghi" in abc "def" "ghi" jkl
+</li><li class="listitem">
+<code class="literal">*?</code> is the <span class="emphasis"><em>lazy star</em></span>: matches only <span class="emphasis"><em>"def"</em></span> in the previous example
+</li><li class="listitem">
+<code class="literal">+</code> matches the previous item at least <span class="emphasis"><em>once</em></span> or more times.
+</li><li class="listitem"><p class="simpara">
+<code class="literal">{n}</code> will match the previous item exactly <code class="literal">n</code> times: <code class="literal">a{3}</code> will match <span class="emphasis"><em>aaa</em></span>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">{n,m}</code> will match the previous item between <code class="literal">n</code> and <code class="literal">m</code> times with <code class="literal">m</code> &gt;= <code class="literal">n</code> and is <span class="emphasis"><em>greedy</em></span> so it will try to match <code class="literal">m</code> items first: <code class="literal">a{2,4}</code> will match <span class="emphasis"><em>aaaa</em></span>, <span class="emphasis"><em>aaa</em></span> and <span class="emphasis"><em>aa</em></span>
+</li><li class="listitem">
+<code class="literal">{n,m}?</code> is the same but in a <span class="emphasis"><em>lazy</em></span> way: will start by matching at least <code class="literal">n</code> times and increase the number of matchs to <code class="literal">m</code>
+</li><li class="listitem">
+<code class="literal">{n,}</code> will match the previous item at least <code class="literal">n</code> times
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Common regexps:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+<code class="literal">\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}</code> matches an ip adress but will also match <code class="literal">999.999.999.999</code>.
+</li><li class="listitem">
+<code class="literal">(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)</code> will match a real ip adress. Can be shortened to: <code class="literal">(?:\d{1,3}\.){3}\d{1,3}</code>
+</li><li class="listitem">
+<code class="literal">[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}</code> matches an email adress
+</li></ul></div></li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>As JavaScript depends on the browser’s implementation, some regexps' features might not work (eg: <span class="emphasis"><em>\d</em></span> doesn’t work on Firefox)</p></td></tr></table></div></div><div class="section" title="9.3.4.3. Strict matching"><div class="titlepage"><div><div><h5 class="title"><a id="_strict_matching"></a>9.3.4.3. Strict matching</h5></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+<code class="literal">exact:string</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Will match a text verbatim, bypassing wildcards
+</li><li class="listitem">
+<code class="literal">exact:*pizza*</code> will match <code class="literal">*pizza*</code> and not <code class="literal">my delicious pizza</code>
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>if no prefix is given, Selenium will handle your pattern as a glob by default</p></td></tr></table></div></div></div><div class="section" title="9.3.5. Security"><div class="titlepage"><div><div><h4 class="title"><a id="_security"></a>9.3.5. Security</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Use real SSL certificates
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Self-signed certificates triggers warnings on the browser
+</li><li class="listitem">
+Selenium can’t interact with these warnings: your tests will fail
+</li><li class="listitem">
+If you can’t have certificates signed by a CA, you can use the custom browser profile feature (Firefox only)
+</li></ul></div></li></ul></div></div></div><div class="section" title="9.4. UI-Elements:"><div class="titlepage"><div><div><h3 class="title"><a id="UI-Elements"></a>9.4. UI-Elements:</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+In order to consolidate your tests, you should separate the test logic from the page description
+</li><li class="listitem">
+A model of one or more pages is created and contains the locators that targets your elements
+</li><li class="listitem">
+The test logic works against this model
+</li><li class="listitem">
+UI elements provides a way to abstract the elements of your pages into more meaningful locators
+</li><li class="listitem">
+You first need to create a pageset that will match the urls with your models
+</li><li class="listitem">
+The pagesets are injected in Selenium using the <span class="emphasis"><em>user-extensions.js</em></span> file
+</li><li class="listitem"><p class="simpara">
+A pageset represents a page or a set of pages with common elements: it’s a template
+</p><pre class="programlisting">var map = new UIMap();  //<a id="CO7-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+map.addPageset({
+    name: 'orders',     //<a id="CO7-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    description: 'the elements common to the orders management pages',  //<a id="CO7-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    pagePrefix: 'orders/',  //<a id="CO7-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+    pathRegexp: '(add|edit|view)order\\.html'  //<a id="CO7-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+});
+
+map.addPageset({
+    name: 'invoices',
+    description: 'the elements common to all invoice management pages',
+    paths: ['invoice.html', 'invoicereports.html'],  //<a id="CO7-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+    paramRegexps: {  //<a id="CO7-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img>
+      action: '^(add|edit|view)$',  //<a id="CO7-8"></a><img src="../images/callouts/8.png" alt="8" border="0"></img>
+      id: '^[0-9]{3}$'  //<a id="CO7-9"></a><img src="../images/callouts/9.png" alt="9" border="0"></img>
+    }
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+We have to initialize a new UIMap object first - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+The name of the pageset - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+The description of the pageset - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Optionally, you can give a prefix to the path of all included urls
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+You can match the urls concerned by the pageset with a regular expression OR
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+You can use an array of pages. Either one of these methods is mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> </p></td><td valign="top" align="left">
+It is also possible to match url parameters
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-8"><img src="../images/callouts/8.png" alt="8" border="0"></img></a> </p></td><td valign="top" align="left">
+The parameter <span class="emphasis"><em>action</em></span> has either one the values <span class="emphasis"><em>add</em></span>, <span class="emphasis"><em>edit</em></span> or <span class="emphasis"><em>delete</em></span>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO7-9"><img src="../images/callouts/9.png" alt="9" border="0"></img></a> </p></td><td valign="top" align="left">
+The <span class="emphasis"><em>id</em></span> parameter is a 3-digit number
+</td></tr></table></div></li><li class="listitem"><p class="simpara">
+Once we have the page set, we can add element mappings to our pages ( reffered to as UI-Elements)
+</p><pre class="programlisting">map.addElement('allPages', {  //<a id="CO8-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+    name: 'about_link',  //<a id="CO8-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    description: 'link to the about page',  //<a id="CO8-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    locator: "//a[contains(@href, 'about.php')]"  //<a id="CO8-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+});
+// usage:
+// ui=allPages::about_link()
+
+map.addElement('allPages', {
+    name: 'form_element',
+    description: 'element from the register form by label map',
+    args: [ //<a id="CO8-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+      {
+        name: 'label', //<a id="CO8-6"></a><img src="../images/callouts/6.png" alt="6" border="0"></img>
+        description: 'the form element to retrieve', //<a id="CO8-7"></a><img src="../images/callouts/7.png" alt="7" border="0"></img>
+        getDefaultValues: function() { //<a id="CO8-8"></a><img src="../images/callouts/8.png" alt="8" border="0"></img>
+          return keys(this._labelMap);
+        }
+    ],
+    _labelMap: { //<a id="CO8-9"></a><img src="../images/callouts/9.png" alt="9" border="0"></img>
+      'Name': 'user',
+      'Email': 'em',
+      'Password': 'pw'
+    },
+    getLocator: function(args) { //<a id="CO8-10"></a><img src="../images/callouts/10.png" alt="10" border="0"></img>
+      var label = this._labelMap[args.label]; //<a id="CO8-11"></a>(11)
+      return '//form/tr[contains(.,' + label.quoteForXpath() + ')'; //<a id="CO8-12"></a>(12)
+    }
+// usage:
+// ui=allPages::form_element(label=Name)
+
+});</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+This UI-Element will be associated with the <span class="emphasis"><em>allPages</em></span> pageset
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+The name of the UI-Element - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+The description of the UI-Element - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+The locator used to match the element - mandatory unless <code class="literal">getLocator()</code> is defined
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+We need to give the list of arguments accepted by the UI-Element (referred to as <span class="emphasis"><em>UI-Argument</em></span>)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-6"><img src="../images/callouts/6.png" alt="6" border="0"></img></a> </p></td><td valign="top" align="left">
+The name of the UI-Argument - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-7"><img src="../images/callouts/7.png" alt="7" border="0"></img></a> </p></td><td valign="top" align="left">
+The description of the UI-Argument - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-8"><img src="../images/callouts/8.png" alt="8" border="0"></img></a> </p></td><td valign="top" align="left">
+A function of numerical or string values or an array of string or numerical values - use <code class="literal">defaultValues</code> if the default values set is static (e.g: <code class="literal">defaultValues: ['a', 'b', 'c']</code> - mandatory
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-9"><img src="../images/callouts/9.png" alt="9" border="0"></img></a> </p></td><td valign="top" align="left">
+A local variable (here an associative array). All local variables should start with <span class="emphasis"><em>_</em></span> and are accessible within the scope of the UI-Element with <code class="literal">this</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-10"><img src="../images/callouts/10.png" alt="10" border="0"></img></a> </p></td><td valign="top" align="left">
+You can also define the locator mapping as a JavaScript function to make it dynamic - mandatory unless <code class="literal">locator</code> is defined
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-11">(11)</a> </p></td><td valign="top" align="left">
+We get the value associated by the key passed as an argument (<code class="literal">label</code>)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO8-12">(12)</a> </p></td><td valign="top" align="left">
+The getLocator function returns a string representing the locator
+</td></tr></table></div></li></ul></div></div><div class="section" title="9.5. Rollups"><div class="titlepage"><div><div><h3 class="title"><a id="seide_rollups"></a>9.5. Rollups</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A rollup rule is a set of Selenium commands that are grouped into one single command
+</li><li class="listitem">
+Rollups are expanded at runtime but a set of commands can be reduced into a rollup using the <code class="literal">commandMatcher</code> property or the <code class="literal">getRollup</code> method
+</li><li class="listitem">
+Rollup rules are defined in the <code class="literal">user-extension.js</code> file and are usable by both IDE and RC via the <code class="literal">rollup</code> command
+</li><li class="listitem"><p class="simpara">
+A rollup rule needs at least 4 mandatory components:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">name</code>: the name of the rollup rule
+</li><li class="listitem">
+<code class="literal">description</code>: a description used for documentation
+</li><li class="listitem">
+A command matcher property/method: <code class="literal">commandMatcher</code> or <code class="literal">getRollup()</code>: this property allows the rollup engin to automatically infer a rollup from a list of commands. If the commands match the matcher’s definition, then the commands are reduced into a rollup
+</li><li class="listitem">
+A list of commands to execute: <code class="literal">expandedCommands</code> or <code class="literal">getExpandedCommands()</code>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Optionally, there is also:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+An UI-Argument list: <code class="literal">args</code>. If none of your commands uses parameters, it is optional. They follow the same rule as with UI-Elements
+</li><li class="listitem">
+A <code class="literal">pre</code> and <code class="literal">post</code> property: is used to document the rollup rule
+</li><li class="listitem">
+An <code class="literal">alternateCommand</code> property: defines an alternate name for the first matched command. For instance, <code class="literal">alternateCommand: 'clickAndWait'</code> applied to a rollup will allow the RollupManager to build a rollup rule even if the first command of the <code class="literal">commandMatcher</code> property is <code class="literal">click</code>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+An example rollup rule:
+</p><pre class="programlisting">var myRollupManager = new RollupManager();
+
+myRollupManager.addRollupRule({
+    name: 'navigate_to_subtopic_article_listing'
+    , description: 'drill down to the listing of articles for a given subtopic from the section menu, then the topic itself.'
+    , pre: 'current page contains the section menu (most pages should)'
+    , post: 'navigated to the page listing all articles for a given subtopic'
+    , args: [
+        {
+            name: 'subtopic'
+            , description: 'the subtopic whose article listing to navigate to'
+            , exampleValues: ['Food','Health','Technology','Economy']
+        }
+    ]
+    , commandMatchers: [
+        {
+            command: 'clickAndWait'
+            , target: 'ui=allPages::section\\(section=topics\\)'
+            // must escape parentheses in the the above target, since the
+            // string is being used as a regular expression. Again, backslashes
+            // in strings must be escaped too.
+        }
+        , {
+            command: 'clickAndWait'
+            , target: 'ui=topicListingPages::topic\\(.+'
+        }
+        , {
+            command: 'clickAndWait'
+            , target: 'ui=subtopicListingPages::subtopic\\(.+'
+            , updateArgs: function(command, args) {
+                // don't bother stripping the "ui=" prefix from the locator
+                // here; we're just using UISpecifier to parse the args out
+                var uiSpecifier = new UISpecifier(command.target);
+                args.subtopic = uiSpecifier.args.subtopic;
+                return args;
+            }
+        }
+    ]
+    , getExpandedCommands: function(args) {
+        var commands = [];
+        var topic = subtopics[args.subtopic];
+        var subtopic = args.subtopic;
+        commands.push({
+            command: 'clickAndWait'
+            , target: 'ui=allPages::section(section=topics)'
+        });
+        commands.push({
+            command: 'clickAndWait'
+            , target: 'ui=topicListingPages::topic(topic=' + topic + ')'
+        });
+        commands.push({
+            command: 'clickAndWait'
+            , target: 'ui=subtopicListingPages::subtopic(subtopic=' + subtopic + ')'
+        });
+        commands.push({
+            command: 'verifyLocation'
+            , target: 'regexp:.+/topics/.+/.+'
+        });
+        return commands;
+    }
+});</pre></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>A sample user-extensions.js file is included in the Selenium IDE extension and is accessible from Firefox at <code class="literal">chrome://selenium-ide/content/selenium/scripts/ui-map-sample.js</code></p></td></tr></table></div></div><div class="section" title="9.6. Lab 5: UI-Elements And Rollups"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_5_ui_elements_and_rollups"></a>9.6. Lab 5: UI-Elements And Rollups</h3></div></div></div><p>Using the sample user-extension.js provided with Selenium IDE:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Build an user-extensions.js file targeting the google search page. Only two elements are needed: the search input box (<code class="literal">id=q</code>) and the google search button (<code class="literal">id=btnG</code>)
+</li><li class="listitem">
+Refactor the <span class="emphasis"><em>pizza</em></span> test of Lab 1 using UI-Elements
+</li><li class="listitem">
+Group the commands into a rollup rule that take the search string as an argument
+</li><li class="listitem">
+Bonus: implement this test with RSpec and make it run against Selenium RC
+</li></ul></div><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>use the <code class="literal">-userExtensions &lt;file&gt;</code> argument when launching the server</p></td></tr></table></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="selenium_grid.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="pageobject.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="testing_strategies.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Selenium Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_assumptions">1.1. Assumptions</a></span></dt><dt><span class="section"><a href="index.html#_lab_files">1.2. Lab Files</a></span></dt></dl></dd><dt><span class="section"><a href="project.html">2. The Selenium Project</a></span></dt><dd><dl><dt><span class="section"><a href="project.html#_overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="project.html#Selenium_and_the_web_testing_frameworks">2.2. Selenium And The Web Testing Frameworks</a></span></dt><dt><span class="section"><a href="project.html#_history">2.3. History</a></span></dt></dl></dd><dt><span class="section"><a href="IDE.html">3. Selenium IDE</a></span></dt><dd><dl><dt><span class="section"><a href="IDE.html#_overview_2">3.1. Overview</a></span></dt><dt><span class="section"><a href="IDE.html#_presentation">3.2. Presentation</a></span></dt><dt><span class="section"><a href="IDE.html#_export_features">3.3. Export Features</a></span></dt><dt><span class="section"><a href="IDE.html#_installation">3.4. Installation</a></span></dt><dt><span class="section"><a href="IDE.html#_lab_1">3.5. Lab 1</a></span></dt><dt><span class="section"><a href="IDE.html#_discussion">3.6. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="test_cases_and_test_suites.html">4. Test-Cases and Test-Suites</a></span></dt><dd><dl><dt><span class="section"><a href="test_cases_and_test_suites.html#_selenese">4.1. Selenese</a></span></dt><dt><span class="section"><a href="test_cases_and_test_suites.html#_test_suites">4.2. Test Suites</a></span></dt></dl></dd><dt><span class="section"><a href="commands.html">5. Commands</a></span></dt><dd><dl><dt><span class="section"><a href="commands.html#_actions">5.1. Actions</a></span></dt><dt><span class="section"><a href="commands.html#_accessors">5.2. Accessors</a></span></dt><dt><span class="section"><a href="commands.html#_assertions">5.3. Assertions</a></span></dt></dl></dd><dt><span class="section"><a href="locators.html">6. Locators</a></span></dt><dd><dl><dt><span class="section"><a href="locators.html#_identifier">6.1. Identifier</a></span></dt><dt><span class="section"><a href="locators.html#_id">6.2. Id</a></span></dt><dt><span class="section"><a href="locators.html#_name">6.3. Name</a></span></dt><dt><span class="section"><a href="locators.html#_link">6.4. Link</a></span></dt><dt><span class="section"><a href="locators.html#_dom">6.5. DOM</a></span></dt><dt><span class="section"><a href="locators.html#_xpath">6.6. XPath</a></span></dt><dt><span class="section"><a href="locators.html#_css">6.7. CSS</a></span></dt><dt><span class="section"><a href="locators.html#_ui_elements">6.8. UI-Elements</a></span></dt><dt><span class="section"><a href="locators.html#_structure_dependent_or_not">6.9. Structure-Dependent Or Not?</a></span></dt><dt><span class="section"><a href="locators.html#quiz_locators">6.10. Quiz</a></span></dt><dt><span class="section"><a href="locators.html#_lab_2">6.11. Lab 2</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_remote_control.html">7. Selenium Remote Control (RC)</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_remote_control.html#_overview_3">7.1. Overview</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_selenium_server">7.2. Selenium Server</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_client_libraries">7.3. Client libraries</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_3_installation_of_selenium_rc">7.4. Lab 3 : Installation of Selenium RC</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_junit">7.5. Junit</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_rspec">7.6. RSpec</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_javascript">7.7. JavaScript</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_fixtures">7.8. Fixtures</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_4_improving_a_test">7.9. Lab 4 : Improving a test</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_grid.html">8. Selenium Grid</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_grid.html#_presentation_2">8.1. Presentation</a></span></dt></dl></dd><dt><span class="section"><a href="testing_strategies.html">9. Testing Strategies</a></span></dt><dd><dl><dt><span class="section"><a href="testing_strategies.html#_what_kinds_of_tests">9.1. What Kinds Of Tests?</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_how_should_you_test_your_apps">9.2. How Should You Test Your Apps</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_best_practices">9.3. Best Practices</a></span></dt><dt><span class="section"><a href="testing_strategies.html#UI-Elements">9.4. UI-Elements:</a></span></dt><dt><span class="section"><a href="testing_strategies.html#seide_rollups">9.5. Rollups</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_lab_5_ui_elements_and_rollups">9.6. Lab 5: UI-Elements And Rollups</a></span></dt></dl></dd><dt><span class="section"><a href="pageobject.html">10. PageObject</a></span></dt><dd><dl><dt><span class="section"><a href="pageobject.html#_lab_6_pageobject_pattern">10.1. Lab 6: PageObject Pattern</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_in_your_company.html">11. Selenium In Your Company</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_in_your_company.html#_where_to_start">11.1. Where to start?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#_what_are_the_issues">11.2. What Are The Issues?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#Continuous-Integration">11.3. Continuous Integration</a></span></dt></dl></dd><dt><span class="section"><a href="selenium2.html">12. Selenium 2.0</a></span></dt><dd><dl><dt><span class="section"><a href="selenium2.html#_differences_amp_new_features">12.1. Differences &amp; New Features</a></span></dt><dt><span class="section"><a href="selenium2.html#_api">12.2. API</a></span></dt></dl></dd><dt><span class="section"><a href="toolbox.html">13. Toolbox</a></span></dt><dd><dl><dt><span class="section"><a href="toolbox.html#_flash_testing">13.1. Flash testing</a></span></dt><dt><span class="section"><a href="toolbox.html#helper_tools">13.2. Selenium helper tools</a></span></dt><dt><span class="section"><a href="toolbox.html#_test_developer_tools">13.3. Test developer tools</a></span></dt></dl></dd><dt><span class="section"><a href="appendix.html">14. Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="appendix.html#_selenium_rc_api_reference_ruby">14.1. Selenium RC API Reference (Ruby)</a></span></dt><dt><span class="section"><a href="appendix.html#_quiz_answers">14.2. Quiz answers</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/testing_strategies.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

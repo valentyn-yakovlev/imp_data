@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/javamail.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:50:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jboss Admin Tutorial : Javamail  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jboss, admin, tutorial, :, javamail" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jboss Admin Tutorial : Javamail </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index-2.html">Jboss Admin Tutorial </a>
+  &raquo;
+  Javamail </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="jndi.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="jms.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="9. Javamail Administration"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="javamail"></a>9. Javamail Administration</h2></div></div></div><div class="section" title="9.1. What is JavaMail?"><div class="titlepage"><div><div><h3 class="title"><a id="_what_is_javamail"></a>9.1. What is JavaMail?</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Platform and protocol-independent framework for building [email] messaging applications
+</li><li class="listitem"><p class="simpara">
+Split into abstract API and protocol-specific SPI
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Default implementation for SMTP, POP3, IMAP
+</li></ul></div></li><li class="listitem">
+Optional in J2SE, included in J2EE
+</li><li class="listitem">
+In J2EE, application server generally manage a mail session - a shared resource for sending email messages over SMTP
+</li><li class="listitem"><p class="simpara">
+JavaMail implicitly uses JavaBeans Activation Framework (JAF).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+JAF provides standard services to:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem">
+determine the type of an arbitrary piece of data,
+</li><li class="listitem">
+encapsulate access to it,
+</li><li class="listitem">
+discover the operations available on it,
+</li><li class="listitem">
+and create the appropriate JavaBeans component to perform those operations
+</li></ul></div></li></ul></div></li><li class="listitem">
+JAF unifies the manner of working with various data formats, be it simple text files, or complex types such as audio, images, video, etc. JAF provides a framework for plugging in data-handlers into JavaMail.
+</li></ul></div></div><div class="section" title="9.2. Configuring JavaMail Service"><div class="titlepage"><div><div><h3 class="title"><a id="_configuring_javamail_service"></a>9.2. Configuring JavaMail Service</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Configured in JBoss AS by <code class="literal">deploy/mail-service.xml</code>
+</li><li class="listitem"><p class="simpara">
+Shared connection information for sending email messages over SMTP
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+Set <code class="literal">mail.smtp.host</code> in <code class="literal">deploy/mail-service.xml</code>, and optionally set <code class="literal">mail.debug</code> to <code class="literal">true</code>:
+</p><pre class="programlisting">&lt;server&gt;
+  &lt;mbean code="org.jboss.mail.MailService"
+         name="jboss:service=Mail"&gt;
+    &lt;attribute name="JNDIName"&gt;java:/Mail&lt;/attribute&gt;
+    ...
+    &lt;attribute name="Configuration"&gt;
+      &lt;configuration&gt;
+        ...
+        &lt;property name="mail.smtp.host" value="smtp.nosuchhost.nosuchdomain.com"/&gt;
+        &lt;property name="mail.smtp.port" value="25"/&gt;
+        ...
+      &lt;/configuration&gt;
+    &lt;/attribute&gt;
+    ...
+  &lt;/mbean&gt;
+&lt;/server&gt;</pre></li><li class="listitem"><p class="simpara">
+To enable support for SMTP over SSL:
+</p><pre class="programlisting">&lt;server&gt;
+  &lt;mbean code="org.jboss.mail.MailService"
+         name="jboss:service=Mail"&gt;
+    ...
+    &lt;attribute name="Configuration"&gt;
+      &lt;configuration&gt;
+        ...
+        &lt;property name="mail.smtp.port" value="465"/&gt;
+        &lt;property name="mail.smtp.ssl.enable" value="true"/&gt;
+        &lt;property name="mail.smtp.socketFactory.class" value="javax.net.ssl.SSLSocketFactory"/&gt;
+        ...
+      &lt;/configuration&gt;
+    &lt;/attribute&gt;
+    ...
+  &lt;/mbean&gt;
+&lt;/server&gt;</pre></li><li class="listitem"><p class="simpara">
+To enable support for SMTP authentication:
+</p><pre class="programlisting">&lt;server&gt;
+  &lt;mbean code="org.jboss.mail.MailService"
+         name="jboss:service=Mail"&gt;
+    ...
+    &lt;attribute name="User"&gt;your-username&lt;/attribute&gt;
+    &lt;attribute name="Password"&gt;your-password&lt;/attribute&gt;
+        &lt;attribute name="Configuration"&gt;
+      &lt;configuration&gt;
+        ...
+        &lt;property name="mail.smtp.auth" value="true"/&gt;
+        &lt;property name="mail.smtp.user" value="your-username"/&gt;
+        ...
+      &lt;/configuration&gt;
+    &lt;/attribute&gt;
+    ...
+  &lt;/mbean&gt;
+&lt;/server&gt;</pre></li></ul></div></li><li class="listitem">
+Can also configure the defaults for receiving mail over POP/IMAP4
+</li><li class="listitem">
+Can enable debugging to STDOUT <code class="literal">&lt;property name="mail.debug" value="true"/&gt;</code>
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>If you don’t have access to mail server that will relay your mail then set <code class="literal">mail.smtp.host</code> to your inbound SMTP mail server. On unix you can use the following command <code class="literal">dig mx "domain_name"</code> (e.g gmail.com)</p></td></tr></table></div><pre class="screen">gmail.com.              2156    IN      MX      5 gmail-smtp-in.l.google.com.
+gmail.com.              2156    IN      MX      20 alt2.gmail-smtp-in.l.google.com.
+gmail.com.              2156    IN      MX      10 alt1.gmail-smtp-in.l.google.com.
+gmail.com.              2156    IN      MX      30 alt3.gmail-smtp-in.l.google.com.
+gmail.com.              2156    IN      MX      40 alt4.gmail-smtp-in.l.google.com.</pre></div><div class="section" title="9.3. Lab: Mail"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_mail"></a>9.3. Lab: Mail</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Configure <code class="literal">mail-service.xml</code> for your environment
+</li><li class="listitem"><p class="simpara">
+In <code class="literal">sendmail.war</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Determine the resource requirement
+</li><li class="listitem">
+Add required resource mapping
+</li></ul></div></li><li class="listitem">
+Deploy <code class="literal">sendmail.war</code>
+</li><li class="listitem">
+Test that you can send email
+</li><li class="listitem">
+Experiment by enabling debugging
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>SMTP authentication for JavaMail under JBoss is not trivial to enable. Experiment without it. Try setting the mail server to the host that handles your own email.</p></td></tr></table></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="jndi.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="jms.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="javamail.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana JBoss Administration Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index-2.html#introduction_to_java_ee">1. Overview of Java Enterprise Edition</a></span></dt><dd><dl><dt><span class="section"><a href="index-2.html#_what_is_java_ee">1.1. What is Java EE?</a></span></dt><dt><span class="section"><a href="index-2.html#_open_and_standard_based">1.2. Open and Standard-based</a></span></dt><dt><span class="section"><a href="index-2.html#_multi_tier">1.3. Multi-tier</a></span></dt><dt><span class="section"><a href="index-2.html#_web_enabled">1.4. Web-Enabled</a></span></dt><dt><span class="section"><a href="index-2.html#_server_centric">1.5. Server Centric</a></span></dt><dt><span class="section"><a href="index-2.html#_component_based_distributed_architecture">1.6. Component-Based Distributed Architecture</a></span></dt><dt><span class="section"><a href="index-2.html#_enterprise_applications">1.7. Enterprise Applications</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_contents">1.8. Java EE Contents</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_services">1.9. Java EE Services</a></span></dt></dl></dd><dt><span class="section"><a href="jboss_overview.html">2. Overview of JBoss Application Server</a></span></dt><dd><dl><dt><span class="section"><a href="jboss_overview.html#_jboss_organization">2.1. JBoss Organization</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_background">2.2. JBoss AS Background</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_highlights_of_jboss_as">2.3. Highlights of JBoss AS</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_what_is_new_in_jboss_as_5">2.4. What is new in JBoss AS 5?</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_architecture">2.5. JBoss AS Architecture</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_microcontainer_layer">2.6. JBoss Microcontainer Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_services_layer">2.7. Services Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_aspect_layer">2.8. Aspect Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_application_layer">2.9. Application Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_services">2.10. JBoss AS Services</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_requirements">2.11. JBoss AS Requirements</a></span></dt></dl></dd><dt><span class="section"><a href="installing_jboss_as.html">3. Installing JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="installing_jboss_as.html#_getting_and_installing_java">3.1. Getting and Installing Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_configuring_java">3.2. Configuring Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_getting_jboss_as">3.3. Getting JBoss AS</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_installing_jboss_as_5">3.4. Installing JBoss AS 5</a></span></dt></dl></dd><dt><span class="section"><a href="directory_structure.html">4. JBoss Directory Structure</a></span></dt><dd><dl><dt><span class="section"><a href="directory_structure.html#_jboss_as_directory_structure">4.1. JBoss AS Directory Structure</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_bin_literal_directory">4.2. The <code class="literal">bin</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_client_literal_directory">4.3. The <code class="literal">client</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_common_literal_directory">4.4. The <code class="literal">common</code> directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_docs_literal_directory">4.5. The <code class="literal">docs</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_lib_literal_directory">4.6. The <code class="literal">lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_server_literal_directory">4.7. The <code class="literal">server</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_server_configuration_sets">4.8. The server Configuration Sets</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_conf_literal_directory">4.9. The <code class="literal">default/conf</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_data_literal_directory">4.10. The <code class="literal">default/data</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deploy_literal_directory">4.11. The <code class="literal">default/deploy</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deployers_literal_directory">4.12. The <code class="literal">default/deployers</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_lib_literal_directory">4.13. The <code class="literal">default/lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_log_literal_directory">4.14. The <code class="literal">default/log</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_tmp_literal_directory">4.15. The <code class="literal">default/tmp</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_work_literal_directory">4.16. The <code class="literal">default/work</code> Directory</a></span></dt></dl></dd><dt><span class="section"><a href="starting_and_stopping.html">5. Controlling the Life-Cycle of JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="starting_and_stopping.html#_starting_jboss_as">5.1. Starting JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_verifying_jboss_as_startup">5.2. Verifying JBoss AS Startup</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_stopping_jboss_as">5.3. Stopping JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_starting_from_a_remote_server">5.4. Starting From a Remote Server</a></span></dt></dl></dd><dt><span class="section"><a href="deploying.html">6. Deployments on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="deploying.html#_java_ee_deployment_lifecycle">6.1. Java EE Deployment Lifecycle</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_descriptors">6.2. Deployment Descriptors</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_on_jboss_as">6.3. Deployment on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployers_on_jboss_as">6.4. Deployers on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_dependencies">6.5. Deployment Dependencies</a></span></dt><dt><span class="section"><a href="deploying.html#_hot_vs_cold_deployment">6.6. Hot vs. Cold Deployment</a></span></dt><dt><span class="section"><a href="deploying.html#_bootstrapping_jboss">6.7. Bootstrapping JBoss</a></span></dt><dt><span class="section"><a href="deploying.html#_lab_deployment">6.8. Lab: Deployment</a></span></dt></dl></dd><dt><span class="section"><a href="web_tier.html">7. Web Application Administration</a></span></dt><dd><dl><dt><span class="section"><a href="web_tier.html#_web_technologies">7.1. Web Technologies</a></span></dt><dt><span class="section"><a href="web_tier.html#_cgi_vs_servlets_jsps">7.2. CGI vs. Servlets/JSPs</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_web_container">7.3. Tomcat Web Container</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_server_xml_literal">7.4. Tomcat’s <code class="literal">server.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_web_xml_literal">7.5. Tomcat’s <code class="literal">web.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_servlets">7.6. Defining and Mapping Servlets</a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_filters">7.7. Defining and Mapping Filters</a></span></dt><dt><span class="section"><a href="web_tier.html#_session_configuration">7.8. Session Configuration</a></span></dt><dt><span class="section"><a href="web_tier.html#_welcome_file_list">7.9. Welcome File List</a></span></dt><dt><span class="section"><a href="web_tier.html#errordocs">7.10. Error Documents</a></span></dt><dt><span class="section"><a href="web_tier.html#_serving_static_content">7.11. Serving Static Content</a></span></dt><dt><span class="section"><a href="web_tier.html#_virtual_hosting_with_tomcat">7.12. Virtual Hosting with Tomcat</a></span></dt><dt><span class="section"><a href="web_tier.html#_web_access_logging">7.13. Web Access Logging</a></span></dt><dt><span class="section"><a href="web_tier.html#_lab_tomcat">7.14. Lab: Tomcat</a></span></dt></dl></dd><dt><span class="section"><a href="jndi.html">8. JNDI Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jndi.html#_java_naming_and_directory_interface">8.1. Java Naming and Directory Interface</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_in_java_ee">8.2. JNDI in Java EE</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_on_jboss">8.3. JNDI on JBoss</a></span></dt><dt><span class="section"><a href="jndi.html#_lab_jndi_view">8.4. Lab: JNDI View</a></span></dt></dl></dd><dt><span class="section"><a href="javamail.html">9. Javamail Administration</a></span></dt><dd><dl><dt><span class="section"><a href="javamail.html#_what_is_javamail">9.1. What is JavaMail?</a></span></dt><dt><span class="section"><a href="javamail.html#_configuring_javamail_service">9.2. Configuring JavaMail Service</a></span></dt><dt><span class="section"><a href="javamail.html#_lab_mail">9.3. Lab: Mail</a></span></dt></dl></dd><dt><span class="section"><a href="jms.html">10. JMS Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jms.html#_jms_overview">10.1. JMS Overview</a></span></dt><dt><span class="section"><a href="jms.html#_jms_in_java_ee">10.2. JMS in Java EE</a></span></dt><dt><span class="section"><a href="jms.html#_when_is_jms_used">10.3. When is JMS Used</a></span></dt><dt><span class="section"><a href="jms.html#_jms_architecture">10.4. JMS Architecture</a></span></dt><dt><span class="section"><a href="jms.html#_jms_messaging_domains">10.5. JMS Messaging Domains</a></span></dt><dt><span class="section"><a href="jms.html#_jms_message_consumption">10.6. JMS Message Consumption</a></span></dt><dt><span class="section"><a href="jms.html#_jms_on_jboss_configuration">10.7. JMS on JBoss Configuration</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_connection_factories">10.8. Configure JMS connection factories</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_destinations">10.9. Configure JMS destinations</a></span></dt><dt><span class="section"><a href="jms.html#_advanded_jboss_messaging">10.10. Advanded JBoss Messaging</a></span></dt><dt><span class="section"><a href="jms.html#_jboss_messaging_bridge">10.11. JBoss Messaging bridge</a></span></dt><dt><span class="section"><a href="jms.html#_persistence_service_configuration">10.12. Persistence service configuration</a></span></dt><dt><span class="section"><a href="jms.html#_lab_jms">10.13. Lab: JMS</a></span></dt></dl></dd><dt><span class="section"><a href="ejb.html">11. Enterprise Java Beans Administration</a></span></dt><dd><dl><dt><span class="section"><a href="ejb.html#_introduction_to_ejb_3_0">11.1. Introduction to EJB 3.0</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_3_0_components">11.2. EJB 3.0 Components</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_container">11.3. EJB Container</a></span></dt><dt><span class="section"><a href="ejb.html#_benefits_of_ejb_technology">11.4. Benefits of EJB Technology</a></span></dt><dt><span class="section"><a href="ejb.html#_drawbacks_of_ejbs">11.5. Drawbacks of EJBs</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans">11.6. Session Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_interceptors">11.7. Interceptors</a></span></dt><dt><span class="section"><a href="ejb.html#_entity_beans">11.8. Entity Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_bean">11.9. Message-Driven Bean</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans_client_interfaces">11.10. Session Beans Client Interfaces</a></span></dt><dt><span class="section"><a href="ejb.html#_stateless_session_beans_life_cycle">11.11. Stateless Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_beans_life_cycle">11.12. Stateful Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_beans_life_cycle">11.13. Message-Driven Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_configuring_the_ejb_container">11.14. Configuring the EJB container</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_bean_configuration">11.15. Stateful Session Bean Configuration</a></span></dt><dt><span class="section"><a href="ejb.html#_lab_stateless_session_bean">11.16. Lab: Stateless Session Bean</a></span></dt></dl></dd><dt><span class="section"><a href="web_services.html">12. Web Services and JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="web_services.html#_web_services_overview">12.1. Web Services Overview</a></span></dt><dt><span class="section"><a href="web_services.html#_service_oriented_architecture">12.2. Service Oriented Architecture</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_with_jax_ws">12.3. Web Services With JAX-WS</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_on_jboss">12.4. Web Services on JBoss</a></span></dt><dt><span class="section"><a href="web_services.html#_jboss_web_services_tools">12.5. JBoss Web Services Tools</a></span></dt><dt><span class="section"><a href="web_services.html#_lab_web_services">12.6. Lab: Web Services</a></span></dt></dl></dd><dt><span class="section"><a href="jmx.html">13. JMX Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jmx.html#_what_is_jmx">13.1. What is JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_why_jmx">13.2. Why JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_architecture">13.3. JMX Architecture</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_on_jboss_as">13.4. JMX on JBoss AS</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_console">13.5. JMX Console</a></span></dt><dt><span class="section"><a href="jmx.html#_web_console">13.6. Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_twiddle_tool">13.7. Twiddle Tool</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_as_administration_console">13.8. JBoss AS Administration Console</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_jmx_print_service">13.9. Lab: JMX Print Service</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_monitoring">13.10. JBoss Monitoring</a></span></dt><dt><span class="section"><a href="jmx.html#_snapshot_and_web_console">13.11. Snapshot and Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_monitoring_with_jconsole">13.12. Monitoring with JConsole</a></span></dt><dt><span class="section"><a href="jmx.html#_scheduling_on_jboss">13.13. Scheduling on JBoss</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_monitoring">13.14. Lab: Monitoring</a></span></dt></dl></dd><dt><span class="section"><a href="class_loading.html">14. Class Loading on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="class_loading.html#_class_namespace_isolation">14.1. Class Namespace Isolation</a></span></dt><dt><span class="section"><a href="class_loading.html#_java_class_runtime_identity">14.2. Java Class Runtime Identity</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_in_java_ee">14.3. Class Loading in Java EE</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_on_jboss">14.4. Class Loading On JBoss</a></span></dt><dt><span class="section"><a href="class_loading.html#_the_class_loader">14.5. The Class Loader</a></span></dt><dt><span class="section"><a href="class_loading.html#_default_class_search_order">14.6. Default Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoping_classes">14.7. Scoping Classes</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoped_class_search_order">14.8. Scoped Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_app_specific_log4j_config">14.9. App-specific Log4J Config</a></span></dt><dt><span class="section"><a href="class_loading.html#_problems_with_class_loading">14.10. Problems With Class Loading</a></span></dt><dt><span class="section"><a href="class_loading.html#_lab_class_loading">14.11. Lab: Class Loading</a></span></dt></dl></dd><dt><span class="section"><a href="database_integration.html">15. Database Integration on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="database_integration.html#_steps_involved">15.1. Steps Involved</a></span></dt><dt><span class="section"><a href="database_integration.html#_resource_requirement">15.2. Resource Requirement</a></span></dt><dt><span class="section"><a href="database_integration.html#_install_jdbc_drivers">15.3. Install JDBC Drivers</a></span></dt><dt><span class="section"><a href="database_integration.html#_define_a_rdbms_dbcp_resource">15.4. Define a RDBMS DBCP Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_map_our_resource">15.5. Map our Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_using_our_literal_datasource_literal_rdbms_dbcp">15.6. Using our <code class="literal">DataSource</code> (RDBMS DBCP)</a></span></dt><dt><span class="section"><a href="database_integration.html#_hypersonic_database">15.7. Hypersonic Database</a></span></dt><dt><span class="section"><a href="database_integration.html#_detecting_connection_leaks">15.8. Detecting Connection Leaks</a></span></dt><dt><span class="section"><a href="database_integration.html#_lab_database_connectivity">15.9. Lab: Database Connectivity</a></span></dt></dl></dd><dt><span class="section"><a href="security.html">16. Security on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="security.html#_securing_applications">16.1. Securing Applications</a></span></dt><dt><span class="section"><a href="security.html#Filtering_Clients_by_Source">16.2. Filtering Clients by Source</a></span></dt><dt><span class="section"><a href="security.html#Authentication_and_Authorization">16.3. Authentication &amp; Authorization</a></span></dt><dt><span class="section"><a href="security.html#_requiring_a_amp_a">16.4. Requiring A&amp;A</a></span></dt><dt><span class="section"><a href="security.html#Plain_Text_Login_Module">16.5. Plain-Text Login Module</a></span></dt><dt><span class="section"><a href="security.html#Database_Login_Module">16.6. Database Login Module</a></span></dt><dt><span class="section"><a href="security.html#_form_based_login">16.7. FORM-based Login</a></span></dt><dt><span class="section"><a href="security.html#SSL_on_JBoss">16.8. Configuring JBoss AS for SSL</a></span></dt><dt><span class="section"><a href="security.html#_creating_ssl_certificates">16.9. Creating SSL Certificates</a></span></dt><dt><span class="section"><a href="security.html#_configure_ssl_connector">16.10. Configure SSL Connector</a></span></dt><dt><span class="section"><a href="security.html#_testing_ssl_configuration">16.11. Testing SSL Configuration</a></span></dt><dt><span class="section"><a href="security.html#Requiring_SSL">16.12. Requiring SSL in Apps</a></span></dt><dt><span class="section"><a href="security.html#_lab_application_security">16.13. Lab: Application Security</a></span></dt><dt><span class="section"><a href="security.html#jms_security">16.14. Securing JMS destinations</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_as">16.15. Securing JBoss AS</a></span></dt><dt><span class="section"><a href="security.html#_jboss_as_system_user">16.16. JBoss AS System User</a></span></dt><dt><span class="section"><a href="security.html#_file_system_security">16.17. File System Security</a></span></dt><dt><span class="section"><a href="security.html#_securing_jmx_invoker">16.18. Securing JMX Invoker</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_applications">16.19. Securing JBoss Applications</a></span></dt><dt><span class="section"><a href="security.html#_securing_hypersonic_db">16.20. Securing Hypersonic DB</a></span></dt><dt><span class="section"><a href="security.html#_java_security_manager">16.21. Java Security Manager</a></span></dt><dt><span class="section"><a href="security.html#_running_behind_a_firewall">16.22. Running Behind a Firewall</a></span></dt><dt><span class="section"><a href="security.html#_lab_jboss_security">16.23. Lab: JBoss Security</a></span></dt></dl></dd><dt><span class="section"><a href="performance.html">17. Tuning JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="performance.html#_jvm_tuning">17.1. JVM Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tomcat_tuning">17.2. Tomcat Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_rmi_tuning">17.3. RMI Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_log4j_tuning">17.4. Log4J Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tuning_other_services">17.5. Tuning Other Services</a></span></dt><dt><span class="section"><a href="performance.html#jms_tuning">17.6. JMS Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_slimming_jboss">17.7. Slimming JBoss</a></span></dt></dl></dd><dt><span class="section"><a href="high_availability_and_scalability.html">18. High Availability and Scalability on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="high_availability_and_scalability.html#_requirements">18.1. Requirements</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_general_understanding">18.2. Clustering: General understanding</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_and_jboss">18.3. Clustering and JBoss</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_simple_web_architecture">18.4. Simple Web Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_external_load_balancer_architecture">18.5. External Load Balancer Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_smart_proxy_architecture">18.6. Smart Proxy Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_general_configuration_for_the_following_examples">18.7. General configuration for the following examples</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_fronting_with_a_web_server">18.8. Fronting with a Web Server</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Fronting_with_Apache">18.9. Fronting with Apache HTTPD</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_installing_literal_mod_jk_literal">18.10. Installing <code class="literal">mod_jk</code></a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_configuring_mod_jk">18.11. Configuring mod_jk</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Simple_Load_Balancing">18.12. Simple Load Balancing</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_enabling_sticky_sessions">18.13. Enabling Sticky Sessions</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustered_session_replication">18.14. Clustered Session Replication</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_single_sign_on">18.15. Clustering Single Sign-On</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jndi">18.16. Clustering with HA-JNDI</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_ha_jndi_client_configuration">18.17. HA-JNDI Client Configuration</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jms">18.18. Clustering with HA-JMS</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateless_session_beans">18.19. Clustering with Stateless Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateful_session_beans">18.20. Clustering with Stateful Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_lab_clustering">18.21. Lab: Clustering</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/javamail.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:50:46 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

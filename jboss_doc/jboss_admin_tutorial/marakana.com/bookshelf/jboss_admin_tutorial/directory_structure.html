@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/directory_structure.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:49:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Jboss Admin Tutorial : Directory Structure  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, jboss, admin, tutorial, :, directory, structure" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Jboss Admin Tutorial : Directory Structure </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index-2.html">Jboss Admin Tutorial </a>
+  &raquo;
+  Directory Structure </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="installing_jboss_as.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="starting_and_stopping.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="4. JBoss Directory Structure"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="directory_structure"></a>4. JBoss Directory Structure</h2></div></div></div><div class="section" title="4.1. JBoss AS Directory Structure"><div class="titlepage"><div><div><h3 class="title"><a id="_jboss_as_directory_structure"></a>4.1. JBoss AS Directory Structure</h3></div></div></div><pre class="screen">JBossORG-EULA.txt       copyright.txt           lib/
+bin/                    docs/                   readme.html
+client/                 jar-versions.xml        server/
+common/                 lgpl.html</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Root dir known as <code class="literal">jboss.home.dir</code> or <code class="literal">$JBOSS_HOME</code>
+</li><li class="listitem"><p class="simpara">
+Understanding the layout is important:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Locating libraries
+</li><li class="listitem">
+Updating configuration
+</li><li class="listitem">
+Deploying apps and services
+</li></ul></div></li></ul></div><p>When JBoss AS is installed (uncompressed), the following directories are created:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">${jboss.home.dir}/bin</code>
+</li><li class="listitem">
+<code class="literal">${jboss.home.dir}/client</code>
+</li><li class="listitem">
+<code class="literal">${jboss.home.dir}/common</code>
+</li><li class="listitem">
+<code class="literal">${jboss.home.dir}/docs</code>
+</li><li class="listitem">
+<code class="literal">${jboss.home.dir}/lib</code>
+</li><li class="listitem">
+<code class="literal">${jboss.home.dir}/server</code>
+</li></ul></div></div><div class="section" title="4.2. The bin Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_bin_literal_directory"></a>4.2. The <code class="literal">bin</code> Directory</h3></div></div></div><pre class="screen">README-service.txt      run.conf                twiddle.sh
+classpath.sh            run.conf.bat            wsconsume.bat
+jboss_init_hpux.sh      run.jar                 wsconsume.sh
+jboss_init_redhat.sh    run.sh                  wsprovide.bat
+jboss_init_suse.sh      service.bat             wsprovide.sh
+jbosssvc.exe            shutdown.bat            wsrunclient.bat
+password_tool.sh        shutdown.jar            wsrunclient.sh
+probe.bat               shutdown.sh             wstools.bat
+probe.sh                twiddle.bat             wstools.sh
+run.bat                 twiddle.jar</pre><p>JBoss AS <code class="literal">${jboss.home.dir}/bin</code> directory contains startup/shutdown scripts, bootstrap libraries, Web Services and server management utilities:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">classpath.sh</code>: A tool to determine JBoss classpaths (both client and server)
+</li><li class="listitem">
+<code class="literal">jboss_init_redhat.sh</code> and <code class="literal">jboss_init_suse.sh</code>: JBoss system control scripts for RedHat and SuSE systems
+</li><li class="listitem">
+<code class="literal">probe.sh</code> and <code class="literal">probe.bat</code>: used for discovering JBoss AS clusters.
+</li><li class="listitem">
+<code class="literal">run.sh</code> and <code class="literal">run.bat</code>: Scripts for starting JBoss AS
+</li><li class="listitem">
+<code class="literal">run.jar</code>: Bootstrap code for starting JBoss AS
+</li><li class="listitem">
+<code class="literal">service.bat</code>: Script to manage JBoss as a Windows service.
+</li><li class="listitem">
+<code class="literal">shutdown.sh</code> and <code class="literal">shutdown.bat</code>: Scripts for shutting down JBoss AS (including remote instances)
+</li><li class="listitem">
+<code class="literal">shutdown.jar</code>: Bootstrap code for shutting down JBoss AS
+</li><li class="listitem">
+<code class="literal">twiddle.sh</code> and <code class="literal">twiddle.bat</code>: Scripts for running JBoss AS command-line management client (based on JMX)
+</li><li class="listitem">
+<code class="literal">twiddle.jar</code>: Bootstrap code for the JMX management (instrumentation) client
+</li><li class="listitem">
+<code class="literal">wsconsume</code>, <code class="literal">wsprovide</code>, <code class="literal">wsrunclient</code> and <code class="literal">wstools</code> are utilities for Web Services. We will see that later on Web Services chapter.
+</li></ul></div></div><div class="section" title="4.3. The client Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_client_literal_directory"></a>4.3. The <code class="literal">client</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Contains the Java libraries (JARs) required for clients that run outside the JBoss AS containers, such as:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+WebService clients
+</li><li class="listitem">
+EJB clients
+</li><li class="listitem">
+JMX clients
+</li></ul></div></li><li class="listitem">
+Used by external applications that need to access JNDI resources
+</li><li class="listitem">
+On Unix, to get the client CLASSPATH, run: <code class="literal">${jboss.home.dir}/bin/classpath.sh -c</code>
+</li><li class="listitem">
+As of JBoss 5, the file <code class="literal">client/jbossall-client.jar</code> contains references to other JARs via <code class="literal">Class-Path</code> setting in its <code class="literal">META-INF/MANIFEST.MF</code> file. This makes it possible for external JBoss clients to just reference this one JAR file as opposed to many of them.
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>We will use the <code class="literal">client/</code> directory later with some clients (like JMS) that will run outside the JBoss AS.</p></td></tr></table></div></div><div class="section" title="4.4. The common directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_common_literal_directory"></a>4.4. The <code class="literal">common</code> directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Contains the <code class="literal">lib</code> directory (also known as <code class="literal">jboss.common.lib.url</code>).
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">lib</code> folder contains the common libraries shared by all server configurations (more on this later)
+</li><li class="listitem">
+This directory is new to JBoss 5. In earlier versions of JBoss a number of common libraries were simply duplicated for each configuration set.
+</li></ul></div></li></ul></div></div><div class="section" title="4.5. The docs Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_docs_literal_directory"></a>4.5. The <code class="literal">docs</code> Directory</h3></div></div></div><pre class="screen">dtd/            examples/       licenses/       schema/         tests/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Examples: sample configuration: JMX, JCA, JMS, NetBoot, etc.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Contains excellent examples for many different configurations.
+For example, the file <code class="literal">docs/examples/jca/mysql-ds.xml</code> can serve as a starting point in defining a MySQL-based DataSource (shared database connection-pool) in JBoss AS.
+</li></ul></div></li><li class="listitem"><p class="simpara">
+DTDs and Schemas for J2EE and JBoss XML files
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Contain all J2EE-referenced XML DTD and XSD files, making it simple to validate XML files and lookup the relevant "grammar" when making configuration changes. DTDs were employed by J2EE 1.3 and JBoss 4 whereas Schemas are used since J2EE 1.4 and JBoss 5.
+</li></ul></div></li><li class="listitem">
+Licenses for all JBoss components
+</li><li class="listitem">
+Unit test results
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The actual JBoss AS documentation can be downloaded from <a class="ulink" href="http://www.jboss.org/jbossas/docs/5-x.html" target="_top">http://www.jboss.org/jbossas/docs/5-x.html</a></p></td></tr></table></div></div><div class="section" title="4.6. The lib Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_lib_literal_directory"></a>4.6. The <code class="literal">lib</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Contains JBoss bootstrap libraries (core libraries)
+</li><li class="listitem">
+Do not place your own files here or remove any of the existing files
+</li><li class="listitem">
+As an example, you’ll find here the JBoss Microcontainer and the old JMX kernel.
+</li></ul></div></div><div class="section" title="4.7. The server Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_server_literal_directory"></a>4.7. The <code class="literal">server</code> Directory</h3></div></div></div><pre class="screen">all/            minimal/        node2/          web/
+default/        node1/          standard/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Known in JBoss AS as <code class="literal">jboss.server.base.dir</code>
+</li><li class="listitem">
+Root of server configuration sets
+</li><li class="listitem">
+JBoss comes with <code class="literal">minimal</code>, <code class="literal">default</code> and <code class="literal">all</code>
+</li><li class="listitem">
+Version 5.x comes with 2 new configurations: <code class="literal">standard</code> and <code class="literal">web</code>
+</li><li class="listitem">
+Defaults to configuration set in <code class="literal">server/default</code>
+</li><li class="listitem">
+Configuration sets contain the actual JBoss services
+</li></ul></div><p>To change the configuration set that JBoss AS runs with, execute: <code class="literal">bin/run.sh -c &lt;configuration-set&gt;</code></p><p>For example:</p><pre class="screen">bin/run.sh -c minimal</pre><pre class="screen">bin/run.sh -c all</pre><p>Configuration sets:</p><p><span class="strong"><strong>minimal/</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Includes support for JNDI and logging. It does not contain any other J2EE services like Servlet/JSP container, EJB container, or JMS.
+</li><li class="listitem">
+Can serve as a starting point when creating your own configuration sets
+</li></ul></div><p><span class="strong"><strong>default/</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+As the name implies, this is the default Java EE 5 configuration. Contains the most used services except JAXR, IIOP and clustering services.
+</li></ul></div><p><span class="strong"><strong>all/</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+This configuration extends the default configuration set and also include JAXR, IIOP and clustering services
+</li></ul></div><p><span class="strong"><strong>standard/</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Certified Java EE 5 configuration compliant.
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>The major differences with the existing configurations is that call-by-value and deployment isolation are enabled by default, along with support for rmiiiop and juddi (taken from the all config).</p></td></tr></table></div><p><span class="strong"><strong>web/</strong></span></p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Lightweight web container profile (Java EE 6 web profile). It provides support for JTA/JCA and JPA except for the servlet/JSP container.
+</li></ul></div></div><div class="section" title="4.8. The server Configuration Sets"><div class="titlepage"><div><div><h3 class="title"><a id="_the_server_configuration_sets"></a>4.8. The server Configuration Sets</h3></div></div></div><pre class="screen">all/            minimal/        node2/          web/
+default/        node1/          standard/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+The currently running server/&lt;server&gt; dir is known in JBoss AS as <code class="literal">jboss.server.home.url</code>
+</li><li class="listitem">
+The name of the server (e.g. "default") is known as <code class="literal">jboss.server.name</code>
+</li><li class="listitem">
+Configuration sets are independent of each other
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Each configuration set has to have at least the following four directories: <code class="literal">conf/</code>, <code class="literal">deploy/</code>, <code class="literal">deployers/</code>, and <code class="literal">lib/</code>.
+Other (referenced) directories such as <code class="literal">data/</code>, <code class="literal">log/</code>, <code class="literal">tmp/</code>, and <code class="literal">work/</code> are automatically created on JBoss AS startup if they do not exist.</p></td></tr></table></div></div><div class="section" title="4.9. The default/conf Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_conf_literal_directory"></a>4.9. The <code class="literal">default/conf</code> Directory</h3></div></div></div><pre class="screen">bindingservice.beans/           jbossts-properties.xml
+bootstrap/                      jndi.properties
+bootstrap.xml                   login-config.xml
+java.policy                     props/
+jax-ws-catalog.xml              standardjboss.xml
+jboss-log4j.xml                 standardjbosscmp-jdbc.xml
+jboss-service.xml               xmdesc/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Known in JBoss as <code class="literal">jboss.server.config.url</code>
+</li><li class="listitem">
+Contains a bootstrap descriptor (<code class="literal">jboss-service.xml</code>) that defines which services are loaded for the lifetime of the instance
+</li></ul></div><p>The files in directory <code class="literal">${jboss.server.config.url}</code> :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">bootstrap/*</code>: Bootstrap descriptors for core microcontainer services defined in <code class="literal">bootstrap.xml</code>
+</li><li class="listitem">
+<code class="literal">bootstrap.xml</code>: Defines the core microcontainer beans to load during bootstap
+</li><li class="listitem">
+<code class="literal">jboss-service.xml</code>: Defines the core JMX services configurations
+</li><li class="listitem">
+<code class="literal">jndi.properties</code>: Specifies a set of properties that are passed to JNDI when <code class="literal">new InitialDirContext()</code> is called within JBoss
+</li><li class="listitem">
+<code class="literal">jboss-log4j.xml</code>: Configuration file for the logging service (Log4J) defining log filters, priorities, and destinations
+</li><li class="listitem">
+<code class="literal">login-config.xml</code>: Defines security realms used for authentication and authorization (JAAS)
+</li><li class="listitem">
+<code class="literal">props/*.properties</code>: Java property files (usually used for JAAS realms)
+</li><li class="listitem">
+<code class="literal">java.policy</code>: Placeholder for security permissions (Java Security Manager). Grant-All by default
+</li><li class="listitem">
+<code class="literal">standardjboss.xml</code>: Configuration file for the standard EJB container
+</li><li class="listitem">
+<code class="literal">standardjbosscmp-jdbc.xml</code>: Configuration file for the standard JBossCMP engine
+</li><li class="listitem">
+<code class="literal">xmdesc/*-mbean.xml</code>: XMBean descriptors for services configured in the <code class="literal">jboss-service.xml</code> file
+</li><li class="listitem">
+<code class="literal">props/*</code>: property files defining users and roles for the <code class="literal">jmx-console</code>
+</li></ul></div><div class="important" title="Important" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="../images/important.png"></img></td><th align="left">Important</th></tr><tr><td align="left" valign="top"><p>Any changes to files in this directory require a full server restart in order to take effect.</p></td></tr></table></div></div><div class="section" title="4.10. The default/data Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_data_literal_directory"></a>4.10. The <code class="literal">default/data</code> Directory</h3></div></div></div><pre class="screen">hypersonic/             wsdl/
+tx-object-store/        xmbean-attrs/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Known in JBoss as <code class="literal">jboss.server.data.dir</code>
+</li><li class="listitem"><p class="simpara">
+Location where some services store private content on the file system
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Hypersonic DB - built-in (by default use as the temporary message store by JMS)
+</li><li class="listitem">
+XMBeans attribute persistence (not enabled by default)
+</li><li class="listitem">
+Transaction objects (temporary storage of objects during the two-phase commit process)
+</li></ul></div></li><li class="listitem">
+This directory is not directory exposed to the end users (e.g. though the web interface)
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Unless you use Hypersonic DB, the contents of this directory (including the directory itself) can be cleared (deleted) between JBoss restarts.</p></td></tr></table></div></div><div class="section" title="4.11. The default/deploy Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_deploy_literal_directory"></a>4.11. The <code class="literal">default/deploy</code> Directory</h3></div></div></div><pre class="screen">CurrencyConverterApp.ear                jsr88-service.xml
+ROOT.war/                               legacy-invokers-service.xml
+admin-console.war/                      mail-ra.rar
+cache-invalidation-service.xml          mail-service.xml
+ejb2-container-jboss-beans.xml          management/
+ejb2-timer-service.xml                  messaging/
+ejb3-connectors-jboss-beans.xml         monitoring-service.xml
+ejb3-container-jboss-beans.xml          my-ws.war
+ejb3-interceptors-aop.xml               printservice.sar/
+ejb3-timerservice-jboss-beans.xml       profileservice-jboss-beans.xml
+fortune.war/                            profileservice-secured.jar/
+hdscanner-jboss-beans.xml               properties-service.xml
+hsqldb-ds.xml                           quartz-ra.rar
+http-invoker.sar/                       remoting-jboss-beans.xml
+jboss-local-jdbc.rar                    schedule-manager-service.xml
+jboss-xa-jdbc.rar                       scheduler-service.xml
+jbossweb.sar/                           security/
+jbossws.sar/                            sqlexception-service.xml
+jca-jboss-beans.xml                     transaction-jboss-beans.xml
+jms-ra.rar                              transaction-service.xml
+jmx-console.war/                        uuid-key-generator.sar/
+jmx-invoker-service.xml                 vfs-jboss-beans.xml
+jmx-remoting.sar/                       xnio-provider.jar/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Dynamic deployment content directory
+</li><li class="listitem">
+This is where applications and services are deployed
+</li><li class="listitem">
+Default location used by hot deployment service
+</li><li class="listitem">
+Contains code and configuration files for all services
+</li></ul></div><p>Some files in the <code class="literal">deploy</code> directory include:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">ROOT.war</code>: is the <span class="emphasis"><em>/</em></span> root web application
+</li><li class="listitem">
+<code class="literal">cache-invalidation-service.xml</code> - Custom invalidation of EJB caches via JMS
+</li><li class="listitem">
+<code class="literal">ejb2-container-jboss-beans.xml</code> - UserTransaction integration bean for EJB2 container
+</li><li class="listitem">
+<code class="literal">ejb2-timer-service.xml</code> - EJB timer service bean
+</li><li class="listitem">
+<code class="literal">ejb3-connectors-jboss-beans.xml</code> - EJB3 remoting transport bean
+</li><li class="listitem">
+<code class="literal">ejb3-container-jboss-beans.xml</code> - UserTransaction integration bean for EJB3 container
+</li><li class="listitem">
+<code class="literal">ejb3-interceptors-aop.xml</code> - AOP for EJB3
+</li><li class="listitem">
+<code class="literal">ejb3-timer-service.xml</code> - alternate quartz based timer service
+</li><li class="listitem">
+<code class="literal">hdscanner-jboss-beans.xml</code> - hot deployment scanner bean
+</li><li class="listitem">
+<code class="literal">hsqldb-ds.xml</code> - Hypersonic embedded database and related connection factories
+</li><li class="listitem">
+<code class="literal">http-invoker.sar</code> - Detached invoker that supports RMI/HTTP
+</li><li class="listitem">
+<code class="literal">jboss-local-jdbc.rar</code> - JCA to DataSource adaptor for JDBC drivers
+</li><li class="listitem">
+<code class="literal">jboss-xa-jdbc.rar</code> - JCA to XADataSource adaptor for JDBC drivers.
+</li><li class="listitem">
+<code class="literal">jbossweb.sar</code> - Tomcat Servlet/JSP Engine
+</li><li class="listitem">
+<code class="literal">jbossws.sar</code> -  The JBoss service that supports web services
+</li><li class="listitem">
+<code class="literal">jca-jboss-beans.xml</code> - Connection management facilities for integrating JCA adaptors into JBoss AS
+</li><li class="listitem">
+<code class="literal">jms-ra.rar</code> - JMS resssource adapter
+</li><li class="listitem">
+<code class="literal">messaging/connection-factories-service.xml</code> - DLQ, ExpiryQueue JMS connection factory
+</li><li class="listitem">
+<code class="literal">messaging/destinations-service.xml</code> - Message persistence store service
+</li><li class="listitem">
+<code class="literal">messaging/jms-ds.xml</code>
+</li><li class="listitem">
+<code class="literal">messaging/legacy-service.xml</code>
+</li><li class="listitem">
+<code class="literal">messaging/messaging-jboss-beans.xml</code> - JMS security and management beans
+</li><li class="listitem">
+<code class="literal">messaging/messaging-service.xml</code> - Core messaging service
+</li><li class="listitem">
+<code class="literal">messaging/remoting-bisocket-service.xml</code> - JMS remoting service layer
+</li><li class="listitem">
+<code class="literal">jmx-console.war</code> - Web application that provides HTML interface to manage MBean server
+</li><li class="listitem">
+<code class="literal">jmx-invoker-service.xml</code> - RMI to JMX adaptor into JBoss
+</li><li class="listitem">
+<code class="literal">jmx-remoting.sar</code> -
+</li><li class="listitem">
+<code class="literal">legacy-invokers-service.xml</code> -
+</li><li class="listitem">
+<code class="literal">jsr-88-service.xml</code> -
+</li><li class="listitem">
+<code class="literal">mail-ra.rar</code> - Resource adaptor that provides a JavaMail connector
+</li><li class="listitem">
+<code class="literal">mail-service.xml</code> - JavaMail session service (SMTP)
+</li><li class="listitem">
+<code class="literal">monitoring-service.xml</code> - Configuration for alert monitors such as email or console listeners
+</li><li class="listitem">
+<code class="literal">properties-service.xml</code> - JavaBeans PropertyEditors and definition of system properties
+</li><li class="listitem">
+<code class="literal">admin-console.war</code> - admin console for JBoss AS
+</li><li class="listitem">
+<code class="literal">scheduler-service.xml</code> - JBoss scheduling service
+</li><li class="listitem">
+<code class="literal">sqlexception-service.xml</code> - Vendor-specific SQL exception handler
+</li><li class="listitem">
+<code class="literal">security/security-jboss-beans.xml</code> - Security domain related beans
+</li><li class="listitem">
+<code class="literal">security/security-policies-jboss-beans.xml</code> - Security authorization for EJB and web authorization
+</li><li class="listitem">
+<code class="literal">transaction-jboss-beans.xml</code> - JTA transaction manager related beans
+</li><li class="listitem">
+<code class="literal">uuid-key-generator.sar</code> - UUID-based key generation facility
+</li></ul></div></div><div class="section" title="4.12. The default/deployers Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_deployers_literal_directory"></a>4.12. The <code class="literal">default/deployers</code> Directory</h3></div></div></div><pre class="screen">alias-deployers-jboss-beans.xml         jboss-threads.deployer/
+bsh.deployer/                           jbossweb.deployer/
+clustering-deployer-jboss-beans.xml     jbossws.deployer/
+dependency-deployers-jboss-beans.xml    jsr77-deployers-jboss-beans.xml
+directory-deployer-jboss-beans.xml      logbridge-jboss-beans.xml
+ear-deployer-jboss-beans.xml            messaging-definitions-jboss-beans.xml
+ejb-deployer-jboss-beans.xml            metadata-deployer-jboss-beans.xml
+ejb3.deployer/                          seam.deployer/
+hibernate-deployer-jboss-beans.xml      security-deployer-jboss-beans.xml
+jboss-aop-jboss5.deployer/              webbeans.deployer/
+jboss-ejb3-endpoint-deployer.jar        xnio.deployer/
+jboss-jca.deployer/</pre><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Contains all the JBoss AS services that are used to recognize and deploy different application and archive types.
+</li></ul></div><p>Some files in the <code class="literal">deployers</code> directory:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<code class="literal">hibernate-deployer-jboss-beans.xml</code> - Deployer for Hibernate archives (HAR)
+</li><li class="listitem">
+<code class="literal">ejb-deployer-jboss-beans.xml</code> - Service responsible for deploying EJB JAR files
+</li><li class="listitem">
+<code class="literal">ear-deployer-jboss-beans.xml</code> - Service responsible for deploying EAR files
+</li><li class="listitem">
+<code class="literal">jbossweb.deployer</code> - Service responsible for deploying WAR files
+</li><li class="listitem">
+<code class="literal">jboss-aop-jboss5.deployer</code> - Deployer that sets up Aspect Manager Service and deploys AOP applications
+</li><li class="listitem">
+etc…
+</li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>This directory is new as of JBoss AS 5</p></td></tr></table></div></div><div class="section" title="4.13. The default/lib Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_lib_literal_directory"></a>4.13. The <code class="literal">default/lib</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Directory referred to by the bootstrap code when loading the configuration set
+</li><li class="listitem">
+Known within JBoss as <code class="literal">jboss.server.lib.url</code>
+</li><li class="listitem">
+This directory is for Java code (JARs) to be used both by the deployed applications and JBoss AS services
+</li><li class="listitem">
+If you have Java libraries that you need to be made available to all your applications/services, these can be placed in the  <code class="literal">${jboss.server.lib.url}</code> directory.
+</li><li class="listitem"><p class="simpara">
+Similarly, you would also use this directory for Java libraries that need to be used by both your applications/services, and JBoss AS services.
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+A typical example of this is a JDBC driver that is needed by JBoss AS to manage a pool of database connections, as well as your code, which implicitly uses it to interact with the database server.
+</li></ul></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>As of JBoss 5, some JARs that used to reside in this directory have been moved to <code class="literal">common/lib</code> in order to share them with other configuration sets.</p></td></tr></table></div></div><div class="section" title="4.14. The default/log Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_log_literal_directory"></a>4.14. The <code class="literal">default/log</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Known within JBoss as <code class="literal">jboss.server.log.dir</code>
+</li><li class="listitem">
+Default destination directory for JBoss AS log files (3 log files)
+</li><li class="listitem">
+<code class="literal">boot.log</code> - logs boot process until logging service starts
+</li><li class="listitem">
+<code class="literal">server.log</code> - takes over once the logging service is initialized from
+<code class="literal">${jboss.server.config.url}/jboss-log4j.xml</code>
+</li><li class="listitem">
+<code class="literal">audit.log</code> - audit security
+</li><li class="listitem">
+Default startup log priority: <code class="literal">DEBUG</code>
+</li><li class="listitem">
+<code class="literal">STDOUT</code> and <code class="literal">STDERR</code> are logged to console
+</li></ul></div><p>By default:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Log file <code class="literal">server.log</code> is rolled over daily (with the ".yyyy-MM-dd" extension)
+</li><li class="listitem">
+Existing logs are overwritten on [re]start
+</li><li class="listitem">
+Old log files are not automatically cleaned by the server during runtime
+</li></ul></div><p>Since the logging system is managed by Log4J it can be easily configured to:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Roll over logs hourly
+</li><li class="listitem">
+Roll over logs by size (e.g. 500KB)
+</li><li class="listitem">
+Automatically remove old logs
+</li><li class="listitem">
+Log to SMTP, SNMP, Syslog, JMS, etc.
+</li></ul></div><p>This directory can be cleared (deleted) between JBoss restarts.</p></div><div class="section" title="4.15. The default/tmp Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_tmp_literal_directory"></a>4.15. The <code class="literal">default/tmp</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Known in JBoss as <code class="literal">jboss.server.temp.dir</code>
+</li><li class="listitem">
+Used by JBoss AS to store temporary files such as unpacked service and application deployments
+</li><li class="listitem">
+Deployments are automatically removed on server shutdown
+</li></ul></div><p>This directory can be cleared (deleted) between JBoss restarts.</p><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Unpacked deployments (e.g. expanded WAR files) are not copied over.
+Packed deployments (WAR, EAR, RAR) are uncompressed, whereas JARs and XML-described services are copied over.</p></td></tr></table></div></div><div class="section" title="4.16. The default/work Directory"><div class="titlepage"><div><div><h3 class="title"><a id="_the_literal_default_work_literal_directory"></a>4.16. The <code class="literal">default/work</code> Directory</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Directory where compiled JSP <code class="literal">.java</code> and <code class="literal">.class</code> files reside
+</li><li class="listitem">
+Also contains cached TLDs
+</li><li class="listitem">
+Very useful for debugging problems in JSPs
+</li></ul></div><p>Java ServerPages (<code class="literal">.jsp</code> files) are automatically compiled into Java Servlets (<code class="literal">.java</code> file) and then into Java byte-code (<code class="literal">.class</code> files) by Tomcat (the embedded servlet engine running within JBoss AS).</p><p>Many JSP errors are easier to fix when developers are able to look at the compiled <code class="literal">.java</code> files and match the line numbers to error/exception messages.</p><p>Unless you care to preserve compiled JSPs, this directory can be cleared (deleted) between JBoss restarts.</p></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="installing_jboss_as.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="starting_and_stopping.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="directory_structure.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana JBoss Administration Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index-2.html#introduction_to_java_ee">1. Overview of Java Enterprise Edition</a></span></dt><dd><dl><dt><span class="section"><a href="index-2.html#_what_is_java_ee">1.1. What is Java EE?</a></span></dt><dt><span class="section"><a href="index-2.html#_open_and_standard_based">1.2. Open and Standard-based</a></span></dt><dt><span class="section"><a href="index-2.html#_multi_tier">1.3. Multi-tier</a></span></dt><dt><span class="section"><a href="index-2.html#_web_enabled">1.4. Web-Enabled</a></span></dt><dt><span class="section"><a href="index-2.html#_server_centric">1.5. Server Centric</a></span></dt><dt><span class="section"><a href="index-2.html#_component_based_distributed_architecture">1.6. Component-Based Distributed Architecture</a></span></dt><dt><span class="section"><a href="index-2.html#_enterprise_applications">1.7. Enterprise Applications</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_contents">1.8. Java EE Contents</a></span></dt><dt><span class="section"><a href="index-2.html#_java_ee_services">1.9. Java EE Services</a></span></dt></dl></dd><dt><span class="section"><a href="jboss_overview.html">2. Overview of JBoss Application Server</a></span></dt><dd><dl><dt><span class="section"><a href="jboss_overview.html#_jboss_organization">2.1. JBoss Organization</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_background">2.2. JBoss AS Background</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_highlights_of_jboss_as">2.3. Highlights of JBoss AS</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_what_is_new_in_jboss_as_5">2.4. What is new in JBoss AS 5?</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_architecture">2.5. JBoss AS Architecture</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_microcontainer_layer">2.6. JBoss Microcontainer Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_services_layer">2.7. Services Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_aspect_layer">2.8. Aspect Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_application_layer">2.9. Application Layer</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_services">2.10. JBoss AS Services</a></span></dt><dt><span class="section"><a href="jboss_overview.html#_jboss_as_requirements">2.11. JBoss AS Requirements</a></span></dt></dl></dd><dt><span class="section"><a href="installing_jboss_as.html">3. Installing JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="installing_jboss_as.html#_getting_and_installing_java">3.1. Getting and Installing Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_configuring_java">3.2. Configuring Java</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_getting_jboss_as">3.3. Getting JBoss AS</a></span></dt><dt><span class="section"><a href="installing_jboss_as.html#_installing_jboss_as_5">3.4. Installing JBoss AS 5</a></span></dt></dl></dd><dt><span class="section"><a href="directory_structure.html">4. JBoss Directory Structure</a></span></dt><dd><dl><dt><span class="section"><a href="directory_structure.html#_jboss_as_directory_structure">4.1. JBoss AS Directory Structure</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_bin_literal_directory">4.2. The <code class="literal">bin</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_client_literal_directory">4.3. The <code class="literal">client</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_common_literal_directory">4.4. The <code class="literal">common</code> directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_docs_literal_directory">4.5. The <code class="literal">docs</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_lib_literal_directory">4.6. The <code class="literal">lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_server_literal_directory">4.7. The <code class="literal">server</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_server_configuration_sets">4.8. The server Configuration Sets</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_conf_literal_directory">4.9. The <code class="literal">default/conf</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_data_literal_directory">4.10. The <code class="literal">default/data</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deploy_literal_directory">4.11. The <code class="literal">default/deploy</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_deployers_literal_directory">4.12. The <code class="literal">default/deployers</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_lib_literal_directory">4.13. The <code class="literal">default/lib</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_log_literal_directory">4.14. The <code class="literal">default/log</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_tmp_literal_directory">4.15. The <code class="literal">default/tmp</code> Directory</a></span></dt><dt><span class="section"><a href="directory_structure.html#_the_literal_default_work_literal_directory">4.16. The <code class="literal">default/work</code> Directory</a></span></dt></dl></dd><dt><span class="section"><a href="starting_and_stopping.html">5. Controlling the Life-Cycle of JBoss AS</a></span></dt><dd><dl><dt><span class="section"><a href="starting_and_stopping.html#_starting_jboss_as">5.1. Starting JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_verifying_jboss_as_startup">5.2. Verifying JBoss AS Startup</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_stopping_jboss_as">5.3. Stopping JBoss AS</a></span></dt><dt><span class="section"><a href="starting_and_stopping.html#_starting_from_a_remote_server">5.4. Starting From a Remote Server</a></span></dt></dl></dd><dt><span class="section"><a href="deploying.html">6. Deployments on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="deploying.html#_java_ee_deployment_lifecycle">6.1. Java EE Deployment Lifecycle</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_descriptors">6.2. Deployment Descriptors</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_on_jboss_as">6.3. Deployment on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployers_on_jboss_as">6.4. Deployers on JBoss AS</a></span></dt><dt><span class="section"><a href="deploying.html#_deployment_dependencies">6.5. Deployment Dependencies</a></span></dt><dt><span class="section"><a href="deploying.html#_hot_vs_cold_deployment">6.6. Hot vs. Cold Deployment</a></span></dt><dt><span class="section"><a href="deploying.html#_bootstrapping_jboss">6.7. Bootstrapping JBoss</a></span></dt><dt><span class="section"><a href="deploying.html#_lab_deployment">6.8. Lab: Deployment</a></span></dt></dl></dd><dt><span class="section"><a href="web_tier.html">7. Web Application Administration</a></span></dt><dd><dl><dt><span class="section"><a href="web_tier.html#_web_technologies">7.1. Web Technologies</a></span></dt><dt><span class="section"><a href="web_tier.html#_cgi_vs_servlets_jsps">7.2. CGI vs. Servlets/JSPs</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_web_container">7.3. Tomcat Web Container</a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_server_xml_literal">7.4. Tomcat’s <code class="literal">server.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_tomcat_8217_s_literal_web_xml_literal">7.5. Tomcat’s <code class="literal">web.xml</code></a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_servlets">7.6. Defining and Mapping Servlets</a></span></dt><dt><span class="section"><a href="web_tier.html#_defining_and_mapping_filters">7.7. Defining and Mapping Filters</a></span></dt><dt><span class="section"><a href="web_tier.html#_session_configuration">7.8. Session Configuration</a></span></dt><dt><span class="section"><a href="web_tier.html#_welcome_file_list">7.9. Welcome File List</a></span></dt><dt><span class="section"><a href="web_tier.html#errordocs">7.10. Error Documents</a></span></dt><dt><span class="section"><a href="web_tier.html#_serving_static_content">7.11. Serving Static Content</a></span></dt><dt><span class="section"><a href="web_tier.html#_virtual_hosting_with_tomcat">7.12. Virtual Hosting with Tomcat</a></span></dt><dt><span class="section"><a href="web_tier.html#_web_access_logging">7.13. Web Access Logging</a></span></dt><dt><span class="section"><a href="web_tier.html#_lab_tomcat">7.14. Lab: Tomcat</a></span></dt></dl></dd><dt><span class="section"><a href="jndi.html">8. JNDI Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jndi.html#_java_naming_and_directory_interface">8.1. Java Naming and Directory Interface</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_in_java_ee">8.2. JNDI in Java EE</a></span></dt><dt><span class="section"><a href="jndi.html#_jndi_on_jboss">8.3. JNDI on JBoss</a></span></dt><dt><span class="section"><a href="jndi.html#_lab_jndi_view">8.4. Lab: JNDI View</a></span></dt></dl></dd><dt><span class="section"><a href="javamail.html">9. Javamail Administration</a></span></dt><dd><dl><dt><span class="section"><a href="javamail.html#_what_is_javamail">9.1. What is JavaMail?</a></span></dt><dt><span class="section"><a href="javamail.html#_configuring_javamail_service">9.2. Configuring JavaMail Service</a></span></dt><dt><span class="section"><a href="javamail.html#_lab_mail">9.3. Lab: Mail</a></span></dt></dl></dd><dt><span class="section"><a href="jms.html">10. JMS Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jms.html#_jms_overview">10.1. JMS Overview</a></span></dt><dt><span class="section"><a href="jms.html#_jms_in_java_ee">10.2. JMS in Java EE</a></span></dt><dt><span class="section"><a href="jms.html#_when_is_jms_used">10.3. When is JMS Used</a></span></dt><dt><span class="section"><a href="jms.html#_jms_architecture">10.4. JMS Architecture</a></span></dt><dt><span class="section"><a href="jms.html#_jms_messaging_domains">10.5. JMS Messaging Domains</a></span></dt><dt><span class="section"><a href="jms.html#_jms_message_consumption">10.6. JMS Message Consumption</a></span></dt><dt><span class="section"><a href="jms.html#_jms_on_jboss_configuration">10.7. JMS on JBoss Configuration</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_connection_factories">10.8. Configure JMS connection factories</a></span></dt><dt><span class="section"><a href="jms.html#_configure_jms_destinations">10.9. Configure JMS destinations</a></span></dt><dt><span class="section"><a href="jms.html#_advanded_jboss_messaging">10.10. Advanded JBoss Messaging</a></span></dt><dt><span class="section"><a href="jms.html#_jboss_messaging_bridge">10.11. JBoss Messaging bridge</a></span></dt><dt><span class="section"><a href="jms.html#_persistence_service_configuration">10.12. Persistence service configuration</a></span></dt><dt><span class="section"><a href="jms.html#_lab_jms">10.13. Lab: JMS</a></span></dt></dl></dd><dt><span class="section"><a href="ejb.html">11. Enterprise Java Beans Administration</a></span></dt><dd><dl><dt><span class="section"><a href="ejb.html#_introduction_to_ejb_3_0">11.1. Introduction to EJB 3.0</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_3_0_components">11.2. EJB 3.0 Components</a></span></dt><dt><span class="section"><a href="ejb.html#_ejb_container">11.3. EJB Container</a></span></dt><dt><span class="section"><a href="ejb.html#_benefits_of_ejb_technology">11.4. Benefits of EJB Technology</a></span></dt><dt><span class="section"><a href="ejb.html#_drawbacks_of_ejbs">11.5. Drawbacks of EJBs</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans">11.6. Session Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_interceptors">11.7. Interceptors</a></span></dt><dt><span class="section"><a href="ejb.html#_entity_beans">11.8. Entity Beans</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_bean">11.9. Message-Driven Bean</a></span></dt><dt><span class="section"><a href="ejb.html#_session_beans_client_interfaces">11.10. Session Beans Client Interfaces</a></span></dt><dt><span class="section"><a href="ejb.html#_stateless_session_beans_life_cycle">11.11. Stateless Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_beans_life_cycle">11.12. Stateful Session Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_message_driven_beans_life_cycle">11.13. Message-Driven Beans Life Cycle</a></span></dt><dt><span class="section"><a href="ejb.html#_configuring_the_ejb_container">11.14. Configuring the EJB container</a></span></dt><dt><span class="section"><a href="ejb.html#_stateful_session_bean_configuration">11.15. Stateful Session Bean Configuration</a></span></dt><dt><span class="section"><a href="ejb.html#_lab_stateless_session_bean">11.16. Lab: Stateless Session Bean</a></span></dt></dl></dd><dt><span class="section"><a href="web_services.html">12. Web Services and JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="web_services.html#_web_services_overview">12.1. Web Services Overview</a></span></dt><dt><span class="section"><a href="web_services.html#_service_oriented_architecture">12.2. Service Oriented Architecture</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_with_jax_ws">12.3. Web Services With JAX-WS</a></span></dt><dt><span class="section"><a href="web_services.html#_web_services_on_jboss">12.4. Web Services on JBoss</a></span></dt><dt><span class="section"><a href="web_services.html#_jboss_web_services_tools">12.5. JBoss Web Services Tools</a></span></dt><dt><span class="section"><a href="web_services.html#_lab_web_services">12.6. Lab: Web Services</a></span></dt></dl></dd><dt><span class="section"><a href="jmx.html">13. JMX Administration</a></span></dt><dd><dl><dt><span class="section"><a href="jmx.html#_what_is_jmx">13.1. What is JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_why_jmx">13.2. Why JMX?</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_architecture">13.3. JMX Architecture</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_on_jboss_as">13.4. JMX on JBoss AS</a></span></dt><dt><span class="section"><a href="jmx.html#_jmx_console">13.5. JMX Console</a></span></dt><dt><span class="section"><a href="jmx.html#_web_console">13.6. Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_twiddle_tool">13.7. Twiddle Tool</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_as_administration_console">13.8. JBoss AS Administration Console</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_jmx_print_service">13.9. Lab: JMX Print Service</a></span></dt><dt><span class="section"><a href="jmx.html#_jboss_monitoring">13.10. JBoss Monitoring</a></span></dt><dt><span class="section"><a href="jmx.html#_snapshot_and_web_console">13.11. Snapshot and Web Console</a></span></dt><dt><span class="section"><a href="jmx.html#_monitoring_with_jconsole">13.12. Monitoring with JConsole</a></span></dt><dt><span class="section"><a href="jmx.html#_scheduling_on_jboss">13.13. Scheduling on JBoss</a></span></dt><dt><span class="section"><a href="jmx.html#_lab_monitoring">13.14. Lab: Monitoring</a></span></dt></dl></dd><dt><span class="section"><a href="class_loading.html">14. Class Loading on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="class_loading.html#_class_namespace_isolation">14.1. Class Namespace Isolation</a></span></dt><dt><span class="section"><a href="class_loading.html#_java_class_runtime_identity">14.2. Java Class Runtime Identity</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_in_java_ee">14.3. Class Loading in Java EE</a></span></dt><dt><span class="section"><a href="class_loading.html#_class_loading_on_jboss">14.4. Class Loading On JBoss</a></span></dt><dt><span class="section"><a href="class_loading.html#_the_class_loader">14.5. The Class Loader</a></span></dt><dt><span class="section"><a href="class_loading.html#_default_class_search_order">14.6. Default Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoping_classes">14.7. Scoping Classes</a></span></dt><dt><span class="section"><a href="class_loading.html#_scoped_class_search_order">14.8. Scoped Class Search Order</a></span></dt><dt><span class="section"><a href="class_loading.html#_app_specific_log4j_config">14.9. App-specific Log4J Config</a></span></dt><dt><span class="section"><a href="class_loading.html#_problems_with_class_loading">14.10. Problems With Class Loading</a></span></dt><dt><span class="section"><a href="class_loading.html#_lab_class_loading">14.11. Lab: Class Loading</a></span></dt></dl></dd><dt><span class="section"><a href="database_integration.html">15. Database Integration on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="database_integration.html#_steps_involved">15.1. Steps Involved</a></span></dt><dt><span class="section"><a href="database_integration.html#_resource_requirement">15.2. Resource Requirement</a></span></dt><dt><span class="section"><a href="database_integration.html#_install_jdbc_drivers">15.3. Install JDBC Drivers</a></span></dt><dt><span class="section"><a href="database_integration.html#_define_a_rdbms_dbcp_resource">15.4. Define a RDBMS DBCP Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_map_our_resource">15.5. Map our Resource</a></span></dt><dt><span class="section"><a href="database_integration.html#_using_our_literal_datasource_literal_rdbms_dbcp">15.6. Using our <code class="literal">DataSource</code> (RDBMS DBCP)</a></span></dt><dt><span class="section"><a href="database_integration.html#_hypersonic_database">15.7. Hypersonic Database</a></span></dt><dt><span class="section"><a href="database_integration.html#_detecting_connection_leaks">15.8. Detecting Connection Leaks</a></span></dt><dt><span class="section"><a href="database_integration.html#_lab_database_connectivity">15.9. Lab: Database Connectivity</a></span></dt></dl></dd><dt><span class="section"><a href="security.html">16. Security on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="security.html#_securing_applications">16.1. Securing Applications</a></span></dt><dt><span class="section"><a href="security.html#Filtering_Clients_by_Source">16.2. Filtering Clients by Source</a></span></dt><dt><span class="section"><a href="security.html#Authentication_and_Authorization">16.3. Authentication &amp; Authorization</a></span></dt><dt><span class="section"><a href="security.html#_requiring_a_amp_a">16.4. Requiring A&amp;A</a></span></dt><dt><span class="section"><a href="security.html#Plain_Text_Login_Module">16.5. Plain-Text Login Module</a></span></dt><dt><span class="section"><a href="security.html#Database_Login_Module">16.6. Database Login Module</a></span></dt><dt><span class="section"><a href="security.html#_form_based_login">16.7. FORM-based Login</a></span></dt><dt><span class="section"><a href="security.html#SSL_on_JBoss">16.8. Configuring JBoss AS for SSL</a></span></dt><dt><span class="section"><a href="security.html#_creating_ssl_certificates">16.9. Creating SSL Certificates</a></span></dt><dt><span class="section"><a href="security.html#_configure_ssl_connector">16.10. Configure SSL Connector</a></span></dt><dt><span class="section"><a href="security.html#_testing_ssl_configuration">16.11. Testing SSL Configuration</a></span></dt><dt><span class="section"><a href="security.html#Requiring_SSL">16.12. Requiring SSL in Apps</a></span></dt><dt><span class="section"><a href="security.html#_lab_application_security">16.13. Lab: Application Security</a></span></dt><dt><span class="section"><a href="security.html#jms_security">16.14. Securing JMS destinations</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_as">16.15. Securing JBoss AS</a></span></dt><dt><span class="section"><a href="security.html#_jboss_as_system_user">16.16. JBoss AS System User</a></span></dt><dt><span class="section"><a href="security.html#_file_system_security">16.17. File System Security</a></span></dt><dt><span class="section"><a href="security.html#_securing_jmx_invoker">16.18. Securing JMX Invoker</a></span></dt><dt><span class="section"><a href="security.html#_securing_jboss_applications">16.19. Securing JBoss Applications</a></span></dt><dt><span class="section"><a href="security.html#_securing_hypersonic_db">16.20. Securing Hypersonic DB</a></span></dt><dt><span class="section"><a href="security.html#_java_security_manager">16.21. Java Security Manager</a></span></dt><dt><span class="section"><a href="security.html#_running_behind_a_firewall">16.22. Running Behind a Firewall</a></span></dt><dt><span class="section"><a href="security.html#_lab_jboss_security">16.23. Lab: JBoss Security</a></span></dt></dl></dd><dt><span class="section"><a href="performance.html">17. Tuning JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="performance.html#_jvm_tuning">17.1. JVM Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tomcat_tuning">17.2. Tomcat Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_rmi_tuning">17.3. RMI Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_log4j_tuning">17.4. Log4J Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_tuning_other_services">17.5. Tuning Other Services</a></span></dt><dt><span class="section"><a href="performance.html#jms_tuning">17.6. JMS Tuning</a></span></dt><dt><span class="section"><a href="performance.html#_slimming_jboss">17.7. Slimming JBoss</a></span></dt></dl></dd><dt><span class="section"><a href="high_availability_and_scalability.html">18. High Availability and Scalability on JBoss</a></span></dt><dd><dl><dt><span class="section"><a href="high_availability_and_scalability.html#_requirements">18.1. Requirements</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_general_understanding">18.2. Clustering: General understanding</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_and_jboss">18.3. Clustering and JBoss</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_simple_web_architecture">18.4. Simple Web Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_external_load_balancer_architecture">18.5. External Load Balancer Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_smart_proxy_architecture">18.6. Smart Proxy Architecture</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_general_configuration_for_the_following_examples">18.7. General configuration for the following examples</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_fronting_with_a_web_server">18.8. Fronting with a Web Server</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Fronting_with_Apache">18.9. Fronting with Apache HTTPD</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_installing_literal_mod_jk_literal">18.10. Installing <code class="literal">mod_jk</code></a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_configuring_mod_jk">18.11. Configuring mod_jk</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#Simple_Load_Balancing">18.12. Simple Load Balancing</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_enabling_sticky_sessions">18.13. Enabling Sticky Sessions</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustered_session_replication">18.14. Clustered Session Replication</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_single_sign_on">18.15. Clustering Single Sign-On</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jndi">18.16. Clustering with HA-JNDI</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_ha_jndi_client_configuration">18.17. HA-JNDI Client Configuration</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_ha_jms">18.18. Clustering with HA-JMS</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateless_session_beans">18.19. Clustering with Stateless Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_clustering_with_stateful_session_beans">18.20. Clustering with Stateful Session Beans</a></span></dt><dt><span class="section"><a href="high_availability_and_scalability.html#_lab_clustering">18.21. Lab: Clustering</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index-2.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../selenium_tutorial/index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/jboss_admin_tutorial/directory_structure.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:49:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>

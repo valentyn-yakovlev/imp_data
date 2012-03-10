@@ -1,0 +1,11 @@
+HTTrack3.43-9+libhtsjava.so.2 launched on Tue, 27 Sep 2011 20:19:21 at http://marakana.com/bookshelf/jboss_admin_tutorial
+(winhttrack http://marakana.com/bookshelf/jboss_admin_tutorial -O "/home/atgadmin/websites/jboss_admin_tutorial" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.43-9 mirror complete in 10 minutes 17 seconds : 225 links scanned, 224 files written (18632224 bytes overall) [14553911 bytes received at 23588 bytes/sec], 5251016 bytes transfered using HTTP compression in 99 files, ratio 20%
+(No errors, 0 warnings, 0 messages)

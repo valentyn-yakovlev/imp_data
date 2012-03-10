@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium_remote_control.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+<head>
+    <title>
+  Selenium Tutorial : Selenium Remote Control  - Marakana</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="training, selenium, tutorial, :, selenium, remote, control" />
+<link href="http://marakana.com/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/css/style.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]>
+  <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+<link href="http://marakana.com/static/skin/marakana/all-v3.css" rel="stylesheet" type="text/css"/>
+<link href="http://marakana.com/static/skin/marakana/print-v2.css" rel="stylesheet" type="text/css" media="print"/>
+<link rel="icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://marakana.com/static/skin/marakana/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/jsapi?key=ABQIAAAAgdMZVB5pnRqIOGJFmvHmihQ7K1hihcyg_-Y_x6M6VAJs9QC0JhTi_7Y45NPTan7rIoOr9jo6n6KIiA" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery.noConflict();
+</script>
+<script type="text/javascript" src="http://marakana.com/js/functions.js"></script>
+</head>
+  <body id="bookshelf" class="bookshelf">
+    <div id="header">
+      <div class="page-part">
+        <div class="content-part">
+          <div id="top-bar">
+            <div id="user-box">
+  <a href="http://marakana.com/login.html">Login</a>
+    <a href="http://marakana.com/user/registration.html">Create an Account</a>
+  </div> <!-- #user-box -->
+<div id="contactus-box">
+  <a href="http://marakana.com/contact_us.html">Contact us</a>
+  <em>1 (415) 647-7000</em>
+  </div> <!-- #contactus-box -->
+</div> <!-- #top-bar -->
+          <div id="page-header">
+            <div id="top-navigation">
+    <ul>
+      <li><a href="http://marakana.com/" >Home</a></li>
+      <li><a href="http://marakana.com/training/schedule.html" >Training</a></li>
+      <li><a href="http://marakana.com/forums/blog/" >TechTalk</a></li>
+      <li><a href="http://marakana.com/techtv/index.html" >TechTV</a></li>
+      <li><a href="http://marakana.com/bookshelf.html" class="selected">Bookshelf</a></li>
+      <li><a href="http://marakana.com/about/index.html" >About Us</a></li>
+      </ul>
+  </div> <!-- #top-navigation -->
+<br class="clear"/>
+</div> <!-- #page-header -->
+        </div> <!-- content-part -->
+        <div class="side-part">
+          <div id="side-top">
+            </div> <!-- #side-top -->
+          <div id="side-header">
+            <a href="http://marakana.com/">
+    <img id="company-logo" src="http://marakana.com/static/logos/logo-marakana-orange-white-200x50.png" alt="Logo" />
+  </a>
+</div> <!-- #side-header -->
+        </div> <!-- side-part -->
+      </div> <!-- page-part -->
+    </div> <!-- #header -->
+    <div id="main">
+      <div id="main-outer" class="page-part">
+        <div id="main-content" class="content-part">
+          <div id="content">
+            <h1>Selenium Tutorial : Selenium Remote Control </h1>
+            <div id="breadcrums">
+  <a href="http://marakana.com/bookshelf.html" class="selected" >Bookshelf</a>
+   &raquo;
+
+   <a href="index.html">Selenium Tutorial </a>
+  &raquo;
+  Selenium Remote Control </div>
+<div class="static-content">
+  <div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><table width="100%" summary="Navigation header"><tr><td width="20%" align="left"><a accesskey="p" href="locators.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="selenium_grid.html">Next</a></td></tr></table><hr></hr></div><div xmlns="http://www.w3.org/1999/xhtml" class="section" title="7. Selenium Remote Control (RC)"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="selenium_remote_control"></a>7. Selenium Remote Control (RC)</h2></div></div></div><div class="section" title="7.1. Overview"><div class="titlepage"><div><div><h3 class="title"><a id="_overview_3"></a>7.1. Overview</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+While Selenium IDE may seem a productive and efficient tool for writing test-cases, it lacks many essential features of a testing tool:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Conditional statements
+</li><li class="listitem">
+Loops
+</li><li class="listitem">
+Logging
+</li><li class="listitem">
+Exception handling
+</li><li class="listitem">
+Reporting
+</li><li class="listitem">
+Test fixtures and data-driven tests
+</li><li class="listitem">
+Test dependencies
+</li><li class="listitem">
+Taking screenshots
+</li></ul></div></li><li class="listitem">
+Selenium RC is the answer to a more powerful test-suite for your applications.
+</li><li class="listitem">
+It follows a client/server model allowing client libraries to execute tests on a browser controlled by the server.
+</li></ul></div><div class="figure"><a id="id36149470"></a><p class="title"><b>Figure 7. Overview of Selenium RC</b></p><div class="figure-contents"><div class="mediaobject"><img src="images/selenium_rc_overview.png" width="300" alt="images/selenium_rc_overview.png"></img></div></div></div><br class="figure-break"></br></div><div class="section" title="7.2. Selenium Server"><div class="titlepage"><div><div><h3 class="title"><a id="_selenium_server"></a>7.2. Selenium Server</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Selenium server is the program that drives the browser
+</li><li class="listitem">
+It embeds Selenium Core framework and injects it into the browser
+</li><li class="listitem">
+It communicates with the running test client and drives the browser
+</li><li class="listitem">
+Client tests sends commands that the server interpretes in order to drive the browser
+</li><li class="listitem">
+The server sends back results to the client
+</li><li class="listitem">
+Client and server communicates via HTTP GETs and POSTs so you can easily plug into
+</li><li class="listitem">
+Server is configurable at startup via command-line options. use <code class="literal">java -jar selenium-server.jar -h</code> to see the list of options
+</li></ul></div></div><div class="section" title="7.3. Client libraries"><div class="titlepage"><div><div><h3 class="title"><a id="_client_libraries"></a>7.3. Client libraries</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Client libraries provides the API to program tests and execute them on the server
+</li><li class="listitem">
+Each implementation provides access to all Selenium commands
+</li><li class="listitem"><p class="simpara">
+Supported API implementation exists in:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Java (also accessible via Groovy)
+</li><li class="listitem">
+.Net
+</li><li class="listitem">
+PHP
+</li><li class="listitem">
+Python
+</li><li class="listitem">
+Perl
+</li><li class="listitem">
+Ruby
+</li></ul></div></li></ul></div></div><div class="section" title="7.4. Lab 3 : Installation of Selenium RC"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_3_installation_of_selenium_rc"></a>7.4. Lab 3 : Installation of Selenium RC</h3></div></div></div><div class="section" title="7.4.1. Prerequisites"><div class="titlepage"><div><div><h4 class="title"><a id="_prerequisites"></a>7.4.1. Prerequisites</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+A JVM installed on the system
+</li><li class="listitem">
+A Ruby distribution with the rspec and selenium-client gems installed if
+</li><li class="listitem">
+you’re working
+</li><li class="listitem">
+The Selenium RC archive
+</li></ul></div></div><div class="section" title="7.4.2. Download The Tested Application"><div class="titlepage"><div><div><h4 class="title"><a id="_download_the_tested_application"></a>7.4.2. Download The Tested Application</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+In the folder of your choice, execute the following command:
+</p><p class="simpara"><code class="literal">git clone http://github.com/wolframarnold/selenium-test-app.git</code></p></li><li class="listitem"><p class="simpara">
+Go to the <code class="literal">selenium-test-app</code> folder and run the following:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">cp ./vendor/plugins/active_scaffold/test/mock_app/config/database.yml ./config/</code>
+</li><li class="listitem">
+<code class="literal">rake db:migrate</code>
+</li></ul></div></li><li class="listitem"><p class="simpara">
+Now you should be able to lauch the application with the script <code class="literal">server</code> available in the <code class="literal">scripts</code> folder:
+</p><p class="simpara"><code class="literal">./scripts/server</code></p></li><li class="listitem">
+The application should be available at <code class="literal">http://localhost:3000</code>
+</li></ul></div></div><div class="section" title="7.4.3. Running The RC Server"><div class="titlepage"><div><div><h4 class="title"><a id="_running_the_rc_server"></a>7.4.3. Running The RC Server</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Unzip the Selenium RC archive somewhere on your system
+</li><li class="listitem">
+Go into the <code class="literal">selenium-rc</code>, then the <code class="literal">selenium-server</code> folder
+</li><li class="listitem">
+Open a terminal in this folder and enter the command <code class="literal">java -jar selenium-server.jar</code>
+</li><li class="listitem">
+If there’s no error messages, your Selenium RC server should be running now.
+</li></ul></div></div><div class="section" title="7.4.4. Running A Test (Java)"><div class="titlepage"><div><div><h4 class="title"><a id="_running_a_test_java"></a>7.4.4. Running A Test (Java)</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Create a new Java project in Eclipse or your Java IDE
+</li><li class="listitem">
+Add the <span class="emphasis"><em>selenium-java-client-driver.jar</em></span> jar to the project’s classpath
+</li><li class="listitem">
+Add a new JUnit test-case to the project. When asked, select <span class="emphasis"><em>Junit 4</em></span>
+</li><li class="listitem">
+You should now have an empty .java file
+</li><li class="listitem">
+Open the lab2 test-case on Selenium IDE
+</li><li class="listitem">
+On Selenium IDE, open the <span class="emphasis"><em>Options</em></span> menu then <span class="emphasis"><em>Format…</em></span> and click <span class="emphasis"><em>Java
+ (Junit)</em></span>
+</li><li class="listitem">
+Copy/paste the contents in the JUnit file on Eclipse
+</li><li class="listitem">
+Change the package name at your will
+</li><li class="listitem"><p class="simpara">
+You may have to fix the imports
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+Click on the following icon and choose the most appropriate option to correct the file
+</li><li class="listitem">
+You may also press <span class="emphasis"><em>Ctrl + Shift + O</em></span> to let Eclipse do it automatically
+</li></ul></div></li><li class="listitem">
+At this point you shouldn’t have any more errors and you are ready to run the test
+</li><li class="listitem">
+Selenium RC will open a couple of Firefox windows and run the test
+</li></ul></div></div><div class="section" title="7.4.5. Running A Test (Ruby)"><div class="titlepage"><div><div><h4 class="title"><a id="_running_a_test_ruby"></a>7.4.5. Running A Test (Ruby)</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Open the lab2 test-case on Selenium IDE and export it as <span class="emphasis"><em>Ruby (rspec)</em></span>
+</li><li class="listitem"><p class="simpara">
+A little workaround is needed, open the exported file:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+On line 47, where you should have: <code class="literal">/^Are you sure you want to delete &lt;suggestion_name&gt;[\s\S]$/ =~ page.get_confirmation.should be_true</code>
+</li><li class="listitem">
+Change it to: <code class="literal">page.get_confirmation.should match(/^Are you sure you want to delete &lt;suggestion_name&gt;[\s\S]$/)</code>
+</li></ul></div></li><li class="listitem">
+Run the test with <code class="literal">spec &lt;filename&gt;.rb</code>
+</li><li class="listitem">
+Selenium RC should launch a couple of new browser windows and run the test
+</li></ul></div></div></div><div class="section" title="7.5. Junit"><div class="titlepage"><div><div><h3 class="title"><a id="_junit"></a>7.5. Junit</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Junit is the reference unit-testing framework for Java
+</li><li class="listitem">
+The framework allows you to test your applications using specific classes containing the logic performing actions on the tested classes and checking the results
+</li><li class="listitem">
+Eclipse provides support for Junit, so we’ll be using that
+</li><li class="listitem">
+JUnit 3 uses named methods to detect set-up and test methods
+</li><li class="listitem"><p class="simpara">
+JUnit 3 cheat sheet:
+</p><pre class="programlisting">import static org.junit.Assert.assertEquals;
+
+public class AdditionTest { //<a id="CO3-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+  DeepThought dt;
+
+  public void setUp() { //<a id="CO3-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+    dt = new DeepThought();
+    dt.initialize();
+  }
+
+  public void tearDown() { //<a id="CO3-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+    dt.closeQASession();
+    saveResult();
+  }
+
+  public void testDeepThought() { //<a id="CO3-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+    int answer = dt.ask("What is the meaning of life, the universe and everything?");
+    assertEquals(42, answer); //<a id="CO3-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+  }
+
+}</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+The tests are embedded within a classic JavaBean
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left">
+The <code class="literal">setUp()</code> method will be executed once, before any other method
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+<code class="literal">tearDown()</code> method is executed after the last test method
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Name your tests methods following the <code class="literal">testSomething()</code> pattern. They will be executed in the order of declaration
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO3-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left">
+Junit uses <code class="literal">assert...</code> methods to provide verification of values.
+</td></tr></table></div></li></ul></div><div class="note" title="Note" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="../images/note.png"></img></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>In our tests, we’ll use <code class="literal">verify...</code> methods provided by the selenium driver instead</p></td></tr></table></div></div><div class="section" title="7.6. RSpec"><div class="titlepage"><div><div><h3 class="title"><a id="_rspec"></a>7.6. RSpec</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+RSpec is a Behaviour Driven Development framework for Ruby
+</li><li class="listitem">
+It provides a framework that tests your apps according to defined behaviors
+</li><li class="listitem">
+In Behavior Driven Development (BDD), you first define the behaviors of your app according to the client’s need, then your write the tests that validate these behaviors and then you start to develop your application.
+</li><li class="listitem">
+It is Agile-oriented
+</li><li class="listitem">
+Behaviors are defined in a spec file containing set-up methods as well as methods providing tests for a given behavior
+</li><li class="listitem">
+You run tests with the <code class="literal">spec</code> command in a terminal
+</li><li class="listitem"><p class="simpara">
+RSpec cheat sheet:
+</p><pre class="programlisting">require 'thing' <a id="CO4-1"></a><img src="../images/callouts/1.png" alt="1" border="0"></img>
+
+describe Thing do <a id="CO4-2"></a><img src="../images/callouts/2.png" alt="2" border="0"></img>
+
+before do <a id="CO4-3"></a><img src="../images/callouts/3.png" alt="3" border="0"></img>
+ @thing = Thing.new
+end
+
+it "should find the Answer to the Ultimate Question of Life, the Universe, and Everything" do <a id="CO4-4"></a><img src="../images/callouts/4.png" alt="4" border="0"></img>
+  @thing.answer.should == 42
+end
+
+it "should enforce the Answer to the Ultimate Question of Life, the Universe, and Everything" do
+  @thing.answer = 24
+  @thing.enforce
+  @thing.answer.should be 42 <a id="CO4-5"></a><img src="../images/callouts/5.png" alt="5" border="0"></img>
+end
+
+end</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-1"><img src="../images/callouts/1.png" alt="1" border="0"></img></a> </p></td><td valign="top" align="left">
+Load the tested file (you don’t need to specify the .rb extension)
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-2"><img src="../images/callouts/2.png" alt="2" border="0"></img></a> </p></td><td valign="top" align="left"><p>
+<code class="literal">describe MyClass do</code>
+</p><p>describe declares what is being tested</p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-3"><img src="../images/callouts/3.png" alt="3" border="0"></img></a> </p></td><td valign="top" align="left">
+You can specify code to be run before (<code class="literal">before</code>) and after (<code class="literal">after</code>). You can execute code before each example with <code class="literal">before(:all)</code>
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-4"><img src="../images/callouts/4.png" alt="4" border="0"></img></a> </p></td><td valign="top" align="left">
+Each example begins with <code class="literal">it</code> followed by a string describing the behavior to be tested
+</td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#CO4-5"><img src="../images/callouts/5.png" alt="5" border="0"></img></a> </p></td><td valign="top" align="left"><p>
+<code class="literal">object.should</code> and <code class="literal">object.should_not</code> are used to compare actual and expected values
+</p><p>examples:</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem">
+<code class="literal">o.should == &lt;value&gt;</code> and <code class="literal">o.should be &lt;value&gt;</code> are equivalent
+</li><li class="listitem">
+<code class="literal">o.should be_close &lt;value&gt;, &lt;tolerance&gt;</code> tests if a value is within a certain range
+</li><li class="listitem">
+<code class="literal">o.should match &lt;regexp&gt;</code> tests if the value matches a regular expression
+</li><li class="listitem">
+<code class="literal">o.should raise_error</code> tests if a method raises an error (you can specify the type of error as arguments)
+</li><li class="listitem">
+<code class="literal">o.should have (5).things</code> tests if a collection contains 5 items exactly. <code class="literal">have_at_least</code> and <code class="literal">have_at_most</code> are also available
+</li></ul></div></td></tr></table></div></li></ul></div></div><div class="section" title="7.7. JavaScript"><div class="titlepage"><div><div><h3 class="title"><a id="_javascript"></a>7.7. JavaScript</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Since Selenium is based on JavaScript, you can use it in your tests
+</li><li class="listitem">
+It is an excellent way to extract information from the pages for later reuse
+</li><li class="listitem"><p class="simpara">
+There are 2 methods available:
+</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
+<code class="literal">getEval(script)</code>: it takes the script as a string, executes it and return the value to which the script evaluates too. In ruby use <code class="literal">get_eval</code> or <code class="literal">js_eval</code>
+</p><div class="itemizedlist"><ul class="itemizedlist" type="square"><li class="listitem"><p class="simpara">
+Using this method, the <code class="literal">window</code> object refers to the Selenium context, which is different from the tested application’s JavaScript context
+</p><p class="simpara">To work around this, you need to get the application’s <code class="literal">window</code> object using <code class="literal">currentwindow = this.browserbot.getCurrentWindow()</code>
+* If you want to get an element, just use <code class="literal">element = this.browserbot.findElement("locator")</code></p></li></ul></div></li><li class="listitem">
+<code class="literal">runScript(script)</code>: it actually adds a <code class="literal">&lt;script&gt;</code> tag in the current page of the tested application, making it easier to debug
+</li></ul></div></li></ul></div></div><div class="section" title="7.8. Fixtures"><div class="titlepage"><div><div><h3 class="title"><a id="_fixtures"></a>7.8. Fixtures</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Usually, fixtures designate the environment setup for the test-cases
+</li><li class="listitem">
+It is a very abstract notion and in practice it could be very different from a project to another depending on the project’s features
+</li><li class="listitem">
+In practice, fixtures are a set of tools allowing the test of an application under a pre-determined environment that produces previsible results
+</li><li class="listitem">
+The main motivation is to avoid errors due to changing environments and the side-effects that may occur
+</li><li class="listitem">
+In our case, Selenium doesn’t provide any support for fixtures so you have to do it by hand using your test framework’s fixtures capabilities
+</li><li class="listitem">
+RSpec and JUnit have support for fixtures through the set-up methods
+</li></ul></div></div><div class="section" title="7.9. Lab 4 : Improving a test"><div class="titlepage"><div><div><h3 class="title"><a id="_lab_4_improving_a_test"></a>7.9. Lab 4 : Improving a test</h3></div></div></div><div class="section" title="7.9.1. Current Situation"><div class="titlepage"><div><div><h4 class="title"><a id="_current_situation"></a>7.9.1. Current Situation</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+Test is brittle : change in the structure of the table displaying suggestions breaks the test
+</li><li class="listitem">
+Locators are complex
+</li><li class="listitem">
+We can’t do Fixtures
+</li></ul></div></div><div class="section" title="7.9.2. How are we going to change that?"><div class="titlepage"><div><div><h4 class="title"><a id="_how_are_we_going_to_change_that"></a>7.9.2. How are we going to change that?</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+You will first creates a suggestion
+</li><li class="listitem">
+Then you will find a way to delete that suggestion using only the id of the <span class="emphasis"><em>delete</em></span> link
+</li></ul></div><div class="tip" title="Tip" style="margin-left: 0; margin-right: 10%;"><table border="0" summary="Tip"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Tip]" src="../images/tip.png"></img></td><th align="left">Tip</th></tr><tr><td align="left" valign="top"><p>Observe the id of each table row and the corresponding <span class="emphasis"><em>delete</em></span> link. You should be able to extract the numeric part of the id and use it to target the delete button. Use the following snippet to get the id:</p></td></tr></table></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+Java:
+</p><pre class="programlisting">String script = "var suggestion_ids = new Array();" +
+                "page = selenium.browserbot.getCurrentWindow().document;" +
+                "table = page.getElementById('as_suggestions-content').childNodes[1];" +
+                "var id = table.rows[2].id;" +
+                "if(id &amp;&amp; id != undefined) {" +
+                "  suggestion_ids.push(id.match(/[0-9]+/g));" +
+                "}" +
+                "suggestion_ids;";
+
+selenium.getEval(script);</pre></li><li class="listitem"><p class="simpara">
+Ruby:
+</p><pre class="programlisting">script = "var suggestion_ids = new Array();" +
+             "page = selenium.browserbot.getCurrentWindow().document;" +
+             "table = page.getElementById('as_suggestions-content').childNodes[1];" +
+             "var id = table.rows[2].id;" +
+             "if (id &amp;&amp; id != undefined) {" +
+               "suggestion_ids.push(id.match(/[0-9]+/g));" +
+             "}" +
+             "suggestion_ids;"
+suggestion_id = page.js_eval(script)</pre></li><li class="listitem">
+Bonus: Make a loop that creates more suggestions and find a way to iterate over the table to delete them using javascript
+</li></ul></div></div></div></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="locators.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="selenium_grid.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a> | <a accesskey="t" href="table_of_contents.html">ToC</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=APP_ID&amp;xfbml=1"></script><fb:comments href="selenium_remote_control.html" num_posts="50" width="690"></fb:comments>
+</div> <!-- #content -->
+        </div> <!-- #main-content -->
+        <div id="main-side" class="side-part">
+          <form action="http://marakana.com/site_search.html" method="get">
+  <div id="search-box">
+    <input type="text" class="search-field-initial" id="search-field" name="q" />
+    <input type="hidden" name="s" value="0" />
+    <input type="image" id="search-button" src="http://marakana.com/images/search-box-button-placeholder.png"
+      name="search" value="Search" alt="Search"/>
+  </div>
+</form><div class="side-panel-1"><div class="side-panel-2"><div class="side-panel-3"><div class="related-info-box"><div xmlns="http://www.w3.org/1999/xhtml" class="navheader"><hr></hr></div><h1 xmlns="http://www.w3.org/1999/xhtml">Marakana Selenium Tutorial</h1><div xmlns="http://www.w3.org/1999/xhtml" class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="index.html#introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="index.html#_assumptions">1.1. Assumptions</a></span></dt><dt><span class="section"><a href="index.html#_lab_files">1.2. Lab Files</a></span></dt></dl></dd><dt><span class="section"><a href="project.html">2. The Selenium Project</a></span></dt><dd><dl><dt><span class="section"><a href="project.html#_overview">2.1. Overview</a></span></dt><dt><span class="section"><a href="project.html#Selenium_and_the_web_testing_frameworks">2.2. Selenium And The Web Testing Frameworks</a></span></dt><dt><span class="section"><a href="project.html#_history">2.3. History</a></span></dt></dl></dd><dt><span class="section"><a href="IDE.html">3. Selenium IDE</a></span></dt><dd><dl><dt><span class="section"><a href="IDE.html#_overview_2">3.1. Overview</a></span></dt><dt><span class="section"><a href="IDE.html#_presentation">3.2. Presentation</a></span></dt><dt><span class="section"><a href="IDE.html#_export_features">3.3. Export Features</a></span></dt><dt><span class="section"><a href="IDE.html#_installation">3.4. Installation</a></span></dt><dt><span class="section"><a href="IDE.html#_lab_1">3.5. Lab 1</a></span></dt><dt><span class="section"><a href="IDE.html#_discussion">3.6. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="test_cases_and_test_suites.html">4. Test-Cases and Test-Suites</a></span></dt><dd><dl><dt><span class="section"><a href="test_cases_and_test_suites.html#_selenese">4.1. Selenese</a></span></dt><dt><span class="section"><a href="test_cases_and_test_suites.html#_test_suites">4.2. Test Suites</a></span></dt></dl></dd><dt><span class="section"><a href="commands.html">5. Commands</a></span></dt><dd><dl><dt><span class="section"><a href="commands.html#_actions">5.1. Actions</a></span></dt><dt><span class="section"><a href="commands.html#_accessors">5.2. Accessors</a></span></dt><dt><span class="section"><a href="commands.html#_assertions">5.3. Assertions</a></span></dt></dl></dd><dt><span class="section"><a href="locators.html">6. Locators</a></span></dt><dd><dl><dt><span class="section"><a href="locators.html#_identifier">6.1. Identifier</a></span></dt><dt><span class="section"><a href="locators.html#_id">6.2. Id</a></span></dt><dt><span class="section"><a href="locators.html#_name">6.3. Name</a></span></dt><dt><span class="section"><a href="locators.html#_link">6.4. Link</a></span></dt><dt><span class="section"><a href="locators.html#_dom">6.5. DOM</a></span></dt><dt><span class="section"><a href="locators.html#_xpath">6.6. XPath</a></span></dt><dt><span class="section"><a href="locators.html#_css">6.7. CSS</a></span></dt><dt><span class="section"><a href="locators.html#_ui_elements">6.8. UI-Elements</a></span></dt><dt><span class="section"><a href="locators.html#_structure_dependent_or_not">6.9. Structure-Dependent Or Not?</a></span></dt><dt><span class="section"><a href="locators.html#quiz_locators">6.10. Quiz</a></span></dt><dt><span class="section"><a href="locators.html#_lab_2">6.11. Lab 2</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_remote_control.html">7. Selenium Remote Control (RC)</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_remote_control.html#_overview_3">7.1. Overview</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_selenium_server">7.2. Selenium Server</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_client_libraries">7.3. Client libraries</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_3_installation_of_selenium_rc">7.4. Lab 3 : Installation of Selenium RC</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_junit">7.5. Junit</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_rspec">7.6. RSpec</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_javascript">7.7. JavaScript</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_fixtures">7.8. Fixtures</a></span></dt><dt><span class="section"><a href="selenium_remote_control.html#_lab_4_improving_a_test">7.9. Lab 4 : Improving a test</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_grid.html">8. Selenium Grid</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_grid.html#_presentation_2">8.1. Presentation</a></span></dt></dl></dd><dt><span class="section"><a href="testing_strategies.html">9. Testing Strategies</a></span></dt><dd><dl><dt><span class="section"><a href="testing_strategies.html#_what_kinds_of_tests">9.1. What Kinds Of Tests?</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_how_should_you_test_your_apps">9.2. How Should You Test Your Apps</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_best_practices">9.3. Best Practices</a></span></dt><dt><span class="section"><a href="testing_strategies.html#UI-Elements">9.4. UI-Elements:</a></span></dt><dt><span class="section"><a href="testing_strategies.html#seide_rollups">9.5. Rollups</a></span></dt><dt><span class="section"><a href="testing_strategies.html#_lab_5_ui_elements_and_rollups">9.6. Lab 5: UI-Elements And Rollups</a></span></dt></dl></dd><dt><span class="section"><a href="pageobject.html">10. PageObject</a></span></dt><dd><dl><dt><span class="section"><a href="pageobject.html#_lab_6_pageobject_pattern">10.1. Lab 6: PageObject Pattern</a></span></dt></dl></dd><dt><span class="section"><a href="selenium_in_your_company.html">11. Selenium In Your Company</a></span></dt><dd><dl><dt><span class="section"><a href="selenium_in_your_company.html#_where_to_start">11.1. Where to start?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#_what_are_the_issues">11.2. What Are The Issues?</a></span></dt><dt><span class="section"><a href="selenium_in_your_company.html#Continuous-Integration">11.3. Continuous Integration</a></span></dt></dl></dd><dt><span class="section"><a href="selenium2.html">12. Selenium 2.0</a></span></dt><dd><dl><dt><span class="section"><a href="selenium2.html#_differences_amp_new_features">12.1. Differences &amp; New Features</a></span></dt><dt><span class="section"><a href="selenium2.html#_api">12.2. API</a></span></dt></dl></dd><dt><span class="section"><a href="toolbox.html">13. Toolbox</a></span></dt><dd><dl><dt><span class="section"><a href="toolbox.html#_flash_testing">13.1. Flash testing</a></span></dt><dt><span class="section"><a href="toolbox.html#helper_tools">13.2. Selenium helper tools</a></span></dt><dt><span class="section"><a href="toolbox.html#_test_developer_tools">13.3. Test developer tools</a></span></dt></dl></dd><dt><span class="section"><a href="appendix.html">14. Appendix</a></span></dt><dd><dl><dt><span class="section"><a href="appendix.html#_selenium_rc_api_reference_ruby">14.1. Selenium RC API Reference (Ruby)</a></span></dt><dt><span class="section"><a href="appendix.html#_quiz_answers">14.2. Quiz answers</a></span></dt></dl></dd></dl></div><div xmlns="http://www.w3.org/1999/xhtml" class="navfooter"><hr></hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div>
+</div>
+  </div></div></div><div class="blurb">
+<p><div class="blurb">
+<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'7d0856ac-d0ba-4f42-a53b-10da969828e1'});</script>
+
+<div style="padding-top:7px;">
+<span  class='st_sharethis_hcount' displayText='ShareThis'></span>
+</div></div> <!-- blurb -->
+</p>
+
+<!--List of Tutorials-->
+<div class="blurb">
+<div class="related-info-box">
+<h2>Marakana Tutorials</h2>
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-python.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../python_fundamentals_tutorial/index.html">Python Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jquery.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jquery_tutorial/index.html">jQuery Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-html5.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../html5_tutorial/index.html">HTML5 Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-java.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../java_fundamentals_tutorial/index.html">Java Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-jboss.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="../jboss_admin_tutorial/index-2.html">JBoss Admin Tutorial</a>
+</div>
+<br class="clear">
+
+<img class="course-icon" src="http://marakana.com/static/logos/logo-selenium.png"/>
+<div style="margin-left:35px;">
+  <a class="important" href="index.html">Selenium Tutorial</a>
+</div>
+<br class="clear">
+
+</div></div> <!-- blurb -->
+
+<p><div class="blurb">
+<!-- Upcoming Classes -->
+  <div class="related-info-box"> <!-- start of upcoming schedule -->
+    <h2 id="upcomingEventsHeader">
+      <span>Upcoming classes</span>
+    </h2>
+<div class="blurb">
+    <div class="content-section">
+                <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_web_server_administration.html">Apache Web Server</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby_on_rails.html">Ruby and Rails Bootcamp</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/ruby.html">Ruby</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 10
+            <span class="fade">(2 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-apache.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/apache/apache_httpd_and_tomcat_administration_bootcamp.html">Apache and Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 10
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/67d747ceb705d8baad2c11d3f3340533.jpg" alt="Anton Epple"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/netbeans_platform_certified.html">NetBeans Platform Certified</a>
+            with <a href="http://marakana.com/expert/anton_epple,4565.html">Anton Epple</a>
+            on
+            Oct 10
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-tomcat.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/tomcat/apache_tomcat_administration.html">Tomcat</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/fc92ae1c7a923712afd34b6563d655e7.jpg" alt="Daniel Morrison"/>
+            <img src="http://marakana.com/static/logos/logo-ruby.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/ruby/rails.html">Rails</a>
+            with <a href="http://marakana.com/expert/daniel_morrison,1585.html">Daniel Morrison</a>
+            on
+            Oct 12
+            <span class="fade">(3 days)</span>
+              in New York
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/96ef2f6abc7b854280cefbc4eeaa231c.jpg" alt="Aleksandar Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-java.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/java/fundamentals_of_java.html">Fundamentals of Java™</a>
+            with <a href="http://marakana.com/expert/aleksandar_gargenta,1.html">Aleksandar Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/android_bootcamp.html">Android™ Bootcamp</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(5 days)</span>
+              in San Francisco
+  	  <br/><br/>
+        <div class="course-event-photo-box contact-photo-content-logo-box">
+            <img class="contact-photo" src="http://marakana.com/user/photo/2ac8c4a74496ee2ae0c2ebad14465524.jpg" alt="Marko Gargenta"/>
+            <img src="http://marakana.com/static/logos/logo-android.png" class="content-logo" />
+        </div>
+            <a class="important" href="http://marakana.com/training/android/intro_to_android.html">Intro to Android™</a>
+            with <a href="http://marakana.com/expert/marko_gargenta,2.html">Marko Gargenta</a>
+            on
+            Oct 17
+            <span class="fade">(3 days)</span>
+              in San Francisco
+  	  <br/><br/>
+    </div></div> <!-- blurb -->
+    <br/>
+    <p>
+      <a class="important"  href="http://marakana.com/training/schedule.html">See Complete Schedule</a>
+    </p>
+  </div> <!-- end of upcoming schedule -->
+</div> <!-- blurb -->
+</p></div> <!-- blurb -->
+</div> <!-- #main-side -->
+        <div id="main-outer-footer"></div>
+      </div> <!-- #main-outer -->
+      <div id="main-footer"></div>
+    </div> <!-- #main -->
+    <div id="footer">
+      <div class="page-part">
+        <div id="footer-content" class="content-part">
+          <div id="footer-blurb">
+  <div class="blurb">
+<ul>
+  <li><a href="http://marakana.com/">Home</a></li>
+  <li><a href="http://marakana.com/training/schedule.html">Schedule</a></li>
+  <li><a href="http://marakana.com/training/courses.html">Courses</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/forums/blog/">TechTalk</a></li>
+  <li><a href="http://marakana.com/techtv/index.html">TechTV</a></li>
+  <li><a href="http://marakana.com/bookshelf.html">Bookshelf</a></li>
+</ul>
+<ul>
+  <li><a href="http://marakana.com/contact_us.html">Contact Us</a></li>
+  <li><a href="#" onclick="javascript:popUp('http://marakana.com/legal/privacy_policy.html', 600, 600); return false;">Privacy Policy</a></li>
+  <li>Affiliate <a href="http://marakana.com/affiliate/registration.html">Registration</a> / <a href="http://marakana.com/affiliate/dashboard.html">Login</a></li>
+</ul>
+<br class="clear" />
+<div>All trademarks belong to their respective owners.</div></div> <!-- blurb -->
+</div> <!-- #footer-blurb -->
+
+<div id="footer-company-info">
+    <div id="company-name">Marakana</div>
+    <div id="company-contact-info">
+      <div id="company-address">
+        301 Howard Street Suite 550<br/>
+        San Francisco, CA 94105<br/>
+      </div>
+      <div id="company-phone">
+        1 (415) 647-7000</div>
+    </div>
+  </div> <!-- #footer-company-info -->
+<div id="footer-copyright">
+    &copy;2011 Marakana Inc, purveyors of fine training since 2005.
+    &nbsp;
+    &nbsp;
+    <small><a href="http://marakana.com/legal_site_info.html">Terms of Use</a></small>
+  </div>
+</div> <!-- content-part -->
+        <div id="footer-side" class="side-part">
+          <div id="footer-side-blurb">
+  </div> <!-- #footer-side-blurb -->
+
+<div id="footer-valid-markup">
+    <a href="http://validator.w3.org/check/referer" title="Validate XHTML">
+      <img alt="Valid XHTML" src="http://marakana.com/images/valid-xhtml.gif"/>
+    </a>
+    <br/>
+    <a href="http://jigsaw.w3.org/css-validator/" title="Validate CSS">
+      <img alt="Valid CSS" src="http://marakana.com/images/valid-css.gif"/>
+    </a>
+  </div>
+<div id="footer-powered-by">
+    This site is powered by <a href="http://www.trainingrocket.com/">TrainingRocket</a>.
+  </div> <!-- #footer-powered-by -->
+</div> <!-- #footer-site-info -->
+      </div> <!-- page-part -->
+    </div> <!-- #footer -->
+    <script type="text/javascript">
+  imageButtonFix();
+</script>
+
+<!--[if lt IE 8]>
+<script type="text/javascript">
+  buttonFix();
+</script>
+<![endif]-->
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-95154-1");
+    pageTracker._trackPageview();
+  </script>
+</body>
+
+<!-- Mirrored from marakana.com/bookshelf/selenium_tutorial/selenium_remote_control.html by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 27 Sep 2011 14:59:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8"><!-- /Added by HTTrack -->
+</html>
