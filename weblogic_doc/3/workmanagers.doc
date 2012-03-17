@@ -1,0 +1,107 @@
+Work managers page1
+
+city compensatary allowence(nasta)
+
+  
+   Re: What are workload managers for? 
+Answer
+# 1 http://www.oracle.com/technology/pub/articles/dev2arch/2006/
+01/workload-management.html
+
+
+
+Applications can request their own fair share of thread 
+resources by using the fair-share parameter. This tells the 
+WebLogic Server kernel to allocate threads to the two 
+applications proportionately, irrespective of their arrival 
+pattern. In fact, this is done by default without any 
+configuration. 
+Administrators no longer have to configure thread counts, 
+and the optimal thread count is determined by the server 
+automatically based on the overall throughput measurements. 
+It is possible to set constraints to enforce minimum and 
+maximum concurrency without creating dedicated thread 
+pools. 
+Unlike execute queues, all WorkManagers share a common 
+thread pool and a priority-based queue. The size of the 
+thread pool is determined automatically by the kernel and 
+resized as needed. WorkManagers (described on the next 
+page) become very lightweight, and customers can create 
+WorkManagers without worrying about the size of the thread 
+pool. Thread dumps look much cleaner with fewer threads. 
+In the new model, it is possible to specify different 
+service-level agreements (SLAs) such as fair shares or 
+response-time goals for the same servlet invocation 
+depending on the user associated with the invocation. For 
+example, it is possible to give higher fair share 
+to "platinum" users than to "evaluation" users for the same 
+servlet or EJB invocation. 
+I will describe more about these features in the following 
+sections.
+
+New Thread Pool Implementation
+WebLogic Server 9.0 has a single thread pool for requests 
+from all applications. Similarly, all pending work is 
+enqueued in a common priority-based queue. The thread count 
+is automatically tuned to achieve maximum overall 
+throughput. Priority of the requests is dynamic and 
+computed internally to meet the stated goals. 
+Administrators state goals simply, using application-level 
+parameters like fair-share, response time goals.
+
+In earlier releases, each servlet or RMI request was 
+associated with a dispatch policy that mapped to an execute 
+queue. Requests without an explicit dispatch policy use the 
+server-wide default execute queue. In WebLogic Server 9.0, 
+requests are still associated with a dispatch policy but 
+are mapped to a WorkManager instead of to an execute queue. 
+Note that the concept of WorkManager described here is 
+completely different from the Timer and WorkManager 
+specification described on page 5.
+
+Requests without an explicit dispatch policy use the 
+default WorkManager of the application. This means that 
+each application has its own default WorkManager that is 
+not shared with other applications. This distinction is 
+important to note. Execute queues are always global whereas 
+WorkManagers are always application scoped. Even 
+WorkManagers defined globally in the console are 
+application scoped during runtime. This means that each 
+application gets into own runtime instance that is distinct 
+from others, but all of them share the same characteristics 
+like fair-share goals. This is done to track work at the 
+application layer and to provide capabilities like graceful 
+suspension of individual applications.
+
+As mentioned earlier, each servlet or RMI request is 
+associated with a WorkManager. By default, all requests are 
+associated with the application default WorkManager. The 
+dispatch-policy element can be used to associate a request 
+with a specific WorkManager either defined within an 
+application scope or globally at the server level. I will 
+provide examples on how to use the dispatch policy in a 
+later section.
+
+Thread Count Self-tuning
+One of the major differences between execute queues and the 
+new thread scheduling model is that the thread count does 
+not need to be set. In earlier releases, customers defined 
+new thread pools and configured their size to avoid 
+deadlocks and provide differentiated service. It is quite 
+difficult to determine the exact number of threads needed 
+in production to achieve optimal throughput and avoid 
+deadlocks. WebLogic Server 9.0 is self-tuned, dynamically 
+adjusting the number of threads to avoid deadlocks and 
+achieve optimal throughput subject to concurrency 
+constraints. It also meets objectives for differentiated 
+service. These objectives are stated as fair shares and 
+response-time goals as explained in the next section.
+
+The self-tuning thread pool monitors the overall throughput 
+every two seconds and uses the collected data to determine 
+if thread count needs to change. Present thread count, the 
+measured throughput, and the past history is taken into 
+account by the algorithm to determine if the thread count 
+needs to increase or decrease, and new threads are 
+automatically added to the pool or removed, as needed.
+   
