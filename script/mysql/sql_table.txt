@@ -1,6 +1,5 @@
 #!/bin/bash
 # System + MySQL backup script
-# Copyright (c) 2008 Marchost
 # This script is licensed under GNU GPL version 2.0 or above
 # ---------------------------------------------------------------------
 
