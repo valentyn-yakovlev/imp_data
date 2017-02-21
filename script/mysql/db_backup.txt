@@ -9,7 +9,7 @@ DEST_DIR=/data/backup
 NOW=$(date +%d%b%Y)
 DEST="${DEST_DIR}/${NOW}"
 mkdir -p "$DEST"
-#DEST_IP="65.182.191.4"
+
 
 for table in $(mysql -u "$MYSQL_USER" -p"$MYSQL_PWD" -h "$MYSQL_HOST" -D "$DB" -e "show tables" | grep -v "Tables_in")
 #for table in  ISMIDM
